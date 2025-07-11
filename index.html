@@ -50,6 +50,7 @@
         border-radius: 0.375rem 0.375rem 0 0;
         cursor: pointer;
         transition: all 0.2s;
+        position: relative;
       }
 
       netsi-tab[active] {
@@ -94,34 +95,39 @@
         display: inline-block;
       }
 
-      .new-badge {
+      netsi-new .new-badge {
         position: absolute;
-        top: -8px;
-        right: -8px;
-        background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-        color: white;
+        /* Use attr() for top if supported, fallback to -28px */
+        top: -28px;
+        top: attr(data-tab-height px, -28px);
+        right: -6px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 4px;
         font-size: 10px;
         font-weight: bold;
         padding: 2px 6px;
         border-radius: 8px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+        color: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        z-index: 10;
         cursor: pointer;
         user-select: none;
-        transition: all 0.2s ease;
+        opacity: 0.7;
+        transition: opacity 0.2s;
       }
-
-      .new-badge:hover {
-        transform: scale(1.1);
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      netsi-new .new-badge:hover {
+        opacity: 1;
       }
 
       .new-speech-bubble {
         position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
+        top: 120%; /* below the badge */
+        left: 50%;
+        transform: translateX(-50%);
         background: white;
         border: 1px solid #e5e7eb;
         border-radius: 8px;
@@ -134,15 +140,15 @@
         line-height: 1.4;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.2s ease;
         pointer-events: none;
+        max-height: 250px;
+        overflow: auto;
+        transition: all 0.2s ease;
       }
 
       .new-speech-bubble.show {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
         pointer-events: auto;
       }
 
@@ -150,14 +156,14 @@
         content: "";
         position: absolute;
         top: -6px;
-        right: 16px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
         width: 12px;
         height: 12px;
         background: white;
         border: 1px solid #e5e7eb;
         border-bottom: none;
         border-right: none;
-        transform: rotate(45deg);
       }
 
       .new-speech-bubble h4 {
@@ -186,13 +192,31 @@
           transform: translateX(50%) rotate(45deg);
         }
       }
+
+      .new-badge .close-x {
+        margin-left: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 2px;
+        line-height: 1;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+
+      .new-badge .close-x:hover {
+        opacity: 1;
+      }
     </style>
   </head>
 
   <body class="bg-gray-100 min-h-screen flex flex-col font-sans">
     <header class="bg-teal-600 text-white py-4 shadow">
       <h1 class="text-2xl font-bold text-center tracking-wide">
-        Latent Dimension Prompt Builder
+        Latent Dimension Prompt Builder
       </h1>
     </header>
 
@@ -204,8 +228,13 @@
         <netsi-tab name="tab3">Text prompt</netsi-tab>
         <netsi-tab name="tab4">Text/JSON prompt</netsi-tab>
         <netsi-tab name="tab5">Grid Text/JSON prompt</netsi-tab>
-        <netsi-tab name="tab6">Text Variations</netsi-tab>
-        <netsi-tab name="tab7">About</netsi-tab>
+        <netsi-tab name="tab6">Text Variations 
+            <netsi-new id="text-variations-new" expires="2025-07-20">Now you can do variations on text!</netsi-new>
+        </netsi-tab>
+      <netsi-tab name="tab7">Examples
+        <netsi-new id="text-examples-new" expires="2025-07-20">You can now load examples, ready for you to play with!</netsi-new>
+      </netsi-tab>
+      <netsi-tab name="tab8">About</netsi-tab>
       </netsi-tabs>
 
       <netsi-tab-content title="Prompt for LLM" id="tab1" active="true">
@@ -239,7 +268,7 @@ Return the result as a JSON object under the key "latent_dimensions".
   "latent_dimensions": [
     {
       "name": "Emotional Tone",
-      "explanation": "Represents the dominant emotional tone conveyed in the subject’s expression",
+      "explanation": "Represents the dominant emotional tone conveyed in the subject's expression",
       "value": "Neutral",
       "importance": 87,
       "example_value": "\"A calm and thoughtful gaze\"",
@@ -279,16 +308,14 @@ Return the result as a JSON object under the key "latent_dimensions".
           >
             Share Style 🔗
           </button>
-          <netsi-new expires="2024-12-31">
+          <netsi-new id="share-style-new" expires="2025-07-20">
             <h4>🔗 New Feature!</h4>
             <p>
-              Share your dimension configurations with others using a shareable
-              URL. Perfect for collaboration and bookmarking your favorite
-              styles!
+              Share styles easily! Click "Share Style 🔗" to copy instructions + JSON to clipboard. Share via email or chat - no broken URLs!
             </p>
             <button
               id="shareBtn"
-              class="px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
+              class="mt-2 px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
             >
               Share Style 🔗
             </button>
@@ -345,7 +372,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             Modernity" parameter.
           </h3>
           <img
-            src="https://assets.codepen.io/9729/ChatGPT+Image+10.+jul.+2025%2C+09.33.09.png"
+            src="https://netsi1964.github.io/LatentDimensionPromptBuilder/examples/images/example0.png"
             alt="Example of a prompt which iterates over website design"
           />
         </div>
@@ -419,7 +446,21 @@ Return the result as a JSON object under the key "latent_dimensions".
         </div>
       </netsi-tab-content>
 
-      <netsi-tab-content title="About" id="tab7">
+      <netsi-tab-content title="Examples" id="tab7">
+        <div class="bg-white p-6 border border-gray-300 rounded shadow-sm">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">📚 Example Style Configurations</h2>
+          
+          <p class="mb-6 text-gray-700 leading-relaxed">
+            Click on any example below to load it into the "Adjust Dimensions" tab. Each example demonstrates different semantic dimensions and their applications.
+          </p>
+
+          <div id="examplesContainer" class="space-y-4">
+            <!-- Examples will be loaded here dynamically -->
+          </div>
+        </div>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="About" id="tab8">
         <div class="bg-white p-6 border border-gray-300 rounded shadow-sm">
           <h2 class="text-xl font-bold text-gray-800 mb-4">🧠 About the Latent Dimension Prompt Builder</h2>
           
@@ -1023,6 +1064,19 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.setAttribute("role", "complementary");
           this.setAttribute("aria-label", "New feature notification");
 
+          // Require a unique id for each badge
+          const id = this.getAttribute('id');
+          if (!id) {
+            console.warn('netsi-new: Missing required id attribute. Badge will always show.');
+          } else {
+            // Use a shared localStorage key for all dismissed badges
+            const dismissed = JSON.parse(localStorage.getItem('netsi-new-dismissed') || '[]');
+            if (dismissed.includes(id)) {
+              this.remove();
+              return;
+            }
+          }
+
           if (!this.checkExpiry()) {
             this.remove();
             return;
@@ -1061,6 +1115,9 @@ Return the result as a JSON object under the key "latent_dimensions".
             if (!this.checkExpiry()) {
               this.expire();
             }
+          } else if (name === "label" && this.isConnected && this._badge) {
+            // Update badge text when label changes
+            this._badge.textContent = newValue || "NEW";
           }
         }
 
@@ -1069,7 +1126,7 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @returns {Array<string>} Array of attribute names to observe
          */
         static get observedAttributes() {
-          return ["expires"];
+          return ["expires", "label"];
         }
 
         /**
@@ -1123,8 +1180,21 @@ Return the result as a JSON object under the key "latent_dimensions".
           // Create badge element
           const badge = document.createElement("div");
           badge.className = "new-badge";
-          badge.textContent = "NEW";
+          // Get label from attribute or default to "NEW"
+          const label = this.getAttribute("label") || "NEW";
+          badge.textContent = label;
           badge.setAttribute("aria-label", "New feature");
+
+          // Add close button
+          const closeBtn = document.createElement("button");
+          closeBtn.className = "close-x";
+          closeBtn.innerHTML = "&times;";
+          closeBtn.title = "Dismiss";
+          closeBtn.onclick = (e) => {
+            e.stopPropagation();
+            this.dismissBadge();
+          };
+          badge.appendChild(closeBtn);
 
           // Create speech bubble
           const speechBubble = document.createElement("div");
@@ -1147,6 +1217,21 @@ Return the result as a JSON object under the key "latent_dimensions".
         }
 
         /**
+         * Dismisses the badge and stores a flag in localStorage
+         */
+        dismissBadge() {
+          const id = this.getAttribute('id');
+          if (id) {
+            let dismissed = JSON.parse(localStorage.getItem('netsi-new-dismissed') || '[]');
+            if (!dismissed.includes(id)) {
+              dismissed.push(id);
+              localStorage.setItem('netsi-new-dismissed', JSON.stringify(dismissed));
+            }
+          }
+          this.remove();
+        }
+
+        /**
          * Attaches event listeners
          */
         attachEventListeners() {
@@ -1157,6 +1242,10 @@ Return the result as a JSON object under the key "latent_dimensions".
               passive: true,
             });
           }
+          if (this._speechBubble) {
+            this._speechBubble.addEventListener("mouseenter", this.handleMouseEnter);
+            this._speechBubble.addEventListener("mouseleave", this.handleMouseLeave);
+          }
         }
 
         /**
@@ -1164,18 +1253,13 @@ Return the result as a JSON object under the key "latent_dimensions".
          */
         detachEventListeners() {
           if (this._badge) {
-            this._badge.removeEventListener(
-              "mouseenter",
-              this.handleMouseEnter
-            );
-            this._badge.removeEventListener(
-              "mouseleave",
-              this.handleMouseLeave
-            );
-            this._badge.removeEventListener(
-              "touchstart",
-              this.handleTouchStart
-            );
+            this._badge.removeEventListener("mouseenter", this.handleMouseEnter);
+            this._badge.removeEventListener("mouseleave", this.handleMouseLeave);
+            this._badge.removeEventListener("touchstart", this.handleTouchStart);
+          }
+          if (this._speechBubble) {
+            this._speechBubble.removeEventListener("mouseenter", this.handleMouseEnter);
+            this._speechBubble.removeEventListener("mouseleave", this.handleMouseLeave);
           }
           document.removeEventListener("click", this.handleDocumentClick);
         }
@@ -1185,6 +1269,7 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @param {MouseEvent} event - The mouse event
          */
         handleMouseEnter(event) {
+          this._hovering = true;
           this.showSpeechBubble();
         }
 
@@ -1193,7 +1278,12 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @param {MouseEvent} event - The mouse event
          */
         handleMouseLeave(event) {
-          this.hideSpeechBubble();
+          this._hovering = false;
+          setTimeout(() => {
+            if (!this._hovering) {
+              this.hideSpeechBubble();
+            }
+          }, 100); // Small delay to allow moving between badge and bubble
         }
 
         /**
@@ -1445,59 +1535,11 @@ Return the result as a JSON object under the key "latent_dimensions".
         toast(message);
       }
 
-      /**
-       * Compresses JSON data using base64 encoding for URL parameters
-       * @param {Object} data - The data to compress
-       * @returns {string} Base64 encoded string
-       */
-      function compressData(data) {
-        const jsonString = JSON.stringify(data);
-        return btoa(encodeURIComponent(jsonString));
-      }
 
-      /**
-       * Decompresses base64 encoded data from URL parameters
-       * @param {string} compressed - Base64 encoded string
-       * @returns {Object|null} Decompressed data or null if invalid
-       */
-      function decompressData(compressed) {
-        try {
-          const jsonString = decodeURIComponent(atob(compressed));
-          return JSON.parse(jsonString);
-        } catch (error) {
-          console.error("Error decompressing data:", error);
-          return null;
-        }
-      }
 
-      /**
-       * Gets URL parameters as an object
-       * @returns {Object} Object containing URL parameters
-       */
-      function getUrlParams() {
-        const params = new URLSearchParams(window.location.search);
-        const result = {};
-        for (const [key, value] of params) {
-          result[key] = value;
-        }
-        return result;
-      }
 
-      /**
-       * Updates the URL with new parameters without reloading the page
-       * @param {Object} params - Parameters to add to URL
-       */
-      function updateUrl(params) {
-        const url = new URL(window.location);
-        Object.keys(params).forEach((key) => {
-          if (params[key]) {
-            url.searchParams.set(key, params[key]);
-          } else {
-            url.searchParams.delete(key);
-          }
-        });
-        window.history.replaceState({}, "", url);
-      }
+
+
 
       /**
        * Validates dimension data structure
@@ -1513,50 +1555,24 @@ Return the result as a JSON object under the key "latent_dimensions".
           return false;
         }
 
-        // Check each dimension has required fields
+        // Check each dimension has required fields (minimal validation for shared URLs)
         return data.latent_dimensions.every(
           (dim) =>
             dim.name &&
-            dim.explanation &&
             dim.value !== undefined &&
-            dim.importance !== undefined &&
-            Array.isArray(dim.values) &&
-            dim.values.length === 11
+            dim.importance !== undefined
         );
       }
 
-      /**
-       * Loads dimension data from URL parameters if present
-       * @returns {Object|null} Loaded data or null if not present/invalid
-       */
-      function loadFromUrl() {
-        const params = getUrlParams();
 
-        if (params.data) {
-          const decompressed = decompressData(params.data);
-
-          if (decompressed && validateDimensionData(decompressed)) {
-            console.log("✅ Loaded valid dimension data from URL");
-            return decompressed;
-          } else {
-            console.warn("⚠️ Invalid dimension data in URL parameter");
-            toast("Invalid dimension data in URL - using default");
-            return null;
-          }
-        }
-
-        return null;
-      }
 
       /**
        * Generates a shareable URL with current dimension configuration
        * @returns {string} The shareable URL
        */
       function generateShareUrl() {
-        const compressed = compressData(sample);
-        const url = new URL(window.location.origin + window.location.pathname);
-        url.searchParams.set("data", compressed);
-        return url.toString();
+        // For now, just return the base URL since we're using clipboard sharing for complex configurations
+        return window.location.origin + window.location.pathname;
       }
 
       /**
@@ -1600,6 +1616,204 @@ Return the result as a JSON object under the key "latent_dimensions".
           fixedParams: dimensions.filter((d) => d.name !== propertyName),
         };
       }
+
+      // --- EXAMPLES DATA ---
+      const examples = [
+        {
+          id: "john-cleese-humor",
+          title: "John Cleese Style Humor",
+          description: "Analyzed from John Cleese's comedy style, focusing on cynicism and punchline ambiguity. Perfect for creating witty, slightly cynical humor.",
+          category: "Comedy",
+          selectedDimension: "Sarcasm Intensity",
+          dimensions: {
+            latent_dimensions: [
+              {
+                name: "Cynicism Level",
+                explanation: "Indicates how skeptical or distrustful the humor is toward institutions or professions",
+                value: "Mildly Cynical",
+                importance: 91,
+                example_value: "\"people couldn't figure out which side of the stamp to spit on\"",
+                values: ["Naive", "Idealistic", "Trusting", "Sincere", "Dry", "Mildly Cynical", "Cynical", "Jaded", "Mocking", "Acerbic", "Bitter"]
+              },
+              {
+                name: "Punchline Ambiguity",
+                explanation: "How much the joke relies on indirectness or misdirection",
+                value: "Moderately Twisted",
+                importance: 84,
+                example_value: "\"which side of the stamp to spit on\"",
+                values: ["Literal", "Direct", "Obvious", "Simple", "Subtle", "Moderately Twisted", "Surprising", "Layered", "Cryptic", "Obscure", "Absurd"]
+              },
+              {
+                name: "Authority Satire",
+                explanation: "Degree of mockery or critique aimed at figures of authority or respect",
+                value: "Sarcastic",
+                importance: 88,
+                example_value: "\"commemorative stamps commemorating lawyers\"",
+                values: ["Respectful", "Earnest", "Gentle", "Playful", "Ironic", "Sarcastic", "Cutting", "Disrespectful", "Ridiculing", "Scathing", "Defamatory"]
+              },
+              {
+                name: "Formality of Language",
+                explanation: "The level of structured, formal, or polished language used",
+                value: "Conversational",
+                importance: 62,
+                example_value: "\"they had to withdraw them\"",
+                values: ["Academic", "Stilted", "Formal", "Polished", "Professional", "Conversational", "Colloquial", "Casual", "Slangy", "Unfiltered", "Crude"]
+              },
+              {
+                name: "Historical Irony",
+                explanation: "How much the humor draws on or twists established traditions or respected symbols",
+                value: "Tradition-Undermining",
+                importance: 74,
+                example_value: "\"The U.S. Postal Service... commemorative stamps\"",
+                values: ["Reverent", "Respectful", "Cautious", "Balanced", "Neutral", "Tradition-Undermining", "Critical", "Ironic", "Darkly Ironic", "Mock-Historic", "Subversive"]
+              },
+              {
+                name: "Delivery Sharpness",
+                explanation: "The abruptness or smoothness of the punchline delivery",
+                value: "Snappy",
+                importance: 71,
+                example_value: "\"spit on\"",
+                values: ["Rambling", "Drawn-out", "Gradual", "Flowing", "Smooth", "Snappy", "Abrupt", "Jarring", "Blunt", "Sudden", "Staccato"]
+              },
+              {
+                name: "Absurdity Level",
+                explanation: "The degree of irrationality or surrealism in the humor",
+                value: "Mildly Absurd",
+                importance: 70,
+                example_value: "\"which side of the stamp to spit on\"",
+                values: ["Realistic", "Grounded", "Believable", "Commonplace", "Dry", "Mildly Absurd", "Silly", "Goofy", "Ridiculous", "Ludicrous", "Surreal"]
+              },
+              {
+                name: "Cultural Specificity",
+                explanation: "How much the joke relies on a specific cultural context",
+                value: "American-Focused",
+                importance: 58,
+                example_value: "\"The U.S. Postal Service\"",
+                values: ["Universal", "Global", "Generic Western", "Modern", "Subtle American", "American-Focused", "Deep Americana", "Regional Dialect", "Obscure Reference", "In-Joke"]
+              },
+              {
+                name: "Moral Edginess",
+                explanation: "Degree to which the joke challenges ethical norms or sensitivities",
+                value: "Borderline Tactless",
+                importance: 69,
+                example_value: "\"spit on\" and its implied disdain",
+                values: ["Wholesome", "Polite", "Safe", "Acceptable", "Crisp", "Borderline Tactless", "Provocative", "Rude", "Crass", "Offensive", "Shocking"]
+              },
+              {
+                name: "Cleverness Quotient",
+                explanation: "The level of intellectual play or wordplay in the joke",
+                value: "Wittily Constructed",
+                importance: 85,
+                example_value: "\"couldn't figure out which side of the stamp to spit on\" as misdirection",
+                values: ["Dull", "Literal", "Plain", "Simple", "Slightly Clever", "Wittily Constructed", "Clever", "Sharp", "Ingenious", "Brilliant", "Genius"]
+              },
+              {
+                name: "Nostalgic Tone",
+                explanation: "Level of old-fashioned or retro feeling in the humor",
+                value: "Mildly Retro",
+                importance: 44,
+                example_value: "\"postal service stamps\"",
+                values: ["Modern", "Contemporary", "Timeless", "Subtle Retro", "Implied Past", "Mildly Retro", "Old-Timey", "Vintage", "WWII Era", "Depression Era", "Victorian"]
+              },
+              {
+                name: "Visual Imagination Trigger",
+                explanation: "How easily the joke conjures a mental image",
+                value: "Vividly Suggestive",
+                importance: 66,
+                example_value: "\"which side of the stamp to spit on\"",
+                values: ["Abstract", "Hard to Picture", "Subtle", "Mild", "Recognizable", "Vividly Suggestive", "Detailed", "Cinematic", "Graphic", "Extreme", "Grotesque"]
+              },
+              {
+                name: "Temporal Specificity",
+                explanation: "How anchored the humor is to a specific time period",
+                value: "Late 20th Century",
+                importance: 49,
+                example_value: "\"postal service stamps\"",
+                values: ["Timeless", "Future-Oriented", "Present-Day", "2010s", "2000s", "Late 20th Century", "Mid-Century", "WWII Era", "Depression Era", "Victorian", "Historic"]
+              },
+              {
+                name: "Irony Density",
+                explanation: "How much of the joke relies on irony",
+                value: "High Irony",
+                importance: 86,
+                example_value: "\"commemorative stamps commemorating lawyers\"",
+                values: ["None", "Low", "Light", "Implied", "Moderate", "High Irony", "Explicit", "Layered", "Recursive", "Meta-Ironic", "Post-Ironic"]
+              },
+              {
+                name: "Use of Wordplay",
+                explanation: "Extent of puns, double meanings, or phonetic tricks",
+                value: "Mild Wordplay",
+                importance: 59,
+                example_value: "\"spit on\" as both literal and symbolic",
+                values: ["None", "Flat", "Plain", "Straight", "Dry", "Mild Wordplay", "Double Meaning", "Pun-Based", "Phonetic Trick", "Layered Pun", "Meta-Wordplay"]
+              },
+              {
+                name: "Social Commentary Depth",
+                explanation: "Level of embedded social critique or observation",
+                value: "Light Commentary",
+                importance: 68,
+                example_value: "\"lawyers\" as a target of mild satire",
+                values: ["None", "Surface", "Thin", "Subtle", "Implied", "Light Commentary", "Moderate", "Direct", "Heavy-Handed", "Blunt", "Preachy"]
+              },
+              {
+                name: "Syllabic Rhythm",
+                explanation: "How much the joke flows rhythmically in its syllables",
+                value: "Light Rhythm",
+                importance: 39,
+                example_value: "\"which side of the stamp to spit on\"",
+                values: ["Choppy", "Clunky", "Irregular", "Uneven", "Straightforward", "Light Rhythm", "Flowing", "Bouncy", "Lyrical", "Poetic", "Musical"]
+              },
+              {
+                name: "Sarcasm Intensity",
+                explanation: "The harshness or bite of the sarcastic tone",
+                value: "Moderate Sarcasm",
+                importance: 73,
+                example_value: "\"people couldn't figure out which side of the stamp to spit on\"",
+                values: ["Sincere", "Light", "Playful", "Dry", "Wry", "Moderate Sarcasm", "Cutting", "Bitter", "Scornful", "Cruel", "Venomous"]
+              },
+              {
+                name: "Professional Stereotype Use",
+                explanation: "How much the joke depends on professional clichés or generalizations",
+                value: "Relies on Tropes",
+                importance: 77,
+                example_value: "\"lawyers\" as untrustworthy stereotype",
+                values: ["Original", "Personalized", "Nuanced", "Balanced", "Neutral", "Relies on Tropes", "Recognizable", "Overused", "Cartoonish", "Exaggerated", "Exaggerated"]
+              },
+              {
+                name: "Nostalgic Tone",
+                explanation: "Level of old-fashioned or retro feeling in the humor",
+                value: "Mildly Retro",
+                importance: 44,
+                example_value: "\"postal service stamps\"",
+                values: ["Modern", "Contemporary", "Timeless", "Subtle Retro", "Implied Past", "Mildly Retro", "Old-Timey", "Vintage", "WWII Era", "Depression Era", "Victorian"]
+              }
+            ]
+          }
+                 }
+         // Add more examples here as needed
+         // 
+         // Example format:
+         // {
+         //   id: "unique-example-id",
+         //   title: "Example Title",
+         //   description: "Brief description of what this example demonstrates",
+         //   category: "Category Name",
+         //   selectedDimension: "Dimension Name to Select",
+         //   dimensions: {
+         //     latent_dimensions: [
+         //       {
+         //         name: "Dimension Name",
+         //         explanation: "What this dimension represents",
+         //         value: "Current Value",
+         //         importance: 85,
+         //         example_value: "Example from the analyzed content",
+         //         values: ["Value1", "Value2", "Value3", "Value4", "Value5", "Current Value", "Value7", "Value8", "Value9", "Value10", "Value11"]
+         //       }
+         //       // ... more dimensions
+         //     ]
+         //   }
+         // }
+       ];
 
       // --- SAMPLE DATA ---
       let sample = {
@@ -1925,7 +2139,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             value: "Structured Insight",
             importance: 83,
             example_value:
-              '"Trifork Secures Landmark Project to Transform Oman’s Healthcare System"',
+              '"Trifork Secures Landmark Project to Transform Oman\'s Healthcare System"',
             values: [
               "Randomized",
               "Scattered News",
@@ -2063,7 +2277,7 @@ Return the result as a JSON object under the key "latent_dimensions".
   "latent_dimensions": [
     {
       "name": "Emotional Tone",
-      "explanation": "Represents the dominant emotional tone conveyed in the subject’s expression",
+      "explanation": "Represents the dominant emotional tone conveyed in the subject's expression",
       "value": "Neutral",
       "importance": 87,
       "example_value": "\"A calm and thoughtful gaze\"",
@@ -2139,6 +2353,45 @@ Return the result as a JSON object under the key "latent_dimensions".
         try {
           const shareUrl = generateShareUrl();
 
+          // Check URL length and provide alternative sharing method
+          if (shareUrl.length > 2000) {
+            // Create sharing instructions and JSON data
+            const sharingInstructions = `🔗 Latent Dimension Prompt Builder - Style Share
+
+I'm sharing a style configuration with you! Here's how to use it:
+
+1. Visit: ${window.location.origin}${window.location.pathname}
+2. Go to the "Adjust Dimensions" tab
+3. Paste the JSON data below into the textarea
+4. Click "Load JSON ↺" to apply the style
+
+JSON Data:
+${JSON.stringify(sample, null, 2)}
+
+Sorry about the long URL - future versions of LDPB will fix this! 😊
+
+---
+Shared with Latent Dimension Prompt Builder`;
+
+            // Copy instructions to clipboard
+            navigator.clipboard
+              .writeText(sharingInstructions)
+              .then(() => {
+                toast("📋 Sharing instructions copied! Share via email or chat. Future versions will fix long URLs! 😊");
+              })
+              .catch(() => {
+                // Fallback for older browsers
+                const tempInput = document.createElement("textarea");
+                tempInput.value = sharingInstructions;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                toast("📋 Sharing instructions copied! Share via email or chat. Future versions will fix long URLs! 😊");
+              });
+            return;
+          }
+
           // Copy to clipboard using modern API
           navigator.clipboard
             .writeText(shareUrl)
@@ -2193,8 +2446,7 @@ Return the result as a JSON object under the key "latent_dimensions".
           sample = data;
           buildSliders(sample.latent_dimensions);
 
-          // Update URL when manually loading JSON
-          updateUrl({ data: compressData(sample) });
+          
 
           toast("✅ JSON loaded successfully!");
         } catch (err) {
@@ -2384,8 +2636,7 @@ Return the result as a JSON object under the key "latent_dimensions".
         generateGridPrompt(dimensions);
         generateTextVariationsPrompt(dimensions);
 
-        // Update URL when sliders change
-        updateUrl({ data: compressData(sample) });
+
       }
 
       // --- PROMPT GENERATION ---
@@ -2580,26 +2831,105 @@ ${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
 
       // --- INITIALIZATION ---
       /**
+       * Loads an example configuration
+       * @param {Object} example - The example to load
+       */
+      function loadExample(example) {
+        try {
+          // Update the sample data
+          sample = example.dimensions;
+          
+          // Update the JSON input
+          jsonInput.value = JSON.stringify(sample, null, 2);
+          
+          // Rebuild sliders
+          buildSliders(sample.latent_dimensions);
+          
+          // Set selected dimension if specified
+          if (example.selectedDimension) {
+            setTimeout(() => {
+              const radioButton = document.querySelector(`input[name="variation"][value="${example.selectedDimension}"]`);
+              if (radioButton) {
+                radioButton.checked = true;
+                // Trigger change event to update prompts
+                radioButton.dispatchEvent(new Event('change'));
+              }
+            }, 100); // Small delay to ensure sliders are built
+          }
+          
+          // Update all prompts
+          updateAllPrompts(sample.latent_dimensions);
+          
+          // Switch to Adjust Dimensions tab
+          const adjustTab = document.querySelector('netsi-tab[name="tab2"]');
+          if (adjustTab) {
+            adjustTab.activate();
+          }
+          
+          toast(`✅ Loaded "${example.title}" example!`);
+        } catch (error) {
+          console.error("Error loading example:", error);
+          toast("❌ Error loading example");
+        }
+      }
+
+      /**
+       * Creates an example card element
+       * @param {Object} example - The example data
+       * @returns {HTMLElement} The example card element
+       */
+      function createExampleCard(example) {
+        const card = document.createElement("div");
+        card.className = "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
+        
+        card.innerHTML = `
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-lg font-semibold text-gray-800">${example.title}</h3>
+            <span class="px-2 py-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full">${example.category}</span>
+          </div>
+          <p class="text-gray-600 text-sm mb-3">${example.description}</p>
+          <button class="w-full bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition-colors text-sm font-medium">
+            Load Example
+          </button>
+        `;
+        
+        // Add click event
+        card.addEventListener("click", () => {
+          loadExample(example);
+        });
+        
+        return card;
+      }
+
+      /**
+       * Loads and displays all examples
+       */
+      function loadExamples() {
+        const container = document.getElementById("examplesContainer");
+        if (!container) return;
+        
+        container.innerHTML = "";
+        
+        examples.forEach(example => {
+          const card = createExampleCard(example);
+          container.appendChild(card);
+        });
+      }
+
+      /**
        * Initializes the application by setting up event listeners and loading initial data
        */
       function initialize() {
         setupEventListeners();
         setupTabEventListeners();
 
-        // Try to load data from URL first
-        const urlData = loadFromUrl();
-
-        if (urlData) {
-          // Load from URL
-          sample = urlData;
-          jsonInput.value = JSON.stringify(sample, null, 2);
-          toast("📋 Loaded configuration from URL");
-        } else {
-          // Use default sample data
-          jsonInput.value = JSON.stringify(sample, null, 2);
-        }
+        // Use default sample data
+        jsonInput.value = JSON.stringify(sample, null, 2);
 
         buildSliders(sample.latent_dimensions);
+
+        // Load examples
+        loadExamples();
 
         // Select the first radio button initially
         document.addEventListener("DOMContentLoaded", () => {
@@ -2711,6 +3041,13 @@ ${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
           newTab.remove();
         }, 10000);
       }
+
+      // Add a script to set data-tab-height on each netsi-tab based on its offsetHeight
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('netsi-tab').forEach(tab => {
+          tab.setAttribute('data-tab-height', tab.offsetHeight);
+        });
+      });
 
       // Start the app
       initialize();
