@@ -1,0 +1,2719 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latent Dimension Prompt Builder V3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom slider track appearance */
+      input[type="range"]::-webkit-slider-runnable-track {
+        background: linear-gradient(
+          to right,
+          #34d399 0%,
+          #34d399 50%,
+          #a78bfa 50%,
+          #a78bfa 100%
+        );
+      }
+
+      input[type="range"]::-moz-range-track {
+        background: linear-gradient(
+          to right,
+          #34d399 0%,
+          #34d399 50%,
+          #a78bfa 50%,
+          #a78bfa 100%
+        );
+      }
+
+      /* Center the thumb slightly for visual balance */
+      input[type="range"]::-webkit-slider-thumb {
+        position: relative;
+        z-index: 1; /* Ensure thumb is above track */
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        position: relative;
+        z-index: 1;
+      }
+      /* Custom element styles */
+      netsi-tabs {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      netsi-tab {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin-right: 0.5rem;
+        background-color: #e5e7eb;
+        border-radius: 0.375rem 0.375rem 0 0;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      netsi-tab[active] {
+        background-color: #0d9488;
+        color: white;
+      }
+
+      netsi-tab:hover:not([active]) {
+        background-color: #d1d5db;
+      }
+
+      netsi-tab-content {
+        display: none;
+      }
+
+      netsi-tab-content[active] {
+        display: block;
+      }
+
+      /* Loading state styles */
+      netsi-tab.loading {
+        pointer-events: none;
+        position: relative;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      /* New badge styles */
+      netsi-new {
+        position: relative;
+        display: inline-block;
+      }
+
+      .new-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.2s ease;
+      }
+
+      .new-badge:hover {
+        transform: scale(1.1);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .new-speech-bubble {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        min-width: 200px;
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 1.4;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+        pointer-events: none;
+      }
+
+      .new-speech-bubble.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .new-speech-bubble::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        right: 16px;
+        width: 12px;
+        height: 12px;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+      }
+
+      .new-speech-bubble h4 {
+        margin: 0 0 8px 0;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      .new-speech-bubble p {
+        margin: 0;
+        color: #6b7280;
+      }
+
+      /* Responsive adjustments for mobile */
+      @media (max-width: 640px) {
+        .new-speech-bubble {
+          right: -50px;
+          left: -50px;
+          width: auto;
+          min-width: auto;
+          max-width: none;
+        }
+
+        .new-speech-bubble::before {
+          right: 50%;
+          transform: translateX(50%) rotate(45deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+    <header class="bg-teal-600 text-white py-4 shadow">
+      <h1 class="text-2xl font-bold text-center tracking-wide">
+        Latent Dimension Prompt Builder
+      </h1>
+    </header>
+
+    <main class="flex-grow container mx-auto p-4">
+      <!-- Custom Tab Components -->
+      <netsi-tabs>
+        <netsi-tab name="tab1" active="true">Prompt for LLM</netsi-tab>
+        <netsi-tab name="tab2">Adjust Dimensions</netsi-tab>
+        <netsi-tab name="tab3">Text prompt</netsi-tab>
+        <netsi-tab name="tab4">Text/JSON prompt</netsi-tab>
+        <netsi-tab name="tab5">Grid Text/JSON prompt</netsi-tab>
+        <netsi-tab name="tab6">Text Variations</netsi-tab>
+        <netsi-tab name="tab7">About</netsi-tab>
+      </netsi-tabs>
+
+      <netsi-tab-content title="Prompt for LLM" id="tab1" active="true">
+        <textarea
+          id="llmPromptOutput"
+          readonly
+          class="w-full h-64 p-3 border border-gray-300 rounded shadow-sm bg-gray-50 text-sm select-all"
+        >
+From the given input, generate a JSON object with the key "latent_dimensions" containing exactly 20 latent space parameters.
+
+Each parameter must include:
+
+- "name": A descriptive name for the latent feature.
+- "explanation": A short explanation of what this latent feature controls or represents.
+- "value": A meaningful **category value** (string) selected as the **middle** (6th) element of the `"values"` array.
+- "importance": An integer between **1 and 100** representing how important this parameter is for the output.
+- "example_value": One example of how this latent feature is expressed depending on the input type:
+
+  * For **images**: Use an **SVG path fragment** (e.g., `"M 50 400 C 50 350, 150 350, 150 400"`) or any **visual reference**.
+  * For **text**: Provide a **quoted phrase** or short excerpt (e.g., `"mad dog"`).
+
+- "values": An array of exactly **11 relevant category values** (strings), ordered from **least to most expressed**.
+  The `"value"` must be the **6th item** in this array (index `5`), representing the **neutral/mid expression**.
+
+Return the result as a JSON object under the key "latent_dimensions".
+
+#### ✅ Example Format
+
+```json
+{
+  "latent_dimensions": [
+    {
+      "name": "Emotional Tone",
+      "explanation": "Represents the dominant emotional tone conveyed in the subject’s expression",
+      "value": "Neutral",
+      "importance": 87,
+      "example_value": "\"A calm and thoughtful gaze\"",
+      "values": [
+        "Flat", "Muted", "Slightly Sad", "Melancholic", "Neutral", "Balanced", "Uplifted", "Joyful", "Playful", "Radiant", "Euphoric"
+      ]
+    },
+    // ... 19 more entries matching this structure ...
+  ]
+}
+```</textarea
+        >
+        <button
+          id="copyLLMPromptBtn"
+          class="mt-3 px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
+        >
+          Copy GenAI Prompt 🧠
+        </button>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="Adjust Dimensions" id="tab2">
+        <textarea
+          id="jsonInput"
+          class="w-full h-56 p-3 border border-gray-300 rounded shadow-sm focus:ring focus:border-teal-500 bg-white text-sm"
+          placeholder="Paste latent_dimensions JSON here …"
+        ></textarea>
+        <div class="flex gap-3 mt-3">
+          <button
+            id="loadBtn"
+            class="px-5 py-2 bg-teal-600 text-white rounded hover:bg-teal-700 transition-colors"
+          >
+            Load JSON ↺
+          </button>
+          <button
+            id="shareBtn-main"
+            class="px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
+          >
+            Share Style 🔗
+          </button>
+          <netsi-new expires="2024-12-31">
+            <h4>🔗 New Feature!</h4>
+            <p>
+              Share your dimension configurations with others using a shareable
+              URL. Perfect for collaboration and bookmarking your favorite
+              styles!
+            </p>
+            <button
+              id="shareBtn"
+              class="px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
+            >
+              Share Style 🔗
+            </button>
+          </netsi-new>
+        </div>
+        <div id="sliderContainer" class="grid gap-6 md:grid-cols-2 mt-6"></div>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="Text prompt" id="tab3">
+        <textarea
+          id="promptOutput"
+          readonly
+          class="w-full h-40 p-3 border border-gray-300 rounded shadow-sm bg-gray-50 text-sm select-all"
+        ></textarea>
+        <button
+          id="copyBtn"
+          class="mt-3 px-5 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
+        >
+          Copy to clipboard 📋
+        </button>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="Text/JSON prompt" id="tab4">
+        <textarea
+          id="finalPromptOutput"
+          readonly
+          class="w-full h-60 p-3 border border-gray-300 rounded shadow-sm bg-gray-50 text-sm select-all"
+        ></textarea>
+        <button
+          id="copyFinalBtn"
+          class="mt-3 px-5 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
+        >
+          Copy Prompt ✅
+        </button>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="Grid Text/JSON prompt" id="tab5">
+        <textarea
+          id="gridPromptOutput"
+          readonly
+          class="w-full h-60 p-3 border border-gray-300 rounded shadow-sm bg-gray-50 text-sm select-all"
+        ></textarea>
+        <button
+          id="copyGridBtn"
+          class="mt-3 px-5 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
+        >
+          Copy Prompt ✅
+        </button>
+        <div class="mt-6">
+          <h3>
+            Example output using Grid Text/JSON prompt and ChatGPT, variying on
+            the
+            <a href="https://trifork.com" target="_blank">Trifork.com</a> "Brand
+            Modernity" parameter.
+          </h3>
+          <img
+            src="https://assets.codepen.io/9729/ChatGPT+Image+10.+jul.+2025%2C+09.33.09.png"
+            alt="Example of a prompt which iterates over website design"
+          />
+        </div>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="Text Variations" id="tab6">
+        <textarea
+          id="textVariationsPromptOutput"
+          readonly
+          class="w-full h-60 p-3 border border-gray-300 rounded shadow-sm bg-gray-50 text-sm select-all"
+        ></textarea>
+        <button
+          id="copyTextVariationsBtn"
+          class="mt-3 px-5 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
+        >
+          Copy Text Variations Prompt ✅
+        </button>
+        <div class="mt-6">
+          <h3 class="mb-2">
+            Example output using Text Variations prompt with a sample phrase
+          </h3>
+          <div class="bg-white p-4 border rounded">
+            <h4 class="font-bold mb-2">Brand Modernity variations</h4>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b">
+                  <th class="text-left py-2">Brand Modernity</th>
+                  <th class="text-left py-2">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td>Outdated</td>
+                  <td>Building Tomorrow's Solutions Today</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Conventional</td>
+                  <td>Creating Smart Solutions for the Future</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Early 2000s</td>
+                  <td>Innovating for a Digital Tomorrow</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Flat Minimal</td>
+                  <td>Smart Innovation. Simple Future.</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Modern</td>
+                  <td>Innovating for a Smarter Future</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Futuristic Minimal</td>
+                  <td>Next-Gen Intelligence</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Tech-Focused</td>
+                  <td>AI-Driven Innovation Platform</td>
+                </tr>
+                <tr class="border-b">
+                  <td>Avant-Garde</td>
+                  <td>Redefining Intelligence Paradigms</td>
+                </tr>
+                <tr>
+                  <td>Experimental</td>
+                  <td>∞ Cognitive Evolution ∞</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </netsi-tab-content>
+
+      <netsi-tab-content title="About" id="tab7">
+        <div class="bg-white p-6 border border-gray-300 rounded shadow-sm">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">🧠 About the Latent Dimension Prompt Builder</h2>
+          
+          <div class="prose prose-gray max-w-none">
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              When you see a person, your brain instantly builds a mental profile:
+              <em>he's about 178 cm tall, has brown hair, brown eyes…</em>
+              You unconsciously assign <strong>labels and values</strong> to
+              describe what you're perceiving. These labels can be thought of as
+              <strong>dimensions</strong>—they help you form an impression of the
+              object in front of you.
+            </p>
+
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              Large Language Models (LLMs) like ChatGPT work similarly. They
+              receive input—whether it's text, images, sound, or video— and
+              process it across a wide set of <strong>latent dimensions</strong>.
+              These are abstract categories that help the model understand and
+              represent the "essence" of the input.
+            </p>
+
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              In this tool, the input (we call it <strong>context</strong>) might
+              be a sentence, a paragraph, or even an image. The Prompt Builder
+              then asks the LLM to describe how it perceives that context—just
+              like you described the person above. It returns a
+              <strong>JSON object</strong> containing:
+            </p>
+
+            <ul class="mb-4 pl-6 space-y-2 text-gray-700">
+              <li class="list-disc">
+                The 20 most important latent dimensions used to "understand" the
+                input
+              </li>
+              <li class="list-disc">
+                A category value for each dimension (e.g., "Calm", "Modern",
+                "Muted")
+              </li>
+              <li class="list-disc">A short explanation of each dimension</li>
+              <li class="list-disc">
+                10 additional values that show the spectrum that dimension can
+                express
+              </li>
+              <li class="list-disc">
+                An example of how that dimension shows up in the current input
+              </li>
+            </ul>
+
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              The result is a kind of <strong>semantic fingerprint</strong>—a
+              structured impression of what the model saw, felt, or sensed in the
+              input.
+            </p>
+
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              Once you have that expression, you can apply it to something else.
+              For example: You could ask the LLM to generate an image of a
+              <em>rose</em> styled with the same expressive dimensions as the
+              <em>man</em> you described earlier.
+            </p>
+
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              In essence, this tool lets you extract the <strong>style</strong> or
+              <strong>semantic aura</strong> of any object—and reuse it creatively
+              across other inputs. <br /><strong class="text-teal-600"
+                >Because to an LLM, everything is just data.</strong
+              >
+            </p>
+            
+            <div class="mt-6 p-4 bg-teal-50 border border-teal-200 rounded">
+              <p class="text-gray-700">
+                <a
+                  href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7348996154723860481/?source=LatentPromptBuilder"
+                  target="_blank"
+                  class="text-teal-600 hover:text-teal-700 font-medium underline"
+                  >Read my post on LinkedIn about Latent Dimension Prompt Builder</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </netsi-tab-content>
+    </main>
+
+    <script>
+      // --- WEB COMPONENTS ---
+      /**
+       * Custom tab component that manages tab functionality with comprehensive API
+       *
+       * @fires NetsiTab#tab-selecting - Before tab activation (cancellable)
+       * @fires NetsiTab#tab-selected - After tab activation
+       * @fires NetsiTab#tab-deselecting - Before tab deactivation (cancellable)
+       * @fires NetsiTab#tab-deselected - After tab deactivation
+       *
+       * @example
+       * // Create a new tab
+       * const tab = new NetsiTab('My Tab', 'content-id');
+       *
+       * // Add event listeners
+       * tab.addEventListener('tab-selecting', (e) => {
+       *   if (shouldPreventSelection()) {
+       *     e.preventDefault(); // Cancels the selection
+       *   }
+       * });
+       *
+       * // Set loading state
+       * NetsiTab.setLoading('tab1', true);
+       *
+       * // Add new tab
+       * NetsiTab.add(new NetsiTab('New Tab', 'new-content'), NetsiTab.getCurrentTab(), true);
+       */
+      class NetsiTab extends HTMLElement {
+        /**
+         * Creates a new NetsiTab instance
+         * @param {string} [text] - The tab display text
+         * @param {string} [contentId] - The ID of the content element to show
+         */
+        constructor(text, contentId) {
+          super();
+
+          if (text) this.textContent = text;
+          if (contentId) this.setAttribute("name", contentId);
+
+          this._isLoading = false;
+          this._originalContent = "";
+
+          this.addEventListener("click", this.handleClick.bind(this));
+          this.addEventListener("keydown", this.handleKeydown.bind(this));
+        }
+
+        /**
+         * Called when the element is connected to the DOM
+         */
+        connectedCallback() {
+          this.setAttribute("role", "tab");
+          this.setAttribute("tabindex", "0");
+          this.setAttribute("aria-selected", "false");
+
+          this._originalContent = this.textContent;
+
+          // Set initial active state
+          if (this.hasAttribute("active")) {
+            this.activate();
+          }
+        }
+
+        /**
+         * Handles click events on the tab
+         * @param {Event} event - The click event
+         */
+        handleClick(event) {
+          event.preventDefault();
+          if (!this._isLoading) {
+            this.activate();
+          }
+        }
+
+        /**
+         * Handles keyboard events for accessibility
+         * @param {KeyboardEvent} event - The keyboard event
+         */
+        handleKeydown(event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            if (!this._isLoading) {
+              this.activate();
+            }
+          }
+        }
+
+        /**
+         * Activates this tab and deactivates siblings
+         * @param {Object} [options] - Activation options
+         * @param {boolean} [options.force=false] - Force activation even if event is cancelled
+         * @returns {boolean} True if activation was successful
+         */
+        activate(options = {}) {
+          const { force = false } = options;
+
+          // Fire tab-selecting event (cancellable)
+          const selectingEvent = new CustomEvent("tab-selecting", {
+            bubbles: true,
+            cancelable: true,
+            detail: { tab: this, contentId: this.getContentId() },
+          });
+
+          this.dispatchEvent(selectingEvent);
+
+          if (selectingEvent.defaultPrevented && !force) {
+            return false;
+          }
+
+          const tabsContainer = this.closest("netsi-tabs");
+          const contentId = this.getContentId();
+
+          // Deactivate all tabs in the same container
+          tabsContainer.querySelectorAll("netsi-tab").forEach((tab) => {
+            if (tab !== this && tab.hasAttribute("active")) {
+              tab.deactivate({ fromActivation: true });
+            }
+          });
+
+          // Activate this tab
+          this.setAttribute("active", "");
+          this.setAttribute("aria-selected", "true");
+
+          // Deactivate all tab content
+          document.querySelectorAll("netsi-tab-content").forEach((content) => {
+            content.removeAttribute("active");
+          });
+
+          // Activate corresponding content
+          const targetContent = document.getElementById(contentId);
+          if (targetContent) {
+            targetContent.setAttribute("active", "");
+
+            // Regenerate prompts for specific tabs
+            if (
+              contentId === "tab5" &&
+              window.generateGridPrompt &&
+              window.sample
+            ) {
+              generateGridPrompt(sample.latent_dimensions);
+            }
+            if (
+              contentId === "tab6" &&
+              window.generateTextVariationsPrompt &&
+              window.sample
+            ) {
+              generateTextVariationsPrompt(sample.latent_dimensions);
+            }
+          }
+
+          // Fire tab-selected event
+          this.dispatchEvent(
+            new CustomEvent("tab-selected", {
+              bubbles: true,
+              detail: { tab: this, contentId, targetContent },
+            })
+          );
+
+          return true;
+        }
+
+        /**
+         * Deactivates this tab
+         * @param {Object} [options] - Deactivation options
+         * @param {boolean} [options.force=false] - Force deactivation even if event is cancelled
+         * @param {boolean} [options.fromActivation=false] - Internal flag indicating deactivation from another tab's activation
+         * @returns {boolean} True if deactivation was successful
+         */
+        deactivate(options = {}) {
+          const { force = false, fromActivation = false } = options;
+
+          if (!this.hasAttribute("active")) {
+            return true; // Already deactivated
+          }
+
+          // Fire tab-deselecting event (cancellable)
+          const deselectingEvent = new CustomEvent("tab-deselecting", {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+              tab: this,
+              contentId: this.getContentId(),
+              fromActivation,
+            },
+          });
+
+          this.dispatchEvent(deselectingEvent);
+
+          if (deselectingEvent.defaultPrevented && !force) {
+            return false;
+          }
+
+          // Deactivate this tab
+          this.removeAttribute("active");
+          this.setAttribute("aria-selected", "false");
+
+          // Fire tab-deselected event
+          this.dispatchEvent(
+            new CustomEvent("tab-deselected", {
+              bubbles: true,
+              detail: { tab: this, contentId: this.getContentId() },
+            })
+          );
+
+          return true;
+        }
+
+        /**
+         * Gets the content ID for this tab
+         * @returns {string} The content ID
+         */
+        getContentId() {
+          return this.getAttribute("content") || this.getAttribute("name");
+        }
+
+        /**
+         * Sets the loading state of this tab
+         * @param {boolean} loading - Whether the tab should show loading state
+         */
+        setLoading(loading) {
+          this._isLoading = loading;
+
+          if (loading) {
+            this.classList.add("loading");
+            this.setAttribute("aria-busy", "true");
+            this.style.cursor = "not-allowed";
+            this.style.opacity = "0.6";
+
+            // Add loading spinner
+            if (!this.querySelector(".loading-spinner")) {
+              const spinner = document.createElement("span");
+              spinner.className =
+                "loading-spinner inline-block animate-spin ml-2";
+              spinner.innerHTML = "⟳";
+              this.appendChild(spinner);
+            }
+          } else {
+            this.classList.remove("loading");
+            this.removeAttribute("aria-busy");
+            this.style.cursor = "";
+            this.style.opacity = "";
+
+            // Remove loading spinner
+            const spinner = this.querySelector(".loading-spinner");
+            if (spinner) {
+              spinner.remove();
+            }
+          }
+        }
+
+        /**
+         * Checks if the tab is currently loading
+         * @returns {boolean} True if loading
+         */
+        isLoading() {
+          return this._isLoading;
+        }
+
+        /**
+         * Removes this tab and its associated content
+         */
+        remove() {
+          const contentId = this.getContentId();
+          const content = document.getElementById(contentId);
+
+          // If this tab is active, activate another tab
+          if (this.hasAttribute("active")) {
+            const tabsContainer = this.closest("netsi-tabs");
+            const nextTab =
+              this.nextElementSibling || this.previousElementSibling;
+            if (nextTab && nextTab.tagName === "NETSI-TAB") {
+              nextTab.activate({ force: true });
+            }
+          }
+
+          // Remove content element
+          if (content) {
+            content.remove();
+          }
+
+          // Remove tab element
+          super.remove();
+        }
+
+        // --- STATIC METHODS ---
+
+        /**
+         * Sets the loading state for a tab by ID
+         * @param {string} tabId - The tab name/ID
+         * @param {boolean} [loading=true] - Whether to show loading state
+         * @returns {boolean} True if tab was found and updated
+         */
+        static setLoading(tabId, loading = true) {
+          const tab = document.querySelector(`netsi-tab[name="${tabId}"]`);
+          if (tab) {
+            tab.setLoading(loading);
+            return true;
+          }
+          console.warn(`Tab with ID "${tabId}" not found`);
+          return false;
+        }
+
+        /**
+         * Gets the currently active tab
+         * @returns {NetsiTab|null} The active tab element or null
+         */
+        static getCurrentTab() {
+          return document.querySelector("netsi-tab[active]");
+        }
+
+        /**
+         * Adds a new tab to the tabs container
+         * @param {NetsiTab} newTab - The new tab element to add
+         * @param {NetsiTab} [referenceTab] - The tab to insert relative to
+         * @param {boolean} [before=false] - Whether to insert before the reference tab
+         * @returns {boolean} True if tab was added successfully
+         */
+        static add(newTab, referenceTab = null, before = false) {
+          const tabsContainer = document.querySelector("netsi-tabs");
+          if (!tabsContainer) {
+            console.error("No netsi-tabs container found");
+            return false;
+          }
+
+          if (!(newTab instanceof NetsiTab)) {
+            console.error("newTab must be an instance of NetsiTab");
+            return false;
+          }
+
+          if (referenceTab) {
+            if (before) {
+              tabsContainer.insertBefore(newTab, referenceTab);
+            } else {
+              if (referenceTab.nextSibling) {
+                tabsContainer.insertBefore(newTab, referenceTab.nextSibling);
+              } else {
+                tabsContainer.appendChild(newTab);
+              }
+            }
+          } else {
+            tabsContainer.appendChild(newTab);
+          }
+
+          return true;
+        }
+
+        /**
+         * Removes a tab by ID
+         * @param {string} tabId - The tab name/ID to remove
+         * @returns {boolean} True if tab was found and removed
+         */
+        static removeById(tabId) {
+          const tab = document.querySelector(`netsi-tab[name="${tabId}"]`);
+          if (tab) {
+            tab.remove();
+            return true;
+          }
+          console.warn(`Tab with ID "${tabId}" not found`);
+          return false;
+        }
+
+        /**
+         * Activates a tab by ID
+         * @param {string} tabId - The tab name/ID to activate
+         * @param {Object} [options] - Activation options
+         * @returns {boolean} True if tab was found and activated
+         */
+        static activateById(tabId, options = {}) {
+          const tab = document.querySelector(`netsi-tab[name="${tabId}"]`);
+          if (tab) {
+            return tab.activate(options);
+          }
+          console.warn(`Tab with ID "${tabId}" not found`);
+          return false;
+        }
+
+        /**
+         * Gets all tabs in the container
+         * @returns {NodeList} List of all tab elements
+         */
+        static getAllTabs() {
+          return document.querySelectorAll("netsi-tab");
+        }
+      }
+
+      /**
+       * Custom tab content component with enhanced API
+       *
+       * @example
+       * const content = new NetsiTabContent();
+       * content.id = 'my-content';
+       * content.innerHTML = '<p>Content here</p>';
+       */
+      class NetsiTabContent extends HTMLElement {
+        /**
+         * Creates a new NetsiTabContent instance
+         * @param {string} [content] - Initial HTML content
+         */
+        constructor(content) {
+          super();
+          if (content) {
+            this.innerHTML = content;
+          }
+        }
+
+        /**
+         * Called when the element is connected to the DOM
+         */
+        connectedCallback() {
+          this.setAttribute("role", "tabpanel");
+          this.setAttribute("aria-hidden", "true");
+
+          // Set initial active state
+          if (!this.hasAttribute("active")) {
+            this.style.display = "none";
+          } else {
+            this.setAttribute("aria-hidden", "false");
+          }
+        }
+
+        /**
+         * Called when attributes change
+         * @param {string} name - Attribute name
+         * @param {string} oldValue - Old attribute value
+         * @param {string} newValue - New attribute value
+         */
+        attributeChangedCallback(name, oldValue, newValue) {
+          if (name === "active") {
+            const isActive = newValue !== null;
+            this.style.display = isActive ? "block" : "none";
+            this.setAttribute("aria-hidden", isActive ? "false" : "true");
+
+            // Fire content visibility events
+            const eventName = isActive ? "content-shown" : "content-hidden";
+            this.dispatchEvent(
+              new CustomEvent(eventName, {
+                bubbles: true,
+                detail: { content: this, contentId: this.id },
+              })
+            );
+          }
+        }
+
+        /**
+         * Observed attributes for the component
+         * @returns {Array<string>} Array of attribute names to observe
+         */
+        static get observedAttributes() {
+          return ["active"];
+        }
+
+        /**
+         * Shows this content panel
+         */
+        show() {
+          this.setAttribute("active", "");
+        }
+
+        /**
+         * Hides this content panel
+         */
+        hide() {
+          this.removeAttribute("active");
+        }
+
+        /**
+         * Checks if this content panel is currently visible
+         * @returns {boolean} True if visible
+         */
+        isVisible() {
+          return this.hasAttribute("active");
+        }
+      }
+
+      /**
+       * Custom "New" badge component with expiry functionality
+       *
+       * @fires NetsiNew#badge-shown - When badge becomes visible
+       * @fires NetsiNew#badge-hidden - When badge is hidden
+       * @fires NetsiNew#badge-expired - When badge expires and is removed
+       * @fires NetsiNew#tooltip-shown - When speech bubble is shown
+       * @fires NetsiNew#tooltip-hidden - When speech bubble is hidden
+       *
+       * @example
+       * // Basic usage
+       * <netsi-new expires="2024-12-31">
+       *   <h4>New Feature!</h4>
+       *   <p>Check out our new sharing functionality</p>
+       * </netsi-new>
+       *
+       * // Programmatic creation
+       * const badge = new NetsiNew();
+       * badge.setAttribute('expires', '2024-06-01');
+       * badge.innerHTML = '<p>New update available!</p>';
+       */
+      class NetsiNew extends HTMLElement {
+        /**
+         * Creates a new NetsiNew instance
+         */
+        constructor() {
+          super();
+
+          this._isVisible = false;
+          this._speechBubbleVisible = false;
+          this._hideTimeout = null;
+
+          // Bind event handlers
+          this.handleMouseEnter = this.handleMouseEnter.bind(this);
+          this.handleMouseLeave = this.handleMouseLeave.bind(this);
+          this.handleTouchStart = this.handleTouchStart.bind(this);
+          this.handleDocumentClick = this.handleDocumentClick.bind(this);
+        }
+
+        /**
+         * Called when the element is connected to the DOM
+         */
+        connectedCallback() {
+          this.setAttribute("role", "complementary");
+          this.setAttribute("aria-label", "New feature notification");
+
+          if (!this.checkExpiry()) {
+            this.remove();
+            return;
+          }
+
+          this.render();
+          this.attachEventListeners();
+
+          // Fire badge-shown event
+          this.dispatchEvent(
+            new CustomEvent("badge-shown", {
+              bubbles: true,
+              detail: { badge: this, expires: this.getAttribute("expires") },
+            })
+          );
+        }
+
+        /**
+         * Called when the element is disconnected from the DOM
+         */
+        disconnectedCallback() {
+          this.detachEventListeners();
+          if (this._hideTimeout) {
+            clearTimeout(this._hideTimeout);
+          }
+        }
+
+        /**
+         * Called when attributes change
+         * @param {string} name - Attribute name
+         * @param {string} oldValue - Old attribute value
+         * @param {string} newValue - New attribute value
+         */
+        attributeChangedCallback(name, oldValue, newValue) {
+          if (name === "expires" && this.isConnected) {
+            if (!this.checkExpiry()) {
+              this.expire();
+            }
+          }
+        }
+
+        /**
+         * Observed attributes for the component
+         * @returns {Array<string>} Array of attribute names to observe
+         */
+        static get observedAttributes() {
+          return ["expires"];
+        }
+
+        /**
+         * Checks if the badge has expired
+         * @returns {boolean} True if badge is still valid
+         */
+        checkExpiry() {
+          const expiryDate = this.getAttribute("expires");
+
+          if (!expiryDate) {
+            return true; // No expiry set, always show
+          }
+
+          const expiry = new Date(expiryDate);
+          const now = new Date();
+
+          if (isNaN(expiry.getTime())) {
+            console.warn("Invalid expiry date format:", expiryDate);
+            return true; // Invalid date, show badge
+          }
+
+          return now <= expiry;
+        }
+
+        /**
+         * Expires and removes the badge
+         */
+        expire() {
+          // Fire badge-expired event
+          this.dispatchEvent(
+            new CustomEvent("badge-expired", {
+              bubbles: true,
+              detail: { badge: this, expires: this.getAttribute("expires") },
+            })
+          );
+
+          // Animate out and remove
+          this.style.transition = "all 0.3s ease";
+          this.style.opacity = "0";
+          this.style.transform = "scale(0.8)";
+
+          setTimeout(() => {
+            this.remove();
+          }, 300);
+        }
+
+        /**
+         * Renders the badge and speech bubble
+         */
+        render() {
+          // Create badge element
+          const badge = document.createElement("div");
+          badge.className = "new-badge";
+          badge.textContent = "NEW";
+          badge.setAttribute("aria-label", "New feature");
+
+          // Create speech bubble
+          const speechBubble = document.createElement("div");
+          speechBubble.className = "new-speech-bubble";
+          speechBubble.setAttribute("role", "tooltip");
+          speechBubble.setAttribute("aria-hidden", "true");
+
+          // Move original content to speech bubble
+          const content = this.innerHTML;
+          speechBubble.innerHTML = content;
+          this.innerHTML = "";
+
+          // Append elements
+          this.appendChild(badge);
+          this.appendChild(speechBubble);
+
+          // Store references
+          this._badge = badge;
+          this._speechBubble = speechBubble;
+        }
+
+        /**
+         * Attaches event listeners
+         */
+        attachEventListeners() {
+          if (this._badge) {
+            this._badge.addEventListener("mouseenter", this.handleMouseEnter);
+            this._badge.addEventListener("mouseleave", this.handleMouseLeave);
+            this._badge.addEventListener("touchstart", this.handleTouchStart, {
+              passive: true,
+            });
+          }
+        }
+
+        /**
+         * Detaches event listeners
+         */
+        detachEventListeners() {
+          if (this._badge) {
+            this._badge.removeEventListener(
+              "mouseenter",
+              this.handleMouseEnter
+            );
+            this._badge.removeEventListener(
+              "mouseleave",
+              this.handleMouseLeave
+            );
+            this._badge.removeEventListener(
+              "touchstart",
+              this.handleTouchStart
+            );
+          }
+          document.removeEventListener("click", this.handleDocumentClick);
+        }
+
+        /**
+         * Handles mouse enter events
+         * @param {MouseEvent} event - The mouse event
+         */
+        handleMouseEnter(event) {
+          this.showSpeechBubble();
+        }
+
+        /**
+         * Handles mouse leave events
+         * @param {MouseEvent} event - The mouse event
+         */
+        handleMouseLeave(event) {
+          this.hideSpeechBubble();
+        }
+
+        /**
+         * Handles touch start events for mobile
+         * @param {TouchEvent} event - The touch event
+         */
+        handleTouchStart(event) {
+          event.preventDefault();
+
+          if (this._speechBubbleVisible) {
+            this.hideSpeechBubble();
+          } else {
+            this.showSpeechBubble();
+            // Add document click listener to close on outside tap
+            setTimeout(() => {
+              document.addEventListener("click", this.handleDocumentClick);
+            }, 100);
+          }
+        }
+
+        /**
+         * Handles document click to close speech bubble on mobile
+         * @param {MouseEvent} event - The click event
+         */
+        handleDocumentClick(event) {
+          if (!this.contains(event.target)) {
+            this.hideSpeechBubble();
+            document.removeEventListener("click", this.handleDocumentClick);
+          }
+        }
+
+        /**
+         * Shows the speech bubble
+         */
+        showSpeechBubble() {
+          if (this._speechBubbleVisible || !this._speechBubble) return;
+
+          this._speechBubbleVisible = true;
+          this._speechBubble.classList.add("show");
+          this._speechBubble.setAttribute("aria-hidden", "false");
+
+          // Clear any pending hide timeout
+          if (this._hideTimeout) {
+            clearTimeout(this._hideTimeout);
+            this._hideTimeout = null;
+          }
+
+          // Fire tooltip-shown event
+          this.dispatchEvent(
+            new CustomEvent("tooltip-shown", {
+              bubbles: true,
+              detail: { badge: this, content: this._speechBubble.innerHTML },
+            })
+          );
+        }
+
+        /**
+         * Hides the speech bubble
+         */
+        hideSpeechBubble() {
+          if (!this._speechBubbleVisible || !this._speechBubble) return;
+
+          this._speechBubbleVisible = false;
+          this._speechBubble.classList.remove("show");
+          this._speechBubble.setAttribute("aria-hidden", "true");
+
+          // Fire tooltip-hidden event
+          this.dispatchEvent(
+            new CustomEvent("tooltip-hidden", {
+              bubbles: true,
+              detail: { badge: this },
+            })
+          );
+        }
+
+        /**
+         * Gets the expiry date of the badge
+         * @returns {Date|null} Expiry date or null if not set
+         */
+        getExpiryDate() {
+          const expiryDate = this.getAttribute("expires");
+          if (!expiryDate) return null;
+
+          const expiry = new Date(expiryDate);
+          return isNaN(expiry.getTime()) ? null : expiry;
+        }
+
+        /**
+         * Sets the expiry date of the badge
+         * @param {string|Date} date - The expiry date
+         */
+        setExpiryDate(date) {
+          if (date instanceof Date) {
+            this.setAttribute("expires", date.toISOString().split("T")[0]);
+          } else {
+            this.setAttribute("expires", date);
+          }
+        }
+
+        /**
+         * Gets the content of the speech bubble
+         * @returns {string} HTML content
+         */
+        getContent() {
+          return this._speechBubble ? this._speechBubble.innerHTML : "";
+        }
+
+        /**
+         * Sets the content of the speech bubble
+         * @param {string} content - HTML content
+         */
+        setContent(content) {
+          if (this._speechBubble) {
+            this._speechBubble.innerHTML = content;
+          }
+        }
+
+        /**
+         * Checks if the speech bubble is currently visible
+         * @returns {boolean} True if visible
+         */
+        isSpeechBubbleVisible() {
+          return this._speechBubbleVisible;
+        }
+
+        /**
+         * Manually shows the badge (useful for testing)
+         */
+        show() {
+          this.style.display = "inline-block";
+          this._isVisible = true;
+
+          this.dispatchEvent(
+            new CustomEvent("badge-shown", {
+              bubbles: true,
+              detail: { badge: this, manual: true },
+            })
+          );
+        }
+
+        /**
+         * Manually hides the badge
+         */
+        hide() {
+          this.style.display = "none";
+          this._isVisible = false;
+          this.hideSpeechBubble();
+
+          this.dispatchEvent(
+            new CustomEvent("badge-hidden", {
+              bubbles: true,
+              detail: { badge: this, manual: true },
+            })
+          );
+        }
+
+        // --- STATIC METHODS ---
+
+        /**
+         * Creates a new badge programmatically
+         * @param {string} content - HTML content for speech bubble
+         * @param {string} [expires] - Expiry date (YYYY-MM-DD format)
+         * @returns {NetsiNew} New badge instance
+         */
+        static create(content, expires = null) {
+          const badge = new NetsiNew();
+          badge.innerHTML = content;
+
+          if (expires) {
+            badge.setAttribute("expires", expires);
+          }
+
+          return badge;
+        }
+
+        /**
+         * Removes all expired badges from the document
+         * @returns {number} Number of badges removed
+         */
+        static cleanupExpired() {
+          const badges = document.querySelectorAll("netsi-new");
+          let removed = 0;
+
+          badges.forEach((badge) => {
+            if (!badge.checkExpiry()) {
+              badge.expire();
+              removed++;
+            }
+          });
+
+          return removed;
+        }
+
+        /**
+         * Gets all active badges in the document
+         * @returns {NodeList} List of all badge elements
+         */
+        static getAllBadges() {
+          return document.querySelectorAll("netsi-new");
+        }
+      }
+
+      // Register custom elements
+      customElements.define("netsi-new", NetsiNew);
+      customElements.define("netsi-tab", NetsiTab);
+      customElements.define("netsi-tab-content", NetsiTabContent);
+      // --- DOM ELEMENTS ---
+      const jsonInput = document.getElementById("jsonInput");
+      const sliderContainer = document.getElementById("sliderContainer");
+      const promptOutput = document.getElementById("promptOutput");
+      const llmPromptOutput = document.getElementById("llmPromptOutput");
+      const finalPromptOutput = document.getElementById("finalPromptOutput");
+      const gridPromptOutput = document.getElementById("gridPromptOutput");
+      const textVariationsPromptOutput = document.getElementById(
+        "textVariationsPromptOutput"
+      );
+
+      // --- UTILITY FUNCTIONS ---
+      /**
+       * Escapes underscores in markdown strings to prevent unintended formatting
+       * @param {string} str - The string to escape
+       * @returns {string} The escaped string
+       */
+      function escapeMarkdown(str) {
+        return str.replace(/_/g, "\\_");
+      }
+
+      /**
+       * Displays a temporary toast notification message
+       * @param {string} msgText - The message to display
+       */
+      function toast(msgText) {
+        const msg = document.createElement("div");
+        msg.textContent = msgText;
+        msg.className =
+          "fixed bottom-4 left-1/2 -translate-x-1/2 bg-black/80 text-white px-4 py-1 rounded";
+        document.body.appendChild(msg);
+        setTimeout(() => msg.remove(), 1500);
+      }
+
+      /**
+       * Copies content from an element to clipboard and shows toast notification
+       * @param {HTMLElement} element - The element containing text to copy
+       * @param {string} message - Success message to display
+       */
+      function copyToClipboard(element, message) {
+        element.select();
+        document.execCommand("copy");
+        toast(message);
+      }
+
+      /**
+       * Compresses JSON data using base64 encoding for URL parameters
+       * @param {Object} data - The data to compress
+       * @returns {string} Base64 encoded string
+       */
+      function compressData(data) {
+        const jsonString = JSON.stringify(data);
+        return btoa(encodeURIComponent(jsonString));
+      }
+
+      /**
+       * Decompresses base64 encoded data from URL parameters
+       * @param {string} compressed - Base64 encoded string
+       * @returns {Object|null} Decompressed data or null if invalid
+       */
+      function decompressData(compressed) {
+        try {
+          const jsonString = decodeURIComponent(atob(compressed));
+          return JSON.parse(jsonString);
+        } catch (error) {
+          console.error("Error decompressing data:", error);
+          return null;
+        }
+      }
+
+      /**
+       * Gets URL parameters as an object
+       * @returns {Object} Object containing URL parameters
+       */
+      function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const result = {};
+        for (const [key, value] of params) {
+          result[key] = value;
+        }
+        return result;
+      }
+
+      /**
+       * Updates the URL with new parameters without reloading the page
+       * @param {Object} params - Parameters to add to URL
+       */
+      function updateUrl(params) {
+        const url = new URL(window.location);
+        Object.keys(params).forEach((key) => {
+          if (params[key]) {
+            url.searchParams.set(key, params[key]);
+          } else {
+            url.searchParams.delete(key);
+          }
+        });
+        window.history.replaceState({}, "", url);
+      }
+
+      /**
+       * Validates dimension data structure
+       * @param {Object} data - Data to validate
+       * @returns {boolean} True if valid
+       */
+      function validateDimensionData(data) {
+        if (!data || typeof data !== "object") {
+          return false;
+        }
+
+        if (!Array.isArray(data.latent_dimensions)) {
+          return false;
+        }
+
+        // Check each dimension has required fields
+        return data.latent_dimensions.every(
+          (dim) =>
+            dim.name &&
+            dim.explanation &&
+            dim.value !== undefined &&
+            dim.importance !== undefined &&
+            Array.isArray(dim.values) &&
+            dim.values.length === 11
+        );
+      }
+
+      /**
+       * Loads dimension data from URL parameters if present
+       * @returns {Object|null} Loaded data or null if not present/invalid
+       */
+      function loadFromUrl() {
+        const params = getUrlParams();
+
+        if (params.data) {
+          const decompressed = decompressData(params.data);
+
+          if (decompressed && validateDimensionData(decompressed)) {
+            console.log("✅ Loaded valid dimension data from URL");
+            return decompressed;
+          } else {
+            console.warn("⚠️ Invalid dimension data in URL parameter");
+            toast("Invalid dimension data in URL - using default");
+            return null;
+          }
+        }
+
+        return null;
+      }
+
+      /**
+       * Generates a shareable URL with current dimension configuration
+       * @returns {string} The shareable URL
+       */
+      function generateShareUrl() {
+        const compressed = compressData(sample);
+        const url = new URL(window.location.origin + window.location.pathname);
+        url.searchParams.set("data", compressed);
+        return url.toString();
+      }
+
+      /**
+       * Creates a simplified dimension object with only essential fields
+       * @param {Object} dimension - The full dimension object
+       * @param {string} dimension.name - Dimension name
+       * @param {string} dimension.explanation - Dimension explanation
+       * @param {string} dimension.value - Current dimension value
+       * @param {number} dimension.importance - Importance rating (1-100)
+       * @returns {Object} Simplified dimension object
+       */
+      function createSimplifiedDimension(dimension) {
+        return {
+          name: dimension.name,
+          explanation: dimension.explanation,
+          value: dimension.value,
+          importance: dimension.importance,
+        };
+      }
+
+      /**
+       * Gets the currently selected dimension from radio buttons
+       * @param {Array<Object>} dimensions - Array of dimension objects
+       * @returns {Object} Object containing selected dimension data
+       * @returns {string} returns.propertyName - Name of selected property
+       * @returns {string} returns.escapedName - Markdown-escaped name
+       * @returns {Object} returns.varyingParam - The selected dimension object
+       * @returns {Array<Object>} returns.fixedParams - All other dimensions
+       */
+      function getSelectedDimension(dimensions) {
+        const selectedElement = document.querySelector(
+          '[name="variation"][type="radio"]:checked'
+        );
+        const propertyName = selectedElement
+          ? selectedElement.value
+          : dimensions[0].name;
+        return {
+          propertyName,
+          escapedName: escapeMarkdown(propertyName),
+          varyingParam: dimensions.find((d) => d.name === propertyName),
+          fixedParams: dimensions.filter((d) => d.name !== propertyName),
+        };
+      }
+
+      // --- SAMPLE DATA ---
+      let sample = {
+        latent_dimensions: [
+          {
+            name: "Brand Modernity",
+            explanation:
+              "Indicates how contemporary and forward-looking the brand presentation feels",
+            value: "Futuristic Minimal",
+            importance: 92,
+            example_value: "M 80 410 C 80 360, 160 360, 160 410",
+            values: [
+              "Outdated",
+              "Conventional",
+              "Early 2000s",
+              "Flat Minimal",
+              "Modern",
+              "Futuristic Minimal",
+              "Tech-Focused",
+              "Avant-Garde",
+              "Experimental",
+              "Post-Modern",
+              "Visionary Abstract",
+            ],
+          },
+          {
+            name: "Content Formality",
+            explanation:
+              "The degree of professionalism in language and visual tone",
+            value: "Professional",
+            importance: 85,
+            example_value:
+              '"CISO Briefing: 2025 Exposure & Vulnerability Management"',
+            values: [
+              "Casual",
+              "Conversational",
+              "Friendly",
+              "Semi-Formal",
+              "Neutral",
+              "Professional",
+              "Executive",
+              "Corporate",
+              "Legalistic",
+              "Bureaucratic",
+              "Academic",
+            ],
+          },
+          {
+            name: "Visual Hierarchy",
+            explanation:
+              "Controls how distinctly different elements stand out in the layout",
+            value: "Balanced Contrast",
+            importance: 78,
+            example_value: "M 30 420 C 30 370, 130 370, 130 420",
+            values: [
+              "Flat",
+              "Subtle",
+              "Low Contrast",
+              "Soft Gradient",
+              "Mild Emphasis",
+              "Balanced Contrast",
+              "Strong Emphasis",
+              "Layered Focus",
+              "Punchy",
+              "Overpowering",
+              "Chaotic",
+            ],
+          },
+          {
+            name: "Color Temperature",
+            explanation:
+              "Refers to the warmth or coolness of the color palette",
+            value: "Cool Neutral",
+            importance: 70,
+            example_value: "M 90 400 C 90 370, 170 370, 170 400",
+            values: [
+              "Cold Gray",
+              "Icy Blue",
+              "Muted Cool",
+              "Cool Pastel",
+              "Neutral",
+              "Cool Neutral",
+              "Soft Warm",
+              "Gentle Peach",
+              "Vibrant Warm",
+              "Sunset Tones",
+              "Hot Red-Orange",
+            ],
+          },
+          {
+            name: "Grid Rigidity",
+            explanation:
+              "How strictly content follows a defined column/row layout",
+            value: "Structured Flexibility",
+            importance: 76,
+            example_value: "M 60 390 C 60 350, 160 350, 160 390",
+            values: [
+              "Fluid",
+              "Free-Form",
+              "Implied Grid",
+              "Loose Layout",
+              "Light Grid",
+              "Structured Flexibility",
+              "Strict Columns",
+              "Boxed Layout",
+              "Fixed Matrix",
+              "Modular Lock",
+              "Rigid Blueprint",
+            ],
+          },
+          {
+            name: "Typography Authority",
+            explanation:
+              "Measures the assertiveness and presence of text styling",
+            value: "Bold Clear",
+            importance: 88,
+            example_value: '"Innovating for a Smarter Future"',
+            values: [
+              "Soft Rounded",
+              "Playful Sans",
+              "Humanist",
+              "Neutral Serif",
+              "Readable Sans",
+              "Bold Clear",
+              "High-Impact",
+              "Condensed Bold",
+              "Geometric",
+              "Branded Slab",
+              "Techno-Aggressive",
+            ],
+          },
+          {
+            name: "Interface Depth",
+            explanation:
+              "Indicates the level of perceived dimensionality and layering",
+            value: "Shallow Layered",
+            importance: 67,
+            example_value: "M 55 395 C 55 355, 135 355, 135 395",
+            values: [
+              "Flat",
+              "Bare",
+              "Monolayer",
+              "Shaded Only",
+              "Subtle Inset",
+              "Shallow Layered",
+              "Material-like",
+              "Glassmorphic",
+              "Deep Focus",
+              "3D Interface",
+              "Tactile Illusion",
+            ],
+          },
+          {
+            name: "Text Density",
+            explanation: "The amount of textual content per visual unit",
+            value: "Medium",
+            importance: 64,
+            example_value:
+              '"OpenCredo Joins the Trifork Brand, Marking a New Chapter in the UK"',
+            values: [
+              "Sparse",
+              "Low",
+              "Short Tags",
+              "Compact",
+              "Concise",
+              "Medium",
+              "Detailed",
+              "Dense",
+              "Heavy",
+              "Wall of Text",
+              "Overloaded",
+            ],
+          },
+          {
+            name: "Call-to-Action Visibility",
+            explanation:
+              "How clearly and prominently CTAs like 'Contact' appear",
+            value: "Distinct Button",
+            importance: 90,
+            example_value: '"CONTACT" (orange pill-shaped button)',
+            values: [
+              "Hidden",
+              "Text Link",
+              "Underlined",
+              "Hover-Only",
+              "Faint Button",
+              "Distinct Button",
+              "Primary Action",
+              "Multi-Level CTA",
+              "Popup Overlay",
+              "Sticky Floating",
+              "Aggressive Prompt",
+            ],
+          },
+          {
+            name: "Image-Text Integration",
+            explanation: "How text is overlaid or combined with imagery",
+            value: "Dark Overlay",
+            importance: 74,
+            example_value: "M 45 415 C 45 365, 145 365, 145 415",
+            values: [
+              "Separate Blocks",
+              "Caption Below",
+              "Caption Above",
+              "Side-by-Side",
+              "Semi-Transparent",
+              "Dark Overlay",
+              "Hard Overlay",
+              "Full Bleed Overlay",
+              "Text Masked",
+              "Blended Text",
+              "In-Image Embed",
+            ],
+          },
+          {
+            name: "Navigation Clarity",
+            explanation:
+              "Ease with which users can interpret and use top navigation",
+            value: "Horizontal Simple",
+            importance: 80,
+            example_value: '"What We Offer", "Our Work", etc.',
+            values: [
+              "Hidden",
+              "Minimal Icons",
+              "Dropdown Only",
+              "Off-canvas",
+              "Sticky Scroll",
+              "Horizontal Simple",
+              "Tabbed Horizontal",
+              "Breadcrumb",
+              "Mega Menu",
+              "Fixed + Hover",
+              "Context-Aware",
+            ],
+          },
+          {
+            name: "Visual Saturation",
+            explanation: "Color richness and intensity of the visuals",
+            value: "Subdued Rich",
+            importance: 72,
+            example_value: "M 40 405 C 40 365, 140 365, 140 405",
+            values: [
+              "Monochrome",
+              "Washed Out",
+              "Muted",
+              "Soft Tint",
+              "Neutral Rich",
+              "Subdued Rich",
+              "Full Color",
+              "Vivid",
+              "Over-Saturated",
+              "Pop Art",
+              "Neon Glow",
+            ],
+          },
+          {
+            name: "Semantic Framing",
+            explanation:
+              "How concepts are framed through language (e.g., tech, future, support)",
+            value: "Strategic Innovation",
+            importance: 91,
+            example_value:
+              '"AI Assist – Boost your customer service with AI superpowers"',
+            values: [
+              "Casual Help",
+              "Basic Info",
+              "Customer Support",
+              "Problem Solving",
+              "Performance",
+              "Strategic Innovation",
+              "Disruption",
+              "Vision-Driven",
+              "Philosophical",
+              "Existential",
+              "Post-Human",
+            ],
+          },
+          {
+            name: "Human Presence",
+            explanation: "How much of the visual content includes people",
+            value: "Balanced",
+            importance: 68,
+            example_value: "Photo of team at table + Charmaine Carmichael",
+            values: [
+              "None",
+              "Silhouettes",
+              "Icons Only",
+              "Hands",
+              "One Person",
+              "Balanced",
+              "Small Group",
+              "Crowd",
+              "Zoomed Faces",
+              "Person-Centered",
+              "Full Portrait Mode",
+            ],
+          },
+          {
+            name: "Device Affinity",
+            explanation:
+              "How clearly the layout caters to multi-device (mobile/tablet/desktop)",
+            value: "Responsive Aesthetic",
+            importance: 69,
+            example_value: "Modular, spaced card layout",
+            values: [
+              "Desktop Only",
+              "Tablet Centered",
+              "Mobile-First",
+              "Adaptive Blocks",
+              "Flexible Grid",
+              "Responsive Aesthetic",
+              "Dynamic Layouts",
+              "Breakpoints-Aware",
+              "Device-Mimic UI",
+              "Gesture-Based",
+              "Context-Aware AI UI",
+            ],
+          },
+          {
+            name: "Narrative Direction",
+            explanation:
+              "Whether the layout implies a storytelling or informational intent",
+            value: "Structured Insight",
+            importance: 83,
+            example_value:
+              '"Trifork Secures Landmark Project to Transform Oman’s Healthcare System"',
+            values: [
+              "Randomized",
+              "Scattered News",
+              "Mixed Headlines",
+              "Topical Tags",
+              "Grouped Content",
+              "Structured Insight",
+              "Chronological",
+              "Step-Based",
+              "Story Arc",
+              "Narrated Flow",
+              "Immersive Journey",
+            ],
+          },
+          {
+            name: "Language Density",
+            explanation: "Amount and complexity of words per section",
+            value: "Concise Strategic",
+            importance: 66,
+            example_value:
+              '"CISO Briefing: 2025 Exposure & Vulnerability Management"',
+            values: [
+              "Minimal",
+              "Keyword Only",
+              "Basic Tags",
+              "Short Title",
+              "Precise Label",
+              "Concise Strategic",
+              "Explained",
+              "Multi-Clause",
+              "Paragraph",
+              "White Paper Style",
+              "Dense Report",
+            ],
+          },
+          {
+            name: "Illustration Usage",
+            explanation:
+              "Balance between photography and illustrative elements",
+            value: "Photo-Centric",
+            importance: 63,
+            example_value: "Multiple image cards with people or books",
+            values: [
+              "None",
+              "Icons",
+              "Line Art",
+              "Mixed Media",
+              "Muted Photos",
+              "Photo-Centric",
+              "Enhanced Visuals",
+              "3D Illustration",
+              "Cinematic",
+              "AI-Rendered",
+              "Augmented",
+            ],
+          },
+          {
+            name: "Brand Confidence",
+            explanation:
+              "How assertively the brand places itself visually and textually",
+            value: "Assertive Professional",
+            importance: 86,
+            example_value: '"Trifork" top-left logo in bold + strong headlines',
+            values: [
+              "Anonymous",
+              "Quiet",
+              "Supportive",
+              "Partner-Oriented",
+              "Stable",
+              "Assertive Professional",
+              "Dominant",
+              "Flagship",
+              "Global Leader",
+              "Thought Commander",
+              "Iconic Titan",
+            ],
+          },
+          {
+            name: "Interaction Cueing",
+            explanation: "Level of visual guidance for interactive elements",
+            value: "Soft Prompting",
+            importance: 71,
+            example_value: "Rounded 'Contact' button with hover style",
+            values: [
+              "Hidden",
+              "Unclear",
+              "Flat Text",
+              "Clickable Box",
+              "Outlined Button",
+              "Soft Prompting",
+              "Hover Animations",
+              "Microinteractions",
+              "Contextual Tips",
+              "Motion-Enhanced",
+              "Voice + Gesture",
+            ],
+          },
+        ],
+      };
+      // --- END UPDATED SAMPLE DATA ---
+
+      // --- UPDATED LLM PROMPT TEXT ---
+      const llmPromptTemplate = `From the given input, generate a JSON object with the key "latent_dimensions" containing exactly 20 latent space parameters.
+
+Each parameter must include:
+
+* **"name"**:
+  A descriptive name for the latent feature.
+
+* **"explanation"**:
+  A short explanation of what this latent feature controls or represents.
+
+* **"value"**:
+  A meaningful **category value** (string) selected as the **middle** (6th) element of the "values" array.
+
+* **"importance"**:
+  An integer between **1 and 100** representing how important this parameter is for the output.
+
+* **"example_value"**:
+  One example of how this latent feature is expressed depending on the input type:
+
+  * For **images**: Use an **SVG path fragment** (e.g., \`"M 50 400 C 50 350, 150 350, 150 400"\`) or any **visual reference**.
+  * For **text**: Provide a **quoted phrase** or short excerpt (e.g., \`"mad dog"\`).
+
+* **"values"**:
+  An array of exactly **11 relevant category values** (strings), ordered from **least to most expressed**.
+  The \`"value"\` must be the **6th item** in this array (index \`5\`), representing the **neutral/mid expression**.
+
+Return the result as a JSON object under the key "latent_dimensions".
+
+#### ✅ Example Format
+
+\`\`\`json
+{
+  "latent_dimensions": [
+    {
+      "name": "Emotional Tone",
+      "explanation": "Represents the dominant emotional tone conveyed in the subject’s expression",
+      "value": "Neutral",
+      "importance": 87,
+      "example_value": "\"A calm and thoughtful gaze\"",
+      "values": [
+        "Flat", "Muted", "Slightly Sad", "Melancholic", "Neutral", "Balanced", "Uplifted", "Joyful", "Playful", "Radiant", "Euphoric"
+      ]
+    },
+    // ... 19 more entries matching this structure ...
+  ]
+}
+\`\`\``;
+      // --- END UPDATED LLM PROMPT TEXT ---
+
+      // --- EVENT LISTENERS ---
+      /**
+       * Sets up all event listeners for the application
+       */
+      function setupEventListeners() {
+        llmPromptOutput.value = llmPromptTemplate;
+
+        document
+          .getElementById("copyLLMPromptBtn")
+          .addEventListener("click", () => {
+            navigator.clipboard.writeText(llmPromptTemplate).then(() => {
+              toast("GenAI prompt copied!");
+            });
+          });
+
+        document
+          .getElementById("copyFinalBtn")
+          .addEventListener("click", () =>
+            copyToClipboard(finalPromptOutput, "Text/JSON prompt copied!")
+          );
+
+        document
+          .getElementById("copyGridBtn")
+          .addEventListener("click", () =>
+            copyToClipboard(gridPromptOutput, "Grid Text/JSON prompt copied!")
+          );
+
+        document
+          .getElementById("copyTextVariationsBtn")
+          .addEventListener("click", () =>
+            copyToClipboard(
+              textVariationsPromptOutput,
+              "Text Variations prompt copied!"
+            )
+          );
+
+        document
+          .getElementById("copyBtn")
+          .addEventListener("click", () =>
+            copyToClipboard(promptOutput, "Text prompt copied!")
+          );
+
+        document.getElementById("loadBtn").addEventListener("click", loadJSON);
+
+        // Set up share button event listeners with delegation since one is inside netsi-new
+        document.addEventListener("click", (e) => {
+          if (
+            e.target &&
+            (e.target.id === "shareBtn" || e.target.id === "shareBtn-main")
+          ) {
+            shareStyle();
+          }
+        });
+      }
+
+      /**
+       * Generates and copies a shareable URL to clipboard
+       */
+      function shareStyle() {
+        try {
+          const shareUrl = generateShareUrl();
+
+          // Copy to clipboard using modern API
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() => {
+              toast("🔗 Share URL copied to clipboard!");
+            })
+            .catch(() => {
+              // Fallback for older browsers
+              const tempInput = document.createElement("input");
+              tempInput.value = shareUrl;
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              document.execCommand("copy");
+              document.body.removeChild(tempInput);
+              toast("🔗 Share URL copied to clipboard!");
+            });
+        } catch (error) {
+          console.error("Error generating share URL:", error);
+          toast("❌ Error generating share URL");
+        }
+      }
+
+      /**
+       * Loads and validates JSON input from the textarea
+       * @throws {Error} When JSON is invalid or missing required structure
+       */
+      function loadJSON() {
+        try {
+          const data = JSON.parse(jsonInput.value);
+
+          if (!validateDimensionData(data)) {
+            throw new Error(
+              "Invalid dimension data structure. Please check the format."
+            );
+          }
+
+          // Additional validation warnings
+          data.latent_dimensions.forEach((dim, index) => {
+            if (
+              !dim.name ||
+              !dim.explanation ||
+              dim.value === undefined ||
+              dim.importance === undefined ||
+              dim.example_value === undefined ||
+              !Array.isArray(dim.values) ||
+              dim.values.length !== 11
+            ) {
+              console.warn(`Dimension ${index} seems malformed:`, dim);
+            }
+          });
+
+          sample = data;
+          buildSliders(sample.latent_dimensions);
+
+          // Update URL when manually loading JSON
+          updateUrl({ data: compressData(sample) });
+
+          toast("✅ JSON loaded successfully!");
+        } catch (err) {
+          console.error("JSON loading error:", err);
+          toast(`❌ Invalid JSON: ${err.message}`);
+        }
+      }
+
+      // --- SLIDER BUILDING ---
+      /**
+       * Builds interactive sliders for all dimensions
+       * @param {Array<Object>} dimensions - Array of dimension objects
+       */
+      function buildSliders(dimensions) {
+        sliderContainer.innerHTML = "";
+        dimensions.forEach((dim, index) => {
+          validateDimension(dim);
+          const currentValueIndex = getCurrentValueIndex(dim);
+          const wrapper = createSliderWrapper(
+            dim,
+            currentValueIndex,
+            index,
+            dimensions
+          );
+          sliderContainer.appendChild(wrapper);
+        });
+        updateAllPrompts(dimensions);
+      }
+
+      /**
+       * Validates and fixes a dimension object if it has invalid values
+       * @param {Object} dim - Dimension object to validate
+       * @param {string} dim.name - Dimension name
+       * @param {Array<string>} dim.values - Array of dimension values (should be length 11)
+       * @param {string} dim.value - Current dimension value
+       */
+      function validateDimension(dim) {
+        if (!Array.isArray(dim.values) || dim.values.length !== 11) {
+          console.error(
+            `Dimension "${dim.name}" does not have a valid 11-element "values" array.`
+          );
+          dim.values = [
+            "Val-0",
+            "Val-1",
+            "Val-2",
+            "Val-3",
+            "Val-4",
+            "Default",
+            "Val-6",
+            "Val-7",
+            "Val-8",
+            "Val-9",
+            "Val-10",
+          ];
+          dim.value = dim.values[5];
+        }
+      }
+
+      /**
+       * Gets the current value index for a dimension
+       * @param {Object} dim - Dimension object
+       * @param {string} dim.value - Current dimension value
+       * @param {Array<string>} dim.values - Array of possible values
+       * @param {string} dim.name - Dimension name (for logging)
+       * @returns {number} Index of current value in values array
+       */
+      function getCurrentValueIndex(dim) {
+        let currentValueIndex = dim.values.indexOf(dim.value);
+        if (currentValueIndex === -1) {
+          console.warn(
+            `Current value "${dim.value}" for "${dim.name}" not found in its values array. Resetting to middle.`
+          );
+          currentValueIndex = 5;
+          dim.value = dim.values[currentValueIndex];
+        }
+        return currentValueIndex;
+      }
+
+      /**
+       * Creates a complete slider wrapper with label, explanation, and input
+       * @param {Object} dim - Dimension object
+       * @param {number} currentValueIndex - Current value index in values array
+       * @param {number} index - Index of this dimension in the dimensions array
+       * @param {Array<Object>} dimensions - Complete array of dimensions
+       * @returns {HTMLElement} Complete slider wrapper element
+       */
+      function createSliderWrapper(dim, currentValueIndex, index, dimensions) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "flex flex-col space-y-1";
+
+        const label = createSliderLabel(dim);
+        const range = createSliderInput(
+          dim,
+          currentValueIndex,
+          wrapper,
+          dimensions
+        );
+        const explanation = createSliderExplanation(dim, index, dimensions);
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(explanation);
+        wrapper.appendChild(range);
+
+        return wrapper;
+      }
+
+      /**
+       * Creates a label element for a slider
+       * @param {Object} dim - Dimension object
+       * @param {string} dim.name - Dimension name
+       * @param {string} dim.value - Current dimension value
+       * @returns {HTMLElement} Label element
+       */
+      function createSliderLabel(dim) {
+        const label = document.createElement("label");
+        label.className =
+          "text-sm font-medium text-gray-700 flex items-baseline";
+        label.innerHTML = `${dim.name.replaceAll(
+          "_",
+          " "
+        )}<span class="ml-2 text-gray-500" data-for="${dim.name}">${
+          dim.value
+        }</span>`;
+        return label;
+      }
+
+      /**
+       * Creates a range input element for a slider
+       * @param {Object} dim - Dimension object
+       * @param {number} currentValueIndex - Current value index
+       * @param {HTMLElement} wrapper - Wrapper element containing the slider
+       * @param {Array<Object>} dimensions - Complete array of dimensions
+       * @returns {HTMLElement} Range input element
+       */
+      function createSliderInput(dim, currentValueIndex, wrapper, dimensions) {
+        const range = document.createElement("input");
+        range.type = "range";
+        range.min = 0;
+        range.max = 10;
+        range.step = 1;
+        range.value = currentValueIndex;
+        range.className = "w-full h-2 accent-teal-600 cursor-pointer";
+
+        range.addEventListener("input", (e) => {
+          const newIndex = parseInt(e.target.value);
+          dim.value = dim.values[newIndex];
+          wrapper.querySelector(`[data-for='${dim.name}']`).textContent =
+            dim.value;
+          updateAllPrompts(dimensions);
+        });
+
+        return range;
+      }
+
+      /**
+       * Creates explanation text with radio button for dimension selection
+      
+       * @param {Object} dim - Dimension object
+       * @param {number} index - Index of this dimension
+       * @param {Array<Object>} dimensions - Complete array of dimensions
+       * @returns {HTMLElement} Explanation element with radio button
+       */
+      function createSliderExplanation(dim, index, dimensions) {
+        const explanation = document.createElement("div");
+        explanation.className =
+          "text-sm font-medium text-gray-700 flex flex items-center";
+        explanation.innerHTML = `<input type="radio" name="variation" class="mr-2" value="${
+          dim.name
+        }" ${index === 0 ? "checked" : ""} /><small>${dim.explanation}</small>`;
+
+        explanation
+          .querySelector('input[type="radio"]')
+          .addEventListener("change", () => {
+            generateGridPrompt(dimensions);
+            generateTextVariationsPrompt(dimensions);
+          });
+
+        return explanation;
+      }
+
+      /**
+       * Updates all generated prompts when dimensions change
+       * @param {Array<Object>} dimensions - Array of dimension objects
+       */
+      function updateAllPrompts(dimensions) {
+        generatePrompt(dimensions);
+        generateGridPrompt(dimensions);
+        generateTextVariationsPrompt(dimensions);
+
+        // Update URL when sliders change
+        updateUrl({ data: compressData(sample) });
+      }
+
+      // --- PROMPT GENERATION ---
+      /**
+       * Generates a 3x3 grid prompt for image variations based on selected dimension
+       * @param {Array<Object>} dimensions - Array of all dimension objects
+       */
+      function generateGridPrompt(dimensions) {
+        const ele = document.querySelector(
+          '[name="variation"][type="radio"]:checked'
+        );
+        // Default to the first dimension if none is selected
+        const propertyName = ele ? ele.value : dimensions[0].name;
+        const escapedName = escapeMarkdown(propertyName);
+
+        const varyingParam = dimensions.find((d) => d.name === propertyName);
+        const fixedParams = dimensions.filter((d) => d.name !== propertyName);
+
+        // Define the indices for the 3x3 grid (0-8)
+        const gridIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        const gridValues = gridIndices.map((index) => {
+          // Get the actual string value from the varying dimension's values array
+          return varyingParam &&
+            varyingParam.values &&
+            varyingParam.values[index] !== undefined
+            ? `"${varyingParam.values[index]}"`
+            : `"Value at Index ${index}"`; // Fallback if something is wrong
+        });
+
+        // Format the grid values for the prompt text with clear row structure
+        const gridValueText = `* Top row: ${gridValues[0]}, ${gridValues[1]}, ${gridValues[2]}  
+* Middle row: ${gridValues[3]}, ${gridValues[4]}, ${gridValues[5]}  
+* Bottom row: ${gridValues[6]}, ${gridValues[7]}, ${gridValues[8]}`;
+
+        // Create simplified JSON objects with only essential fields
+        const simplifiedVaryingParam = varyingParam
+          ? {
+              name: varyingParam.name,
+              explanation: varyingParam.explanation,
+              value: varyingParam.value,
+              importance: varyingParam.importance,
+            }
+          : null;
+
+        const simplifiedFixedParams = fixedParams.map((param) => ({
+          name: param.name,
+          explanation: param.explanation,
+          value: param.value,
+          importance: param.importance,
+        }));
+
+        const prompt = `Generate a 3 x 3 grid of image variations for the image in context. Vary only the **"${escapedName}"** latent dimension across the 9 images. Use the following category values for **"${escapedName}"**, applied row-wise (index in the "values" array):
+
+${gridValueText}
+
+**Layout instructions:**
+- The result must be a strict **3 column by 3 row** grid.
+- All images must be **equally sized and evenly spaced** in the grid.
+- Each image must include a **visible label** in the **bottom-right corner** indicating the current "${escapedName}" value. Example:  
+  \`${escapedName}: ${gridValues[4]}\`
+- Below the 3x3 grid, place a **centered white-background label** with the title:  
+  **"${escapedName} variations"**
+
+**Do not** include any other captions, decorations, framing, or visual elements besides what is explicitly stated.
+
+Include the full JSON for the varying parameter and the fixed parameters for reference:
+
+\`\`\`json
+${JSON.stringify(simplifiedVaryingParam, null, 2)}
+\`\`\`
+
+\`\`\`json
+${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
+\`\`\``;
+
+        gridPromptOutput.value = prompt;
+      }
+      // --- END MODIFIED generateGridPrompt FUNCTION ---
+
+      // --- NEW generateTextVariationsPrompt FUNCTION ---
+      /**
+       * Generates a text variations prompt using all 11 values from selected dimension
+       * @param {Array<Object>} dimensions - Array of all dimension objects
+       */
+      function generateTextVariationsPrompt(dimensions) {
+        const ele = document.querySelector(
+          '[name="variation"][type="radio"]:checked'
+        );
+        // Default to the first dimension if none is selected
+        const propertyName = ele ? ele.value : dimensions[0].name;
+        const escapedName = escapeMarkdown(propertyName);
+
+        const varyingParam = dimensions.find((d) => d.name === propertyName);
+        const fixedParams = dimensions.filter((d) => d.name !== propertyName);
+
+        // Use all 11 values for the text variations
+        const textValues =
+          varyingParam && varyingParam.values
+            ? varyingParam.values.map((val) => `"${val}"`).join(", ")
+            : '"Value 0", "Value 1", "Value 2", "Value 3", "Value 4", "Value 5", "Value 6", "Value 7", "Value 8", "Value 9", "Value 10"';
+
+        // Create simplified JSON objects with only essential fields
+        const simplifiedVaryingParam = varyingParam
+          ? {
+              name: varyingParam.name,
+              explanation: varyingParam.explanation,
+              value: varyingParam.value,
+              importance: varyingParam.importance,
+            }
+          : null;
+
+        const simplifiedFixedParams = fixedParams.map((param) => ({
+          name: param.name,
+          explanation: param.explanation,
+          value: param.value,
+          importance: param.importance,
+        }));
+
+        const prompt = `
+Generate a markdown table titled:
+
+**${escapedName} variations**
+
+Vary only the **"${escapedName}"** latent dimension across the context. Use the following category values for **${escapedName}**:
+
+\`\`\`
+${textValues}
+\`\`\`
+
+All other latent parameters must remain constant.
+
+The markdown table must contain **two columns**:
+
+* **${escapedName}** – listing the current category for each row
+* **Value** – a variation of the phrase from the context, rewritten to match the tone and aesthetic of the respective **${escapedName}** value.
+
+After the table, insert this markdown section:
+
+**Based on this context:**
+
+> [Insert the original phrase/text from context here]
+
+Do **not** include any JSON, images, or extra content. The style of the rewritten values must feel natural and match the ${escapedName.toLowerCase()} dimension.
+
+Include the full JSON for the varying parameter and the fixed parameters for reference:
+\`\`\`json
+${JSON.stringify(simplifiedVaryingParam, null, 2)}
+\`\`\`
+
+\`\`\`json
+${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
+\`\`\`
+`.trim();
+        textVariationsPromptOutput.value = prompt;
+      }
+      // --- END NEW generateTextVariationsPrompt FUNCTION ---
+
+      // --- MODIFIED generatePrompt FUNCTION (for tabs 3 & 4) ---
+      /**
+       * Generates general prompts for tabs 3 & 4 (Text prompt and Text/JSON prompt)
+       * @param {Array<Object>} dimensions - Array of all dimension objects
+       */
+      function generatePrompt(dimensions) {
+        const jsonOut = {
+          instruction:
+            "If context is an image (or you are prompted to generate one). Use the following latent space parameters to control the style, tone, and feel of the generated output. These parameters must influence the generation but must not be included, explained, or referred to in the output. Assume these values were crafted specifically for this context, do not reply with other that the image. If context is a text, use the parameters to generate a new version of the text using the parameters as influence to the generation. Do not reply with anything other that the text",
+          latent_control: dimensions.map((d) => ({
+            name: d.name.toLowerCase(),
+            explanation: `${d.explanation}`,
+            // Use the string value here
+            value: d.value,
+            // Note: The 'values' array is NOT included in this output JSON,
+            // only the selected 'value' string.
+          })),
+        };
+
+        // Update the simple text prompt to use the string value
+        promptOutput.value = `Rendered using ${dimensions
+          .map(
+            (d) =>
+              `a ${d.name.toLowerCase().replaceAll("_", " ")} of "${d.value}"`
+          )
+          .join(", ")
+          .replace(/, ([^,]*)$/, " and $1")}.`;
+
+        // Update the final prompt JSON output (assuming the target system accepts this JSON structure)
+        finalPromptOutput.value =
+          `Follow these instructions taking into account the current context, so use these instructions to generate : ` +
+          JSON.stringify(jsonOut, null, 2);
+      }
+      // --- END MODIFIED generatePrompt FUNCTION ---
+
+      // --- INITIALIZATION ---
+      /**
+       * Initializes the application by setting up event listeners and loading initial data
+       */
+      function initialize() {
+        setupEventListeners();
+        setupTabEventListeners();
+
+        // Try to load data from URL first
+        const urlData = loadFromUrl();
+
+        if (urlData) {
+          // Load from URL
+          sample = urlData;
+          jsonInput.value = JSON.stringify(sample, null, 2);
+          toast("📋 Loaded configuration from URL");
+        } else {
+          // Use default sample data
+          jsonInput.value = JSON.stringify(sample, null, 2);
+        }
+
+        buildSliders(sample.latent_dimensions);
+
+        // Select the first radio button initially
+        document.addEventListener("DOMContentLoaded", () => {
+          const firstRadio = document.querySelector(
+            '#sliderContainer input[type="radio"]'
+          );
+          if (firstRadio) {
+            firstRadio.checked = true;
+            updateAllPrompts(sample.latent_dimensions);
+          }
+        });
+      }
+
+      /**
+       * Sets up tab-specific event listeners for demonstration
+       */
+      function setupTabEventListeners() {
+        // Example: Listen for tab selection events
+        document.addEventListener("tab-selecting", (e) => {
+          console.log(
+            "Tab selecting:",
+            e.detail.tab.textContent,
+            "Content ID:",
+            e.detail.contentId
+          );
+
+          // Example: Prevent switching to a specific tab under certain conditions
+          // if (e.detail.contentId === 'tab2' && someCondition) {
+          //     e.preventDefault();
+          //     toast('Cannot switch to this tab right now');
+          // }
+        });
+
+        document.addEventListener("tab-selected", (e) => {
+          console.log("Tab selected:", e.detail.tab.textContent);
+        });
+
+        document.addEventListener("tab-deselecting", (e) => {
+          console.log("Tab deselecting:", e.detail.tab.textContent);
+
+          // Example: Prevent leaving a tab if there are unsaved changes
+          // if (hasUnsavedChanges()) {
+          //     e.preventDefault();
+          //     if (!confirm('You have unsaved changes. Are you sure you want to leave?')) {
+          //         return;
+          //     }
+          //     // Force the deactivation if user confirms
+          //     e.detail.tab.deactivate({ force: true });
+          // }
+        });
+
+        document.addEventListener("tab-deselected", (e) => {
+          console.log("Tab deselected:", e.detail.tab.textContent);
+        });
+
+        // Example: Listen for content visibility events
+        document.addEventListener("content-shown", (e) => {
+          console.log("Content shown:", e.detail.contentId);
+        });
+
+        document.addEventListener("content-hidden", (e) => {
+          console.log("Content hidden:", e.detail.contentId);
+        });
+      }
+
+      /**
+       * Example function demonstrating the NetsiTab API
+       * Call this from the browser console to test the API
+       */
+      function demonstrateTabAPI() {
+        console.log("=== NetsiTab API Demonstration ===");
+
+        // Get current tab
+        const currentTab = NetsiTab.getCurrentTab();
+        console.log("Current tab:", currentTab?.textContent);
+
+        // Set loading state
+        console.log("Setting tab1 to loading...");
+        NetsiTab.setLoading("tab1", true);
+
+        setTimeout(() => {
+          console.log("Removing loading state from tab1");
+          NetsiTab.setLoading("tab1", false);
+        }, 3000);
+
+        // Create and add a new tab
+        const newTab = new NetsiTab("Dynamic Tab", "dynamic-content");
+        const newContent = new NetsiTabContent(
+          "<h2>This is dynamic content!</h2><p>Added via JavaScript API</p>"
+        );
+        newContent.id = "dynamic-content";
+
+        // Insert the content before adding the tab
+        document.querySelector("main").appendChild(newContent);
+
+        // Add tab after the current tab
+        NetsiTab.add(newTab, currentTab);
+        console.log("Added new dynamic tab");
+
+        // Activate the new tab after a delay
+        setTimeout(() => {
+          console.log("Activating dynamic tab...");
+          newTab.activate();
+        }, 1000);
+
+        // Remove the tab after 10 seconds
+        setTimeout(() => {
+          console.log("Removing dynamic tab...");
+          newTab.remove();
+        }, 10000);
+      }
+
+      // Start the app
+      initialize();
+    </script>
+  </body>
+</html>
