@@ -307,19 +307,25 @@ Return the result as a JSON object under the key "latent_dimensions".
             id="shareBtn-main"
             class="px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
           >
-            Share Style 🔗
+            Share Style
+          </button>
+          <button
+            id="prepareExampleBtn"
+            class="px-5 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
+          >
+            Prepare to Example JSON
           </button>
           <netsi-new id="share-style-new" expires="2025-07-20">
             <h4>🔗 New Feature!</h4>
             <p>
-              Share styles easily! Click "Share Style 🔗" to copy instructions +
-              JSON to clipboard. Share via email or chat - no broken URLs!
+              Share styles easily! Click "Share Style" to copy instructions +
+              JSON to clipboard. Share via email or chat.
             </p>
             <button
               id="shareBtn"
               class="mt-2 px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
             >
-              Share Style 🔗
+              Share Style
             </button>
           </netsi-new>
         </div>
@@ -554,6 +560,134 @@ Return the result as a JSON object under the key "latent_dimensions".
         </div>
       </netsi-tab-content>
     </main>
+
+    <!-- Prepare Example Modal -->
+    <div
+      id="prepareExampleModal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      style="display: none"
+    >
+      <div
+        class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="flex justify-between items-center p-6 border-b border-gray-200"
+        >
+          <h2 class="text-xl font-bold text-gray-800">Prepare Example JSON</h2>
+          <button
+            id="modalCloseBtn"
+            class="text-gray-400 hover:text-gray-600 text-2xl font-bold"
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="p-6">
+          <form id="prepareExampleForm" class="space-y-4">
+            <div>
+              <label
+                for="exampleId"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >Example ID *</label>
+              <input
+                type="text"
+                id="exampleId"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                placeholder="e.g., my-custom-style"
+              >
+              <p class="text-xs text-gray-500 mt-1">
+                Unique identifier for this example (lowercase, hyphens only)
+              </p>
+            </div>
+
+            <div>
+              <label
+                for="exampleTitle"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >Title *</label>
+              <input
+                type="text"
+                id="exampleTitle"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                placeholder="e.g., My Custom Style"
+              >
+            </div>
+
+            <div>
+              <label
+                for="exampleDescription"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >Description *</label>
+              <textarea
+                id="exampleDescription"
+                required
+                rows="3"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                placeholder="Describe what this example demonstrates..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label
+                for="exampleCategory"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >Category *</label>
+              <input
+                type="text"
+                id="exampleCategory"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                placeholder="e.g., Photography, Art, Writing, etc."
+              >
+              <p class="text-xs text-gray-500 mt-1">
+                Enter any category that describes this example
+              </p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Selected Dimension</label>
+              <div id="selectedDimensionRadios" class="space-y-2">
+                <label class="flex items-center">
+                  <input
+                    type="radio"
+                    name="selectedDimension"
+                    value=""
+                    class="mr-2"
+                  >
+                  <span class="text-sm text-gray-600"
+                  >No dimension selected</span>
+                </label>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                Which dimension should be pre-selected when loading this
+                example?
+              </p>
+            </div>
+
+            <div
+              class="flex justify-end space-x-3 pt-4 border-t border-gray-200"
+            >
+              <button
+                type="button"
+                id="cancelBtn"
+                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors"
+              >
+                Generate & Copy JSON
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <script>
       // --- WEB COMPONENTS ---
@@ -985,7 +1119,10 @@ Return the result as a JSON object under the key "latent_dimensions".
           if (!this.hasAttribute("active")) {
             this.style.display = "none";
           } else {
-            this.setAttribute("aria-hidden", "false");
+            this.setAttribute(
+              "aria-hidden",
+              "false",
+            );
           }
         }
 
@@ -1581,10 +1718,135 @@ Return the result as a JSON object under the key "latent_dimensions".
         }
       }
 
+      /**
+       * Custom modal component with comprehensive API
+       *
+       * @example
+       * const modal = new NetsiModal();
+       * modal.title = 'My Modal';
+       * modal.innerHTML = '<p>Modal content here</p>';
+       * modal.show();
+       */
+      class NetsiModal extends HTMLElement {
+        constructor() {
+          super();
+          this._isVisible = false;
+          this._backdrop = null;
+          this._modalContent = null;
+          this._titleElement = null;
+          this._closeButton = null;
+        }
+
+        connectedCallback() {
+          this.setAttribute("role", "dialog");
+          this.setAttribute("aria-modal", "true");
+          this.setAttribute("aria-hidden", "true");
+
+          this.render();
+          this.attachEventListeners();
+        }
+
+        disconnectedCallback() {
+          this.detachEventListeners();
+        }
+
+        render() {
+          this.innerHTML = `
+            <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" style="display: none;">
+              <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                  <h2 class="text-xl font-bold text-gray-800">${
+            this.getAttribute("title") || "Modal"
+          }</h2>
+                  <button class="text-gray-400 hover:text-gray-600 text-2xl font-bold" aria-label="Close modal">&times;</button>
+                </div>
+                <div class="p-6">
+                  <slot></slot>
+                </div>
+              </div>
+            </div>
+          `;
+
+          this._backdrop = this.querySelector("div");
+          this._modalContent = this._backdrop.querySelector("div");
+          this._titleElement = this._backdrop.querySelector("h2");
+          this._closeButton = this._backdrop.querySelector("button");
+
+          // Ensure slot content is properly assigned
+          this._slot = this.querySelector("slot");
+        }
+
+        attachEventListeners() {
+          this._closeButton.addEventListener(
+            "click",
+            () => this.hide(),
+          );
+          this._backdrop.addEventListener("click", (e) => {
+            if (e.target === this._backdrop) {
+              this.hide();
+            }
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && this._isVisible) {
+              this.hide();
+            }
+          });
+        }
+
+        detachEventListeners() {
+          // Event listeners will be cleaned up automatically
+        }
+
+        show() {
+          this._isVisible = true;
+          this._backdrop.style.display = "flex";
+          this.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+
+          this.dispatchEvent(
+            new CustomEvent("modal-shown", {
+              bubbles: true,
+              detail: { modal: this },
+            }),
+          );
+        }
+
+        hide() {
+          this._isVisible = false;
+          this._backdrop.style.display = "none";
+          this.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "auto";
+
+          this.dispatchEvent(
+            new CustomEvent("modal-hidden", {
+              bubbles: true,
+              detail: { modal: this },
+            }),
+          );
+        }
+
+        get title() {
+          return this.getAttribute("title") || "";
+        }
+
+        set title(value) {
+          this.setAttribute("title", value);
+          if (this._titleElement) {
+            this._titleElement.textContent = value;
+          }
+        }
+
+        get isVisible() {
+          return this._isVisible;
+        }
+      }
+
       // Register custom elements
       customElements.define("netsi-new", NetsiNew);
       customElements.define("netsi-tab", NetsiTab);
       customElements.define("netsi-tab-content", NetsiTabContent);
+      customElements.define("netsi-modal", NetsiModal);
       // --- DOM ELEMENTS ---
       const jsonInput = document.getElementById("jsonInput");
       const sliderContainer = document.getElementById(
@@ -1662,15 +1924,6 @@ Return the result as a JSON object under the key "latent_dimensions".
       }
 
       /**
-       * Generates a shareable URL with current dimension configuration
-       * @returns {string} The shareable URL
-       */
-      function generateShareUrl() {
-        // For now, just return the base URL since we're using clipboard sharing for complex configurations
-        return window.location.origin + window.location.pathname;
-      }
-
-      /**
        * Creates a simplified dimension object with only essential fields
        * @param {Object} dimension - The full dimension object
        * @param {string} dimension.name - Dimension name
@@ -1716,7 +1969,7 @@ Return the result as a JSON object under the key "latent_dimensions".
 
       // --- EXAMPLES DATA ---
       let sample = {
-        latent_dimensions: []
+        latent_dimensions: [],
       };
       let examples = [];
 
@@ -1726,22 +1979,171 @@ Return the result as a JSON object under the key "latent_dimensions".
        */
       function updateAllPrompts(dimensions) {
         // Update text prompt
-        const textPrompt = dimensions.map(d => `${d.name}: ${d.value}`).join(', ');
+        const textPrompt = dimensions.map((d) =>
+          `${d.name}: ${d.value}`
+        ).join(", ");
         promptOutput.value = textPrompt;
-        
+
         // Update final prompt (text + JSON)
-        const finalPrompt = `Generate content with these characteristics:\n${textPrompt}\n\nJSON Configuration:\n${JSON.stringify({ latent_dimensions: dimensions }, null, 2)}`;
+        const finalPrompt =
+          `Generate content with these characteristics:\n${textPrompt}\n\nJSON Configuration:\n${
+            JSON.stringify({ latent_dimensions: dimensions }, null, 2)
+          }`;
         finalPromptOutput.value = finalPrompt;
-        
+
         // Update grid prompt if function exists
-        if (typeof generateGridPrompt === 'function') {
+        if (typeof generateGridPrompt === "function") {
           generateGridPrompt(dimensions);
         }
-        
+
         // Update text variations prompt if function exists
-        if (typeof generateTextVariationsPrompt === 'function') {
+        if (typeof generateTextVariationsPrompt === "function") {
           generateTextVariationsPrompt(dimensions);
         }
+      }
+
+      /**
+       * Generates grid prompt with variations based on selected dimension
+       * @param {Array<Object>} dimensions - Array of dimension objects
+       */
+      function generateGridPrompt(dimensions) {
+        const selectedDimension = getSelectedDimension(dimensions);
+
+        // Create grid with variations of the selected dimension
+        const gridPrompt =
+          `Generate a grid of variations for "${selectedDimension.propertyName}" dimension:
+
+Base Configuration:
+${dimensions.map((d) => `${d.name}: ${d.value}`).join(", ")}
+
+Grid Variations:
+Create 9 variations by adjusting "${selectedDimension.propertyName}" through its full range:
+- Top-left: ${selectedDimension.varyingParam.values[0]}
+- Top-center: ${selectedDimension.varyingParam.values[2]}
+- Top-right: ${selectedDimension.varyingParam.values[4]}
+- Middle-left: ${selectedDimension.varyingParam.values[5]}
+- Middle-center: ${selectedDimension.varyingParam.values[6]}
+- Middle-right: ${selectedDimension.varyingParam.values[8]}
+- Bottom-left: ${selectedDimension.varyingParam.values[9]}
+- Bottom-center: ${selectedDimension.varyingParam.values[10]}
+
+Each variation should maintain the other dimensions at their current values while only changing "${selectedDimension.propertyName}".
+
+JSON for each variation:
+${
+            JSON.stringify(
+              {
+                base_config: dimensions.map((d) => ({
+                  name: d.name,
+                  value: d.value,
+                })),
+                variations: selectedDimension.varyingParam.values.map(
+                  (value) => ({
+                    [selectedDimension.propertyName]: value,
+                    description:
+                      `Variation with ${selectedDimension.propertyName}: ${value}`,
+                  }),
+                ),
+              },
+              null,
+              2,
+            )
+          }`;
+
+        gridPromptOutput.value = gridPrompt;
+      }
+
+      /**
+       * Generates text variations prompt based on selected dimension
+       * @param {Array<Object>} dimensions - Array of dimension objects
+       */
+      function generateTextVariationsPrompt(dimensions) {
+        const selectedDimension = getSelectedDimension(dimensions);
+
+        const textVariationsPrompt =
+          `Generate text variations for "${selectedDimension.propertyName}" dimension:
+
+Base Configuration:
+${dimensions.map((d) => `${d.name}: ${d.value}`).join(", ")}
+
+Text Variations:
+Create 5 different text descriptions that vary the "${selectedDimension.propertyName}" dimension:
+
+1. Low ${selectedDimension.propertyName} (${
+            selectedDimension.varyingParam.values[0]
+          }):
+   "A style with minimal ${selectedDimension.propertyName.toLowerCase()} characteristics..."
+
+2. Low-Mid ${selectedDimension.propertyName} (${
+            selectedDimension.varyingParam.values[3]
+          }):
+   "A balanced approach with subtle ${selectedDimension.propertyName.toLowerCase()} elements..."
+
+3. Medium ${selectedDimension.propertyName} (${
+            selectedDimension.varyingParam.values[5]
+          }):
+   "A moderate ${selectedDimension.propertyName.toLowerCase()} style that..."
+
+4. Mid-High ${selectedDimension.propertyName} (${
+            selectedDimension.varyingParam.values[7]
+          }):
+   "A prominent ${selectedDimension.propertyName.toLowerCase()} approach featuring..."
+
+5. High ${selectedDimension.propertyName} (${
+            selectedDimension.varyingParam.values[10]
+          }):
+   "An intense ${selectedDimension.propertyName.toLowerCase()} style with strong..."
+
+Fixed Parameters (keep these consistent):
+${
+            selectedDimension.fixedParams.map((d) =>
+              `- ${d.name}: ${d.value}`
+            ).join("\n")
+          }
+
+JSON Structure:
+${
+            JSON.stringify(
+              {
+                base_config: dimensions.map((d) => ({
+                  name: d.name,
+                  value: d.value,
+                })),
+                varying_dimension: selectedDimension.propertyName,
+                variations: [
+                  {
+                    level: "low",
+                    value: selectedDimension.varyingParam.values[0],
+                    description: "",
+                  },
+                  {
+                    level: "low-mid",
+                    value: selectedDimension.varyingParam.values[3],
+                    description: "",
+                  },
+                  {
+                    level: "medium",
+                    value: selectedDimension.varyingParam.values[5],
+                    description: "",
+                  },
+                  {
+                    level: "mid-high",
+                    value: selectedDimension.varyingParam.values[7],
+                    description: "",
+                  },
+                  {
+                    level: "high",
+                    value: selectedDimension.varyingParam.values[10],
+                    description: "",
+                  },
+                ],
+              },
+              null,
+              2,
+            )
+          }`;
+
+        textVariationsPromptOutput.value = textVariationsPrompt;
       }
 
       /**
@@ -1750,18 +2152,35 @@ Return the result as a JSON object under the key "latent_dimensions".
        */
       function buildSliders(dimensions) {
         sliderContainer.innerHTML = "";
-        
+
         dimensions.forEach((dimension, index) => {
           const sliderDiv = document.createElement("div");
-          sliderDiv.className = "bg-white p-4 rounded-lg shadow-sm border border-gray-200";
-          
-          const currentValueIndex = dimension.values.indexOf(dimension.value);
-          const sliderValue = currentValueIndex !== -1 ? currentValueIndex : 5;
-          
+          sliderDiv.className =
+            "bg-white p-4 rounded-lg shadow-sm border border-gray-200";
+
+          const currentValueIndex = dimension.values.indexOf(
+            dimension.value,
+          );
+          const sliderValue = currentValueIndex !== -1
+            ? currentValueIndex
+            : 5;
+
           sliderDiv.innerHTML = `
             <div class="flex justify-between items-center mb-2">
               <label class="text-sm font-medium text-gray-700">${dimension.name}</label>
               <span class="text-xs text-gray-500">${dimension.importance}/100</span>
+            </div>
+            <div class="mb-3">
+              <label class="flex items-center">
+                <input 
+                  type="radio" 
+                  name="variation" 
+                  value="${dimension.name}" 
+                  ${index === 0 ? "checked" : ""}
+                  class="mr-2"
+                >
+                <span class="text-xs text-gray-600">Use for variations</span>
+              </label>
             </div>
             <input 
               type="range" 
@@ -1784,21 +2203,32 @@ Return the result as a JSON object under the key "latent_dimensions".
               <label class="text-xs text-gray-500">${dimension.explanation}</label>
             </div>
           `;
-          
+
           const slider = sliderDiv.querySelector('input[type="range"]');
-          slider.addEventListener('input', function() {
+          slider.addEventListener("input", function () {
             const newValueIndex = parseInt(this.value);
             const newValue = dimension.values[newValueIndex];
             dimension.value = newValue;
-            
+
             // Update the display
-            const currentLabel = sliderDiv.querySelector('label:last-of-type');
+            const currentLabel = sliderDiv.querySelector(
+              "label:last-of-type",
+            );
             currentLabel.textContent = `Current: ${newValue}`;
-            
+
             // Update all prompts
             updateAllPrompts(dimensions);
           });
-          
+
+          // Add event listener for radio button
+          const radioButton = sliderDiv.querySelector(
+            'input[type="radio"]',
+          );
+          radioButton.addEventListener("change", function () {
+            // Update all prompts when selected dimension changes
+            updateAllPrompts(dimensions);
+          });
+
           sliderContainer.appendChild(sliderDiv);
         });
       }
@@ -1814,7 +2244,8 @@ Return the result as a JSON object under the key "latent_dimensions".
 
         examples.forEach((example) => {
           const card = document.createElement("div");
-          card.className = "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
+          card.className =
+            "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
 
           card.innerHTML = `
             <div class="flex justify-between items-start mb-2">
@@ -1851,7 +2282,7 @@ Return the result as a JSON object under the key "latent_dimensions".
           if (example.selectedDimension) {
             setTimeout(() => {
               const radioButton = document.querySelector(
-                `input[name="variation"][value="${example.selectedDimension}"]`
+                `input[name="variation"][value="${example.selectedDimension}"]`,
               );
               if (radioButton) {
                 radioButton.checked = true;
@@ -1865,7 +2296,9 @@ Return the result as a JSON object under the key "latent_dimensions".
           updateAllPrompts(sample.latent_dimensions);
 
           // Skift til Adjust Dimensions tab
-          const adjustTab = document.querySelector('netsi-tab[name="tab2"]');
+          const adjustTab = document.querySelector(
+            'netsi-tab[name="tab2"]',
+          );
           if (adjustTab) {
             adjustTab.activate();
           }
@@ -1880,31 +2313,382 @@ Return the result as a JSON object under the key "latent_dimensions".
       // Load examples from dimensions.json file
       async function loadExamplesFromFile() {
         try {
-          const response = await fetch('examples/dimensions.json');
+          const response = await fetch("examples/dimensions.json");
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           const data = await response.json();
           examples = data;
-          
+
           // Load the first example on startup
           if (examples.length > 0) {
             loadExample(examples[0]);
           }
-          
+
           // Populate examples tab
           populateExamplesTab();
         } catch (error) {
-          console.error('Error loading examples:', error);
+          console.error("Error loading examples:", error);
           // Fallback to hardcoded examples if file loading fails
           examples = [];
         }
       }
 
       // Load examples on page load
-      document.addEventListener('DOMContentLoaded', loadExamplesFromFile);
+      document.addEventListener(
+        "DOMContentLoaded",
+        loadExamplesFromFile,
+      );
 
-      // ... existing code ...
+      // --- MODAL FUNCTIONALITY ---
+
+      // Initialize modal functionality when DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM loaded, initializing modal functionality...");
+
+        // Modal and button elements
+        const modal = document.getElementById("prepareExampleModal");
+        const prepareExampleBtn = document.getElementById(
+          "prepareExampleBtn",
+        );
+
+        console.log("Modal elements found:", {
+          modal: !!modal,
+          prepareExampleBtn: !!prepareExampleBtn,
+        });
+
+        // Check if elements exist before adding event listeners
+        if (!modal || !prepareExampleBtn) {
+          console.warn(
+            "Modal or button not found, modal functionality disabled",
+          );
+          return;
+        }
+
+        console.log("Modal elements found, adding event listeners...");
+
+        // Open modal
+        prepareExampleBtn.addEventListener("click", () => {
+          console.log("Prepare example button clicked!");
+
+          try {
+            // Show modal
+            console.log("Attempting to show modal...");
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+            console.log("Modal shown successfully");
+
+            // Initialize form immediately since elements are now accessible
+            initializeModalForm();
+          } catch (error) {
+            console.error("Error in modal click handler:", error);
+          }
+        });
+
+        // Close modal functionality
+        const modalCloseBtn = document.getElementById("modalCloseBtn");
+        if (modalCloseBtn) {
+          modalCloseBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          });
+        }
+
+        // Close modal when clicking backdrop
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.style.display === "flex") {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        console.log("Event listeners added successfully");
+
+        // Initialize modal form elements after modal is shown
+        function initializeModalForm() {
+          console.log("Initializing modal form...");
+
+          // Form elements should now be directly accessible
+          const cancelBtn = document.querySelector("#cancelBtn");
+          const form = document.querySelector("#prepareExampleForm");
+          const selectedDimensionRadios = document.querySelector(
+            "#selectedDimensionRadios",
+          );
+
+          console.log("Form elements found:", {
+            cancelBtn: !!cancelBtn,
+            form: !!form,
+            selectedDimensionRadios: !!selectedDimensionRadios,
+          });
+
+          if (!cancelBtn || !form || !selectedDimensionRadios) {
+            console.error("Form elements not found");
+            toast("❌ Error loading modal form. Please try again.");
+            return;
+          }
+
+          setupModalForm(cancelBtn, form, selectedDimensionRadios);
+        }
+
+        // Setup the modal form with the found elements
+        function setupModalForm(
+          cancelBtn,
+          form,
+          selectedDimensionRadios,
+        ) {
+          // Populate selected dimension radio buttons with current dimensions
+          populateSelectedDimensionRadios(selectedDimensionRadios);
+
+          // Set default values
+          setDefaultFormValues();
+
+          // Focus first input
+          const exampleIdInput = document.querySelector("#exampleId");
+          if (exampleIdInput) {
+            exampleIdInput.focus();
+            console.log("Focused on exampleId input");
+          }
+
+          // Close modal function
+          function closeModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+            form.reset();
+          }
+
+          // Cancel button closes modal
+          cancelBtn.addEventListener("click", closeModal);
+
+          // Handle form submission
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Validate that we have current dimension data
+            if (
+              !sample || !sample.latent_dimensions ||
+              sample.latent_dimensions.length === 0
+            ) {
+              toast(
+                "❌ No dimension data available. Please load some dimensions first.",
+              );
+              return;
+            }
+
+            // Get form data
+            const formData = {
+              id: document.querySelector("#exampleId").value.trim(),
+              title: document.querySelector("#exampleTitle").value
+                .trim(),
+              description: document.querySelector("#exampleDescription")
+                .value.trim(),
+              category:
+                document.querySelector("#exampleCategory").value,
+              selectedDimension: document.querySelector(
+                'input[name="selectedDimension"]:checked',
+              )?.value || null,
+              dimensions: sample,
+            };
+
+            // Validate required fields
+            if (
+              !formData.id || !formData.title ||
+              !formData.description || !formData.category
+            ) {
+              toast("❌ Please fill in all required fields.");
+              return;
+            }
+
+            // Validate ID format
+            if (!/^[a-z0-9-]+$/.test(formData.id)) {
+              toast(
+                "❌ Example ID must contain only lowercase letters, numbers, and hyphens.",
+              );
+              return;
+            }
+
+            // Generate the example JSON
+            const exampleJson = JSON.stringify(formData, null, 2);
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(exampleJson).then(() => {
+              toast(
+                "✅ Example JSON copied to clipboard! You can now paste it into dimensions.json",
+              );
+              closeModal();
+            }).catch(() => {
+              // Fallback for older browsers
+              const textArea = document.createElement("textarea");
+              textArea.value = exampleJson;
+              document.body.appendChild(textArea);
+              textArea.select();
+              document.execCommand("copy");
+              document.body.removeChild(textArea);
+              toast(
+                "✅ Example JSON copied to clipboard! You can now paste it into dimensions.json",
+              );
+              closeModal();
+            });
+          });
+        }
+
+        // Populate selected dimension radio buttons
+        function populateSelectedDimensionRadios(radiosContainer) {
+          // Clear existing radio buttons except the "No dimension selected" option
+          const noDimensionRadio =
+            radiosContainer.querySelector('input[value=""]')
+              .parentElement;
+          radiosContainer.innerHTML = "";
+          radiosContainer.appendChild(noDimensionRadio);
+
+          // Get the currently selected dimension from the main interface
+          const currentlySelectedDimension =
+            document.querySelector('input[name="variation"]:checked')
+              ?.value || "";
+
+          if (sample && sample.latent_dimensions) {
+            sample.latent_dimensions.forEach((dimension) => {
+              const label = document.createElement("label");
+              label.className = "flex items-center";
+
+              const radio = document.createElement("input");
+              radio.type = "radio";
+              radio.name = "selectedDimension";
+              radio.value = dimension.name;
+              radio.className = "mr-2";
+
+              // Check if this dimension is currently selected in the main interface
+              if (dimension.name === currentlySelectedDimension) {
+                radio.checked = true;
+              }
+
+              const span = document.createElement("span");
+              span.className = "text-sm text-gray-600";
+              span.textContent = dimension.name;
+
+              label.appendChild(radio);
+              label.appendChild(span);
+              radiosContainer.appendChild(label);
+            });
+          }
+        }
+
+        // Set default form values
+        function setDefaultFormValues() {
+          const currentDate = new Date().toISOString().split("T")[0];
+          const timestamp = Date.now();
+
+          const exampleIdInput = document.querySelector("#exampleId");
+          const exampleTitleInput = document.querySelector(
+            "#exampleTitle",
+          );
+          const exampleDescriptionInput = document.querySelector(
+            "#exampleDescription",
+          );
+          const exampleCategoryInput = document.querySelector(
+            "#exampleCategory",
+          );
+
+          if (exampleIdInput) {
+            exampleIdInput.value = `custom-example-${timestamp}`;
+          }
+          if (exampleTitleInput) {
+            exampleTitleInput.value = "My Custom Style";
+          }
+          if (exampleDescriptionInput) {
+            exampleDescriptionInput.value =
+              "A custom style configuration created with the Latent Dimension Prompt Builder.";
+          }
+          if (exampleCategoryInput) {
+            exampleCategoryInput.value = "Custom";
+          }
+        }
+      });
+
+      // --- SHARE FUNCTIONALITY ---
+
+      // Initialize share functionality when DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        const shareBtnMain = document.getElementById("shareBtn-main");
+        const shareBtn = document.getElementById("shareBtn");
+
+        // Share button in main interface
+        if (shareBtnMain) {
+          shareBtnMain.addEventListener("click", () => {
+            shareCurrentStyle();
+          });
+        }
+
+        // Share button in notification
+        if (shareBtn) {
+          shareBtn.addEventListener("click", () => {
+            shareCurrentStyle();
+          });
+        }
+      });
+
+      /**
+       * Shares the current style configuration
+       */
+      function shareCurrentStyle() {
+        if (
+          !sample || !sample.latent_dimensions ||
+          sample.latent_dimensions.length === 0
+        ) {
+          toast("❌ No dimension data available to share");
+          return;
+        }
+
+        // Get the currently selected dimension
+        const selectedDimension =
+          document.querySelector('input[name="variation"]:checked')
+            ?.value || "";
+
+        // Create share content
+        const shareContent =
+          `Latent Dimension Prompt Builder - Style Configuration
+
+Current Configuration:
+${
+            sample.latent_dimensions.map((d) => `${d.name}: ${d.value}`)
+              .join("\n")
+          }
+
+Selected Dimension for Variations: ${selectedDimension || "None"}
+
+Instructions:
+1. Copy the JSON below
+2. Paste it into the JSON input field
+3. Click "Load Dimensions"
+4. Adjust sliders as needed
+5. Select which dimension to use for variations
+
+JSON Configuration:
+${JSON.stringify(sample, null, 2)}
+
+Share URL: https://netsi1964.github.io/LatentDimensionPromptBuilder/`;
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(shareContent).then(() => {
+          toast("✅ Style configuration copied to clipboard!");
+        }).catch(() => {
+          // Fallback for older browsers
+          const textArea = document.createElement("textarea");
+          textArea.value = shareContent;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+          toast("✅ Style configuration copied to clipboard!");
+        });
+      }
     </script>
   </body>
 </html>
