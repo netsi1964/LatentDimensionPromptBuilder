@@ -564,7 +564,7 @@ Return the result as a JSON object under the key "latent_dimensions".
     <!-- Prepare Example Modal -->
     <div
       id="prepareExampleModal"
-      class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal"
       style="display: none"
     >
       <div
@@ -657,7 +657,7 @@ Return the result as a JSON object under the key "latent_dimensions".
                 <div id="selectedDimensionChips" class="flex flex-wrap gap-2">
                   <button
                     type="button"
-                    class="dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer"
+                    class="chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer"
                     data-value=""
                     data-selected="true"
                   >
@@ -2155,7 +2155,7 @@ ${
         dimensions.forEach((dimension, index) => {
           const sliderDiv = document.createElement("div");
           sliderDiv.className =
-            "bg-white p-4 rounded-lg shadow-sm border border-gray-200";
+            "bg-white p-4 rounded-lg shadow-sm border border-gray-200 slider has-[input:checked]:outline";
 
           const currentValueIndex = dimension.values.indexOf(
             dimension.value,
@@ -2571,7 +2571,7 @@ ${
             sample.latent_dimensions.forEach((dimension) => {
               const chip = document.createElement("button");
               chip.type = "button";
-              chip.className = "dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer";
+              chip.className = "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer";
               chip.dataset.value = dimension.name;
               chip.dataset.selected = "false";
               chip.textContent = dimension.name;
@@ -2627,10 +2627,10 @@ ${
             
             if (isSelected) {
               // Selected state - teal background like examples
-              chip.className = "dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-teal-500 bg-teal-100 text-teal-800 transition-all cursor-pointer";
+              chip.className = "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-teal-500 bg-teal-100 text-teal-800 transition-all cursor-pointer";
             } else {
               // Normal state - gray border
-              chip.className = "dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-gray-300 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50 transition-all cursor-pointer";
+              chip.className = "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-gray-300 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50 transition-all cursor-pointer";
             }
           });
         }
@@ -2744,6 +2744,41 @@ Share URL: https://netsi1964.github.io/LatentDimensionPromptBuilder/`;
           toast("✅ Style configuration copied to clipboard!");
         });
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Helper for copy
+        function copyPromptById(textareaId, message) {
+          const el = document.getElementById(textareaId);
+          if (!el) return;
+          el.select();
+          try {
+            if (navigator.clipboard) {
+              navigator.clipboard.writeText(el.value).then(() => {
+                toast(message);
+              });
+            } else {
+              document.execCommand("copy");
+              toast(message);
+            }
+          } catch (e) {
+            toast("❌ Could not copy");
+          }
+        }
+
+        const copyMap = [
+          { btn: "copyLLMPromptBtn", ta: "llmPromptOutput", msg: "✅ Copied LLM prompt!" },
+          { btn: "copyBtn", ta: "promptOutput", msg: "✅ Copied text prompt!" },
+          { btn: "copyFinalBtn", ta: "finalPromptOutput", msg: "✅ Copied text/JSON prompt!" },
+          { btn: "copyGridBtn", ta: "gridPromptOutput", msg: "✅ Copied grid prompt!" },
+          { btn: "copyTextVariationsBtn", ta: "textVariationsPromptOutput", msg: "✅ Copied text variations prompt!" },
+        ];
+        copyMap.forEach(({ btn, ta, msg }) => {
+          const button = document.getElementById(btn);
+          if (button) {
+            button.addEventListener("click", () => copyPromptById(ta, msg));
+          }
+        });
+      });
     </script>
   </body>
 </html>

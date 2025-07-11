@@ -1,5 +1,416 @@
 [
   {
+    "id": "photoshop-styled",
+    "title": "Example of doing Photoshop sort of styling",
+    "description": "Using mostly color modifications",
+    "category": "Photography",
+    "selectedDimension": "Depth Perception",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Color Temperature",
+          "explanation": "Controls the warmth or coolness of the image tones",
+          "value": "Cold",
+          "importance": 90,
+          "example_value": "#87CEEB sky with moderate green vegetation",
+          "values": [
+            "Cold",
+            "Cool",
+            "Subtle Cool",
+            "Slightly Cool",
+            "Neutral Cool",
+            "Balanced",
+            "Slightly Warm",
+            "Warm",
+            "Golden",
+            "Amber",
+            "Hot"
+          ]
+        },
+        {
+          "name": "Contrast Level",
+          "explanation": "Degree of tonal separation between light and dark areas",
+          "value": "Extreme",
+          "importance": 86,
+          "example_value": "Clear shadow from the man on pebbles, yet details visible",
+          "values": [
+            "Flat",
+            "Low",
+            "Soft",
+            "Muted",
+            "Subdued",
+            "Natural",
+            "Crisp",
+            "Defined",
+            "High",
+            "Sharp",
+            "Extreme"
+          ]
+        },
+        {
+          "name": "Scene Realism",
+          "explanation": "Degree to which the image mimics real-world lighting and texture",
+          "value": "Stylized",
+          "importance": 95,
+          "example_value": "Shoreline textures and foliage appear true-to-life",
+          "values": [
+            "Stylized",
+            "Painterly",
+            "Artistic",
+            "Semi-Realistic",
+            "Neutral Realism",
+            "Photorealistic",
+            "Detailed Realism",
+            "Hyperreal",
+            "Enhanced Realism",
+            "Surreal Realism",
+            "Ultra-Defined"
+          ]
+        },
+        {
+          "name": "Framing Balance",
+          "explanation": "Symmetry and weight distribution in the composition",
+          "value": "Visually Balanced",
+          "importance": 78,
+          "example_value": "Coastline guiding eye diagonally, figure offset to the right",
+          "values": [
+            "Chaotic",
+            "Disjointed",
+            "Loose",
+            "Unstructured",
+            "Neutral",
+            "Visually Balanced",
+            "Structured",
+            "Harmonious",
+            "Architectonic",
+            "Geometric",
+            "Perfectly Symmetrical"
+          ]
+        },
+        {
+          "name": "Light Source Clarity",
+          "explanation": "How defined and directional the light source appears",
+          "value": "Moderately Clear",
+          "importance": 74,
+          "example_value": "Sunlight casting gentle, soft-edged shadows",
+          "values": [
+            "Diffuse",
+            "Overcast",
+            "Soft",
+            "Subtle",
+            "Implied",
+            "Moderately Clear",
+            "Clear",
+            "Direct",
+            "Harsh",
+            "Theatrical",
+            "Blinding"
+          ]
+        },
+        {
+          "name": "Grain Texture",
+          "explanation": "The visibility and strength of image texture or photographic grain",
+          "value": "Noisy",
+          "importance": 65,
+          "example_value": "Subtle grain visible in beach stones and cliff face",
+          "values": [
+            "Smooth",
+            "Digital Clean",
+            "Minimal Grain",
+            "Soft Grain",
+            "Matte",
+            "Natural Film Texture",
+            "Defined Grain",
+            "Strong Grain",
+            "Coarse",
+            "Rough",
+            "Noisy"
+          ]
+        },
+        {
+          "name": "Color Saturation",
+          "explanation": "Intensity of the colors used in the image",
+          "value": "Desaturated",
+          "importance": 82,
+          "example_value": "Lush greens, deep blue sea, but not oversaturated",
+          "values": [
+            "Desaturated",
+            "Faded",
+            "Muted",
+            "Soft",
+            "Neutral",
+            "Medium Saturation",
+            "Lively",
+            "Vibrant",
+            "Bold",
+            "Intense",
+            "Oversaturated"
+          ]
+        },
+        {
+          "name": "Depth Perception",
+          "explanation": "The sense of distance and spatial layering in the image",
+          "value": "Moderately Deep",
+          "importance": 88,
+          "example_value": "Foreground pebbles and distant sea line clearly separated",
+          "values": [
+            "Flat",
+            "Minimal",
+            "Shallow",
+            "Layered",
+            "Slight Depth",
+            "Moderately Deep",
+            "Deep",
+            "Expanded",
+            "Vast",
+            "Dramatic Depth",
+            "Cinematic"
+          ]
+        },
+        {
+          "name": "Movement Suggestion",
+          "explanation": "How much implied motion is present in the image",
+          "value": "Mild Motion",
+          "importance": 54,
+          "example_value": "Gentle waves, walking posture of man",
+          "values": [
+            "Still",
+            "Frozen",
+            "Minimal",
+            "Implied",
+            "Static",
+            "Mild Motion",
+            "Noticeable Motion",
+            "Flowing",
+            "Dynamic",
+            "Sweeping",
+            "Kinetic"
+          ]
+        },
+        {
+          "name": "Nature Dominance",
+          "explanation": "How much of the image is occupied by natural elements",
+          "value": "None",
+          "importance": 85,
+          "example_value": "Sea, cliffs, and vegetation make up majority of frame",
+          "values": [
+            "None",
+            "Sparse",
+            "Low",
+            "Fragmented",
+            "Balanced",
+            "High Nature Presence",
+            "Dominant",
+            "Overwhelming",
+            "Engulfing",
+            "Pure Wilderness",
+            "Mythic Naturalism"
+          ]
+        },
+        {
+          "name": "Human Presence Subtlety",
+          "explanation": "How prominent or intrusive the human figure appears",
+          "value": "Overbearing",
+          "importance": 68,
+          "example_value": "Single person placed low and off to the side",
+          "values": [
+            "None",
+            "Barely Visible",
+            "Blended",
+            "Minor",
+            "Secondary",
+            "Low Emphasis",
+            "Equal Focus",
+            "Moderate Presence",
+            "Dominant",
+            "Central",
+            "Overbearing"
+          ]
+        },
+        {
+          "name": "Horizon Line Prominence",
+          "explanation": "Visibility and compositional dominance of the horizon",
+          "value": "Gently Defined",
+          "importance": 61,
+          "example_value": "Soft line where sky meets sea in top third of image",
+          "values": [
+            "Hidden",
+            "Soft",
+            "Blended",
+            "Implied",
+            "Subtle",
+            "Gently Defined",
+            "Clear",
+            "Prominent",
+            "Framing",
+            "Dividing",
+            "Overpowering"
+          ]
+        },
+        {
+          "name": "Ambient Light Mood",
+          "explanation": "Overall feeling of lighting across the scene",
+          "value": "Joyful",
+          "importance": 80,
+          "example_value": "Bright daylight with soft contrast",
+          "values": [
+            "Dark",
+            "Somber",
+            "Cloudy",
+            "Flat",
+            "Neutral",
+            "Open and Relaxed",
+            "Uplifting",
+            "Sunny",
+            "Joyful",
+            "Radiant",
+            "Overexposed"
+          ]
+        },
+        {
+          "name": "Visual Simplicity",
+          "explanation": "How minimal or cluttered the visual composition appears",
+          "value": "Balanced Simplicity",
+          "importance": 76,
+          "example_value": "Clean lines, few objects, no visual noise",
+          "values": [
+            "Chaotic",
+            "Busy",
+            "Layered",
+            "Textured",
+            "Neutral",
+            "Balanced Simplicity",
+            "Clear",
+            "Minimalist",
+            "Sparse",
+            "Bare",
+            "Zen-like"
+          ]
+        },
+        {
+          "name": "Detail Sharpness",
+          "explanation": "Crispness and definition of image details",
+          "value": "Moderate Sharpness",
+          "importance": 84,
+          "example_value": "Edges of rocks and cliff vegetation clearly visible",
+          "values": [
+            "Blurry",
+            "Soft",
+            "Matte",
+            "Low Sharpness",
+            "Natural",
+            "Moderate Sharpness",
+            "Crisp",
+            "High Definition",
+            "Hyperclear",
+            "Sharpened",
+            "Overprocessed"
+          ]
+        },
+        {
+          "name": "Foreground Emphasis",
+          "explanation": "How much visual weight is given to the closest part of the image",
+          "value": "Crushing Foreground",
+          "importance": 67,
+          "example_value": "Rocks and man provide anchoring without dominating",
+          "values": [
+            "None",
+            "Distant",
+            "Background-Focused",
+            "Minimal",
+            "Balanced",
+            "Mildly Anchored",
+            "Anchored",
+            "Dominant Foreground",
+            "Strong Anchor",
+            "Foreground-Heavy",
+            "Crushing Foreground"
+          ]
+        },
+        {
+          "name": "Color Palette Harmony",
+          "explanation": "How well the colors blend and complement each other",
+          "value": "Perfectly Blended",
+          "importance": 73,
+          "example_value": "Earthy browns, greens, and cool blue sea tones",
+          "values": [
+            "Discordant",
+            "Contrasty",
+            "Vivid Clashes",
+            "Bold Mix",
+            "Neutral",
+            "Natural Harmony",
+            "Complementary",
+            "Pastel Flow",
+            "Color-Themed",
+            "Monochrome",
+            "Perfectly Blended"
+          ]
+        },
+        {
+          "name": "Line Flow",
+          "explanation": "How the visual lines guide the viewer's eye",
+          "value": "Curved Natural Path",
+          "importance": 70,
+          "example_value": "Curved coastline draws eye from figure to horizon",
+          "values": [
+            "Chaotic",
+            "Broken",
+            "Erratic",
+            "Unfocused",
+            "Neutral",
+            "Curved Natural Path",
+            "Rhythmic",
+            "Guided",
+            "Strong Flow",
+            "Cinematic Sweep",
+            "Perfect Spiral"
+          ]
+        },
+        {
+          "name": "Narrative Suggestion",
+          "explanation": "How much the image implies a story or human experience",
+          "value": "Light Narrative",
+          "importance": 75,
+          "example_value": "Elderly man walking with poles along coastal path",
+          "values": [
+            "None",
+            "Minimal",
+            "Abstract",
+            "Unclear",
+            "Neutral",
+            "Light Narrative",
+            "Personal",
+            "Implied Backstory",
+            "Strong Story",
+            "Dramatic Scene",
+            "Mythic"
+          ]
+        },
+        {
+          "name": "Temporal Atmosphere",
+          "explanation": "Time of day and temporal mood (pastoral, timeless, fleeting)",
+          "value": "Present-Moment",
+          "importance": 69,
+          "example_value": "Midday sun with no nostalgic or futuristic cues",
+          "values": [
+            "Timeless",
+            "Dreamlike",
+            "Distant Past",
+            "Soft Glow",
+            "Neutral Time",
+            "Present-Moment",
+            "Passing",
+            "Ephemeral",
+            "Golden Hour",
+            "Imminent Change",
+            "Frozen Time"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "image-style",
     "title": "Dimensions of Image Style",
     "description": "Analysed from a random smartphone image taken in Denmark.",
