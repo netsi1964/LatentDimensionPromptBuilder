@@ -1,0 +1,207 @@
+/* Custom slider track appearance */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #34d399 0%,
+    #34d399 50%,
+    #a78bfa 50%,
+    #a78bfa 100%
+  );
+}
+
+input[type="range"]::-moz-range-track {
+  background: linear-gradient(
+    to right,
+    #34d399 0%,
+    #34d399 50%,
+    #a78bfa 50%,
+    #a78bfa 100%
+  );
+}
+
+/* Center the thumb slightly for visual balance */
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1; /* Ensure thumb is above track */
+}
+
+input[type="range"]::-moz-range-thumb {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom element styles */
+netsi-tabs {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+netsi-tab {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 0.375rem 0.375rem 0 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+netsi-tab[active] {
+  background-color: #0d9488;
+  color: white;
+}
+
+netsi-tab:hover:not([active]) {
+  background-color: #d1d5db;
+}
+
+netsi-tab-content {
+  display: none;
+}
+
+netsi-tab-content[active] {
+  display: block;
+}
+
+/* Loading state styles */
+netsi-tab.loading {
+  pointer-events: none;
+  position: relative;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* New badge styles */
+netsi-new {
+  position: relative;
+  display: inline-block;
+}
+
+netsi-new .new-badge {
+  position: absolute;
+  /* Use attr() for top if supported, fallback to -28px */
+  top: -28px;
+  top: attr(data-tab-height px, -28px);
+  right: -6px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+netsi-new .new-badge:hover {
+  opacity: 1;
+}
+
+.new-speech-bubble {
+  position: absolute;
+  top: 120%; /* below the badge */
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 200px;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  max-height: 250px;
+  overflow: auto;
+  transition: all 0.2s ease;
+}
+
+.new-speech-bubble.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.new-speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+  border-right: none;
+}
+
+.new-speech-bubble h4 {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  color: #374151;
+}
+
+.new-speech-bubble p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+  .new-speech-bubble {
+    right: -50px;
+    left: -50px;
+    width: auto;
+    min-width: auto;
+    max-width: none;
+  }
+
+  .new-speech-bubble::before {
+    right: 50%;
+    transform: translateX(50%) rotate(45deg);
+  }
+}
+
+.new-badge .close-x {
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.new-badge .close-x:hover {
+  opacity: 1;
+} 

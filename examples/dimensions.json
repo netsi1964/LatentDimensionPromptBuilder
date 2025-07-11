@@ -1,5 +1,416 @@
 [
   {
+    "id": "aesthetic-face-profile",
+    "title": "Example: What makes a face beautiful?",
+    "description": "This example captures 20 latent dimensions that contribute to perceived facial beauty based on symmetry, harmony, expression, and subtle feature qualities. Each dimension includes mid-level category values and structured gradations from low to high.",
+    "category": "Human Perception",
+    "selectedDimension": "Facial Harmony",
+    "dimensions": {
+      "latent_dimensions": [
+          {
+            "name": "Facial Symmetry",
+            "explanation": "Balance and mirroring between the left and right sides of the face",
+            "value": "Moderately Symmetrical",
+            "importance": 95,
+            "example_value": "Equal distance between eyes and ears on both sides",
+            "values": [
+              "Highly Asymmetrical",
+              "Unbalanced",
+              "Slightly Skewed",
+              "Visibly Uneven",
+              "Softly Tilted",
+              "Moderately Symmetrical",
+              "Balanced",
+              "Evenly Mirrored",
+              "Perfectly Proportioned",
+              "Near-Identical Halves",
+              "Flawlessly Symmetrical"
+            ]
+          },
+          {
+            "name": "Skin Clarity",
+            "explanation": "Smoothness, evenness of tone, and absence of blemishes",
+            "value": "Even Complexion",
+            "importance": 92,
+            "example_value": "Smooth skin with minimal pores or discoloration",
+            "values": [
+              "Acne-Prone",
+              "Patchy",
+              "Red-Blotched",
+              "Uneven",
+              "Mildly Textured",
+              "Even Complexion",
+              "Smooth",
+              "Refined Texture",
+              "Radiant",
+              "Glowing",
+              "Porcelain Clarity"
+            ]
+          },
+          {
+            "name": "Eye Expression",
+            "explanation": "The emotional and aesthetic impression conveyed by the eyes",
+            "value": "Soft and Engaging",
+            "importance": 90,
+            "example_value": "Eyes that look gently curious or kind",
+            "values": [
+              "Empty",
+              "Flat",
+              "Tired",
+              "Neutral",
+              "Focused",
+              "Soft and Engaging",
+              "Warm",
+              "Expressive",
+              "Captivating",
+              "Magnetic",
+              "Soulful and Deep"
+            ]
+          },
+          {
+            "name": "Lip Fullness",
+            "explanation": "Volume and shape of lips, perceived as balanced or appealing",
+            "value": "Moderately Full",
+            "importance": 85,
+            "example_value": "Naturally rounded lips with gentle curvature",
+            "values": [
+              "Thin",
+              "Flat",
+              "Tight-Lipped",
+              "Narrow",
+              "Slightly Defined",
+              "Moderately Full",
+              "Rounded",
+              "Voluminous",
+              "Plush",
+              "Kissable",
+              "Perfect Cupid's Bow"
+            ]
+          },
+          {
+            "name": "Jawline Definition",
+            "explanation": "How cleanly the jaw is outlined and structured",
+            "value": "Subtly Defined",
+            "importance": 80,
+            "example_value": "Soft but visible jaw curve, no harsh edges",
+            "values": [
+              "Blurry",
+              "Undefined",
+              "Soft Jaw",
+              "Round",
+              "Mildly Structured",
+              "Subtly Defined",
+              "Crisp",
+              "Angular",
+              "Chiseled",
+              "Sculpted",
+              "Statuesque"
+            ]
+          },
+          {
+            "name": "Cheekbone Prominence",
+            "explanation": "How much cheekbones stand out in the facial structure",
+            "value": "Gently Raised",
+            "importance": 82,
+            "example_value": "Light catching softly along cheekbone arcs",
+            "values": [
+              "Flat",
+              "Low Set",
+              "Blended",
+              "Soft Ridges",
+              "Mild Curves",
+              "Gently Raised",
+              "Defined",
+              "Prominent",
+              "Sharp Lines",
+              "High Sculpted",
+              "Sculptural Peaks"
+            ]
+          },
+          {
+            "name": "Nose Proportion",
+            "explanation": "Harmony of nose size and shape in relation to the face",
+            "value": "Harmonious",
+            "importance": 87,
+            "example_value": "A nose that blends with the overall shape of the face",
+            "values": [
+              "Large and Wide",
+              "Bulbous",
+              "Flat Bridge",
+              "Long and Narrow",
+              "Slightly Asymmetrical",
+              "Harmonious",
+              "Balanced",
+              "Refined",
+              "Elegant",
+              "Delicate",
+              "Classic Profile"
+            ]
+          },
+          {
+            "name": "Eyebrow Shape",
+            "explanation": "Curvature, thickness, and flow of the eyebrows",
+            "value": "Natural Arc",
+            "importance": 76,
+            "example_value": "Soft arch that follows the bone structure",
+            "values": [
+              "Unkempt",
+              "Flat",
+              "Over-Plucked",
+              "Irregular",
+              "Softly Sloped",
+              "Natural Arc",
+              "Cleanly Defined",
+              "Symmetrical Arch",
+              "Sculpted",
+              "Perfect Curve",
+              "High Precision"
+            ]
+          },
+          {
+            "name": "Facial Harmony",
+            "explanation": "Overall balance between all facial features",
+            "value": "Cohesive Blend",
+            "importance": 96,
+            "example_value": "Nothing stands out as disproportionate",
+            "values": [
+              "Chaotic",
+              "Mismatched",
+              "Unbalanced",
+              "Mild Disparity",
+              "Nearly Aligned",
+              "Cohesive Blend",
+              "Balanced Proportions",
+              "Flowing Structure",
+              "Unified Geometry",
+              "Elegant Equilibrium",
+              "Golden Ratio Harmony"
+            ]
+          },
+          {
+            "name": "Smile Impact",
+            "explanation": "How expressive and pleasant the smile is",
+            "value": "Warm and Approachable",
+            "importance": 88,
+            "example_value": "A relaxed smile with slightly raised cheeks",
+            "values": [
+              "Absent",
+              "Forced",
+              "Flat",
+              "Mild",
+              "Gentle",
+              "Warm and Approachable",
+              "Charming",
+              "Radiant",
+              "Magnetic",
+              "Joyful Beam",
+              "Infectious Glow"
+            ]
+          },
+          {
+            "name": "Eye Size to Face Ratio",
+            "explanation": "How large the eyes are in proportion to the face",
+            "value": "Slightly Large",
+            "importance": 78,
+            "example_value": "Eyes just slightly larger than average",
+            "values": [
+              "Very Small",
+              "Narrow",
+              "Low Emphasis",
+              "Average",
+              "Mildly Prominent",
+              "Slightly Large",
+              "Open and Bright",
+              "Doll-like",
+              "Bold Gaze",
+              "Enlarged Highlighted",
+              "Idealized Proportion"
+            ]
+          },
+          {
+            "name": "Forehead Proportion",
+            "explanation": "Height and curvature of the forehead in balance with other features",
+            "value": "Balanced Forehead",
+            "importance": 65,
+            "example_value": "Forehead height matches golden facial thirds",
+            "values": [
+              "Very Low",
+              "Short",
+              "Flat",
+              "Slightly Small",
+              "Mildly Low",
+              "Balanced Forehead",
+              "Gracefully High",
+              "Slight Dome",
+              "Smooth Curve",
+              "Sculpted Crown",
+              "Ideal Third"
+            ]
+          },
+          {
+            "name": "Hairline Shape",
+            "explanation": "The flow and positioning of the hairline in framing the face",
+            "value": "Natural Frame",
+            "importance": 60,
+            "example_value": "Even hairline that follows forehead contour",
+            "values": [
+              "Uneven",
+              "Jagged",
+              "Receded",
+              "Irregular",
+              "Sloped",
+              "Natural Frame",
+              "Soft Widow’s Peak",
+              "Curved Flow",
+              "Ideal Contour",
+              "Framing Halo",
+              "Symmetric Frame"
+            ]
+          },
+          {
+            "name": "Chin Shape",
+            "explanation": "Form and prominence of the chin in relation to the jaw and lips",
+            "value": "Softly Defined",
+            "importance": 72,
+            "example_value": "Rounded tip, neither sharp nor recessed",
+            "values": [
+              "Receding",
+              "Flat",
+              "Undefined",
+              "Blunt",
+              "Mildly Pointed",
+              "Softly Defined",
+              "Rounded",
+              "Balanced",
+              "Elegantly Prominent",
+              "Sculpted",
+              "Perfectly Centered"
+            ]
+          },
+          {
+            "name": "Facial Glow",
+            "explanation": "Perceived inner vitality and luminosity of the skin",
+            "value": "Healthy Radiance",
+            "importance": 83,
+            "example_value": "Soft light reflected naturally on skin",
+            "values": [
+              "Dull",
+              "Pale",
+              "Flat Lighting",
+              "Dry",
+              "Basic Tone",
+              "Healthy Radiance",
+              "Soft Glow",
+              "Inner Warmth",
+              "Luminous Skin",
+              "Ethereal Shine",
+              "Angel-like Light"
+            ]
+          },
+          {
+            "name": "Color Harmony",
+            "explanation": "How the skin tone, eye color, and lip tone complement each other",
+            "value": "Natural Balance",
+            "importance": 79,
+            "example_value": "Olive skin with hazel eyes and soft coral lips",
+            "values": [
+              "Clashing",
+              "Slight Discord",
+              "Washed Out",
+              "Off-Tone",
+              "Neutralized",
+              "Natural Balance",
+              "Soft Contrast",
+              "Vibrant Match",
+              "Harmonious Palette",
+              "Aesthetic Unity",
+              "Perfect Blend"
+            ]
+          },
+          {
+            "name": "Nostril Symmetry",
+            "explanation": "Proportional balance between nostrils and nose tip",
+            "value": "Aligned",
+            "importance": 68,
+            "example_value": "Both nostrils of equal height and width",
+            "values": [
+              "Misaligned",
+              "Visible Skew",
+              "Uneven Widths",
+              "Imbalanced Shape",
+              "Nearly Aligned",
+              "Aligned",
+              "Symmetrical Flare",
+              "Perfect Width Match",
+              "Balanced Ellipse",
+              "Even Airflow",
+              "Invisible Perfection"
+            ]
+          },
+          {
+            "name": "Pupil Brightness",
+            "explanation": "How well light reflects in the pupils to enhance liveliness",
+            "value": "Visible Light Dot",
+            "importance": 73,
+            "example_value": "Small white highlight in both eyes",
+            "values": [
+              "Flat",
+              "Dim",
+              "Clouded",
+              "Shadowed",
+              "Faint Spark",
+              "Visible Light Dot",
+              "Reflective",
+              "Alive Gaze",
+              "Glowing Eyes",
+              "Starry Reflection",
+              "Vibrant Radiance"
+            ]
+          },
+          {
+            "name": "Smile Line Softness",
+            "explanation": "Curvature and depth of nasolabial lines during a smile",
+            "value": "Gently Formed",
+            "importance": 64,
+            "example_value": "Soft lines indicating a genuine smile without harsh creases",
+            "values": [
+              "Deep Wrinkles",
+              "Sharp Lines",
+              "Hollowed",
+              "Angular",
+              "Mild Indent",
+              "Gently Formed",
+              "Soft Contours",
+              "Youthful Curves",
+              "Natural Elevation",
+              "Playful Arcs",
+              "Barely Present"
+            ]
+          },
+          {
+            "name": "Eyelash Presence",
+            "explanation": "Length, density, and natural curvature of the eyelashes",
+            "value": "Visible and Curved",
+            "importance": 71,
+            "example_value": "Lashes curve upwards and frame the eye",
+            "values": [
+              "Sparse",
+              "Short",
+              "Straight",
+              "Flat",
+              "Moderate",
+              "Visible and Curved",
+              "Darkened Fringe",
+              "Framing Arc",
+              "Feathered Sweep",
+              "Lush Curl",
+              "Elegant Flutter"
+            ]
+          }
+        ]
+      }
+    },
+  {
     "id": "photoshop-styled",
     "title": "Example of doing Photoshop sort of styling",
     "description": "Using mostly color modifications",
