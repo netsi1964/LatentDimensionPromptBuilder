@@ -582,13 +582,17 @@ Return the result as a JSON object under the key "latent_dimensions".
             &times;
           </button>
         </div>
-        <div class="p-6">
+        <div class="py-2 px-4">
           <form id="prepareExampleForm" class="space-y-4">
             <div>
               <label
                 for="exampleId"
                 class="block text-sm font-medium text-gray-700 mb-1"
-              >Example ID *</label>
+              >Example ID * - <span class="text-xs text-gray-500 ml-2">
+                Unique identifier for this example (lowercase, hyphens only)
+              </span></label>
+
+              
               <input
                 type="text"
                 id="exampleId"
@@ -596,9 +600,6 @@ Return the result as a JSON object under the key "latent_dimensions".
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 placeholder="e.g., my-custom-style"
               >
-              <p class="text-xs text-gray-500 mt-1">
-                Unique identifier for this example (lowercase, hyphens only)
-              </p>
             </div>
 
             <div>
@@ -633,7 +634,10 @@ Return the result as a JSON object under the key "latent_dimensions".
               <label
                 for="exampleCategory"
                 class="block text-sm font-medium text-gray-700 mb-1"
-              >Category *</label>
+              >Category * - <span class="text-xs text-gray-500 ml-2">
+                Enter any category that describes this example
+              </span></label>
+              
               <input
                 type="text"
                 id="exampleCategory"
@@ -641,31 +645,26 @@ Return the result as a JSON object under the key "latent_dimensions".
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 placeholder="e.g., Photography, Art, Writing, etc."
               >
-              <p class="text-xs text-gray-500 mt-1">
-                Enter any category that describes this example
-              </p>
             </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2"
-              >Selected Dimension</label>
-              <div id="selectedDimensionRadios" class="space-y-2">
-                <label class="flex items-center">
-                  <input
-                    type="radio"
-                    name="selectedDimension"
-                    value=""
-                    class="mr-2"
+                          <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Selected Dimension - <span class="text-xs text-gray-500 ml-2">
+                  Which dimension should be pre-selected when loading this
+                  example?
+                </s></label>
+                
+                <div id="selectedDimensionChips" class="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    class="dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer"
+                    data-value=""
+                    data-selected="true"
                   >
-                  <span class="text-sm text-gray-600"
-                  >No dimension selected</span>
-                </label>
+                    No dimension selected
+                  </button>
+                </div>
               </div>
-              <p class="text-xs text-gray-500 mt-1">
-                Which dimension should be pre-selected when loading this
-                example?
-              </p>
-            </div>
 
             <div
               class="flex justify-end space-x-3 pt-4 border-t border-gray-200"
@@ -2419,33 +2418,47 @@ ${
           // Form elements should now be directly accessible
           const cancelBtn = document.querySelector("#cancelBtn");
           const form = document.querySelector("#prepareExampleForm");
-          const selectedDimensionRadios = document.querySelector(
-            "#selectedDimensionRadios",
+          const selectedDimensionChips = document.querySelector(
+            "#selectedDimensionChips",
           );
 
           console.log("Form elements found:", {
             cancelBtn: !!cancelBtn,
             form: !!form,
-            selectedDimensionRadios: !!selectedDimensionRadios,
+            selectedDimensionChips: !!selectedDimensionChips,
           });
 
-          if (!cancelBtn || !form || !selectedDimensionRadios) {
+          if (!cancelBtn || !form || !selectedDimensionChips) {
             console.error("Form elements not found");
             toast("❌ Error loading modal form. Please try again.");
             return;
           }
 
-          setupModalForm(cancelBtn, form, selectedDimensionRadios);
+          setupModalForm(cancelBtn, form, selectedDimensionChips);
         }
 
         // Setup the modal form with the found elements
         function setupModalForm(
           cancelBtn,
           form,
-          selectedDimensionRadios,
+          selectedDimensionChips,
         ) {
-          // Populate selected dimension radio buttons with current dimensions
-          populateSelectedDimensionRadios(selectedDimensionRadios);
+          // Populate selected dimension chips with current dimensions
+          populateSelectedDimensionChips(selectedDimensionChips);
+          
+          // Add click event listener to "No dimension selected" chip
+          const noDimensionChip = selectedDimensionChips.querySelector('[data-value=""]');
+          if (noDimensionChip) {
+            noDimensionChip.addEventListener("click", () => {
+              // Deselect all chips
+              selectedDimensionChips.querySelectorAll('.dimension-chip').forEach(c => {
+                c.dataset.selected = "false";
+              });
+              // Select this chip
+              noDimensionChip.dataset.selected = "true";
+              updateChipStyles();
+            });
+          }
 
           // Set default values
           setDefaultFormValues();
@@ -2492,8 +2505,8 @@ ${
               category:
                 document.querySelector("#exampleCategory").value,
               selectedDimension: document.querySelector(
-                'input[name="selectedDimension"]:checked',
-              )?.value || null,
+                '.dimension-chip[data-selected="true"]',
+              )?.dataset.value || null,
               dimensions: sample,
             };
 
@@ -2539,45 +2552,87 @@ ${
           });
         }
 
-        // Populate selected dimension radio buttons
-        function populateSelectedDimensionRadios(radiosContainer) {
-          // Clear existing radio buttons except the "No dimension selected" option
-          const noDimensionRadio =
-            radiosContainer.querySelector('input[value=""]')
-              .parentElement;
-          radiosContainer.innerHTML = "";
-          radiosContainer.appendChild(noDimensionRadio);
+        // Populate selected dimension chips
+        function populateSelectedDimensionChips(chipsContainer) {
+          // Clear existing chips except the "No dimension selected" option
+          const noDimensionChip = chipsContainer.querySelector('[data-value=""]');
+          chipsContainer.innerHTML = "";
+          chipsContainer.appendChild(noDimensionChip);
 
           // Get the currently selected dimension from the main interface
           const currentlySelectedDimension =
             document.querySelector('input[name="variation"]:checked')
               ?.value || "";
 
+          // Track if we found a selected dimension
+          let foundSelected = false;
+
           if (sample && sample.latent_dimensions) {
             sample.latent_dimensions.forEach((dimension) => {
-              const label = document.createElement("label");
-              label.className = "flex items-center";
-
-              const radio = document.createElement("input");
-              radio.type = "radio";
-              radio.name = "selectedDimension";
-              radio.value = dimension.name;
-              radio.className = "mr-2";
+              const chip = document.createElement("button");
+              chip.type = "button";
+              chip.className = "dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer";
+              chip.dataset.value = dimension.name;
+              chip.dataset.selected = "false";
+              chip.textContent = dimension.name;
 
               // Check if this dimension is currently selected in the main interface
               if (dimension.name === currentlySelectedDimension) {
-                radio.checked = true;
+                chip.dataset.selected = "true";
+                foundSelected = true;
               }
 
-              const span = document.createElement("span");
-              span.className = "text-sm text-gray-600";
-              span.textContent = dimension.name;
+              // Add click event listener
+              chip.addEventListener("click", () => {
+                // Deselect all chips
+                chipsContainer.querySelectorAll('.dimension-chip').forEach(c => {
+                  c.dataset.selected = "false";
+                });
+                // Select this chip
+                chip.dataset.selected = "true";
+                updateChipStyles();
+              });
 
-              label.appendChild(radio);
-              label.appendChild(span);
-              radiosContainer.appendChild(label);
+              chipsContainer.appendChild(chip);
             });
           }
+
+          // Set "No dimension selected" chip only if no other is selected
+          if (noDimensionChip) {
+            if (!foundSelected) {
+              noDimensionChip.dataset.selected = "true";
+            } else {
+              noDimensionChip.dataset.selected = "false";
+            }
+            // Add click event listener
+            noDimensionChip.addEventListener("click", () => {
+              chipsContainer.querySelectorAll('.dimension-chip').forEach(c => {
+                c.dataset.selected = "false";
+              });
+              noDimensionChip.dataset.selected = "true";
+              updateChipStyles();
+            });
+          }
+
+          // Update chip styles after adding all chips
+          updateChipStyles();
+        }
+
+        // Update chip styles based on selected state
+        function updateChipStyles() {
+          const chips = document.querySelectorAll('.dimension-chip');
+          chips.forEach(chip => {
+            const isSelected = chip.dataset.selected === "true";
+            const value = chip.dataset.value;
+            
+            if (isSelected) {
+              // Selected state - teal background like examples
+              chip.className = "dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-teal-500 bg-teal-100 text-teal-800 transition-all cursor-pointer";
+            } else {
+              // Normal state - gray border
+              chip.className = "dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-gray-300 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50 transition-all cursor-pointer";
+            }
+          });
         }
 
         // Set default form values
