@@ -228,13 +228,15 @@
         <netsi-tab name="tab3">Text prompt</netsi-tab>
         <netsi-tab name="tab4">Text/JSON prompt</netsi-tab>
         <netsi-tab name="tab5">Grid Text/JSON prompt</netsi-tab>
-        <netsi-tab name="tab6">Text Variations 
-            <netsi-new id="text-variations-new" expires="2025-07-20">Now you can do variations on text!</netsi-new>
+        <netsi-tab name="tab6">Text Variations
+          <netsi-new id="text-variations-new" expires="2025-07-20"
+          >Now you can do variations on text!</netsi-new>
         </netsi-tab>
-      <netsi-tab name="tab7">Examples
-        <netsi-new id="text-examples-new" expires="2025-07-20">You can now load examples, ready for you to play with!</netsi-new>
-      </netsi-tab>
-      <netsi-tab name="tab8">About</netsi-tab>
+        <netsi-tab name="tab7">Examples
+          <netsi-new id="text-examples-new" expires="2025-07-20"
+          >You can now load examples, ready for you to play with!</netsi-new>
+        </netsi-tab>
+        <netsi-tab name="tab8">About</netsi-tab>
       </netsi-tabs>
 
       <netsi-tab-content title="Prompt for LLM" id="tab1" active="true">
@@ -279,8 +281,7 @@ Return the result as a JSON object under the key "latent_dimensions".
     // ... 19 more entries matching this structure ...
   ]
 }
-```</textarea
-        >
+```</textarea>
         <button
           id="copyLLMPromptBtn"
           class="mt-3 px-5 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors"
@@ -311,7 +312,8 @@ Return the result as a JSON object under the key "latent_dimensions".
           <netsi-new id="share-style-new" expires="2025-07-20">
             <h4>🔗 New Feature!</h4>
             <p>
-              Share styles easily! Click "Share Style 🔗" to copy instructions + JSON to clipboard. Share via email or chat - no broken URLs!
+              Share styles easily! Click "Share Style 🔗" to copy instructions +
+              JSON to clipboard. Share via email or chat - no broken URLs!
             </p>
             <button
               id="shareBtn"
@@ -448,10 +450,14 @@ Return the result as a JSON object under the key "latent_dimensions".
 
       <netsi-tab-content title="Examples" id="tab7">
         <div class="bg-white p-6 border border-gray-300 rounded shadow-sm">
-          <h2 class="text-xl font-bold text-gray-800 mb-4">📚 Example Style Configurations</h2>
-          
+          <h2 class="text-xl font-bold text-gray-800 mb-4">
+            📚 Example Style Configurations
+          </h2>
+
           <p class="mb-6 text-gray-700 leading-relaxed">
-            Click on any example below to load it into the "Adjust Dimensions" tab. Each example demonstrates different semantic dimensions and their applications.
+            Click on any example below to load it into the "Adjust Dimensions"
+            tab. Each example demonstrates different semantic dimensions and
+            their applications.
           </p>
 
           <div id="examplesContainer" class="space-y-4">
@@ -462,31 +468,34 @@ Return the result as a JSON object under the key "latent_dimensions".
 
       <netsi-tab-content title="About" id="tab8">
         <div class="bg-white p-6 border border-gray-300 rounded shadow-sm">
-          <h2 class="text-xl font-bold text-gray-800 mb-4">🧠 About the Latent Dimension Prompt Builder</h2>
-          
+          <h2 class="text-xl font-bold text-gray-800 mb-4">
+            🧠 About the Latent Dimension Prompt Builder
+          </h2>
+
           <div class="prose prose-gray max-w-none">
             <p class="mb-4 text-gray-700 leading-relaxed">
-              When you see a person, your brain instantly builds a mental profile:
+              When you see a person, your brain instantly builds a mental
+              profile:
               <em>he's about 178 cm tall, has brown hair, brown eyes…</em>
               You unconsciously assign <strong>labels and values</strong> to
               describe what you're perceiving. These labels can be thought of as
-              <strong>dimensions</strong>—they help you form an impression of the
-              object in front of you.
+              <strong>dimensions</strong>—they help you form an impression of
+              the object in front of you.
             </p>
 
             <p class="mb-4 text-gray-700 leading-relaxed">
               Large Language Models (LLMs) like ChatGPT work similarly. They
               receive input—whether it's text, images, sound, or video— and
-              process it across a wide set of <strong>latent dimensions</strong>.
-              These are abstract categories that help the model understand and
-              represent the "essence" of the input.
+              process it across a wide set of <strong>latent
+                dimensions</strong>. These are abstract categories that help the
+              model understand and represent the "essence" of the input.
             </p>
 
             <p class="mb-4 text-gray-700 leading-relaxed">
-              In this tool, the input (we call it <strong>context</strong>) might
-              be a sentence, a paragraph, or even an image. The Prompt Builder
-              then asks the LLM to describe how it perceives that context—just
-              like you described the person above. It returns a
+              In this tool, the input (we call it <strong>context</strong>)
+              might be a sentence, a paragraph, or even an image. The Prompt
+              Builder then asks the LLM to describe how it perceives that
+              context—just like you described the person above. It returns a
               <strong>JSON object</strong> containing:
             </p>
 
@@ -511,8 +520,8 @@ Return the result as a JSON object under the key "latent_dimensions".
 
             <p class="mb-4 text-gray-700 leading-relaxed">
               The result is a kind of <strong>semantic fingerprint</strong>—a
-              structured impression of what the model saw, felt, or sensed in the
-              input.
+              structured impression of what the model saw, felt, or sensed in
+              the input.
             </p>
 
             <p class="mb-4 text-gray-700 leading-relaxed">
@@ -523,21 +532,22 @@ Return the result as a JSON object under the key "latent_dimensions".
             </p>
 
             <p class="mb-4 text-gray-700 leading-relaxed">
-              In essence, this tool lets you extract the <strong>style</strong> or
-              <strong>semantic aura</strong> of any object—and reuse it creatively
-              across other inputs. <br /><strong class="text-teal-600"
-                >Because to an LLM, everything is just data.</strong
-              >
+              In essence, this tool lets you extract the <strong>style</strong>
+              or
+              <strong>semantic aura</strong> of any object—and reuse it
+              creatively across other inputs. <br /><strong
+                class="text-teal-600"
+              >Because to an LLM, everything is just data.</strong>
             </p>
-            
+
             <div class="mt-6 p-4 bg-teal-50 border border-teal-200 rounded">
               <p class="text-gray-700">
                 <a
                   href="https://www.linkedin.com/pulse/latent-dimension-prompt-builder-v3-ldpb-sten-hougaard-h8vvf"
                   target="_blank"
                   class="text-teal-600 hover:text-teal-700 font-medium underline"
-                  >Read my post on LinkedIn about Latent Dimension Prompt Builder</a
-                >.
+                >Read my post on LinkedIn about Latent Dimension Prompt
+                  Builder</a>.
               </p>
             </div>
           </div>
@@ -588,7 +598,10 @@ Return the result as a JSON object under the key "latent_dimensions".
           this._originalContent = "";
 
           this.addEventListener("click", this.handleClick.bind(this));
-          this.addEventListener("keydown", this.handleKeydown.bind(this));
+          this.addEventListener(
+            "keydown",
+            this.handleKeydown.bind(this),
+          );
         }
 
         /**
@@ -668,9 +681,11 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.setAttribute("aria-selected", "true");
 
           // Deactivate all tab content
-          document.querySelectorAll("netsi-tab-content").forEach((content) => {
-            content.removeAttribute("active");
-          });
+          document.querySelectorAll("netsi-tab-content").forEach(
+            (content) => {
+              content.removeAttribute("active");
+            },
+          );
 
           // Activate corresponding content
           const targetContent = document.getElementById(contentId);
@@ -699,7 +714,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             new CustomEvent("tab-selected", {
               bubbles: true,
               detail: { tab: this, contentId, targetContent },
-            })
+            }),
           );
 
           return true;
@@ -745,7 +760,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             new CustomEvent("tab-deselected", {
               bubbles: true,
               detail: { tab: this, contentId: this.getContentId() },
-            })
+            }),
           );
 
           return true;
@@ -756,7 +771,8 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @returns {string} The content ID
          */
         getContentId() {
-          return this.getAttribute("content") || this.getAttribute("name");
+          return this.getAttribute("content") ||
+            this.getAttribute("name");
         }
 
         /**
@@ -812,8 +828,8 @@ Return the result as a JSON object under the key "latent_dimensions".
           // If this tab is active, activate another tab
           if (this.hasAttribute("active")) {
             const tabsContainer = this.closest("netsi-tabs");
-            const nextTab =
-              this.nextElementSibling || this.previousElementSibling;
+            const nextTab = this.nextElementSibling ||
+              this.previousElementSibling;
             if (nextTab && nextTab.tagName === "NETSI-TAB") {
               nextTab.activate({ force: true });
             }
@@ -837,7 +853,9 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @returns {boolean} True if tab was found and updated
          */
         static setLoading(tabId, loading = true) {
-          const tab = document.querySelector(`netsi-tab[name="${tabId}"]`);
+          const tab = document.querySelector(
+            `netsi-tab[name="${tabId}"]`,
+          );
           if (tab) {
             tab.setLoading(loading);
             return true;
@@ -878,7 +896,10 @@ Return the result as a JSON object under the key "latent_dimensions".
               tabsContainer.insertBefore(newTab, referenceTab);
             } else {
               if (referenceTab.nextSibling) {
-                tabsContainer.insertBefore(newTab, referenceTab.nextSibling);
+                tabsContainer.insertBefore(
+                  newTab,
+                  referenceTab.nextSibling,
+                );
               } else {
                 tabsContainer.appendChild(newTab);
               }
@@ -896,7 +917,9 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @returns {boolean} True if tab was found and removed
          */
         static removeById(tabId) {
-          const tab = document.querySelector(`netsi-tab[name="${tabId}"]`);
+          const tab = document.querySelector(
+            `netsi-tab[name="${tabId}"]`,
+          );
           if (tab) {
             tab.remove();
             return true;
@@ -912,7 +935,9 @@ Return the result as a JSON object under the key "latent_dimensions".
          * @returns {boolean} True if tab was found and activated
          */
         static activateById(tabId, options = {}) {
-          const tab = document.querySelector(`netsi-tab[name="${tabId}"]`);
+          const tab = document.querySelector(
+            `netsi-tab[name="${tabId}"]`,
+          );
           if (tab) {
             return tab.activate(options);
           }
@@ -974,15 +999,20 @@ Return the result as a JSON object under the key "latent_dimensions".
           if (name === "active") {
             const isActive = newValue !== null;
             this.style.display = isActive ? "block" : "none";
-            this.setAttribute("aria-hidden", isActive ? "false" : "true");
+            this.setAttribute(
+              "aria-hidden",
+              isActive ? "false" : "true",
+            );
 
             // Fire content visibility events
-            const eventName = isActive ? "content-shown" : "content-hidden";
+            const eventName = isActive
+              ? "content-shown"
+              : "content-hidden";
             this.dispatchEvent(
               new CustomEvent(eventName, {
                 bubbles: true,
                 detail: { content: this, contentId: this.id },
-              })
+              }),
             );
           }
         }
@@ -1054,7 +1084,9 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.handleMouseEnter = this.handleMouseEnter.bind(this);
           this.handleMouseLeave = this.handleMouseLeave.bind(this);
           this.handleTouchStart = this.handleTouchStart.bind(this);
-          this.handleDocumentClick = this.handleDocumentClick.bind(this);
+          this.handleDocumentClick = this.handleDocumentClick.bind(
+            this,
+          );
         }
 
         /**
@@ -1065,12 +1097,16 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.setAttribute("aria-label", "New feature notification");
 
           // Require a unique id for each badge
-          const id = this.getAttribute('id');
+          const id = this.getAttribute("id");
           if (!id) {
-            console.warn('netsi-new: Missing required id attribute. Badge will always show.');
+            console.warn(
+              "netsi-new: Missing required id attribute. Badge will always show.",
+            );
           } else {
             // Use a shared localStorage key for all dismissed badges
-            const dismissed = JSON.parse(localStorage.getItem('netsi-new-dismissed') || '[]');
+            const dismissed = JSON.parse(
+              localStorage.getItem("netsi-new-dismissed") || "[]",
+            );
             if (dismissed.includes(id)) {
               this.remove();
               return;
@@ -1089,8 +1125,11 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.dispatchEvent(
             new CustomEvent("badge-shown", {
               bubbles: true,
-              detail: { badge: this, expires: this.getAttribute("expires") },
-            })
+              detail: {
+                badge: this,
+                expires: this.getAttribute("expires"),
+              },
+            }),
           );
         }
 
@@ -1115,7 +1154,9 @@ Return the result as a JSON object under the key "latent_dimensions".
             if (!this.checkExpiry()) {
               this.expire();
             }
-          } else if (name === "label" && this.isConnected && this._badge) {
+          } else if (
+            name === "label" && this.isConnected && this._badge
+          ) {
             // Update badge text when label changes
             this._badge.textContent = newValue || "NEW";
           }
@@ -1159,8 +1200,11 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.dispatchEvent(
             new CustomEvent("badge-expired", {
               bubbles: true,
-              detail: { badge: this, expires: this.getAttribute("expires") },
-            })
+              detail: {
+                badge: this,
+                expires: this.getAttribute("expires"),
+              },
+            }),
           );
 
           // Animate out and remove
@@ -1220,12 +1264,17 @@ Return the result as a JSON object under the key "latent_dimensions".
          * Dismisses the badge and stores a flag in localStorage
          */
         dismissBadge() {
-          const id = this.getAttribute('id');
+          const id = this.getAttribute("id");
           if (id) {
-            let dismissed = JSON.parse(localStorage.getItem('netsi-new-dismissed') || '[]');
+            let dismissed = JSON.parse(
+              localStorage.getItem("netsi-new-dismissed") || "[]",
+            );
             if (!dismissed.includes(id)) {
               dismissed.push(id);
-              localStorage.setItem('netsi-new-dismissed', JSON.stringify(dismissed));
+              localStorage.setItem(
+                "netsi-new-dismissed",
+                JSON.stringify(dismissed),
+              );
             }
           }
           this.remove();
@@ -1236,15 +1285,31 @@ Return the result as a JSON object under the key "latent_dimensions".
          */
         attachEventListeners() {
           if (this._badge) {
-            this._badge.addEventListener("mouseenter", this.handleMouseEnter);
-            this._badge.addEventListener("mouseleave", this.handleMouseLeave);
-            this._badge.addEventListener("touchstart", this.handleTouchStart, {
-              passive: true,
-            });
+            this._badge.addEventListener(
+              "mouseenter",
+              this.handleMouseEnter,
+            );
+            this._badge.addEventListener(
+              "mouseleave",
+              this.handleMouseLeave,
+            );
+            this._badge.addEventListener(
+              "touchstart",
+              this.handleTouchStart,
+              {
+                passive: true,
+              },
+            );
           }
           if (this._speechBubble) {
-            this._speechBubble.addEventListener("mouseenter", this.handleMouseEnter);
-            this._speechBubble.addEventListener("mouseleave", this.handleMouseLeave);
+            this._speechBubble.addEventListener(
+              "mouseenter",
+              this.handleMouseEnter,
+            );
+            this._speechBubble.addEventListener(
+              "mouseleave",
+              this.handleMouseLeave,
+            );
           }
         }
 
@@ -1253,15 +1318,33 @@ Return the result as a JSON object under the key "latent_dimensions".
          */
         detachEventListeners() {
           if (this._badge) {
-            this._badge.removeEventListener("mouseenter", this.handleMouseEnter);
-            this._badge.removeEventListener("mouseleave", this.handleMouseLeave);
-            this._badge.removeEventListener("touchstart", this.handleTouchStart);
+            this._badge.removeEventListener(
+              "mouseenter",
+              this.handleMouseEnter,
+            );
+            this._badge.removeEventListener(
+              "mouseleave",
+              this.handleMouseLeave,
+            );
+            this._badge.removeEventListener(
+              "touchstart",
+              this.handleTouchStart,
+            );
           }
           if (this._speechBubble) {
-            this._speechBubble.removeEventListener("mouseenter", this.handleMouseEnter);
-            this._speechBubble.removeEventListener("mouseleave", this.handleMouseLeave);
+            this._speechBubble.removeEventListener(
+              "mouseenter",
+              this.handleMouseEnter,
+            );
+            this._speechBubble.removeEventListener(
+              "mouseleave",
+              this.handleMouseLeave,
+            );
           }
-          document.removeEventListener("click", this.handleDocumentClick);
+          document.removeEventListener(
+            "click",
+            this.handleDocumentClick,
+          );
         }
 
         /**
@@ -1299,7 +1382,10 @@ Return the result as a JSON object under the key "latent_dimensions".
             this.showSpeechBubble();
             // Add document click listener to close on outside tap
             setTimeout(() => {
-              document.addEventListener("click", this.handleDocumentClick);
+              document.addEventListener(
+                "click",
+                this.handleDocumentClick,
+              );
             }, 100);
           }
         }
@@ -1311,7 +1397,10 @@ Return the result as a JSON object under the key "latent_dimensions".
         handleDocumentClick(event) {
           if (!this.contains(event.target)) {
             this.hideSpeechBubble();
-            document.removeEventListener("click", this.handleDocumentClick);
+            document.removeEventListener(
+              "click",
+              this.handleDocumentClick,
+            );
           }
         }
 
@@ -1335,8 +1424,11 @@ Return the result as a JSON object under the key "latent_dimensions".
           this.dispatchEvent(
             new CustomEvent("tooltip-shown", {
               bubbles: true,
-              detail: { badge: this, content: this._speechBubble.innerHTML },
-            })
+              detail: {
+                badge: this,
+                content: this._speechBubble.innerHTML,
+              },
+            }),
           );
         }
 
@@ -1355,7 +1447,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             new CustomEvent("tooltip-hidden", {
               bubbles: true,
               detail: { badge: this },
-            })
+            }),
           );
         }
 
@@ -1377,7 +1469,10 @@ Return the result as a JSON object under the key "latent_dimensions".
          */
         setExpiryDate(date) {
           if (date instanceof Date) {
-            this.setAttribute("expires", date.toISOString().split("T")[0]);
+            this.setAttribute(
+              "expires",
+              date.toISOString().split("T")[0],
+            );
           } else {
             this.setAttribute("expires", date);
           }
@@ -1420,7 +1515,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             new CustomEvent("badge-shown", {
               bubbles: true,
               detail: { badge: this, manual: true },
-            })
+            }),
           );
         }
 
@@ -1436,7 +1531,7 @@ Return the result as a JSON object under the key "latent_dimensions".
             new CustomEvent("badge-hidden", {
               bubbles: true,
               detail: { badge: this, manual: true },
-            })
+            }),
           );
         }
 
@@ -1492,13 +1587,21 @@ Return the result as a JSON object under the key "latent_dimensions".
       customElements.define("netsi-tab-content", NetsiTabContent);
       // --- DOM ELEMENTS ---
       const jsonInput = document.getElementById("jsonInput");
-      const sliderContainer = document.getElementById("sliderContainer");
+      const sliderContainer = document.getElementById(
+        "sliderContainer",
+      );
       const promptOutput = document.getElementById("promptOutput");
-      const llmPromptOutput = document.getElementById("llmPromptOutput");
-      const finalPromptOutput = document.getElementById("finalPromptOutput");
-      const gridPromptOutput = document.getElementById("gridPromptOutput");
+      const llmPromptOutput = document.getElementById(
+        "llmPromptOutput",
+      );
+      const finalPromptOutput = document.getElementById(
+        "finalPromptOutput",
+      );
+      const gridPromptOutput = document.getElementById(
+        "gridPromptOutput",
+      );
       const textVariationsPromptOutput = document.getElementById(
-        "textVariationsPromptOutput"
+        "textVariationsPromptOutput",
       );
 
       // --- UTILITY FUNCTIONS ---
@@ -1535,12 +1638,6 @@ Return the result as a JSON object under the key "latent_dimensions".
         toast(message);
       }
 
-
-
-
-
-
-
       /**
        * Validates dimension data structure
        * @param {Object} data - Data to validate
@@ -1560,11 +1657,9 @@ Return the result as a JSON object under the key "latent_dimensions".
           (dim) =>
             dim.name &&
             dim.value !== undefined &&
-            dim.importance !== undefined
+            dim.importance !== undefined,
         );
       }
-
-
 
       /**
        * Generates a shareable URL with current dimension configuration
@@ -1604,7 +1699,7 @@ Return the result as a JSON object under the key "latent_dimensions".
        */
       function getSelectedDimension(dimensions) {
         const selectedElement = document.querySelector(
-          '[name="variation"][type="radio"]:checked'
+          '[name="variation"][type="radio"]:checked',
         );
         const propertyName = selectedElement
           ? selectedElement.value
@@ -1613,1259 +1708,168 @@ Return the result as a JSON object under the key "latent_dimensions".
           propertyName,
           escapedName: escapeMarkdown(propertyName),
           varyingParam: dimensions.find((d) => d.name === propertyName),
-          fixedParams: dimensions.filter((d) => d.name !== propertyName),
+          fixedParams: dimensions.filter((d) =>
+            d.name !== propertyName
+          ),
         };
       }
 
       // --- EXAMPLES DATA ---
-      const examples = [
-        {
-          id: "john-cleese-humor",
-          title: "John Cleese Style Humor",
-          description: "Analyzed from John Cleese's comedy style, focusing on cynicism and punchline ambiguity. Perfect for creating witty, slightly cynical humor.",
-          category: "Comedy",
-          selectedDimension: "Sarcasm Intensity",
-          dimensions: {
-            latent_dimensions: [
-              {
-                name: "Cynicism Level",
-                explanation: "Indicates how skeptical or distrustful the humor is toward institutions or professions",
-                value: "Mildly Cynical",
-                importance: 91,
-                example_value: "\"people couldn't figure out which side of the stamp to spit on\"",
-                values: ["Naive", "Idealistic", "Trusting", "Sincere", "Dry", "Mildly Cynical", "Cynical", "Jaded", "Mocking", "Acerbic", "Bitter"]
-              },
-              {
-                name: "Punchline Ambiguity",
-                explanation: "How much the joke relies on indirectness or misdirection",
-                value: "Moderately Twisted",
-                importance: 84,
-                example_value: "\"which side of the stamp to spit on\"",
-                values: ["Literal", "Direct", "Obvious", "Simple", "Subtle", "Moderately Twisted", "Surprising", "Layered", "Cryptic", "Obscure", "Absurd"]
-              },
-              {
-                name: "Authority Satire",
-                explanation: "Degree of mockery or critique aimed at figures of authority or respect",
-                value: "Sarcastic",
-                importance: 88,
-                example_value: "\"commemorative stamps commemorating lawyers\"",
-                values: ["Respectful", "Earnest", "Gentle", "Playful", "Ironic", "Sarcastic", "Cutting", "Disrespectful", "Ridiculing", "Scathing", "Defamatory"]
-              },
-              {
-                name: "Formality of Language",
-                explanation: "The level of structured, formal, or polished language used",
-                value: "Conversational",
-                importance: 62,
-                example_value: "\"they had to withdraw them\"",
-                values: ["Academic", "Stilted", "Formal", "Polished", "Professional", "Conversational", "Colloquial", "Casual", "Slangy", "Unfiltered", "Crude"]
-              },
-              {
-                name: "Historical Irony",
-                explanation: "How much the humor draws on or twists established traditions or respected symbols",
-                value: "Tradition-Undermining",
-                importance: 74,
-                example_value: "\"The U.S. Postal Service... commemorative stamps\"",
-                values: ["Reverent", "Respectful", "Cautious", "Balanced", "Neutral", "Tradition-Undermining", "Critical", "Ironic", "Darkly Ironic", "Mock-Historic", "Subversive"]
-              },
-              {
-                name: "Delivery Sharpness",
-                explanation: "The abruptness or smoothness of the punchline delivery",
-                value: "Snappy",
-                importance: 71,
-                example_value: "\"spit on\"",
-                values: ["Rambling", "Drawn-out", "Gradual", "Flowing", "Smooth", "Snappy", "Abrupt", "Jarring", "Blunt", "Sudden", "Staccato"]
-              },
-              {
-                name: "Absurdity Level",
-                explanation: "The degree of irrationality or surrealism in the humor",
-                value: "Mildly Absurd",
-                importance: 70,
-                example_value: "\"which side of the stamp to spit on\"",
-                values: ["Realistic", "Grounded", "Believable", "Commonplace", "Dry", "Mildly Absurd", "Silly", "Goofy", "Ridiculous", "Ludicrous", "Surreal"]
-              },
-              {
-                name: "Cultural Specificity",
-                explanation: "How much the joke relies on a specific cultural context",
-                value: "American-Focused",
-                importance: 58,
-                example_value: "\"The U.S. Postal Service\"",
-                values: ["Universal", "Global", "Generic Western", "Modern", "Subtle American", "American-Focused", "Deep Americana", "Regional Dialect", "Obscure Reference", "In-Joke"]
-              },
-              {
-                name: "Moral Edginess",
-                explanation: "Degree to which the joke challenges ethical norms or sensitivities",
-                value: "Borderline Tactless",
-                importance: 69,
-                example_value: "\"spit on\" and its implied disdain",
-                values: ["Wholesome", "Polite", "Safe", "Acceptable", "Crisp", "Borderline Tactless", "Provocative", "Rude", "Crass", "Offensive", "Shocking"]
-              },
-              {
-                name: "Cleverness Quotient",
-                explanation: "The level of intellectual play or wordplay in the joke",
-                value: "Wittily Constructed",
-                importance: 85,
-                example_value: "\"couldn't figure out which side of the stamp to spit on\" as misdirection",
-                values: ["Dull", "Literal", "Plain", "Simple", "Slightly Clever", "Wittily Constructed", "Clever", "Sharp", "Ingenious", "Brilliant", "Genius"]
-              },
-              {
-                name: "Nostalgic Tone",
-                explanation: "Level of old-fashioned or retro feeling in the humor",
-                value: "Mildly Retro",
-                importance: 44,
-                example_value: "\"postal service stamps\"",
-                values: ["Modern", "Contemporary", "Timeless", "Subtle Retro", "Implied Past", "Mildly Retro", "Old-Timey", "Vintage", "WWII Era", "Depression Era", "Victorian"]
-              },
-              {
-                name: "Visual Imagination Trigger",
-                explanation: "How easily the joke conjures a mental image",
-                value: "Vividly Suggestive",
-                importance: 66,
-                example_value: "\"which side of the stamp to spit on\"",
-                values: ["Abstract", "Hard to Picture", "Subtle", "Mild", "Recognizable", "Vividly Suggestive", "Detailed", "Cinematic", "Graphic", "Extreme", "Grotesque"]
-              },
-              {
-                name: "Temporal Specificity",
-                explanation: "How anchored the humor is to a specific time period",
-                value: "Late 20th Century",
-                importance: 49,
-                example_value: "\"postal service stamps\"",
-                values: ["Timeless", "Future-Oriented", "Present-Day", "2010s", "2000s", "Late 20th Century", "Mid-Century", "WWII Era", "Depression Era", "Victorian", "Historic"]
-              },
-              {
-                name: "Irony Density",
-                explanation: "How much of the joke relies on irony",
-                value: "High Irony",
-                importance: 86,
-                example_value: "\"commemorative stamps commemorating lawyers\"",
-                values: ["None", "Low", "Light", "Implied", "Moderate", "High Irony", "Explicit", "Layered", "Recursive", "Meta-Ironic", "Post-Ironic"]
-              },
-              {
-                name: "Use of Wordplay",
-                explanation: "Extent of puns, double meanings, or phonetic tricks",
-                value: "Mild Wordplay",
-                importance: 59,
-                example_value: "\"spit on\" as both literal and symbolic",
-                values: ["None", "Flat", "Plain", "Straight", "Dry", "Mild Wordplay", "Double Meaning", "Pun-Based", "Phonetic Trick", "Layered Pun", "Meta-Wordplay"]
-              },
-              {
-                name: "Social Commentary Depth",
-                explanation: "Level of embedded social critique or observation",
-                value: "Light Commentary",
-                importance: 68,
-                example_value: "\"lawyers\" as a target of mild satire",
-                values: ["None", "Surface", "Thin", "Subtle", "Implied", "Light Commentary", "Moderate", "Direct", "Heavy-Handed", "Blunt", "Preachy"]
-              },
-              {
-                name: "Syllabic Rhythm",
-                explanation: "How much the joke flows rhythmically in its syllables",
-                value: "Light Rhythm",
-                importance: 39,
-                example_value: "\"which side of the stamp to spit on\"",
-                values: ["Choppy", "Clunky", "Irregular", "Uneven", "Straightforward", "Light Rhythm", "Flowing", "Bouncy", "Lyrical", "Poetic", "Musical"]
-              },
-              {
-                name: "Sarcasm Intensity",
-                explanation: "The harshness or bite of the sarcastic tone",
-                value: "Moderate Sarcasm",
-                importance: 73,
-                example_value: "\"people couldn't figure out which side of the stamp to spit on\"",
-                values: ["Sincere", "Light", "Playful", "Dry", "Wry", "Moderate Sarcasm", "Cutting", "Bitter", "Scornful", "Cruel", "Venomous"]
-              },
-              {
-                name: "Professional Stereotype Use",
-                explanation: "How much the joke depends on professional clichés or generalizations",
-                value: "Relies on Tropes",
-                importance: 77,
-                example_value: "\"lawyers\" as untrustworthy stereotype",
-                values: ["Original", "Personalized", "Nuanced", "Balanced", "Neutral", "Relies on Tropes", "Recognizable", "Overused", "Cartoonish", "Exaggerated", "Exaggerated"]
-              },
-              {
-                name: "Nostalgic Tone",
-                explanation: "Level of old-fashioned or retro feeling in the humor",
-                value: "Mildly Retro",
-                importance: 44,
-                example_value: "\"postal service stamps\"",
-                values: ["Modern", "Contemporary", "Timeless", "Subtle Retro", "Implied Past", "Mildly Retro", "Old-Timey", "Vintage", "WWII Era", "Depression Era", "Victorian"]
-              }
-            ]
-          }
-                 }
-         // Add more examples here as needed
-         // 
-         // Example format:
-         // {
-         //   id: "unique-example-id",
-         //   title: "Example Title",
-         //   description: "Brief description of what this example demonstrates",
-         //   category: "Category Name",
-         //   selectedDimension: "Dimension Name to Select",
-         //   dimensions: {
-         //     latent_dimensions: [
-         //       {
-         //         name: "Dimension Name",
-         //         explanation: "What this dimension represents",
-         //         value: "Current Value",
-         //         importance: 85,
-         //         example_value: "Example from the analyzed content",
-         //         values: ["Value1", "Value2", "Value3", "Value4", "Value5", "Current Value", "Value7", "Value8", "Value9", "Value10", "Value11"]
-         //       }
-         //       // ... more dimensions
-         //     ]
-         //   }
-         // }
-       ];
-
-      // --- SAMPLE DATA ---
       let sample = {
-        latent_dimensions: [
-          {
-            name: "Brand Modernity",
-            explanation:
-              "Indicates how contemporary and forward-looking the brand presentation feels",
-            value: "Futuristic Minimal",
-            importance: 92,
-            example_value: "M 80 410 C 80 360, 160 360, 160 410",
-            values: [
-              "Outdated",
-              "Conventional",
-              "Early 2000s",
-              "Flat Minimal",
-              "Modern",
-              "Futuristic Minimal",
-              "Tech-Focused",
-              "Avant-Garde",
-              "Experimental",
-              "Post-Modern",
-              "Visionary Abstract",
-            ],
-          },
-          {
-            name: "Content Formality",
-            explanation:
-              "The degree of professionalism in language and visual tone",
-            value: "Professional",
-            importance: 85,
-            example_value:
-              '"CISO Briefing: 2025 Exposure & Vulnerability Management"',
-            values: [
-              "Casual",
-              "Conversational",
-              "Friendly",
-              "Semi-Formal",
-              "Neutral",
-              "Professional",
-              "Executive",
-              "Corporate",
-              "Legalistic",
-              "Bureaucratic",
-              "Academic",
-            ],
-          },
-          {
-            name: "Visual Hierarchy",
-            explanation:
-              "Controls how distinctly different elements stand out in the layout",
-            value: "Balanced Contrast",
-            importance: 78,
-            example_value: "M 30 420 C 30 370, 130 370, 130 420",
-            values: [
-              "Flat",
-              "Subtle",
-              "Low Contrast",
-              "Soft Gradient",
-              "Mild Emphasis",
-              "Balanced Contrast",
-              "Strong Emphasis",
-              "Layered Focus",
-              "Punchy",
-              "Overpowering",
-              "Chaotic",
-            ],
-          },
-          {
-            name: "Color Temperature",
-            explanation:
-              "Refers to the warmth or coolness of the color palette",
-            value: "Cool Neutral",
-            importance: 70,
-            example_value: "M 90 400 C 90 370, 170 370, 170 400",
-            values: [
-              "Cold Gray",
-              "Icy Blue",
-              "Muted Cool",
-              "Cool Pastel",
-              "Neutral",
-              "Cool Neutral",
-              "Soft Warm",
-              "Gentle Peach",
-              "Vibrant Warm",
-              "Sunset Tones",
-              "Hot Red-Orange",
-            ],
-          },
-          {
-            name: "Grid Rigidity",
-            explanation:
-              "How strictly content follows a defined column/row layout",
-            value: "Structured Flexibility",
-            importance: 76,
-            example_value: "M 60 390 C 60 350, 160 350, 160 390",
-            values: [
-              "Fluid",
-              "Free-Form",
-              "Implied Grid",
-              "Loose Layout",
-              "Light Grid",
-              "Structured Flexibility",
-              "Strict Columns",
-              "Boxed Layout",
-              "Fixed Matrix",
-              "Modular Lock",
-              "Rigid Blueprint",
-            ],
-          },
-          {
-            name: "Typography Authority",
-            explanation:
-              "Measures the assertiveness and presence of text styling",
-            value: "Bold Clear",
-            importance: 88,
-            example_value: '"Innovating for a Smarter Future"',
-            values: [
-              "Soft Rounded",
-              "Playful Sans",
-              "Humanist",
-              "Neutral Serif",
-              "Readable Sans",
-              "Bold Clear",
-              "High-Impact",
-              "Condensed Bold",
-              "Geometric",
-              "Branded Slab",
-              "Techno-Aggressive",
-            ],
-          },
-          {
-            name: "Interface Depth",
-            explanation:
-              "Indicates the level of perceived dimensionality and layering",
-            value: "Shallow Layered",
-            importance: 67,
-            example_value: "M 55 395 C 55 355, 135 355, 135 395",
-            values: [
-              "Flat",
-              "Bare",
-              "Monolayer",
-              "Shaded Only",
-              "Subtle Inset",
-              "Shallow Layered",
-              "Material-like",
-              "Glassmorphic",
-              "Deep Focus",
-              "3D Interface",
-              "Tactile Illusion",
-            ],
-          },
-          {
-            name: "Text Density",
-            explanation: "The amount of textual content per visual unit",
-            value: "Medium",
-            importance: 64,
-            example_value:
-              '"OpenCredo Joins the Trifork Brand, Marking a New Chapter in the UK"',
-            values: [
-              "Sparse",
-              "Low",
-              "Short Tags",
-              "Compact",
-              "Concise",
-              "Medium",
-              "Detailed",
-              "Dense",
-              "Heavy",
-              "Wall of Text",
-              "Overloaded",
-            ],
-          },
-          {
-            name: "Call-to-Action Visibility",
-            explanation:
-              "How clearly and prominently CTAs like 'Contact' appear",
-            value: "Distinct Button",
-            importance: 90,
-            example_value: '"CONTACT" (orange pill-shaped button)',
-            values: [
-              "Hidden",
-              "Text Link",
-              "Underlined",
-              "Hover-Only",
-              "Faint Button",
-              "Distinct Button",
-              "Primary Action",
-              "Multi-Level CTA",
-              "Popup Overlay",
-              "Sticky Floating",
-              "Aggressive Prompt",
-            ],
-          },
-          {
-            name: "Image-Text Integration",
-            explanation: "How text is overlaid or combined with imagery",
-            value: "Dark Overlay",
-            importance: 74,
-            example_value: "M 45 415 C 45 365, 145 365, 145 415",
-            values: [
-              "Separate Blocks",
-              "Caption Below",
-              "Caption Above",
-              "Side-by-Side",
-              "Semi-Transparent",
-              "Dark Overlay",
-              "Hard Overlay",
-              "Full Bleed Overlay",
-              "Text Masked",
-              "Blended Text",
-              "In-Image Embed",
-            ],
-          },
-          {
-            name: "Navigation Clarity",
-            explanation:
-              "Ease with which users can interpret and use top navigation",
-            value: "Horizontal Simple",
-            importance: 80,
-            example_value: '"What We Offer", "Our Work", etc.',
-            values: [
-              "Hidden",
-              "Minimal Icons",
-              "Dropdown Only",
-              "Off-canvas",
-              "Sticky Scroll",
-              "Horizontal Simple",
-              "Tabbed Horizontal",
-              "Breadcrumb",
-              "Mega Menu",
-              "Fixed + Hover",
-              "Context-Aware",
-            ],
-          },
-          {
-            name: "Visual Saturation",
-            explanation: "Color richness and intensity of the visuals",
-            value: "Subdued Rich",
-            importance: 72,
-            example_value: "M 40 405 C 40 365, 140 365, 140 405",
-            values: [
-              "Monochrome",
-              "Washed Out",
-              "Muted",
-              "Soft Tint",
-              "Neutral Rich",
-              "Subdued Rich",
-              "Full Color",
-              "Vivid",
-              "Over-Saturated",
-              "Pop Art",
-              "Neon Glow",
-            ],
-          },
-          {
-            name: "Semantic Framing",
-            explanation:
-              "How concepts are framed through language (e.g., tech, future, support)",
-            value: "Strategic Innovation",
-            importance: 91,
-            example_value:
-              '"AI Assist – Boost your customer service with AI superpowers"',
-            values: [
-              "Casual Help",
-              "Basic Info",
-              "Customer Support",
-              "Problem Solving",
-              "Performance",
-              "Strategic Innovation",
-              "Disruption",
-              "Vision-Driven",
-              "Philosophical",
-              "Existential",
-              "Post-Human",
-            ],
-          },
-          {
-            name: "Human Presence",
-            explanation: "How much of the visual content includes people",
-            value: "Balanced",
-            importance: 68,
-            example_value: "Photo of team at table + Charmaine Carmichael",
-            values: [
-              "None",
-              "Silhouettes",
-              "Icons Only",
-              "Hands",
-              "One Person",
-              "Balanced",
-              "Small Group",
-              "Crowd",
-              "Zoomed Faces",
-              "Person-Centered",
-              "Full Portrait Mode",
-            ],
-          },
-          {
-            name: "Device Affinity",
-            explanation:
-              "How clearly the layout caters to multi-device (mobile/tablet/desktop)",
-            value: "Responsive Aesthetic",
-            importance: 69,
-            example_value: "Modular, spaced card layout",
-            values: [
-              "Desktop Only",
-              "Tablet Centered",
-              "Mobile-First",
-              "Adaptive Blocks",
-              "Flexible Grid",
-              "Responsive Aesthetic",
-              "Dynamic Layouts",
-              "Breakpoints-Aware",
-              "Device-Mimic UI",
-              "Gesture-Based",
-              "Context-Aware AI UI",
-            ],
-          },
-          {
-            name: "Narrative Direction",
-            explanation:
-              "Whether the layout implies a storytelling or informational intent",
-            value: "Structured Insight",
-            importance: 83,
-            example_value:
-              '"Trifork Secures Landmark Project to Transform Oman\'s Healthcare System"',
-            values: [
-              "Randomized",
-              "Scattered News",
-              "Mixed Headlines",
-              "Topical Tags",
-              "Grouped Content",
-              "Structured Insight",
-              "Chronological",
-              "Step-Based",
-              "Story Arc",
-              "Narrated Flow",
-              "Immersive Journey",
-            ],
-          },
-          {
-            name: "Language Density",
-            explanation: "Amount and complexity of words per section",
-            value: "Concise Strategic",
-            importance: 66,
-            example_value:
-              '"CISO Briefing: 2025 Exposure & Vulnerability Management"',
-            values: [
-              "Minimal",
-              "Keyword Only",
-              "Basic Tags",
-              "Short Title",
-              "Precise Label",
-              "Concise Strategic",
-              "Explained",
-              "Multi-Clause",
-              "Paragraph",
-              "White Paper Style",
-              "Dense Report",
-            ],
-          },
-          {
-            name: "Illustration Usage",
-            explanation:
-              "Balance between photography and illustrative elements",
-            value: "Photo-Centric",
-            importance: 63,
-            example_value: "Multiple image cards with people or books",
-            values: [
-              "None",
-              "Icons",
-              "Line Art",
-              "Mixed Media",
-              "Muted Photos",
-              "Photo-Centric",
-              "Enhanced Visuals",
-              "3D Illustration",
-              "Cinematic",
-              "AI-Rendered",
-              "Augmented",
-            ],
-          },
-          {
-            name: "Brand Confidence",
-            explanation:
-              "How assertively the brand places itself visually and textually",
-            value: "Assertive Professional",
-            importance: 86,
-            example_value: '"Trifork" top-left logo in bold + strong headlines',
-            values: [
-              "Anonymous",
-              "Quiet",
-              "Supportive",
-              "Partner-Oriented",
-              "Stable",
-              "Assertive Professional",
-              "Dominant",
-              "Flagship",
-              "Global Leader",
-              "Thought Commander",
-              "Iconic Titan",
-            ],
-          },
-          {
-            name: "Interaction Cueing",
-            explanation: "Level of visual guidance for interactive elements",
-            value: "Soft Prompting",
-            importance: 71,
-            example_value: "Rounded 'Contact' button with hover style",
-            values: [
-              "Hidden",
-              "Unclear",
-              "Flat Text",
-              "Clickable Box",
-              "Outlined Button",
-              "Soft Prompting",
-              "Hover Animations",
-              "Microinteractions",
-              "Contextual Tips",
-              "Motion-Enhanced",
-              "Voice + Gesture",
-            ],
-          },
-        ],
+        latent_dimensions: []
       };
-      // --- END UPDATED SAMPLE DATA ---
-
-      // --- UPDATED LLM PROMPT TEXT ---
-      const llmPromptTemplate = `From the given input, generate a JSON object with the key "latent_dimensions" containing exactly 20 latent space parameters.
-
-Each parameter must include:
-
-* **"name"**:
-  A descriptive name for the latent feature.
-
-* **"explanation"**:
-  A short explanation of what this latent feature controls or represents.
-
-* **"value"**:
-  A meaningful **category value** (string) selected as the **middle** (6th) element of the "values" array.
-
-* **"importance"**:
-  An integer between **1 and 100** representing how important this parameter is for the output.
-
-* **"example_value"**:
-  One example of how this latent feature is expressed depending on the input type:
-
-  * For **images**: Use an **SVG path fragment** (e.g., \`"M 50 400 C 50 350, 150 350, 150 400"\`) or any **visual reference**.
-  * For **text**: Provide a **quoted phrase** or short excerpt (e.g., \`"mad dog"\`).
-
-* **"values"**:
-  An array of exactly **11 relevant category values** (strings), ordered from **least to most expressed**.
-  The \`"value"\` must be the **6th item** in this array (index \`5\`), representing the **neutral/mid expression**.
-
-Return the result as a JSON object under the key "latent_dimensions".
-
-#### ✅ Example Format
-
-\`\`\`json
-{
-  "latent_dimensions": [
-    {
-      "name": "Emotional Tone",
-      "explanation": "Represents the dominant emotional tone conveyed in the subject's expression",
-      "value": "Neutral",
-      "importance": 87,
-      "example_value": "\"A calm and thoughtful gaze\"",
-      "values": [
-        "Flat", "Muted", "Slightly Sad", "Melancholic", "Neutral", "Balanced", "Uplifted", "Joyful", "Playful", "Radiant", "Euphoric"
-      ]
-    },
-    // ... 19 more entries matching this structure ...
-  ]
-}
-\`\`\``;
-      // --- END UPDATED LLM PROMPT TEXT ---
-
-      // --- EVENT LISTENERS ---
-      /**
-       * Sets up all event listeners for the application
-       */
-      function setupEventListeners() {
-        llmPromptOutput.value = llmPromptTemplate;
-
-        document
-          .getElementById("copyLLMPromptBtn")
-          .addEventListener("click", () => {
-            navigator.clipboard.writeText(llmPromptTemplate).then(() => {
-              toast("GenAI prompt copied!");
-            });
-          });
-
-        document
-          .getElementById("copyFinalBtn")
-          .addEventListener("click", () =>
-            copyToClipboard(finalPromptOutput, "Text/JSON prompt copied!")
-          );
-
-        document
-          .getElementById("copyGridBtn")
-          .addEventListener("click", () =>
-            copyToClipboard(gridPromptOutput, "Grid Text/JSON prompt copied!")
-          );
-
-        document
-          .getElementById("copyTextVariationsBtn")
-          .addEventListener("click", () =>
-            copyToClipboard(
-              textVariationsPromptOutput,
-              "Text Variations prompt copied!"
-            )
-          );
-
-        document
-          .getElementById("copyBtn")
-          .addEventListener("click", () =>
-            copyToClipboard(promptOutput, "Text prompt copied!")
-          );
-
-        document.getElementById("loadBtn").addEventListener("click", loadJSON);
-
-        // Set up share button event listeners with delegation since one is inside netsi-new
-        document.addEventListener("click", (e) => {
-          if (
-            e.target &&
-            (e.target.id === "shareBtn" || e.target.id === "shareBtn-main")
-          ) {
-            shareStyle();
-          }
-        });
-      }
+      let examples = [];
 
       /**
-       * Generates and copies a shareable URL to clipboard
+       * Updates all prompt outputs with current dimension data
+       * @param {Array<Object>} dimensions - Array of dimension objects
        */
-      function shareStyle() {
-        try {
-          const shareUrl = generateShareUrl();
-
-          // Check URL length and provide alternative sharing method
-          if (shareUrl.length > 2000) {
-            // Create sharing instructions and JSON data
-            const sharingInstructions = `🔗 Latent Dimension Prompt Builder - Style Share
-
-I'm sharing a style configuration with you! Here's how to use it:
-
-1. Visit: ${window.location.origin}${window.location.pathname}
-2. Go to the "Adjust Dimensions" tab
-3. Paste the JSON data below into the textarea
-4. Click "Load JSON ↺" to apply the style
-
-JSON Data:
-${JSON.stringify(sample, null, 2)}
-
-Sorry about the long URL - future versions of LDPB will fix this! 😊
-
----
-Shared with Latent Dimension Prompt Builder`;
-
-            // Copy instructions to clipboard
-            navigator.clipboard
-              .writeText(sharingInstructions)
-              .then(() => {
-                toast("📋 Sharing instructions copied! Share via email or chat. Future versions will fix long URLs! 😊");
-              })
-              .catch(() => {
-                // Fallback for older browsers
-                const tempInput = document.createElement("textarea");
-                tempInput.value = sharingInstructions;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand("copy");
-                document.body.removeChild(tempInput);
-                toast("📋 Sharing instructions copied! Share via email or chat. Future versions will fix long URLs! 😊");
-              });
-            return;
-          }
-
-          // Copy to clipboard using modern API
-          navigator.clipboard
-            .writeText(shareUrl)
-            .then(() => {
-              toast("🔗 Share URL copied to clipboard!");
-            })
-            .catch(() => {
-              // Fallback for older browsers
-              const tempInput = document.createElement("input");
-              tempInput.value = shareUrl;
-              document.body.appendChild(tempInput);
-              tempInput.select();
-              document.execCommand("copy");
-              document.body.removeChild(tempInput);
-              toast("🔗 Share URL copied to clipboard!");
-            });
-        } catch (error) {
-          console.error("Error generating share URL:", error);
-          toast("❌ Error generating share URL");
+      function updateAllPrompts(dimensions) {
+        // Update text prompt
+        const textPrompt = dimensions.map(d => `${d.name}: ${d.value}`).join(', ');
+        promptOutput.value = textPrompt;
+        
+        // Update final prompt (text + JSON)
+        const finalPrompt = `Generate content with these characteristics:\n${textPrompt}\n\nJSON Configuration:\n${JSON.stringify({ latent_dimensions: dimensions }, null, 2)}`;
+        finalPromptOutput.value = finalPrompt;
+        
+        // Update grid prompt if function exists
+        if (typeof generateGridPrompt === 'function') {
+          generateGridPrompt(dimensions);
+        }
+        
+        // Update text variations prompt if function exists
+        if (typeof generateTextVariationsPrompt === 'function') {
+          generateTextVariationsPrompt(dimensions);
         }
       }
 
       /**
-       * Loads and validates JSON input from the textarea
-       * @throws {Error} When JSON is invalid or missing required structure
-       */
-      function loadJSON() {
-        try {
-          const data = JSON.parse(jsonInput.value);
-
-          if (!validateDimensionData(data)) {
-            throw new Error(
-              "Invalid dimension data structure. Please check the format."
-            );
-          }
-
-          // Additional validation warnings
-          data.latent_dimensions.forEach((dim, index) => {
-            if (
-              !dim.name ||
-              !dim.explanation ||
-              dim.value === undefined ||
-              dim.importance === undefined ||
-              dim.example_value === undefined ||
-              !Array.isArray(dim.values) ||
-              dim.values.length !== 11
-            ) {
-              console.warn(`Dimension ${index} seems malformed:`, dim);
-            }
-          });
-
-          sample = data;
-          buildSliders(sample.latent_dimensions);
-
-          
-
-          toast("✅ JSON loaded successfully!");
-        } catch (err) {
-          console.error("JSON loading error:", err);
-          toast(`❌ Invalid JSON: ${err.message}`);
-        }
-      }
-
-      // --- SLIDER BUILDING ---
-      /**
-       * Builds interactive sliders for all dimensions
+       * Builds slider controls for dimension adjustment
        * @param {Array<Object>} dimensions - Array of dimension objects
        */
       function buildSliders(dimensions) {
         sliderContainer.innerHTML = "";
-        dimensions.forEach((dim, index) => {
-          validateDimension(dim);
-          const currentValueIndex = getCurrentValueIndex(dim);
-          const wrapper = createSliderWrapper(
-            dim,
-            currentValueIndex,
-            index,
-            dimensions
-          );
-          sliderContainer.appendChild(wrapper);
+        
+        dimensions.forEach((dimension, index) => {
+          const sliderDiv = document.createElement("div");
+          sliderDiv.className = "bg-white p-4 rounded-lg shadow-sm border border-gray-200";
+          
+          const currentValueIndex = dimension.values.indexOf(dimension.value);
+          const sliderValue = currentValueIndex !== -1 ? currentValueIndex : 5;
+          
+          sliderDiv.innerHTML = `
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-sm font-medium text-gray-700">${dimension.name}</label>
+              <span class="text-xs text-gray-500">${dimension.importance}/100</span>
+            </div>
+            <input 
+              type="range" 
+              min="0" 
+              max="10" 
+              value="${sliderValue}" 
+              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+              data-dimension="${dimension.name}"
+              data-index="${index}"
+            >
+            <div class="flex justify-between text-xs text-gray-500 mt-1">
+              <span>${dimension.values[0]}</span>
+              <span>${dimension.values[5]}</span>
+              <span>${dimension.values[10]}</span>
+            </div>
+            <div class="mt-2">
+              <label class="text-xs text-gray-600">Current: ${dimension.value}</label>
+            </div>
+            <div class="mt-1">
+              <label class="text-xs text-gray-500">${dimension.explanation}</label>
+            </div>
+          `;
+          
+          const slider = sliderDiv.querySelector('input[type="range"]');
+          slider.addEventListener('input', function() {
+            const newValueIndex = parseInt(this.value);
+            const newValue = dimension.values[newValueIndex];
+            dimension.value = newValue;
+            
+            // Update the display
+            const currentLabel = sliderDiv.querySelector('label:last-of-type');
+            currentLabel.textContent = `Current: ${newValue}`;
+            
+            // Update all prompts
+            updateAllPrompts(dimensions);
+          });
+          
+          sliderContainer.appendChild(sliderDiv);
         });
-        updateAllPrompts(dimensions);
       }
 
       /**
-       * Validates and fixes a dimension object if it has invalid values
-       * @param {Object} dim - Dimension object to validate
-       * @param {string} dim.name - Dimension name
-       * @param {Array<string>} dim.values - Array of dimension values (should be length 11)
-       * @param {string} dim.value - Current dimension value
+       * Populates the examples tab with example cards
        */
-      function validateDimension(dim) {
-        if (!Array.isArray(dim.values) || dim.values.length !== 11) {
-          console.error(
-            `Dimension "${dim.name}" does not have a valid 11-element "values" array.`
-          );
-          dim.values = [
-            "Val-0",
-            "Val-1",
-            "Val-2",
-            "Val-3",
-            "Val-4",
-            "Default",
-            "Val-6",
-            "Val-7",
-            "Val-8",
-            "Val-9",
-            "Val-10",
-          ];
-          dim.value = dim.values[5];
-        }
-      }
+      function populateExamplesTab() {
+        const container = document.getElementById("examplesContainer");
+        if (!container) return;
 
-      /**
-       * Gets the current value index for a dimension
-       * @param {Object} dim - Dimension object
-       * @param {string} dim.value - Current dimension value
-       * @param {Array<string>} dim.values - Array of possible values
-       * @param {string} dim.name - Dimension name (for logging)
-       * @returns {number} Index of current value in values array
-       */
-      function getCurrentValueIndex(dim) {
-        let currentValueIndex = dim.values.indexOf(dim.value);
-        if (currentValueIndex === -1) {
-          console.warn(
-            `Current value "${dim.value}" for "${dim.name}" not found in its values array. Resetting to middle.`
-          );
-          currentValueIndex = 5;
-          dim.value = dim.values[currentValueIndex];
-        }
-        return currentValueIndex;
-      }
+        container.innerHTML = "";
 
-      /**
-       * Creates a complete slider wrapper with label, explanation, and input
-       * @param {Object} dim - Dimension object
-       * @param {number} currentValueIndex - Current value index in values array
-       * @param {number} index - Index of this dimension in the dimensions array
-       * @param {Array<Object>} dimensions - Complete array of dimensions
-       * @returns {HTMLElement} Complete slider wrapper element
-       */
-      function createSliderWrapper(dim, currentValueIndex, index, dimensions) {
-        const wrapper = document.createElement("div");
-        wrapper.className = "flex flex-col space-y-1";
+        examples.forEach((example) => {
+          const card = document.createElement("div");
+          card.className = "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
 
-        const label = createSliderLabel(dim);
-        const range = createSliderInput(
-          dim,
-          currentValueIndex,
-          wrapper,
-          dimensions
-        );
-        const explanation = createSliderExplanation(dim, index, dimensions);
+          card.innerHTML = `
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-semibold text-gray-800">${example.title}</h3>
+              <span class="px-2 py-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full">${example.category}</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">${example.description}</p>
+            <button class="w-full bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition-colors text-sm font-medium">
+              Load Example
+            </button>
+          `;
 
-        wrapper.appendChild(label);
-        wrapper.appendChild(explanation);
-        wrapper.appendChild(range);
-
-        return wrapper;
-      }
-
-      /**
-       * Creates a label element for a slider
-       * @param {Object} dim - Dimension object
-       * @param {string} dim.name - Dimension name
-       * @param {string} dim.value - Current dimension value
-       * @returns {HTMLElement} Label element
-       */
-      function createSliderLabel(dim) {
-        const label = document.createElement("label");
-        label.className =
-          "text-sm font-medium text-gray-700 flex items-baseline";
-        label.innerHTML = `${dim.name.replaceAll(
-          "_",
-          " "
-        )}<span class="ml-2 text-gray-500" data-for="${dim.name}">${
-          dim.value
-        }</span>`;
-        return label;
-      }
-
-      /**
-       * Creates a range input element for a slider
-       * @param {Object} dim - Dimension object
-       * @param {number} currentValueIndex - Current value index
-       * @param {HTMLElement} wrapper - Wrapper element containing the slider
-       * @param {Array<Object>} dimensions - Complete array of dimensions
-       * @returns {HTMLElement} Range input element
-       */
-      function createSliderInput(dim, currentValueIndex, wrapper, dimensions) {
-        const range = document.createElement("input");
-        range.type = "range";
-        range.min = 0;
-        range.max = 10;
-        range.step = 1;
-        range.value = currentValueIndex;
-        range.className = "w-full h-2 accent-teal-600 cursor-pointer";
-
-        range.addEventListener("input", (e) => {
-          const newIndex = parseInt(e.target.value);
-          dim.value = dim.values[newIndex];
-          wrapper.querySelector(`[data-for='${dim.name}']`).textContent =
-            dim.value;
-          updateAllPrompts(dimensions);
-        });
-
-        return range;
-      }
-
-      /**
-       * Creates explanation text with radio button for dimension selection
-      
-       * @param {Object} dim - Dimension object
-       * @param {number} index - Index of this dimension
-       * @param {Array<Object>} dimensions - Complete array of dimensions
-       * @returns {HTMLElement} Explanation element with radio button
-       */
-      function createSliderExplanation(dim, index, dimensions) {
-        const explanation = document.createElement("div");
-        explanation.className =
-          "text-sm font-medium text-gray-700 flex flex items-center";
-        explanation.innerHTML = `<input type="radio" name="variation" class="mr-2" value="${
-          dim.name
-        }" ${index === 0 ? "checked" : ""} /><small>${dim.explanation}</small>`;
-
-        explanation
-          .querySelector('input[type="radio"]')
-          .addEventListener("change", () => {
-            generateGridPrompt(dimensions);
-            generateTextVariationsPrompt(dimensions);
+          // Add click event
+          card.addEventListener("click", () => {
+            loadExample(example);
           });
 
-        return explanation;
-      }
-
-      /**
-       * Updates all generated prompts when dimensions change
-       * @param {Array<Object>} dimensions - Array of dimension objects
-       */
-      function updateAllPrompts(dimensions) {
-        generatePrompt(dimensions);
-        generateGridPrompt(dimensions);
-        generateTextVariationsPrompt(dimensions);
-
-
-      }
-
-      // --- PROMPT GENERATION ---
-      /**
-       * Generates a 3x3 grid prompt for image variations based on selected dimension
-       * @param {Array<Object>} dimensions - Array of all dimension objects
-       */
-      function generateGridPrompt(dimensions) {
-        const ele = document.querySelector(
-          '[name="variation"][type="radio"]:checked'
-        );
-        // Default to the first dimension if none is selected
-        const propertyName = ele ? ele.value : dimensions[0].name;
-        const escapedName = escapeMarkdown(propertyName);
-
-        const varyingParam = dimensions.find((d) => d.name === propertyName);
-        const fixedParams = dimensions.filter((d) => d.name !== propertyName);
-
-        // Define the indices for the 3x3 grid (0-8)
-        const gridIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-        const gridValues = gridIndices.map((index) => {
-          // Get the actual string value from the varying dimension's values array
-          return varyingParam &&
-            varyingParam.values &&
-            varyingParam.values[index] !== undefined
-            ? `"${varyingParam.values[index]}"`
-            : `"Value at Index ${index}"`; // Fallback if something is wrong
+          container.appendChild(card);
         });
-
-        // Format the grid values for the prompt text with clear row structure
-        const gridValueText = `* Top row: ${gridValues[0]}, ${gridValues[1]}, ${gridValues[2]}  
-* Middle row: ${gridValues[3]}, ${gridValues[4]}, ${gridValues[5]}  
-* Bottom row: ${gridValues[6]}, ${gridValues[7]}, ${gridValues[8]}`;
-
-        // Create simplified JSON objects with only essential fields
-        const simplifiedVaryingParam = varyingParam
-          ? {
-              name: varyingParam.name,
-              explanation: varyingParam.explanation,
-              value: varyingParam.value,
-              importance: varyingParam.importance,
-            }
-          : null;
-
-        const simplifiedFixedParams = fixedParams.map((param) => ({
-          name: param.name,
-          explanation: param.explanation,
-          value: param.value,
-          importance: param.importance,
-        }));
-
-        const prompt = `Generate a 3 x 3 grid of image variations for the image in context. Vary only the **"${escapedName}"** latent dimension across the 9 images. Use the following category values for **"${escapedName}"**, applied row-wise (index in the "values" array):
-
-${gridValueText}
-
-**Layout instructions:**
-- The result must be a strict **3 column by 3 row** grid.
-- All images must be **equally sized and evenly spaced** in the grid.
-- Each image must include a **visible label** in the **bottom-right corner** indicating the current "${escapedName}" value. Example:  
-  \`${escapedName}: ${gridValues[4]}\`
-- Below the 3x3 grid, place a **centered white-background label** with the title:  
-  **"${escapedName} variations"**
-
-**Do not** include any other captions, decorations, framing, or visual elements besides what is explicitly stated.
-
-Include the full JSON for the varying parameter and the fixed parameters for reference:
-
-\`\`\`json
-${JSON.stringify(simplifiedVaryingParam, null, 2)}
-\`\`\`
-
-\`\`\`json
-${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
-\`\`\``;
-
-        gridPromptOutput.value = prompt;
       }
-      // --- END MODIFIED generateGridPrompt FUNCTION ---
 
-      // --- NEW generateTextVariationsPrompt FUNCTION ---
-      /**
-       * Generates a text variations prompt using all 11 values from selected dimension
-       * @param {Array<Object>} dimensions - Array of all dimension objects
-       */
-      function generateTextVariationsPrompt(dimensions) {
-        const ele = document.querySelector(
-          '[name="variation"][type="radio"]:checked'
-        );
-        // Default to the first dimension if none is selected
-        const propertyName = ele ? ele.value : dimensions[0].name;
-        const escapedName = escapeMarkdown(propertyName);
-
-        const varyingParam = dimensions.find((d) => d.name === propertyName);
-        const fixedParams = dimensions.filter((d) => d.name !== propertyName);
-
-        // Use all 11 values for the text variations
-        const textValues =
-          varyingParam && varyingParam.values
-            ? varyingParam.values.map((val) => `"${val}"`).join(", ")
-            : '"Value 0", "Value 1", "Value 2", "Value 3", "Value 4", "Value 5", "Value 6", "Value 7", "Value 8", "Value 9", "Value 10"';
-
-        // Create simplified JSON objects with only essential fields
-        const simplifiedVaryingParam = varyingParam
-          ? {
-              name: varyingParam.name,
-              explanation: varyingParam.explanation,
-              value: varyingParam.value,
-              importance: varyingParam.importance,
-            }
-          : null;
-
-        const simplifiedFixedParams = fixedParams.map((param) => ({
-          name: param.name,
-          explanation: param.explanation,
-          value: param.value,
-          importance: param.importance,
-        }));
-
-        const prompt = `
-Generate a markdown table titled:
-
-**${escapedName} variations**
-
-Vary only the **"${escapedName}"** latent dimension across the context. Use the following category values for **${escapedName}**:
-
-\`\`\`
-${textValues}
-\`\`\`
-
-All other latent parameters must remain constant.
-
-The markdown table must contain **two columns**:
-
-* **${escapedName}** – listing the current category for each row
-* **Value** – a variation of the phrase from the context, rewritten to match the tone and aesthetic of the respective **${escapedName}** value.
-
-After the table, insert this markdown section:
-
-**Based on this context:**
-
-> [Insert the original phrase/text from context here]
-
-Do **not** include any JSON, images, or extra content. The style of the rewritten values must feel natural and match the ${escapedName.toLowerCase()} dimension.
-
-Include the full JSON for the varying parameter and the fixed parameters for reference:
-\`\`\`json
-${JSON.stringify(simplifiedVaryingParam, null, 2)}
-\`\`\`
-
-\`\`\`json
-${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
-\`\`\`
-`.trim();
-        textVariationsPromptOutput.value = prompt;
-      }
-      // --- END NEW generateTextVariationsPrompt FUNCTION ---
-
-      // --- MODIFIED generatePrompt FUNCTION (for tabs 3 & 4) ---
-      /**
-       * Generates general prompts for tabs 3 & 4 (Text prompt and Text/JSON prompt)
-       * @param {Array<Object>} dimensions - Array of all dimension objects
-       */
-      function generatePrompt(dimensions) {
-        const jsonOut = {
-          instruction:
-            "If context is an image (or you are prompted to generate one). Use the following latent space parameters to control the style, tone, and feel of the generated output. These parameters must influence the generation but must not be included, explained, or referred to in the output. Assume these values were crafted specifically for this context, do not reply with other that the image. If context is a text, use the parameters to generate a new version of the text using the parameters as influence to the generation. Do not reply with anything other that the text",
-          latent_control: dimensions.map((d) => ({
-            name: d.name.toLowerCase(),
-            explanation: `${d.explanation}`,
-            // Use the string value here
-            value: d.value,
-            // Note: The 'values' array is NOT included in this output JSON,
-            // only the selected 'value' string.
-          })),
-        };
-
-        // Update the simple text prompt to use the string value
-        promptOutput.value = `Rendered using ${dimensions
-          .map(
-            (d) =>
-              `a ${d.name.toLowerCase().replaceAll("_", " ")} of "${d.value}"`
-          )
-          .join(", ")
-          .replace(/, ([^,]*)$/, " and $1")}.`;
-
-        // Update the final prompt JSON output (assuming the target system accepts this JSON structure)
-        finalPromptOutput.value =
-          `Follow these instructions taking into account the current context, so use these instructions to generate : ` +
-          JSON.stringify(jsonOut, null, 2);
-      }
-      // --- END MODIFIED generatePrompt FUNCTION ---
-
-      // --- INITIALIZATION ---
-      /**
-       * Loads an example configuration
-       * @param {Object} example - The example to load
-       */
       function loadExample(example) {
         try {
-          // Update the sample data
+          // Opdater sample data
           sample = example.dimensions;
-          
-          // Update the JSON input
+
+          // Opdater JSON input
           jsonInput.value = JSON.stringify(sample, null, 2);
-          
-          // Rebuild sliders
+
+          // Genopbyg sliders
           buildSliders(sample.latent_dimensions);
-          
-          // Set selected dimension if specified
+
+          // Sæt valgt dimension hvis angivet
           if (example.selectedDimension) {
             setTimeout(() => {
-              const radioButton = document.querySelector(`input[name="variation"][value="${example.selectedDimension}"]`);
+              const radioButton = document.querySelector(
+                `input[name="variation"][value="${example.selectedDimension}"]`
+              );
               if (radioButton) {
                 radioButton.checked = true;
                 // Trigger change event to update prompts
-                radioButton.dispatchEvent(new Event('change'));
+                radioButton.dispatchEvent(new Event("change"));
               }
-            }, 100); // Small delay to ensure sliders are built
+            }, 100);
           }
-          
-          // Update all prompts
+
+          // Opdater alle prompts
           updateAllPrompts(sample.latent_dimensions);
-          
-          // Switch to Adjust Dimensions tab
+
+          // Skift til Adjust Dimensions tab
           const adjustTab = document.querySelector('netsi-tab[name="tab2"]');
           if (adjustTab) {
             adjustTab.activate();
           }
-          
+
           toast(`✅ Loaded "${example.title}" example!`);
         } catch (error) {
           console.error("Error loading example:", error);
@@ -2873,184 +1877,34 @@ ${JSON.stringify({ latent_dimensions: simplifiedFixedParams }, null, 2)}
         }
       }
 
-      /**
-       * Creates an example card element
-       * @param {Object} example - The example data
-       * @returns {HTMLElement} The example card element
-       */
-      function createExampleCard(example) {
-        const card = document.createElement("div");
-        card.className = "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
-        
-        card.innerHTML = `
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-lg font-semibold text-gray-800">${example.title}</h3>
-            <span class="px-2 py-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full">${example.category}</span>
-          </div>
-          <p class="text-gray-600 text-sm mb-3">${example.description}</p>
-          <button class="w-full bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition-colors text-sm font-medium">
-            Load Example
-          </button>
-        `;
-        
-        // Add click event
-        card.addEventListener("click", () => {
-          loadExample(example);
-        });
-        
-        return card;
-      }
-
-      /**
-       * Loads and displays all examples
-       */
-      function loadExamples() {
-        const container = document.getElementById("examplesContainer");
-        if (!container) return;
-        
-        container.innerHTML = "";
-        
-        examples.forEach(example => {
-          const card = createExampleCard(example);
-          container.appendChild(card);
-        });
-      }
-
-      /**
-       * Initializes the application by setting up event listeners and loading initial data
-       */
-      function initialize() {
-        setupEventListeners();
-        setupTabEventListeners();
-
-        // Use default sample data
-        jsonInput.value = JSON.stringify(sample, null, 2);
-
-        buildSliders(sample.latent_dimensions);
-
-        // Load examples
-        loadExamples();
-
-        // Select the first radio button initially
-        document.addEventListener("DOMContentLoaded", () => {
-          const firstRadio = document.querySelector(
-            '#sliderContainer input[type="radio"]'
-          );
-          if (firstRadio) {
-            firstRadio.checked = true;
-            updateAllPrompts(sample.latent_dimensions);
+      // Load examples from dimensions.json file
+      async function loadExamplesFromFile() {
+        try {
+          const response = await fetch('examples/dimensions.json');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
           }
-        });
+          const data = await response.json();
+          examples = data;
+          
+          // Load the first example on startup
+          if (examples.length > 0) {
+            loadExample(examples[0]);
+          }
+          
+          // Populate examples tab
+          populateExamplesTab();
+        } catch (error) {
+          console.error('Error loading examples:', error);
+          // Fallback to hardcoded examples if file loading fails
+          examples = [];
+        }
       }
 
-      /**
-       * Sets up tab-specific event listeners for demonstration
-       */
-      function setupTabEventListeners() {
-        // Example: Listen for tab selection events
-        document.addEventListener("tab-selecting", (e) => {
-          console.log(
-            "Tab selecting:",
-            e.detail.tab.textContent,
-            "Content ID:",
-            e.detail.contentId
-          );
+      // Load examples on page load
+      document.addEventListener('DOMContentLoaded', loadExamplesFromFile);
 
-          // Example: Prevent switching to a specific tab under certain conditions
-          // if (e.detail.contentId === 'tab2' && someCondition) {
-          //     e.preventDefault();
-          //     toast('Cannot switch to this tab right now');
-          // }
-        });
-
-        document.addEventListener("tab-selected", (e) => {
-          console.log("Tab selected:", e.detail.tab.textContent);
-        });
-
-        document.addEventListener("tab-deselecting", (e) => {
-          console.log("Tab deselecting:", e.detail.tab.textContent);
-
-          // Example: Prevent leaving a tab if there are unsaved changes
-          // if (hasUnsavedChanges()) {
-          //     e.preventDefault();
-          //     if (!confirm('You have unsaved changes. Are you sure you want to leave?')) {
-          //         return;
-          //     }
-          //     // Force the deactivation if user confirms
-          //     e.detail.tab.deactivate({ force: true });
-          // }
-        });
-
-        document.addEventListener("tab-deselected", (e) => {
-          console.log("Tab deselected:", e.detail.tab.textContent);
-        });
-
-        // Example: Listen for content visibility events
-        document.addEventListener("content-shown", (e) => {
-          console.log("Content shown:", e.detail.contentId);
-        });
-
-        document.addEventListener("content-hidden", (e) => {
-          console.log("Content hidden:", e.detail.contentId);
-        });
-      }
-
-      /**
-       * Example function demonstrating the NetsiTab API
-       * Call this from the browser console to test the API
-       */
-      function demonstrateTabAPI() {
-        console.log("=== NetsiTab API Demonstration ===");
-
-        // Get current tab
-        const currentTab = NetsiTab.getCurrentTab();
-        console.log("Current tab:", currentTab?.textContent);
-
-        // Set loading state
-        console.log("Setting tab1 to loading...");
-        NetsiTab.setLoading("tab1", true);
-
-        setTimeout(() => {
-          console.log("Removing loading state from tab1");
-          NetsiTab.setLoading("tab1", false);
-        }, 3000);
-
-        // Create and add a new tab
-        const newTab = new NetsiTab("Dynamic Tab", "dynamic-content");
-        const newContent = new NetsiTabContent(
-          "<h2>This is dynamic content!</h2><p>Added via JavaScript API</p>"
-        );
-        newContent.id = "dynamic-content";
-
-        // Insert the content before adding the tab
-        document.querySelector("main").appendChild(newContent);
-
-        // Add tab after the current tab
-        NetsiTab.add(newTab, currentTab);
-        console.log("Added new dynamic tab");
-
-        // Activate the new tab after a delay
-        setTimeout(() => {
-          console.log("Activating dynamic tab...");
-          newTab.activate();
-        }, 1000);
-
-        // Remove the tab after 10 seconds
-        setTimeout(() => {
-          console.log("Removing dynamic tab...");
-          newTab.remove();
-        }, 10000);
-      }
-
-      // Add a script to set data-tab-height on each netsi-tab based on its offsetHeight
-      window.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('netsi-tab').forEach(tab => {
-          tab.setAttribute('data-tab-height', tab.offsetHeight);
-        });
-      });
-
-      // Start the app
-      initialize();
+      // ... existing code ...
     </script>
   </body>
 </html>

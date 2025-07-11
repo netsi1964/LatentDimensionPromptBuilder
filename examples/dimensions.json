@@ -1,0 +1,1234 @@
+[
+  {
+    "id": "image-style",
+    "title": "Dimensions of Image Style",
+    "description": "Analysed from a random smartphone image taken in Denmark.",
+    "category": "Photography",
+    "selectedDimension": "Scene Realism",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Color Temperature",
+          "explanation": "Controls the warmth or coolness of the image tones",
+          "value": "Balanced",
+          "importance": 90,
+          "example_value": "#87CEEB sky with moderate green vegetation",
+          "values": [
+            "Cold",
+            "Cool",
+            "Subtle Cool",
+            "Slightly Cool",
+            "Neutral Cool",
+            "Balanced",
+            "Slightly Warm",
+            "Warm",
+            "Golden",
+            "Amber",
+            "Hot"
+          ]
+        },
+        {
+          "name": "Contrast Level",
+          "explanation": "Degree of tonal separation between light and dark areas",
+          "value": "Natural",
+          "importance": 86,
+          "example_value": "Clear shadow from the man on pebbles, yet details visible",
+          "values": [
+            "Flat",
+            "Low",
+            "Soft",
+            "Muted",
+            "Subdued",
+            "Natural",
+            "Crisp",
+            "Defined",
+            "High",
+            "Sharp",
+            "Extreme"
+          ]
+        },
+        {
+          "name": "Scene Realism",
+          "explanation": "Degree to which the image mimics real-world lighting and texture",
+          "value": "Photorealistic",
+          "importance": 95,
+          "example_value": "Shoreline textures and foliage appear true-to-life",
+          "values": [
+            "Stylized",
+            "Painterly",
+            "Artistic",
+            "Semi-Realistic",
+            "Neutral Realism",
+            "Photorealistic",
+            "Detailed Realism",
+            "Hyperreal",
+            "Enhanced Realism",
+            "Surreal Realism",
+            "Ultra-Defined"
+          ]
+        },
+        {
+          "name": "Framing Balance",
+          "explanation": "Symmetry and weight distribution in the composition",
+          "value": "Visually Balanced",
+          "importance": 78,
+          "example_value": "Coastline guiding eye diagonally, figure offset to the right",
+          "values": [
+            "Chaotic",
+            "Disjointed",
+            "Loose",
+            "Unstructured",
+            "Neutral",
+            "Visually Balanced",
+            "Structured",
+            "Harmonious",
+            "Architectonic",
+            "Geometric",
+            "Perfectly Symmetrical"
+          ]
+        },
+        {
+          "name": "Light Source Clarity",
+          "explanation": "How defined and directional the light source appears",
+          "value": "Moderately Clear",
+          "importance": 74,
+          "example_value": "Sunlight casting gentle, soft-edged shadows",
+          "values": [
+            "Diffuse",
+            "Overcast",
+            "Soft",
+            "Subtle",
+            "Implied",
+            "Moderately Clear",
+            "Clear",
+            "Direct",
+            "Harsh",
+            "Theatrical",
+            "Blinding"
+          ]
+        },
+        {
+          "name": "Grain Texture",
+          "explanation": "The visibility and strength of image texture or photographic grain",
+          "value": "Natural Film Texture",
+          "importance": 65,
+          "example_value": "Subtle grain visible in beach stones and cliff face",
+          "values": [
+            "Smooth",
+            "Digital Clean",
+            "Minimal Grain",
+            "Soft Grain",
+            "Matte",
+            "Natural Film Texture",
+            "Defined Grain",
+            "Strong Grain",
+            "Coarse",
+            "Rough",
+            "Noisy"
+          ]
+        },
+        {
+          "name": "Color Saturation",
+          "explanation": "Intensity of the colors used in the image",
+          "value": "Medium Saturation",
+          "importance": 82,
+          "example_value": "Lush greens, deep blue sea, but not oversaturated",
+          "values": [
+            "Desaturated",
+            "Faded",
+            "Muted",
+            "Soft",
+            "Neutral",
+            "Medium Saturation",
+            "Lively",
+            "Vibrant",
+            "Bold",
+            "Intense",
+            "Oversaturated"
+          ]
+        },
+        {
+          "name": "Depth Perception",
+          "explanation": "The sense of distance and spatial layering in the image",
+          "value": "Moderately Deep",
+          "importance": 88,
+          "example_value": "Foreground pebbles and distant sea line clearly separated",
+          "values": [
+            "Flat",
+            "Minimal",
+            "Shallow",
+            "Layered",
+            "Slight Depth",
+            "Moderately Deep",
+            "Deep",
+            "Expanded",
+            "Vast",
+            "Dramatic Depth",
+            "Cinematic"
+          ]
+        },
+        {
+          "name": "Movement Suggestion",
+          "explanation": "How much implied motion is present in the image",
+          "value": "Mild Motion",
+          "importance": 54,
+          "example_value": "Gentle waves, walking posture of man",
+          "values": [
+            "Still",
+            "Frozen",
+            "Minimal",
+            "Implied",
+            "Static",
+            "Mild Motion",
+            "Noticeable Motion",
+            "Flowing",
+            "Dynamic",
+            "Sweeping",
+            "Kinetic"
+          ]
+        },
+        {
+          "name": "Nature Dominance",
+          "explanation": "How much of the image is occupied by natural elements",
+          "value": "High Nature Presence",
+          "importance": 85,
+          "example_value": "Sea, cliffs, and vegetation make up majority of frame",
+          "values": [
+            "None",
+            "Sparse",
+            "Low",
+            "Fragmented",
+            "Balanced",
+            "High Nature Presence",
+            "Dominant",
+            "Overwhelming",
+            "Engulfing",
+            "Pure Wilderness",
+            "Mythic Naturalism"
+          ]
+        },
+        {
+          "name": "Human Presence Subtlety",
+          "explanation": "How prominent or intrusive the human figure appears",
+          "value": "Low Emphasis",
+          "importance": 68,
+          "example_value": "Single person placed low and off to the side",
+          "values": [
+            "None",
+            "Barely Visible",
+            "Blended",
+            "Minor",
+            "Secondary",
+            "Low Emphasis",
+            "Equal Focus",
+            "Moderate Presence",
+            "Dominant",
+            "Central",
+            "Overbearing"
+          ]
+        },
+        {
+          "name": "Horizon Line Prominence",
+          "explanation": "Visibility and compositional dominance of the horizon",
+          "value": "Gently Defined",
+          "importance": 61,
+          "example_value": "Soft line where sky meets sea in top third of image",
+          "values": [
+            "Hidden",
+            "Soft",
+            "Blended",
+            "Implied",
+            "Subtle",
+            "Gently Defined",
+            "Clear",
+            "Prominent",
+            "Framing",
+            "Dividing",
+            "Overpowering"
+          ]
+        },
+        {
+          "name": "Ambient Light Mood",
+          "explanation": "Overall feeling of lighting across the scene",
+          "value": "Open and Relaxed",
+          "importance": 80,
+          "example_value": "Bright daylight with soft contrast",
+          "values": [
+            "Dark",
+            "Somber",
+            "Cloudy",
+            "Flat",
+            "Neutral",
+            "Open and Relaxed",
+            "Uplifting",
+            "Sunny",
+            "Joyful",
+            "Radiant",
+            "Overexposed"
+          ]
+        },
+        {
+          "name": "Visual Simplicity",
+          "explanation": "How minimal or cluttered the visual composition appears",
+          "value": "Balanced Simplicity",
+          "importance": 76,
+          "example_value": "Clean lines, few objects, no visual noise",
+          "values": [
+            "Chaotic",
+            "Busy",
+            "Layered",
+            "Textured",
+            "Neutral",
+            "Balanced Simplicity",
+            "Clear",
+            "Minimalist",
+            "Sparse",
+            "Bare",
+            "Zen-like"
+          ]
+        },
+        {
+          "name": "Detail Sharpness",
+          "explanation": "Crispness and definition of image details",
+          "value": "Moderate Sharpness",
+          "importance": 84,
+          "example_value": "Edges of rocks and cliff vegetation clearly visible",
+          "values": [
+            "Blurry",
+            "Soft",
+            "Matte",
+            "Low Sharpness",
+            "Natural",
+            "Moderate Sharpness",
+            "Crisp",
+            "High Definition",
+            "Hyperclear",
+            "Sharpened",
+            "Overprocessed"
+          ]
+        },
+        {
+          "name": "Foreground Emphasis",
+          "explanation": "How much visual weight is given to the closest part of the image",
+          "value": "Mildly Anchored",
+          "importance": 67,
+          "example_value": "Rocks and man provide anchoring without dominating",
+          "values": [
+            "None",
+            "Distant",
+            "Background-Focused",
+            "Minimal",
+            "Balanced",
+            "Mildly Anchored",
+            "Anchored",
+            "Dominant Foreground",
+            "Strong Anchor",
+            "Foreground-Heavy",
+            "Crushing Foreground"
+          ]
+        },
+        {
+          "name": "Color Palette Harmony",
+          "explanation": "How well the colors blend and complement each other",
+          "value": "Natural Harmony",
+          "importance": 73,
+          "example_value": "Earthy browns, greens, and cool blue sea tones",
+          "values": [
+            "Discordant",
+            "Contrasty",
+            "Vivid Clashes",
+            "Bold Mix",
+            "Neutral",
+            "Natural Harmony",
+            "Complementary",
+            "Pastel Flow",
+            "Color-Themed",
+            "Monochrome",
+            "Perfectly Blended"
+          ]
+        },
+        {
+          "name": "Line Flow",
+          "explanation": "How the visual lines guide the viewer's eye",
+          "value": "Curved Natural Path",
+          "importance": 70,
+          "example_value": "Curved coastline draws eye from figure to horizon",
+          "values": [
+            "Chaotic",
+            "Broken",
+            "Erratic",
+            "Unfocused",
+            "Neutral",
+            "Curved Natural Path",
+            "Rhythmic",
+            "Guided",
+            "Strong Flow",
+            "Cinematic Sweep",
+            "Perfect Spiral"
+          ]
+        },
+        {
+          "name": "Narrative Suggestion",
+          "explanation": "How much the image implies a story or human experience",
+          "value": "Light Narrative",
+          "importance": 75,
+          "example_value": "Elderly man walking with poles along coastal path",
+          "values": [
+            "None",
+            "Minimal",
+            "Abstract",
+            "Unclear",
+            "Neutral",
+            "Light Narrative",
+            "Personal",
+            "Implied Backstory",
+            "Strong Story",
+            "Dramatic Scene",
+            "Mythic"
+          ]
+        },
+        {
+          "name": "Temporal Atmosphere",
+          "explanation": "Time of day and temporal mood (pastoral, timeless, fleeting)",
+          "value": "Present-Moment",
+          "importance": 69,
+          "example_value": "Midday sun with no nostalgic or futuristic cues",
+          "values": [
+            "Timeless",
+            "Dreamlike",
+            "Distant Past",
+            "Soft Glow",
+            "Neutral Time",
+            "Present-Moment",
+            "Passing",
+            "Ephemeral",
+            "Golden Hour",
+            "Imminent Change",
+            "Frozen Time"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "john-cleese-humor",
+    "title": "John Cleese Style Humor",
+    "description": "Analyzed from John Cleese's comedy style, focusing on cynicism and punchline ambiguity. Perfect for creating witty, slightly cynical humor.",
+    "category": "Comedy",
+    "selectedDimension": "Sarcasm Intensity",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Cynicism Level",
+          "explanation": "Indicates how skeptical or distrustful the humor is toward institutions or professions",
+          "value": "Mildly Cynical",
+          "importance": 91,
+          "example_value": "people couldn't figure out which side of the stamp to spit on",
+          "values": [
+            "Naive",
+            "Idealistic",
+            "Trusting",
+            "Sincere",
+            "Dry",
+            "Mildly Cynical",
+            "Cynical",
+            "Jaded",
+            "Mocking",
+            "Acerbic",
+            "Bitter"
+          ]
+        },
+        {
+          "name": "Punchline Ambiguity",
+          "explanation": "How much the joke relies on indirectness or misdirection",
+          "value": "Moderately Twisted",
+          "importance": 84,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Literal",
+            "Direct",
+            "Obvious",
+            "Simple",
+            "Subtle",
+            "Moderately Twisted",
+            "Surprising",
+            "Layered",
+            "Cryptic",
+            "Obscure",
+            "Absurd"
+          ]
+        },
+        {
+          "name": "Authority Satire",
+          "explanation": "Degree of mockery or critique aimed at figures of authority or respect",
+          "value": "Sarcastic",
+          "importance": 88,
+          "example_value": "commemorative stamps commemorating lawyers",
+          "values": [
+            "Respectful",
+            "Earnest",
+            "Gentle",
+            "Playful",
+            "Ironic",
+            "Sarcastic",
+            "Cutting",
+            "Disrespectful",
+            "Ridiculing",
+            "Scathing",
+            "Defamatory"
+          ]
+        },
+        {
+          "name": "Formality of Language",
+          "explanation": "The level of structured, formal, or polished language used",
+          "value": "Conversational",
+          "importance": 62,
+          "example_value": "they had to withdraw them",
+          "values": [
+            "Academic",
+            "Stilted",
+            "Formal",
+            "Polished",
+            "Professional",
+            "Conversational",
+            "Colloquial",
+            "Casual",
+            "Slangy",
+            "Unfiltered",
+            "Crude"
+          ]
+        },
+        {
+          "name": "Historical Irony",
+          "explanation": "How much the humor draws on or twists established traditions or respected symbols",
+          "value": "Tradition-Undermining",
+          "importance": 74,
+          "example_value": "The U.S. Postal Service... commemorative stamps",
+          "values": [
+            "Reverent",
+            "Respectful",
+            "Cautious",
+            "Balanced",
+            "Neutral",
+            "Tradition-Undermining",
+            "Critical",
+            "Ironic",
+            "Darkly Ironic",
+            "Mock-Historic",
+            "Subversive"
+          ]
+        },
+        {
+          "name": "Delivery Sharpness",
+          "explanation": "The abruptness or smoothness of the punchline delivery",
+          "value": "Snappy",
+          "importance": 71,
+          "example_value": "spit on",
+          "values": [
+            "Rambling",
+            "Drawn-out",
+            "Gradual",
+            "Flowing",
+            "Smooth",
+            "Snappy",
+            "Abrupt",
+            "Jarring",
+            "Blunt",
+            "Sudden",
+            "Staccato"
+          ]
+        },
+        {
+          "name": "Absurdity Level",
+          "explanation": "The degree of irrationality or surrealism in the humor",
+          "value": "Mildly Absurd",
+          "importance": 70,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Realistic",
+            "Grounded",
+            "Believable",
+            "Commonplace",
+            "Dry",
+            "Mildly Absurd",
+            "Silly",
+            "Goofy",
+            "Ridiculous",
+            "Ludicrous",
+            "Surreal"
+          ]
+        },
+        {
+          "name": "Cultural Specificity",
+          "explanation": "How much the joke relies on a specific cultural context",
+          "value": "American-Focused",
+          "importance": 58,
+          "example_value": "The U.S. Postal Service",
+          "values": [
+            "Universal",
+            "Global",
+            "Generic Western",
+            "Modern",
+            "Subtle American",
+            "American-Focused",
+            "Deep Americana",
+            "Regional Dialect",
+            "Obscure Reference",
+            "In-Joke"
+          ]
+        },
+        {
+          "name": "Moral Edginess",
+          "explanation": "Degree to which the joke challenges ethical norms or sensitivities",
+          "value": "Borderline Tactless",
+          "importance": 69,
+          "example_value": "spit on and its implied disdain",
+          "values": [
+            "Wholesome",
+            "Polite",
+            "Safe",
+            "Acceptable",
+            "Crisp",
+            "Borderline Tactless",
+            "Provocative",
+            "Rude",
+            "Crass",
+            "Offensive",
+            "Shocking"
+          ]
+        },
+        {
+          "name": "Cleverness Quotient",
+          "explanation": "The level of intellectual play or wordplay in the joke",
+          "value": "Wittily Constructed",
+          "importance": 85,
+          "example_value": "couldn't figure out which side of the stamp to spit on as misdirection",
+          "values": [
+            "Dull",
+            "Literal",
+            "Plain",
+            "Simple",
+            "Slightly Clever",
+            "Wittily Constructed",
+            "Clever",
+            "Sharp",
+            "Ingenious",
+            "Brilliant",
+            "Genius"
+          ]
+        },
+        {
+          "name": "Nostalgic Tone",
+          "explanation": "Level of old-fashioned or retro feeling in the humor",
+          "value": "Mildly Retro",
+          "importance": 44,
+          "example_value": "postal service stamps",
+          "values": [
+            "Modern",
+            "Contemporary",
+            "Timeless",
+            "Subtle Retro",
+            "Implied Past",
+            "Mildly Retro",
+            "Old-Timey",
+            "Vintage",
+            "WWII Era",
+            "Depression Era",
+            "Victorian"
+          ]
+        },
+        {
+          "name": "Visual Imagination Trigger",
+          "explanation": "How easily the joke conjures a mental image",
+          "value": "Vividly Suggestive",
+          "importance": 66,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Abstract",
+            "Hard to Picture",
+            "Subtle",
+            "Mild",
+            "Recognizable",
+            "Vividly Suggestive",
+            "Detailed",
+            "Cinematic",
+            "Graphic",
+            "Extreme",
+            "Grotesque"
+          ]
+        },
+        {
+          "name": "Temporal Specificity",
+          "explanation": "How anchored the humor is to a specific time period",
+          "value": "Late 20th Century",
+          "importance": 49,
+          "example_value": "postal service stamps",
+          "values": [
+            "Timeless",
+            "Future-Oriented",
+            "Present-Day",
+            "2010s",
+            "2000s",
+            "Late 20th Century",
+            "Mid-Century",
+            "WWII Era",
+            "Depression Era",
+            "Victorian",
+            "Historic"
+          ]
+        },
+        {
+          "name": "Irony Density",
+          "explanation": "How much of the joke relies on irony",
+          "value": "High Irony",
+          "importance": 86,
+          "example_value": "commemorative stamps commemorating lawyers",
+          "values": [
+            "None",
+            "Low",
+            "Light",
+            "Implied",
+            "Moderate",
+            "High Irony",
+            "Explicit",
+            "Layered",
+            "Recursive",
+            "Meta-Ironic",
+            "Post-Ironic"
+          ]
+        },
+        {
+          "name": "Use of Wordplay",
+          "explanation": "Extent of puns, double meanings, or phonetic tricks",
+          "value": "Mild Wordplay",
+          "importance": 59,
+          "example_value": "spit on as both literal and symbolic",
+          "values": [
+            "None",
+            "Flat",
+            "Plain",
+            "Straight",
+            "Dry",
+            "Mild Wordplay",
+            "Double Meaning",
+            "Pun-Based",
+            "Phonetic Trick",
+            "Layered Pun",
+            "Meta-Wordplay"
+          ]
+        },
+        {
+          "name": "Social Commentary Depth",
+          "explanation": "Level of embedded social critique or observation",
+          "value": "Light Commentary",
+          "importance": 68,
+          "example_value": "lawyers as a target of mild satire",
+          "values": [
+            "None",
+            "Surface",
+            "Thin",
+            "Subtle",
+            "Implied",
+            "Light Commentary",
+            "Moderate",
+            "Direct",
+            "Heavy-Handed",
+            "Blunt",
+            "Preachy"
+          ]
+        },
+        {
+          "name": "Syllabic Rhythm",
+          "explanation": "How much the joke flows rhythmically in its syllables",
+          "value": "Light Rhythm",
+          "importance": 39,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Choppy",
+            "Clunky",
+            "Irregular",
+            "Uneven",
+            "Straightforward",
+            "Light Rhythm",
+            "Flowing",
+            "Bouncy",
+            "Lyrical",
+            "Poetic",
+            "Musical"
+          ]
+        },
+        {
+          "name": "Sarcasm Intensity",
+          "explanation": "The harshness or bite of the sarcastic tone",
+          "value": "Moderate Sarcasm",
+          "importance": 73,
+          "example_value": "people couldn't figure out which side of the stamp to spit on",
+          "values": [
+            "Sincere",
+            "Light",
+            "Playful",
+            "Dry",
+            "Wry",
+            "Moderate Sarcasm",
+            "Cutting",
+            "Bitter",
+            "Scornful",
+            "Cruel",
+            "Venomous"
+          ]
+        },
+        {
+          "name": "Professional Stereotype Use",
+          "explanation": "How much the joke depends on professional clichés or generalizations",
+          "value": "Relies on Tropes",
+          "importance": 77,
+          "example_value": "lawyers as untrustworthy stereotype",
+          "values": [
+            "Original",
+            "Personalized",
+            "Nuanced",
+            "Balanced",
+            "Neutral",
+            "Relies on Tropes",
+            "Recognizable",
+            "Overused",
+            "Cartoonish",
+            "Exaggerated",
+            "Exaggerated"
+          ]
+        },
+        {
+          "name": "Nostalgic Tone",
+          "explanation": "Level of old-fashioned or retro feeling in the humor",
+          "value": "Mildly Retro",
+          "importance": 44,
+          "example_value": "postal service stamps",
+          "values": [
+            "Modern",
+            "Contemporary",
+            "Timeless",
+            "Subtle Retro",
+            "Implied Past",
+            "Mildly Retro",
+            "Old-Timey",
+            "Vintage",
+            "WWII Era",
+            "Depression Era",
+            "Victorian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "website-design",
+    "title": "Website Design Dimensions",
+    "description": "Analyzed from a modern website design, focusing on visual hierarchy and user experience elements.",
+    "category": "Web Design",
+    "selectedDimension": "Visual Hierarchy",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Visual Hierarchy",
+          "explanation": "How clearly the design guides the user's attention through different elements",
+          "value": "Strong Hierarchy",
+          "importance": 92,
+          "example_value": "Clear heading structure with distinct font sizes and weights",
+          "values": [
+            "Flat",
+            "Minimal",
+            "Subtle",
+            "Balanced",
+            "Moderate",
+            "Strong Hierarchy",
+            "Emphasized",
+            "Bold",
+            "Dramatic",
+            "Overwhelming",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Color Scheme",
+          "explanation": "The overall color palette and how colors are used throughout the design",
+          "value": "Professional Blue",
+          "importance": 88,
+          "example_value": "Primary blue with white and gray accents",
+          "values": [
+            "Monochromatic",
+            "Neutral",
+            "Pastel",
+            "Earthy",
+            "Balanced",
+            "Professional Blue",
+            "Vibrant",
+            "Bold",
+            "Dark",
+            "High Contrast",
+            "Experimental"
+          ]
+        },
+        {
+          "name": "Typography Style",
+          "explanation": "The font choices and how text is presented",
+          "value": "Clean Sans-serif",
+          "importance": 85,
+          "example_value": "Modern sans-serif fonts with good readability",
+          "values": [
+            "Serif",
+            "Classic",
+            "Minimal",
+            "Readable",
+            "Balanced",
+            "Clean Sans-serif",
+            "Modern",
+            "Bold",
+            "Stylized",
+            "Decorative",
+            "Experimental"
+          ]
+        },
+        {
+          "name": "Layout Structure",
+          "explanation": "How content is organized and arranged on the page",
+          "value": "Grid-based",
+          "importance": 90,
+          "example_value": "Organized grid layout with clear sections",
+          "values": [
+            "Free-form",
+            "Minimal",
+            "Centered",
+            "Balanced",
+            "Structured",
+            "Grid-based",
+            "Organized",
+            "Complex",
+            "Layered",
+            "Dense",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "White Space Usage",
+          "explanation": "How empty space is used to create breathing room",
+          "value": "Generous",
+          "importance": 82,
+          "example_value": "Plenty of padding and margins around elements",
+          "values": [
+            "Minimal",
+            "Tight",
+            "Compact",
+            "Balanced",
+            "Comfortable",
+            "Generous",
+            "Spacious",
+            "Open",
+            "Airy",
+            "Sparse",
+            "Empty"
+          ]
+        },
+        {
+          "name": "Interactive Elements",
+          "explanation": "How buttons, links, and interactive components are designed",
+          "value": "Subtle Hover",
+          "importance": 78,
+          "example_value": "Gentle hover effects and smooth transitions",
+          "values": [
+            "Static",
+            "Minimal",
+            "Subtle",
+            "Functional",
+            "Balanced",
+            "Subtle Hover",
+            "Interactive",
+            "Dynamic",
+            "Animated",
+            "Flashy",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Content Density",
+          "explanation": "How much information is presented in a given space",
+          "value": "Moderate",
+          "importance": 75,
+          "example_value": "Good balance of content without feeling cluttered",
+          "values": [
+            "Sparse",
+            "Light",
+            "Comfortable",
+            "Balanced",
+            "Moderate",
+            "Informative",
+            "Dense",
+            "Compact",
+            "Crowded",
+            "Overwhelming",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Brand Presence",
+          "explanation": "How prominently the brand identity is displayed",
+          "value": "Professional",
+          "importance": 80,
+          "example_value": "Consistent branding with logo and color scheme",
+          "values": [
+            "Minimal",
+            "Subtle",
+            "Discrete",
+            "Balanced",
+            "Present",
+            "Professional",
+            "Prominent",
+            "Bold",
+            "Dominant",
+            "Overwhelming",
+            "Aggressive"
+          ]
+        },
+        {
+          "name": "Navigation Clarity",
+          "explanation": "How easy it is to find and use navigation elements",
+          "value": "Clear",
+          "importance": 87,
+          "example_value": "Obvious navigation menu with clear labels",
+          "values": [
+            "Hidden",
+            "Minimal",
+            "Subtle",
+            "Functional",
+            "Accessible",
+            "Clear",
+            "Obvious",
+            "Prominent",
+            "Bold",
+            "Dominant",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Mobile Responsiveness",
+          "explanation": "How well the design adapts to different screen sizes",
+          "value": "Responsive",
+          "importance": 85,
+          "example_value": "Design adapts smoothly to mobile and tablet screens",
+          "values": [
+            "Fixed",
+            "Basic",
+            "Adaptive",
+            "Flexible",
+            "Responsive",
+            "Mobile-first",
+            "Progressive",
+            "Advanced",
+            "Optimized",
+            "Perfect",
+            "Over-engineered"
+          ]
+        },
+        {
+          "name": "Loading Performance",
+          "explanation": "How quickly the design loads and becomes interactive",
+          "value": "Fast",
+          "importance": 83,
+          "example_value": "Quick loading times with smooth interactions",
+          "values": [
+            "Slow",
+            "Heavy",
+            "Moderate",
+            "Acceptable",
+            "Good",
+            "Fast",
+            "Optimized",
+            "Lightning",
+            "Instant",
+            "Pre-loaded",
+            "Over-optimized"
+          ]
+        },
+        {
+          "name": "Accessibility",
+          "explanation": "How well the design accommodates users with different abilities",
+          "value": "Good",
+          "importance": 76,
+          "example_value": "Proper contrast ratios and keyboard navigation",
+          "values": [
+            "Poor",
+            "Basic",
+            "Minimal",
+            "Acceptable",
+            "Standard",
+            "Good",
+            "Comprehensive",
+            "Excellent",
+            "Inclusive",
+            "Perfect",
+            "Over-engineered"
+          ]
+        },
+        {
+          "name": "Content Readability",
+          "explanation": "How easy it is to read and understand the content",
+          "value": "High",
+          "importance": 89,
+          "example_value": "Clear typography with good contrast and spacing",
+          "values": [
+            "Poor",
+            "Difficult",
+            "Challenging",
+            "Acceptable",
+            "Readable",
+            "High",
+            "Excellent",
+            "Optimal",
+            "Perfect",
+            "Enhanced",
+            "Over-enhanced"
+          ]
+        },
+        {
+          "name": "Visual Consistency",
+          "explanation": "How uniform the design elements are throughout",
+          "value": "Consistent",
+          "importance": 84,
+          "example_value": "Uniform styling across all pages and components",
+          "values": [
+            "Inconsistent",
+            "Varied",
+            "Mixed",
+            "Acceptable",
+            "Balanced",
+            "Consistent",
+            "Uniform",
+            "Cohesive",
+            "Harmonious",
+            "Perfect",
+            "Rigid"
+          ]
+        },
+        {
+          "name": "Call-to-Action Prominence",
+          "explanation": "How prominently action buttons and links are displayed",
+          "value": "Clear",
+          "importance": 81,
+          "example_value": "Obvious buttons with clear purpose and styling",
+          "values": [
+            "Hidden",
+            "Subtle",
+            "Discrete",
+            "Present",
+            "Visible",
+            "Clear",
+            "Prominent",
+            "Bold",
+            "Dominant",
+            "Aggressive",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Information Architecture",
+          "explanation": "How logically content is organized and structured",
+          "value": "Logical",
+          "importance": 86,
+          "example_value": "Clear content hierarchy with intuitive organization",
+          "values": [
+            "Chaotic",
+            "Confusing",
+            "Unclear",
+            "Acceptable",
+            "Functional",
+            "Logical",
+            "Clear",
+            "Intuitive",
+            "Excellent",
+            "Perfect",
+            "Over-organized"
+          ]
+        },
+        {
+          "name": "Visual Appeal",
+          "explanation": "Overall aesthetic attractiveness of the design",
+          "value": "Professional",
+          "importance": 88,
+          "example_value": "Clean, modern design with professional appearance",
+          "values": [
+            "Unattractive",
+            "Basic",
+            "Plain",
+            "Acceptable",
+            "Pleasant",
+            "Professional",
+            "Attractive",
+            "Beautiful",
+            "Stunning",
+            "Perfect",
+            "Over-designed"
+          ]
+        },
+        {
+          "name": "User Experience Flow",
+          "explanation": "How smoothly users can navigate and complete tasks",
+          "value": "Smooth",
+          "importance": 87,
+          "example_value": "Intuitive user journey with clear next steps",
+          "values": [
+            "Confusing",
+            "Difficult",
+            "Challenging",
+            "Acceptable",
+            "Functional",
+            "Smooth",
+            "Intuitive",
+            "Excellent",
+            "Seamless",
+            "Perfect",
+            "Over-simplified"
+          ]
+        },
+        {
+          "name": "Technical Sophistication",
+          "explanation": "Level of advanced technical features and capabilities",
+          "value": "Modern",
+          "importance": 79,
+          "example_value": "Contemporary web technologies with good performance",
+          "values": [
+            "Basic",
+            "Simple",
+            "Standard",
+            "Adequate",
+            "Good",
+            "Modern",
+            "Advanced",
+            "Sophisticated",
+            "Cutting-edge",
+            "Experimental",
+            "Over-engineered"
+          ]
+        },
+        {
+          "name": "Content Relevance",
+          "explanation": "How well the content matches user expectations and needs",
+          "value": "Highly Relevant",
+          "importance": 85,
+          "example_value": "Content directly addresses user needs and goals",
+          "values": [
+            "Irrelevant",
+            "Poor",
+            "Basic",
+            "Acceptable",
+            "Good",
+            "Highly Relevant",
+            "Excellent",
+            "Perfect",
+            "Targeted",
+            "Personalized",
+            "Over-personalized"
+          ]
+        }
+      ]
+    }
+  }
+]
