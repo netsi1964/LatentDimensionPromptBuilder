@@ -14,6 +14,16 @@ perceiving.
 This tool extracts these semantic fingerprints and lets you apply them
 creatively to other content.
 
+## Demo
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 24px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: center; border: none;">
+  <h3 style="color: white; font-size: 24px; margin: 0 0 12px 0; font-weight: 600;">🚀 Try the Live Demo</h3>
+  <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0 0 20px 0; line-height: 1.5;">Experience the power of semantic dimension extraction and style transfer</p>
+  <a href="https://netsi1964.github.io/LatentDimensionPromptBuilder/" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);" onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='translateY(0px)';">
+    ✨ Launch Latent Dimension Prompt Builder
+  </a>
+</div>
+
 ## 🎯 Key Features
 
 - **🧠 Semantic Analysis**: Extract the 20 most important latent dimensions from

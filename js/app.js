@@ -11,7 +11,9 @@ const promptOutput = document.getElementById("promptOutput");
 const llmPromptOutput = document.getElementById("llmPromptOutput");
 const finalPromptOutput = document.getElementById("finalPromptOutput");
 const gridPromptOutput = document.getElementById("gridPromptOutput");
-const textVariationsPromptOutput = document.getElementById("textVariationsPromptOutput");
+const textVariationsPromptOutput = document.getElementById(
+  "textVariationsPromptOutput",
+);
 
 // --- CORE FUNCTIONS ---
 
@@ -25,7 +27,10 @@ function updateAllPrompts(dimensions) {
   promptOutput.value = textPrompt;
 
   // Update final prompt (text + JSON)
-  const finalPrompt = `Generate content with these characteristics:\n${textPrompt}\n\nJSON Configuration:\n${JSON.stringify({ latent_dimensions: dimensions }, null, 2)}`;
+  const finalPrompt =
+    `Generate content with these characteristics:\n${textPrompt}\n\nJSON Configuration:\n${
+      JSON.stringify({ latent_dimensions: dimensions }, null, 2)
+    }`;
   finalPromptOutput.value = finalPrompt;
 
   // Update grid prompt if function exists
@@ -47,7 +52,8 @@ function generateGridPrompt(dimensions) {
   const selectedDimension = getSelectedDimension(dimensions);
 
   // Create grid with variations of the selected dimension
-  const gridPrompt = `Generate a grid of variations for "${selectedDimension.propertyName}" dimension:
+  const gridPrompt =
+    `Generate a grid of variations for "${selectedDimension.propertyName}" dimension:
 
 Base Configuration:
 ${dimensions.map((d) => `${d.name}: ${d.value}`).join(", ")}
@@ -66,22 +72,25 @@ Create 9 variations by adjusting "${selectedDimension.propertyName}" through its
 Each variation should maintain the other dimensions at their current values while only changing "${selectedDimension.propertyName}".
 
 JSON for each variation:
-${JSON.stringify(
-  {
-    base_config: dimensions.map((d) => ({
-      name: d.name,
-      value: d.value,
-    })),
-    variations: selectedDimension.varyingParam.values.map(
-      (value) => ({
-        [selectedDimension.propertyName]: value,
-        description: `Variation with ${selectedDimension.propertyName}: ${value}`,
-      }),
-    ),
-  },
-  null,
-  2,
-)}`;
+${
+      JSON.stringify(
+        {
+          base_config: dimensions.map((d) => ({
+            name: d.name,
+            value: d.value,
+          })),
+          variations: selectedDimension.varyingParam.values.map(
+            (value) => ({
+              [selectedDimension.propertyName]: value,
+              description:
+                `Variation with ${selectedDimension.propertyName}: ${value}`,
+            }),
+          ),
+        },
+        null,
+        2,
+      )
+    }`;
 
   gridPromptOutput.value = gridPrompt;
 }
@@ -94,9 +103,9 @@ function generateTextVariationsPrompt(dimensions) {
   const selectedDimension = getSelectedDimension(dimensions);
 
   // Create markdown table with all values from the selected dimension
-  const tableRows = selectedDimension.varyingParam.values.map(value => 
+  const tableRows = selectedDimension.varyingParam.values.map((value) =>
     `| ${value} | [Insert variation of the phrase that matches "${value}" tone here] |`
-  ).join('\n');
+  ).join("\n");
 
   const textVariationsPrompt = `Generate a markdown table titled:
 
@@ -104,7 +113,7 @@ function generateTextVariationsPrompt(dimensions) {
 
 Vary only the **"${selectedDimension.propertyName}"** latent dimension across the context. Use the following category values for **${selectedDimension.propertyName}**:
 
-${selectedDimension.varyingParam.values.map(value => `"${value}"`).join(", ")}
+${selectedDimension.varyingParam.values.map((value) => `"${value}"`).join(", ")}
 
 All other latent parameters must remain constant.
 
@@ -134,9 +143,11 @@ ${JSON.stringify(selectedDimension.varyingParam, null, 2)}
 \`\`\`json
 {
   "latent_dimensions": [
-${selectedDimension.fixedParams.map(param => 
-  `    ${JSON.stringify(param, null, 2).replace(/\n/g, '\n    ')}`
-).join(',\n')}
+${
+    selectedDimension.fixedParams.map((param) =>
+      `    ${JSON.stringify(param, null, 2).replace(/\n/g, "\n    ")}`
+    ).join(",\n")
+  }
   ]
 }
 \`\`\``;
@@ -153,7 +164,8 @@ function buildSliders(dimensions) {
 
   dimensions.forEach((dimension, index) => {
     const sliderDiv = document.createElement("div");
-    sliderDiv.className = "bg-white p-4 rounded-lg shadow-sm border border-gray-200 slider has-[input:checked]:outline";
+    sliderDiv.className =
+      "bg-white p-4 rounded-lg shadow-sm border border-gray-200 slider has-[input:checked]:outline";
 
     const currentValueIndex = dimension.values.indexOf(dimension.value);
     const sliderValue = currentValueIndex !== -1 ? currentValueIndex : 5;
@@ -246,9 +258,12 @@ function populateExamplesTab() {
   }
 
   examples.forEach((example, index) => {
-    console.log(`📋 Creating card for example ${index + 1}: "${example.title}"`);
+    console.log(
+      `📋 Creating card for example ${index + 1}: "${example.title}"`,
+    );
     const card = document.createElement("div");
-    card.className = "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
+    card.className =
+      "border border-gray-200 rounded-lg p-4 hover:border-teal-300 hover:shadow-md transition-all cursor-pointer bg-gray-50";
 
     card.innerHTML = `
       <div class="flex justify-between items-start mb-2">
@@ -269,7 +284,7 @@ function populateExamplesTab() {
 
     container.appendChild(card);
   });
-  
+
   console.log(`✅ Successfully populated ${examples.length} example cards`);
 }
 
@@ -291,7 +306,9 @@ function loadExample(example) {
     // Set selected dimension if specified
     if (example.selectedDimension) {
       setTimeout(() => {
-        const radioButton = document.querySelector(`input[name="variation"][value="${example.selectedDimension}"]`);
+        const radioButton = document.querySelector(
+          `input[name="variation"][value="${example.selectedDimension}"]`,
+        );
         if (radioButton) {
           radioButton.checked = true;
           // Trigger change event to update prompts
@@ -338,44 +355,83 @@ async function loadExamplesFromFile() {
     console.log(`✅ Loaded ${examples.length} examples from dimensions.json`);
   } catch (error) {
     console.error("Error loading examples:", error);
-    
+
     // Create fallback examples when file loading fails
     examples = [
       {
         id: "fallback-example",
         title: "Sample Configuration",
-        description: "A basic example to get you started. This loads when the examples file is unavailable.",
+        description:
+          "A basic example to get you started. This loads when the examples file is unavailable.",
         category: "Demo",
         selectedDimension: null,
         dimensions: {
           latent_dimensions: [
             {
               name: "Emotional Tone",
-              explanation: "Represents the dominant emotional tone conveyed in the subject's expression",
+              explanation:
+                "Represents the dominant emotional tone conveyed in the subject's expression",
               value: "Neutral",
               importance: 87,
-              example_value: "\"A calm and thoughtful gaze\"",
-              values: ["Flat", "Muted", "Slightly Sad", "Melancholic", "Subdued", "Neutral", "Balanced", "Uplifted", "Joyful", "Playful", "Radiant"]
+              example_value: '"A calm and thoughtful gaze"',
+              values: [
+                "Flat",
+                "Muted",
+                "Slightly Sad",
+                "Melancholic",
+                "Subdued",
+                "Neutral",
+                "Balanced",
+                "Uplifted",
+                "Joyful",
+                "Playful",
+                "Radiant",
+              ],
             },
             {
               name: "Visual Complexity",
-              explanation: "Controls the amount of detail and visual elements present",
+              explanation:
+                "Controls the amount of detail and visual elements present",
               value: "Moderate",
               importance: 75,
-              example_value: "\"Clean lines with subtle texture\"",
-              values: ["Minimal", "Sparse", "Simple", "Clean", "Balanced", "Moderate", "Detailed", "Rich", "Complex", "Intricate", "Overwhelming"]
+              example_value: '"Clean lines with subtle texture"',
+              values: [
+                "Minimal",
+                "Sparse",
+                "Simple",
+                "Clean",
+                "Balanced",
+                "Moderate",
+                "Detailed",
+                "Rich",
+                "Complex",
+                "Intricate",
+                "Overwhelming",
+              ],
             },
             {
               name: "Color Saturation",
               explanation: "Intensity and vibrancy of colors used",
               value: "Balanced",
               importance: 82,
-              example_value: "\"Soft pastels with selective accent colors\"",
-              values: ["Grayscale", "Desaturated", "Muted", "Soft", "Natural", "Balanced", "Vibrant", "Rich", "Intense", "Saturated", "Neon"]
-            }
-          ]
-        }
-      }
+              example_value: '"Soft pastels with selective accent colors"',
+              values: [
+                "Grayscale",
+                "Desaturated",
+                "Muted",
+                "Soft",
+                "Natural",
+                "Balanced",
+                "Vibrant",
+                "Rich",
+                "Intense",
+                "Saturated",
+                "Neon",
+              ],
+            },
+          ],
+        },
+      },
     ];
 
     // Load the fallback example
@@ -385,7 +441,7 @@ async function loadExamplesFromFile() {
 
     // Populate examples tab with fallback
     populateExamplesTab();
-    
+
     // Show user-friendly message
     toast("ℹ️ Using demo examples (dimensions.json not found)");
     console.log("✅ Loaded fallback examples");
@@ -396,13 +452,17 @@ async function loadExamplesFromFile() {
  * Shares the current style configuration
  */
 function shareCurrentStyle() {
-  if (!sample || !sample.latent_dimensions || sample.latent_dimensions.length === 0) {
+  if (
+    !sample || !sample.latent_dimensions ||
+    sample.latent_dimensions.length === 0
+  ) {
     toast("❌ No dimension data available to share");
     return;
   }
 
   // Get the currently selected dimension
-  const selectedDimension = document.querySelector('input[name="variation"]:checked')?.value || "";
+  const selectedDimension =
+    document.querySelector('input[name="variation"]:checked')?.value || "";
 
   // Create share content
   const shareContent = `Latent Dimension Prompt Builder - Style Configuration
@@ -525,7 +585,9 @@ function initializeModal() {
 function initializeModalForm() {
   const cancelBtn = document.querySelector("#cancelBtn");
   const form = document.querySelector("#prepareExampleForm");
-  const selectedDimensionChips = document.querySelector("#selectedDimensionChips");
+  const selectedDimensionChips = document.querySelector(
+    "#selectedDimensionChips",
+  );
 
   if (!cancelBtn || !form || !selectedDimensionChips) {
     console.error("Form elements not found");
@@ -541,10 +603,10 @@ function initializeModalForm() {
  */
 function setupModalForm(cancelBtn, form, selectedDimensionChips) {
   const modal = document.getElementById("prepareExampleModal");
-  
+
   // Populate selected dimension chips with current dimensions
   populateSelectedDimensionChips(selectedDimensionChips);
-  
+
   // Set default values
   setDefaultFormValues();
 
@@ -569,8 +631,13 @@ function setupModalForm(cancelBtn, form, selectedDimensionChips) {
     e.preventDefault();
 
     // Validate that we have current dimension data
-    if (!sample || !sample.latent_dimensions || sample.latent_dimensions.length === 0) {
-      toast("❌ No dimension data available. Please load some dimensions first.");
+    if (
+      !sample || !sample.latent_dimensions ||
+      sample.latent_dimensions.length === 0
+    ) {
+      toast(
+        "❌ No dimension data available. Please load some dimensions first.",
+      );
       return;
     }
 
@@ -580,19 +647,26 @@ function setupModalForm(cancelBtn, form, selectedDimensionChips) {
       title: document.querySelector("#exampleTitle").value.trim(),
       description: document.querySelector("#exampleDescription").value.trim(),
       category: document.querySelector("#exampleCategory").value,
-      selectedDimension: document.querySelector('.dimension-chip[data-selected="true"]')?.dataset.value || null,
+      selectedDimension:
+        document.querySelector('.dimension-chip[data-selected="true"]')?.dataset
+          .value || null,
       dimensions: sample,
     };
 
     // Validate required fields
-    if (!formData.id || !formData.title || !formData.description || !formData.category) {
+    if (
+      !formData.id || !formData.title || !formData.description ||
+      !formData.category
+    ) {
       toast("❌ Please fill in all required fields.");
       return;
     }
 
     // Validate ID format
     if (!/^[a-z0-9-]+$/.test(formData.id)) {
-      toast("❌ Example ID must contain only lowercase letters, numbers, and hyphens.");
+      toast(
+        "❌ Example ID must contain only lowercase letters, numbers, and hyphens.",
+      );
       return;
     }
 
@@ -601,7 +675,9 @@ function setupModalForm(cancelBtn, form, selectedDimensionChips) {
 
     // Copy to clipboard
     navigator.clipboard.writeText(exampleJson).then(() => {
-      toast("✅ Example JSON copied to clipboard! You can now paste it into dimensions.json");
+      toast(
+        "✅ Example JSON copied to clipboard! You can now paste it into dimensions.json",
+      );
       closeModal();
     }).catch(() => {
       // Fallback for older browsers
@@ -611,7 +687,9 @@ function setupModalForm(cancelBtn, form, selectedDimensionChips) {
       textArea.select();
       document.execCommand("copy");
       document.body.removeChild(textArea);
-      toast("✅ Example JSON copied to clipboard! You can now paste it into dimensions.json");
+      toast(
+        "✅ Example JSON copied to clipboard! You can now paste it into dimensions.json",
+      );
       closeModal();
     });
   });
@@ -627,7 +705,8 @@ function populateSelectedDimensionChips(chipsContainer) {
   chipsContainer.appendChild(noDimensionChip);
 
   // Get the currently selected dimension from the main interface
-  const currentlySelectedDimension = document.querySelector('input[name="variation"]:checked')?.value || "";
+  const currentlySelectedDimension =
+    document.querySelector('input[name="variation"]:checked')?.value || "";
 
   // Track if we found a selected dimension
   let foundSelected = false;
@@ -636,7 +715,8 @@ function populateSelectedDimensionChips(chipsContainer) {
     sample.latent_dimensions.forEach((dimension) => {
       const chip = document.createElement("button");
       chip.type = "button";
-      chip.className = "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer";
+      chip.className =
+        "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 transition-all cursor-pointer";
       chip.dataset.value = dimension.name;
       chip.dataset.selected = "false";
       chip.textContent = dimension.name;
@@ -650,7 +730,7 @@ function populateSelectedDimensionChips(chipsContainer) {
       // Add click event listener
       chip.addEventListener("click", () => {
         // Deselect all chips
-        chipsContainer.querySelectorAll('.dimension-chip').forEach(c => {
+        chipsContainer.querySelectorAll(".dimension-chip").forEach((c) => {
           c.dataset.selected = "false";
         });
         // Select this chip
@@ -671,7 +751,7 @@ function populateSelectedDimensionChips(chipsContainer) {
     }
     // Add click event listener
     noDimensionChip.addEventListener("click", () => {
-      chipsContainer.querySelectorAll('.dimension-chip').forEach(c => {
+      chipsContainer.querySelectorAll(".dimension-chip").forEach((c) => {
         c.dataset.selected = "false";
       });
       noDimensionChip.dataset.selected = "true";
@@ -687,16 +767,18 @@ function populateSelectedDimensionChips(chipsContainer) {
  * Update chip styles based on selected state
  */
 function updateChipStyles() {
-  const chips = document.querySelectorAll('.dimension-chip');
-  chips.forEach(chip => {
+  const chips = document.querySelectorAll(".dimension-chip");
+  chips.forEach((chip) => {
     const isSelected = chip.dataset.selected === "true";
-    
+
     if (isSelected) {
       // Selected state - teal background like examples
-      chip.className = "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-teal-500 bg-teal-100 text-teal-800 transition-all cursor-pointer";
+      chip.className =
+        "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-teal-500 bg-teal-100 text-teal-800 transition-all cursor-pointer";
     } else {
       // Normal state - gray border
-      chip.className = "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-gray-300 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50 transition-all cursor-pointer";
+      chip.className =
+        "chip dimension-chip px-3 py-1 text-sm font-medium rounded-full border-2 border-gray-300 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50 transition-all cursor-pointer";
     }
   });
 }
@@ -720,7 +802,8 @@ function setDefaultFormValues() {
     exampleTitleInput.value = "My Custom Style";
   }
   if (exampleDescriptionInput) {
-    exampleDescriptionInput.value = "A custom style configuration created with the Latent Dimension Prompt Builder.";
+    exampleDescriptionInput.value =
+      "A custom style configuration created with the Latent Dimension Prompt Builder.";
   }
   if (exampleCategoryInput) {
     exampleCategoryInput.value = "Custom";
@@ -758,11 +841,27 @@ function initializeApp() {
 
   // Initialize copy buttons
   const copyMap = [
-    { btn: "copyLLMPromptBtn", ta: "llmPromptOutput", msg: "✅ Copied LLM prompt!" },
+    {
+      btn: "copyLLMPromptBtn",
+      ta: "llmPromptOutput",
+      msg: "✅ Copied LLM prompt!",
+    },
     { btn: "copyBtn", ta: "promptOutput", msg: "✅ Copied text prompt!" },
-    { btn: "copyFinalBtn", ta: "finalPromptOutput", msg: "✅ Copied text/JSON prompt!" },
-    { btn: "copyGridBtn", ta: "gridPromptOutput", msg: "✅ Copied grid prompt!" },
-    { btn: "copyTextVariationsBtn", ta: "textVariationsPromptOutput", msg: "✅ Copied text variations prompt!" },
+    {
+      btn: "copyFinalBtn",
+      ta: "finalPromptOutput",
+      msg: "✅ Copied text/JSON prompt!",
+    },
+    {
+      btn: "copyGridBtn",
+      ta: "gridPromptOutput",
+      msg: "✅ Copied grid prompt!",
+    },
+    {
+      btn: "copyTextVariationsBtn",
+      ta: "textVariationsPromptOutput",
+      msg: "✅ Copied text variations prompt!",
+    },
   ];
 
   copyMap.forEach(({ btn, ta, msg }) => {
@@ -779,4 +878,4 @@ document.addEventListener("DOMContentLoaded", initializeApp);
 // Expose functions globally for web components
 window.sample = sample;
 window.generateGridPrompt = generateGridPrompt;
-window.generateTextVariationsPrompt = generateTextVariationsPrompt; 
+window.generateTextVariationsPrompt = generateTextVariationsPrompt;

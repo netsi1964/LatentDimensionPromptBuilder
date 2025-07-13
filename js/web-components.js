@@ -150,7 +150,7 @@ class NetsiTab extends HTMLElement {
       new CustomEvent("tab-selected", {
         bubbles: true,
         detail: { tab: this, contentId, targetContent },
-      })
+      }),
     );
 
     return true;
@@ -196,7 +196,7 @@ class NetsiTab extends HTMLElement {
       new CustomEvent("tab-deselected", {
         bubbles: true,
         detail: { tab: this, contentId: this.getContentId() },
-      })
+      }),
     );
 
     return true;
@@ -431,7 +431,7 @@ class NetsiTabContent extends HTMLElement {
         new CustomEvent(eventName, {
           bubbles: true,
           detail: { content: this, contentId: this.id },
-        })
+        }),
       );
     }
   }
@@ -517,12 +517,12 @@ class NetsiNew extends HTMLElement {
     const id = this.getAttribute("id");
     if (!id) {
       console.warn(
-        "netsi-new: Missing required id attribute. Badge will always show."
+        "netsi-new: Missing required id attribute. Badge will always show.",
       );
     } else {
       // Use a shared localStorage key for all dismissed badges
       const dismissed = JSON.parse(
-        localStorage.getItem("netsi-new-dismissed") || "[]"
+        localStorage.getItem("netsi-new-dismissed") || "[]",
       );
       if (dismissed.includes(id)) {
         this.remove();
@@ -546,7 +546,7 @@ class NetsiNew extends HTMLElement {
           badge: this,
           expires: this.getAttribute("expires"),
         },
-      })
+      }),
     );
   }
 
@@ -619,7 +619,7 @@ class NetsiNew extends HTMLElement {
           badge: this,
           expires: this.getAttribute("expires"),
         },
-      })
+      }),
     );
 
     // Animate out and remove
@@ -682,13 +682,13 @@ class NetsiNew extends HTMLElement {
     const id = this.getAttribute("id");
     if (id) {
       let dismissed = JSON.parse(
-        localStorage.getItem("netsi-new-dismissed") || "[]"
+        localStorage.getItem("netsi-new-dismissed") || "[]",
       );
       if (!dismissed.includes(id)) {
         dismissed.push(id);
         localStorage.setItem(
           "netsi-new-dismissed",
-          JSON.stringify(dismissed)
+          JSON.stringify(dismissed),
         );
       }
     }
@@ -722,8 +722,14 @@ class NetsiNew extends HTMLElement {
       this._badge.removeEventListener("touchstart", this.handleTouchStart);
     }
     if (this._speechBubble) {
-      this._speechBubble.removeEventListener("mouseenter", this.handleMouseEnter);
-      this._speechBubble.removeEventListener("mouseleave", this.handleMouseLeave);
+      this._speechBubble.removeEventListener(
+        "mouseenter",
+        this.handleMouseEnter,
+      );
+      this._speechBubble.removeEventListener(
+        "mouseleave",
+        this.handleMouseLeave,
+      );
     }
     document.removeEventListener("click", this.handleDocumentClick);
   }
@@ -803,7 +809,7 @@ class NetsiNew extends HTMLElement {
           badge: this,
           content: this._speechBubble.innerHTML,
         },
-      })
+      }),
     );
   }
 
@@ -822,7 +828,7 @@ class NetsiNew extends HTMLElement {
       new CustomEvent("tooltip-hidden", {
         bubbles: true,
         detail: { badge: this },
-      })
+      }),
     );
   }
 
@@ -887,7 +893,7 @@ class NetsiNew extends HTMLElement {
       new CustomEvent("badge-shown", {
         bubbles: true,
         detail: { badge: this, manual: true },
-      })
+      }),
     );
   }
 
@@ -903,7 +909,7 @@ class NetsiNew extends HTMLElement {
       new CustomEvent("badge-hidden", {
         bubbles: true,
         detail: { badge: this, manual: true },
-      })
+      }),
     );
   }
 
@@ -991,8 +997,8 @@ class NetsiModal extends HTMLElement {
         <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           <div class="flex justify-between items-center p-6 border-b border-gray-200">
             <h2 class="text-xl font-bold text-gray-800">${
-              this.getAttribute("title") || "Modal"
-            }</h2>
+      this.getAttribute("title") || "Modal"
+    }</h2>
             <button class="text-gray-400 hover:text-gray-600 text-2xl font-bold" aria-label="Close modal">&times;</button>
           </div>
           <div class="p-6">
@@ -1040,7 +1046,7 @@ class NetsiModal extends HTMLElement {
       new CustomEvent("modal-shown", {
         bubbles: true,
         detail: { modal: this },
-      })
+      }),
     );
   }
 
@@ -1054,7 +1060,7 @@ class NetsiModal extends HTMLElement {
       new CustomEvent("modal-hidden", {
         bubbles: true,
         detail: { modal: this },
-      })
+      }),
     );
   }
 
@@ -1078,4 +1084,4 @@ class NetsiModal extends HTMLElement {
 customElements.define("netsi-new", NetsiNew);
 customElements.define("netsi-tab", NetsiTab);
 customElements.define("netsi-tab-content", NetsiTabContent);
-customElements.define("netsi-modal", NetsiModal); 
+customElements.define("netsi-modal", NetsiModal);

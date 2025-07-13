@@ -92,9 +92,7 @@ function getSelectedDimension(dimensions) {
     propertyName,
     escapedName: escapeMarkdown(propertyName),
     varyingParam: dimensions.find((d) => d.name === propertyName),
-    fixedParams: dimensions.filter((d) =>
-      d.name !== propertyName
-    ),
+    fixedParams: dimensions.filter((d) => d.name !== propertyName),
   };
 }
 
@@ -119,4 +117,4 @@ function copyPromptById(textareaId, message) {
   } catch (e) {
     toast("❌ Could not copy");
   }
-} 
+}
