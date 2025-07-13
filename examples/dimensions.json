@@ -1,395 +1,395 @@
-[{
-  "id": "skagen-style",
-  "title": "Example: Skagensmalernes Artistic Style",
-  "description": "This profile captures the visual and emotional dimensions found in the Danish Skagen painters' style: natural light, realism in everyday life, coastal settings, and a subtle interplay between people and nature.",
-  "category": "Art Style",
-  "selectedDimension": "Light Atmosphere",
-  "dimensions": {
-    "latent_dimensions": [
-      {
-        "name": "Light Atmosphere",
-        "explanation": "The soft, coastal light characteristic of Skagen's natural setting",
-        "value": "Nordic Glow",
-        "importance": 95,
-        "example_value": "A hazy yellow-pink hue falling across beach sand at dusk",
-        "values": [
-          "Flat Light",
-          "Indoor Candlelight",
-          "Dim Nordic Shade",
-          "Grey Overcast",
-          "Cool Coastal Light",
-          "Nordic Glow",
-          "Subtle Sunlight",
-          "Soft Sunset",
-          "Warm Morning Haze",
-          "Golden Tones",
-          "Radiant Seaside Glow"
-        ]
-      },
-      {
-        "name": "Brushstroke Texture",
-        "explanation": "How visible and expressive the brushstrokes are",
-        "value": "Delicate Impressionist",
-        "importance": 82,
-        "example_value": "Soft visible strokes capturing light wind in garments",
-        "values": [
-          "Smoothly Blended",
-          "Photorealistic",
-          "Polished",
-          "Invisible Strokes",
-          "Minimal Brush Texture",
-          "Delicate Impressionist",
-          "Loose Natural",
-          "Visible Flow",
-          "Expressive Texture",
-          "Painterly Swirls",
-          "Raw Canvas Gesture"
-        ]
-      },
-      {
-        "name": "Social Intimacy",
-        "explanation": "How much interpersonal closeness or everyday life is depicted",
-        "value": "Quietly Connected",
-        "importance": 88,
-        "example_value": "Two women sewing in silence near a sunlit window",
-        "values": [
-          "Distant",
-          "Detached",
-          "Formal Posing",
-          "Reserved",
-          "Mildly Observant",
-          "Quietly Connected",
-          "Modest Closeness",
-          "Domestic Warmth",
-          "Subtle Tenderness",
-          "Emotional Stillness",
-          "Deep Shared Presence"
-        ]
-      },
-      {
-        "name": "Color Palette Temperature",
-        "explanation": "Balance between cool coastal blues and warm sun tones",
-        "value": "Coastal-Neutral",
-        "importance": 78,
-        "example_value": "Muted beige with hints of seafoam blue and pale ochre",
-        "values": [
-          "Cold Blue",
-          "Muted Greys",
-          "Cool Neutrals",
-          "Washed Out",
-          "Faded Blue-Green",
-          "Coastal-Neutral",
-          "Sun-Washed",
-          "Mild Warmth",
-          "Honeyed",
-          "Warm Sand & Sky",
-          "Burnished Gold"
-        ]
-      },
-      {
-        "name": "Scene Stillness",
-        "explanation": "How tranquil and motionless the scene feels",
-        "value": "Gently Static",
-        "importance": 81,
-        "example_value": "A woman seated at a table lost in thought as time slows",
-        "values": [
-          "Chaotic",
-          "Animated",
-          "Busy",
-          "Mildly Dynamic",
-          "Everyday Motion",
-          "Gently Static",
-          "Tranquil",
-          "Timeless",
-          "Frozen Moment",
-          "Dreamlike Calm",
-          "Ethereal Pause"
-        ]
-      },
-      {
-        "name": "Environmental Dominance",
-        "explanation": "How much the setting (coast, sky, light) dominates over human figures",
-        "value": "Balanced with Nature",
-        "importance": 75,
-        "example_value": "Small figures walking against a vast shoreline under open sky",
-        "values": [
-          "Figure-Dominant",
-          "Interior-Focused",
-          "Urban Detail",
-          "Portrait-Centric",
-          "Neutral Balance",
-          "Balanced with Nature",
-          "Natural Framing",
-          "Landscape-Weighted",
-          "Sky-Centric",
-          "Horizon Emphasized",
-          "Immersed in Environment"
-        ]
-      },
-      {
-        "name": "Narrative Clarity",
-        "explanation": "How strongly a story or moment is implied in the composition",
-        "value": "Subtly Evocative",
-        "importance": 73,
-        "example_value": "A man staring out at the sea while children play behind him",
-        "values": [
-          "Abstract",
-          "Ambiguous",
-          "Open-Ended",
-          "Anecdotal",
-          "Faintly Suggestive",
-          "Subtly Evocative",
-          "Implied Narrative",
-          "Daily Life Moment",
-          "Clear Story",
-          "Cinematic",
-          "Staged Tableau"
-        ]
-      },
-      {
-        "name": "Mood in Picture",
-        "explanation": "The emotional atmosphere conveyed by the scene",
-        "value": "Melancholic Calm",
-        "importance": 89,
-        "example_value": "A lonely figure gazing out into the twilight sea",
-        "values": [
-          "Joyful",
-          "Hopeful",
-          "Quiet Happiness",
-          "Neutral",
-          "Subdued",
-          "Melancholic Calm",
-          "Wistful",
-          "Nostalgic",
-          "Solemn",
-          "Mourning",
-          "Spiritual Serenity"
-        ]
-      },
-      {
-        "name": "Emotional Temperature",
-        "explanation": "Emotional warmth or coolness conveyed by facial expressions and setting",
-        "value": "Reserved Warmth",
-        "importance": 70,
-        "example_value": "A family gathered quietly under a golden evening sky",
-        "values": [
-          "Detached",
-          "Neutral",
-          "Quiet Sadness",
-          "Reserved",
-          "Cool Contemplation",
-          "Reserved Warmth",
-          "Gentle Affection",
-          "Warm Connection",
-          "Contentment",
-          "Tender Joy",
-          "Sunlit Bliss"
-        ]
-      },
-      {
-        "name": "Cultural Timelessness",
-        "explanation": "How anchored the scene is in a specific historical period",
-        "value": "Late 19th Century",
-        "importance": 68,
-        "example_value": "Clothing and furnishings typical of late 1800s Skagen life",
-        "values": [
-          "Timeless",
-          "Modern",
-          "20th Century",
-          "Mid-1900s",
-          "Historical Echo",
-          "Late 19th Century",
-          "1890s Skagen",
-          "Period-Painted",
-          "Era-Rooted",
-          "Documentary Feel",
-          "Heritage Authentic"
-        ]
-      },
-      {
-        "name": "Color Intensity",
-        "explanation": "How vibrant or muted the color saturation is",
-        "value": "Muted Earth",
-        "importance": 77,
-        "example_value": "Faded ochre and soft blue-greys blending with natural linen",
-        "values": [
-          "Desaturated",
-          "Monochrome",
-          "Washed Out",
-          "Dusty Pastel",
-          "Faded Linen",
-          "Muted Earth",
-          "Soft Glow",
-          "Moderately Vibrant",
-          "Sunny Bold",
-          "Strong Saturation",
-          "Technicolor Burst"
-        ]
-      },
-      {
-        "name": "Perspective Depth",
-        "explanation": "The amount of spatial depth and perspective in the image",
-        "value": "Moderate Natural Depth",
-        "importance": 63,
-        "example_value": "Figures receding softly into the dune landscape",
-        "values": [
-          "Flat Plane",
-          "Collage-Like",
-          "Shallow Depth",
-          "Minimal Perspective",
-          "Linear Depth",
-          "Moderate Natural Depth",
-          "Layered Realism",
-          "Deep Field",
-          "Sweeping Horizon",
-          "Cinematic Wide",
-          "Immersive Depth"
-        ]
-      },
-      {
-        "name": "Scene Time of Painting",
-        "explanation": "When the scene appears to take place historically",
-        "value": "1880s",
-        "importance": 69,
-        "example_value": "Fishermen with 19th-century attire walking the beach",
-        "values": [
-          "1700s",
-          "1780s",
-          "1810s",
-          "1840s",
-          "1870s",
-          "1880s",
-          "1900s",
-          "1950s",
-          "1980s",
-          "2000s",
-          "Post-2100s"
-        ]
-      },
-      {
-        "name": "Image Frame Style",
-        "explanation": "What type of frame would traditionally surround the image",
-        "value": "Ornate Wood Frame",
-        "importance": 60,
-        "example_value": "A dark oak hand-carved frame with slight gilded edges",
-        "values": [
-          "No Frame",
-          "White Modern Border",
-          "Thin Metal Frame",
-          "Neutral Wood Trim",
-          "Contemporary Wide",
-          "Ornate Wood Frame",
-          "Classic Gold",
-          "Victorian Carving",
-          "Museum Shadowbox",
-          "Baroque Heavy",
-          "Gilded Rococo"
-        ]
-      },
-      {
-        "name": "Subject Focus",
-        "explanation": "Whether the emphasis is on landscape, people, or objects",
-        "value": "People-in-Landscape",
-        "importance": 72,
-        "example_value": "Children playing on the beach under open sky",
-        "values": [
-          "Pure Landscape",
-          "Still Life",
-          "Animal-Centric",
-          "Environmental Shapes",
-          "Architectural",
-          "People-in-Landscape",
-          "Portrait",
-          "Group Portrait",
-          "Interior Scene",
-          "Gesture Study",
-          "Symbolic Composition"
-        ]
-      },
-      {
-        "name": "Figure Detail Level",
-        "explanation": "Degree of anatomical or facial detail rendered in the figures",
-        "value": "Softly Defined",
-        "importance": 65,
-        "example_value": "Smooth outlines and soft shadows defining forms",
-        "values": [
-          "Abstract",
-          "Blurry",
-          "Loose Forms",
-          "Misty Detail",
-          "Hinted Contours",
-          "Softly Defined",
-          "Modest Detail",
-          "Refined",
-          "Clear-Faced",
-          "Photorealistic",
-          "Hyperreal"
-        ]
-      },
-      {
-        "name": "Clothing Style",
-        "explanation": "The type and period of clothing depicted",
-        "value": "Simple 19th Century Nordic",
-        "importance": 58,
-        "example_value": "Aprons, long skirts, work shirts and fishermen’s garments",
-        "values": [
-          "Modern Casual",
-          "Formal Suit",
-          "Urban Industrial",
-          "Victorian Upper Class",
-          "Bohemian Layered",
-          "Simple 19th Century Nordic",
-          "Peasant Garb",
-          "Uniformed",
-          "Turn-of-Century",
-          "Folk-Inspired",
-          "Timeless Attire"
-        ]
-      },
-      {
-        "name": "Canvas Surface Perception",
-        "explanation": "How the texture of the canvas or medium is perceived",
-        "value": "Fine Linen",
-        "importance": 55,
-        "example_value": "Barely visible cross-weave texture under thin paint",
-        "values": [
-          "Digital Clean",
-          "Glass Smooth",
-          "Slick Paper",
-          "Matte Board",
-          "Cotton Canvas",
-          "Fine Linen",
-          "Rough Weave",
-          "Heavy Texture",
-          "Gritty Oil",
-          "Palette Knife",
-          "Textured Wood Panel"
-        ]
-      },
-      {
-        "name": "Background Activity",
-        "explanation": "How much narrative or motion is present in the background",
-        "value": "Low Ambient",
-        "importance": 54,
-        "example_value": "Figures moving faintly in distant fields or beach scenes",
-        "values": [
-          "Silent",
-          "Empty Background",
-          "Minimal",
-          "Still",
-          "Ambient Motion",
-          "Low Ambient",
-          "Domestic Movement",
-          "Community Activity",
-          "Subplot Layered",
-          "Crowded",
-          "Narrative Rich"
-        ]
-      }
-<<<<<<< HEAD
-    ]
-=======
-    },
+[
+  {
+    "id": "skagen-style",
+    "title": "Example: Skagensmalernes Artistic Style",
+    "description": "This profile captures the visual and emotional dimensions found in the Danish Skagen painters' style: natural light, realism in everyday life, coastal settings, and a subtle interplay between people and nature.",
+    "category": "Art Style",
+    "selectedDimension": "Light Atmosphere",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Light Atmosphere",
+          "explanation": "The soft, coastal light characteristic of Skagen's natural setting",
+          "value": "Nordic Glow",
+          "importance": 95,
+          "example_value": "A hazy yellow-pink hue falling across beach sand at dusk",
+          "values": [
+            "Flat Light",
+            "Indoor Candlelight",
+            "Dim Nordic Shade",
+            "Grey Overcast",
+            "Cool Coastal Light",
+            "Nordic Glow",
+            "Subtle Sunlight",
+            "Soft Sunset",
+            "Warm Morning Haze",
+            "Golden Tones",
+            "Radiant Seaside Glow"
+          ]
+        },
+        {
+          "name": "Brushstroke Texture",
+          "explanation": "How visible and expressive the brushstrokes are",
+          "value": "Delicate Impressionist",
+          "importance": 82,
+          "example_value": "Soft visible strokes capturing light wind in garments",
+          "values": [
+            "Smoothly Blended",
+            "Photorealistic",
+            "Polished",
+            "Invisible Strokes",
+            "Minimal Brush Texture",
+            "Delicate Impressionist",
+            "Loose Natural",
+            "Visible Flow",
+            "Expressive Texture",
+            "Painterly Swirls",
+            "Raw Canvas Gesture"
+          ]
+        },
+        {
+          "name": "Social Intimacy",
+          "explanation": "How much interpersonal closeness or everyday life is depicted",
+          "value": "Quietly Connected",
+          "importance": 88,
+          "example_value": "Two women sewing in silence near a sunlit window",
+          "values": [
+            "Distant",
+            "Detached",
+            "Formal Posing",
+            "Reserved",
+            "Mildly Observant",
+            "Quietly Connected",
+            "Modest Closeness",
+            "Domestic Warmth",
+            "Subtle Tenderness",
+            "Emotional Stillness",
+            "Deep Shared Presence"
+          ]
+        },
+        {
+          "name": "Color Palette Temperature",
+          "explanation": "Balance between cool coastal blues and warm sun tones",
+          "value": "Coastal-Neutral",
+          "importance": 78,
+          "example_value": "Muted beige with hints of seafoam blue and pale ochre",
+          "values": [
+            "Cold Blue",
+            "Muted Greys",
+            "Cool Neutrals",
+            "Washed Out",
+            "Faded Blue-Green",
+            "Coastal-Neutral",
+            "Sun-Washed",
+            "Mild Warmth",
+            "Honeyed",
+            "Warm Sand & Sky",
+            "Burnished Gold"
+          ]
+        },
+        {
+          "name": "Scene Stillness",
+          "explanation": "How tranquil and motionless the scene feels",
+          "value": "Gently Static",
+          "importance": 81,
+          "example_value": "A woman seated at a table lost in thought as time slows",
+          "values": [
+            "Chaotic",
+            "Animated",
+            "Busy",
+            "Mildly Dynamic",
+            "Everyday Motion",
+            "Gently Static",
+            "Tranquil",
+            "Timeless",
+            "Frozen Moment",
+            "Dreamlike Calm",
+            "Ethereal Pause"
+          ]
+        },
+        {
+          "name": "Environmental Dominance",
+          "explanation": "How much the setting (coast, sky, light) dominates over human figures",
+          "value": "Balanced with Nature",
+          "importance": 75,
+          "example_value": "Small figures walking against a vast shoreline under open sky",
+          "values": [
+            "Figure-Dominant",
+            "Interior-Focused",
+            "Urban Detail",
+            "Portrait-Centric",
+            "Neutral Balance",
+            "Balanced with Nature",
+            "Natural Framing",
+            "Landscape-Weighted",
+            "Sky-Centric",
+            "Horizon Emphasized",
+            "Immersed in Environment"
+          ]
+        },
+        {
+          "name": "Narrative Clarity",
+          "explanation": "How strongly a story or moment is implied in the composition",
+          "value": "Subtly Evocative",
+          "importance": 73,
+          "example_value": "A man staring out at the sea while children play behind him",
+          "values": [
+            "Abstract",
+            "Ambiguous",
+            "Open-Ended",
+            "Anecdotal",
+            "Faintly Suggestive",
+            "Subtly Evocative",
+            "Implied Narrative",
+            "Daily Life Moment",
+            "Clear Story",
+            "Cinematic",
+            "Staged Tableau"
+          ]
+        },
+        {
+          "name": "Mood in Picture",
+          "explanation": "The emotional atmosphere conveyed by the scene",
+          "value": "Melancholic Calm",
+          "importance": 89,
+          "example_value": "A lonely figure gazing out into the twilight sea",
+          "values": [
+            "Joyful",
+            "Hopeful",
+            "Quiet Happiness",
+            "Neutral",
+            "Subdued",
+            "Melancholic Calm",
+            "Wistful",
+            "Nostalgic",
+            "Solemn",
+            "Mourning",
+            "Spiritual Serenity"
+          ]
+        },
+        {
+          "name": "Emotional Temperature",
+          "explanation": "Emotional warmth or coolness conveyed by facial expressions and setting",
+          "value": "Reserved Warmth",
+          "importance": 70,
+          "example_value": "A family gathered quietly under a golden evening sky",
+          "values": [
+            "Detached",
+            "Neutral",
+            "Quiet Sadness",
+            "Reserved",
+            "Cool Contemplation",
+            "Reserved Warmth",
+            "Gentle Affection",
+            "Warm Connection",
+            "Contentment",
+            "Tender Joy",
+            "Sunlit Bliss"
+          ]
+        },
+        {
+          "name": "Cultural Timelessness",
+          "explanation": "How anchored the scene is in a specific historical period",
+          "value": "Late 19th Century",
+          "importance": 68,
+          "example_value": "Clothing and furnishings typical of late 1800s Skagen life",
+          "values": [
+            "Timeless",
+            "Modern",
+            "20th Century",
+            "Mid-1900s",
+            "Historical Echo",
+            "Late 19th Century",
+            "1890s Skagen",
+            "Period-Painted",
+            "Era-Rooted",
+            "Documentary Feel",
+            "Heritage Authentic"
+          ]
+        },
+        {
+          "name": "Color Intensity",
+          "explanation": "How vibrant or muted the color saturation is",
+          "value": "Muted Earth",
+          "importance": 77,
+          "example_value": "Faded ochre and soft blue-greys blending with natural linen",
+          "values": [
+            "Desaturated",
+            "Monochrome",
+            "Washed Out",
+            "Dusty Pastel",
+            "Faded Linen",
+            "Muted Earth",
+            "Soft Glow",
+            "Moderately Vibrant",
+            "Sunny Bold",
+            "Strong Saturation",
+            "Technicolor Burst"
+          ]
+        },
+        {
+          "name": "Perspective Depth",
+          "explanation": "The amount of spatial depth and perspective in the image",
+          "value": "Moderate Natural Depth",
+          "importance": 63,
+          "example_value": "Figures receding softly into the dune landscape",
+          "values": [
+            "Flat Plane",
+            "Collage-Like",
+            "Shallow Depth",
+            "Minimal Perspective",
+            "Linear Depth",
+            "Moderate Natural Depth",
+            "Layered Realism",
+            "Deep Field",
+            "Sweeping Horizon",
+            "Cinematic Wide",
+            "Immersive Depth"
+          ]
+        },
+        {
+          "name": "Scene Time of Painting",
+          "explanation": "When the scene appears to take place historically",
+          "value": "1880s",
+          "importance": 69,
+          "example_value": "Fishermen with 19th-century attire walking the beach",
+          "values": [
+            "1700s",
+            "1780s",
+            "1810s",
+            "1840s",
+            "1870s",
+            "1880s",
+            "1900s",
+            "1950s",
+            "1980s",
+            "2000s",
+            "Post-2100s"
+          ]
+        },
+        {
+          "name": "Image Frame Style",
+          "explanation": "What type of frame would traditionally surround the image",
+          "value": "Ornate Wood Frame",
+          "importance": 60,
+          "example_value": "A dark oak hand-carved frame with slight gilded edges",
+          "values": [
+            "No Frame",
+            "White Modern Border",
+            "Thin Metal Frame",
+            "Neutral Wood Trim",
+            "Contemporary Wide",
+            "Ornate Wood Frame",
+            "Classic Gold",
+            "Victorian Carving",
+            "Museum Shadowbox",
+            "Baroque Heavy",
+            "Gilded Rococo"
+          ]
+        },
+        {
+          "name": "Subject Focus",
+          "explanation": "Whether the emphasis is on landscape, people, or objects",
+          "value": "People-in-Landscape",
+          "importance": 72,
+          "example_value": "Children playing on the beach under open sky",
+          "values": [
+            "Pure Landscape",
+            "Still Life",
+            "Animal-Centric",
+            "Environmental Shapes",
+            "Architectural",
+            "People-in-Landscape",
+            "Portrait",
+            "Group Portrait",
+            "Interior Scene",
+            "Gesture Study",
+            "Symbolic Composition"
+          ]
+        },
+        {
+          "name": "Figure Detail Level",
+          "explanation": "Degree of anatomical or facial detail rendered in the figures",
+          "value": "Softly Defined",
+          "importance": 65,
+          "example_value": "Smooth outlines and soft shadows defining forms",
+          "values": [
+            "Abstract",
+            "Blurry",
+            "Loose Forms",
+            "Misty Detail",
+            "Hinted Contours",
+            "Softly Defined",
+            "Modest Detail",
+            "Refined",
+            "Clear-Faced",
+            "Photorealistic",
+            "Hyperreal"
+          ]
+        },
+        {
+          "name": "Clothing Style",
+          "explanation": "The type and period of clothing depicted",
+          "value": "Simple 19th Century Nordic",
+          "importance": 58,
+          "example_value": "Aprons, long skirts, work shirts and fishermen's garments",
+          "values": [
+            "Modern Casual",
+            "Formal Suit",
+            "Urban Industrial",
+            "Victorian Upper Class",
+            "Bohemian Layered",
+            "Simple 19th Century Nordic",
+            "Peasant Garb",
+            "Uniformed",
+            "Turn-of-Century",
+            "Folk-Inspired",
+            "Timeless Attire"
+          ]
+        },
+        {
+          "name": "Canvas Surface Perception",
+          "explanation": "How the texture of the canvas or medium is perceived",
+          "value": "Fine Linen",
+          "importance": 55,
+          "example_value": "Barely visible cross-weave texture under thin paint",
+          "values": [
+            "Digital Clean",
+            "Glass Smooth",
+            "Slick Paper",
+            "Matte Board",
+            "Cotton Canvas",
+            "Fine Linen",
+            "Rough Weave",
+            "Heavy Texture",
+            "Gritty Oil",
+            "Palette Knife",
+            "Textured Wood Panel"
+          ]
+        },
+        {
+          "name": "Background Activity",
+          "explanation": "How much narrative or motion is present in the background",
+          "value": "Low Ambient",
+          "importance": 54,
+          "example_value": "Figures moving faintly in distant fields or beach scenes",
+          "values": [
+            "Silent",
+            "Empty Background",
+            "Minimal",
+            "Still",
+            "Ambient Motion",
+            "Low Ambient",
+            "Domestic Movement",
+            "Community Activity",
+            "Subplot Layered",
+            "Crowded",
+            "Narrative Rich"
+          ]
+        }
+      ]
+    }
+  },
   {
     "id": "photoshop-styled",
     "title": "Example of doing Photoshop sort of styling",
@@ -4087,2085 +4087,627 @@
         }
       ]
     }
->>>>>>> e6d22f9d350345a20abdc8f51cc53eb62cf50df9
-  }
-}, {
-  "id": "aesthetic-face-profile",
-  "title": "Example: What makes a face beautiful?",
-  "description": "This example captures 20 latent dimensions that contribute to perceived facial beauty based on symmetry, harmony, expression, and subtle feature qualities. Each dimension includes mid-level category values and structured gradations from low to high.",
-  "category": "Human Perception",
-  "selectedDimension": "Facial Harmony",
-  "dimensions": {
-    "latent_dimensions": [
-      {
-        "name": "Facial Symmetry",
-        "explanation": "Balance and mirroring between the left and right sides of the face",
-        "value": "Moderately Symmetrical",
-        "importance": 95,
-        "example_value": "Equal distance between eyes and ears on both sides",
-        "values": [
-          "Highly Asymmetrical",
-          "Unbalanced",
-          "Slightly Skewed",
-          "Visibly Uneven",
-          "Softly Tilted",
-          "Moderately Symmetrical",
-          "Balanced",
-          "Evenly Mirrored",
-          "Perfectly Proportioned",
-          "Near-Identical Halves",
-          "Flawlessly Symmetrical"
-        ]
-      },
-      {
-        "name": "Skin Clarity",
-        "explanation": "Smoothness, evenness of tone, and absence of blemishes",
-        "value": "Even Complexion",
-        "importance": 92,
-        "example_value": "Smooth skin with minimal pores or discoloration",
-        "values": [
-          "Acne-Prone",
-          "Patchy",
-          "Red-Blotched",
-          "Uneven",
-          "Mildly Textured",
-          "Even Complexion",
-          "Smooth",
-          "Refined Texture",
-          "Radiant",
-          "Glowing",
-          "Porcelain Clarity"
-        ]
-      },
-      {
-        "name": "Eye Expression",
-        "explanation": "The emotional and aesthetic impression conveyed by the eyes",
-        "value": "Soft and Engaging",
-        "importance": 90,
-        "example_value": "Eyes that look gently curious or kind",
-        "values": [
-          "Empty",
-          "Flat",
-          "Tired",
-          "Neutral",
-          "Focused",
-          "Soft and Engaging",
-          "Warm",
-          "Expressive",
-          "Captivating",
-          "Magnetic",
-          "Soulful and Deep"
-        ]
-      },
-      {
-        "name": "Lip Fullness",
-        "explanation": "Volume and shape of lips, perceived as balanced or appealing",
-        "value": "Moderately Full",
-        "importance": 85,
-        "example_value": "Naturally rounded lips with gentle curvature",
-        "values": [
-          "Thin",
-          "Flat",
-          "Tight-Lipped",
-          "Narrow",
-          "Slightly Defined",
-          "Moderately Full",
-          "Rounded",
-          "Voluminous",
-          "Plush",
-          "Kissable",
-          "Perfect Cupid's Bow"
-        ]
-      },
-      {
-        "name": "Jawline Definition",
-        "explanation": "How cleanly the jaw is outlined and structured",
-        "value": "Subtly Defined",
-        "importance": 80,
-        "example_value": "Soft but visible jaw curve, no harsh edges",
-        "values": [
-          "Blurry",
-          "Undefined",
-          "Soft Jaw",
-          "Round",
-          "Mildly Structured",
-          "Subtly Defined",
-          "Crisp",
-          "Angular",
-          "Chiseled",
-          "Sculpted",
-          "Statuesque"
-        ]
-      },
-      {
-        "name": "Cheekbone Prominence",
-        "explanation": "How much cheekbones stand out in the facial structure",
-        "value": "Gently Raised",
-        "importance": 82,
-        "example_value": "Light catching softly along cheekbone arcs",
-        "values": [
-          "Flat",
-          "Low Set",
-          "Blended",
-          "Soft Ridges",
-          "Mild Curves",
-          "Gently Raised",
-          "Defined",
-          "Prominent",
-          "Sharp Lines",
-          "High Sculpted",
-          "Sculptural Peaks"
-        ]
-      },
-      {
-        "name": "Nose Proportion",
-        "explanation": "Harmony of nose size and shape in relation to the face",
-        "value": "Harmonious",
-        "importance": 87,
-        "example_value": "A nose that blends with the overall shape of the face",
-        "values": [
-          "Large and Wide",
-          "Bulbous",
-          "Flat Bridge",
-          "Long and Narrow",
-          "Slightly Asymmetrical",
-          "Harmonious",
-          "Balanced",
-          "Refined",
-          "Elegant",
-          "Delicate",
-          "Classic Profile"
-        ]
-      },
-      {
-        "name": "Eyebrow Shape",
-        "explanation": "Curvature, thickness, and flow of the eyebrows",
-        "value": "Natural Arc",
-        "importance": 76,
-        "example_value": "Soft arch that follows the bone structure",
-        "values": [
-          "Unkempt",
-          "Flat",
-          "Over-Plucked",
-          "Irregular",
-          "Softly Sloped",
-          "Natural Arc",
-          "Cleanly Defined",
-          "Symmetrical Arch",
-          "Sculpted",
-          "Perfect Curve",
-          "High Precision"
-        ]
-      },
-      {
-        "name": "Facial Harmony",
-        "explanation": "Overall balance between all facial features",
-        "value": "Cohesive Blend",
-        "importance": 96,
-        "example_value": "Nothing stands out as disproportionate",
-        "values": [
-          "Chaotic",
-          "Mismatched",
-          "Unbalanced",
-          "Mild Disparity",
-          "Nearly Aligned",
-          "Cohesive Blend",
-          "Balanced Proportions",
-          "Flowing Structure",
-          "Unified Geometry",
-          "Elegant Equilibrium",
-          "Golden Ratio Harmony"
-        ]
-      },
-      {
-        "name": "Smile Impact",
-        "explanation": "How expressive and pleasant the smile is",
-        "value": "Warm and Approachable",
-        "importance": 88,
-        "example_value": "A relaxed smile with slightly raised cheeks",
-        "values": [
-          "Absent",
-          "Forced",
-          "Flat",
-          "Mild",
-          "Gentle",
-          "Warm and Approachable",
-          "Charming",
-          "Radiant",
-          "Magnetic",
-          "Joyful Beam",
-          "Infectious Glow"
-        ]
-      },
-      {
-        "name": "Eye Size to Face Ratio",
-        "explanation": "How large the eyes are in proportion to the face",
-        "value": "Slightly Large",
-        "importance": 78,
-        "example_value": "Eyes just slightly larger than average",
-        "values": [
-          "Very Small",
-          "Narrow",
-          "Low Emphasis",
-          "Average",
-          "Mildly Prominent",
-          "Slightly Large",
-          "Open and Bright",
-          "Doll-like",
-          "Bold Gaze",
-          "Enlarged Highlighted",
-          "Idealized Proportion"
-        ]
-      },
-      {
-        "name": "Forehead Proportion",
-        "explanation": "Height and curvature of the forehead in balance with other features",
-        "value": "Balanced Forehead",
-        "importance": 65,
-        "example_value": "Forehead height matches golden facial thirds",
-        "values": [
-          "Very Low",
-          "Short",
-          "Flat",
-          "Slightly Small",
-          "Mildly Low",
-          "Balanced Forehead",
-          "Gracefully High",
-          "Slight Dome",
-          "Smooth Curve",
-          "Sculpted Crown",
-          "Ideal Third"
-        ]
-      },
-      {
-        "name": "Hairline Shape",
-        "explanation": "The flow and positioning of the hairline in framing the face",
-        "value": "Natural Frame",
-        "importance": 60,
-        "example_value": "Even hairline that follows forehead contour",
-        "values": [
-          "Uneven",
-          "Jagged",
-          "Receded",
-          "Irregular",
-          "Sloped",
-          "Natural Frame",
-          "Soft Widow’s Peak",
-          "Curved Flow",
-          "Ideal Contour",
-          "Framing Halo",
-          "Symmetric Frame"
-        ]
-      },
-      {
-        "name": "Chin Shape",
-        "explanation": "Form and prominence of the chin in relation to the jaw and lips",
-        "value": "Softly Defined",
-        "importance": 72,
-        "example_value": "Rounded tip, neither sharp nor recessed",
-        "values": [
-          "Receding",
-          "Flat",
-          "Undefined",
-          "Blunt",
-          "Mildly Pointed",
-          "Softly Defined",
-          "Rounded",
-          "Balanced",
-          "Elegantly Prominent",
-          "Sculpted",
-          "Perfectly Centered"
-        ]
-      },
-      {
-        "name": "Facial Glow",
-        "explanation": "Perceived inner vitality and luminosity of the skin",
-        "value": "Healthy Radiance",
-        "importance": 83,
-        "example_value": "Soft light reflected naturally on skin",
-        "values": [
-          "Dull",
-          "Pale",
-          "Flat Lighting",
-          "Dry",
-          "Basic Tone",
-          "Healthy Radiance",
-          "Soft Glow",
-          "Inner Warmth",
-          "Luminous Skin",
-          "Ethereal Shine",
-          "Angel-like Light"
-        ]
-      },
-      {
-        "name": "Color Harmony",
-        "explanation": "How the skin tone, eye color, and lip tone complement each other",
-        "value": "Natural Balance",
-        "importance": 79,
-        "example_value": "Olive skin with hazel eyes and soft coral lips",
-        "values": [
-          "Clashing",
-          "Slight Discord",
-          "Washed Out",
-          "Off-Tone",
-          "Neutralized",
-          "Natural Balance",
-          "Soft Contrast",
-          "Vibrant Match",
-          "Harmonious Palette",
-          "Aesthetic Unity",
-          "Perfect Blend"
-        ]
-      },
-      {
-        "name": "Nostril Symmetry",
-        "explanation": "Proportional balance between nostrils and nose tip",
-        "value": "Aligned",
-        "importance": 68,
-        "example_value": "Both nostrils of equal height and width",
-        "values": [
-          "Misaligned",
-          "Visible Skew",
-          "Uneven Widths",
-          "Imbalanced Shape",
-          "Nearly Aligned",
-          "Aligned",
-          "Symmetrical Flare",
-          "Perfect Width Match",
-          "Balanced Ellipse",
-          "Even Airflow",
-          "Invisible Perfection"
-        ]
-      },
-      {
-        "name": "Pupil Brightness",
-        "explanation": "How well light reflects in the pupils to enhance liveliness",
-        "value": "Visible Light Dot",
-        "importance": 73,
-        "example_value": "Small white highlight in both eyes",
-        "values": [
-          "Flat",
-          "Dim",
-          "Clouded",
-          "Shadowed",
-          "Faint Spark",
-          "Visible Light Dot",
-          "Reflective",
-          "Alive Gaze",
-          "Glowing Eyes",
-          "Starry Reflection",
-          "Vibrant Radiance"
-        ]
-      },
-      {
-        "name": "Smile Line Softness",
-        "explanation": "Curvature and depth of nasolabial lines during a smile",
-        "value": "Gently Formed",
-        "importance": 64,
-        "example_value": "Soft lines indicating a genuine smile without harsh creases",
-        "values": [
-          "Deep Wrinkles",
-          "Sharp Lines",
-          "Hollowed",
-          "Angular",
-          "Mild Indent",
-          "Gently Formed",
-          "Soft Contours",
-          "Youthful Curves",
-          "Natural Elevation",
-          "Playful Arcs",
-          "Barely Present"
-        ]
-      },
-      {
-        "name": "Eyelash Presence",
-        "explanation": "Length, density, and natural curvature of the eyelashes",
-        "value": "Visible and Curved",
-        "importance": 71,
-        "example_value": "Lashes curve upwards and frame the eye",
-        "values": [
-          "Sparse",
-          "Short",
-          "Straight",
-          "Flat",
-          "Moderate",
-          "Visible and Curved",
-          "Darkened Fringe",
-          "Framing Arc",
-          "Feathered Sweep",
-          "Lush Curl",
-          "Elegant Flutter"
-        ]
-      }
-    ]
-  }
-}, {
-  "id": "photoshop-styled",
-  "title": "Example of doing Photoshop sort of styling",
-  "description": "Using mostly color modifications",
-  "category": "Photography",
-  "selectedDimension": "Depth Perception",
-  "dimensions": {
-    "latent_dimensions": [
-      {
-        "name": "Color Temperature",
-        "explanation": "Controls the warmth or coolness of the image tones",
-        "value": "Cold",
-        "importance": 90,
-        "example_value": "#87CEEB sky with moderate green vegetation",
-        "values": [
-          "Cold",
-          "Cool",
-          "Subtle Cool",
-          "Slightly Cool",
-          "Neutral Cool",
-          "Balanced",
-          "Slightly Warm",
-          "Warm",
-          "Golden",
-          "Amber",
-          "Hot"
-        ]
-      },
-      {
-        "name": "Contrast Level",
-        "explanation": "Degree of tonal separation between light and dark areas",
-        "value": "Extreme",
-        "importance": 86,
-        "example_value": "Clear shadow from the man on pebbles, yet details visible",
-        "values": [
-          "Flat",
-          "Low",
-          "Soft",
-          "Muted",
-          "Subdued",
-          "Natural",
-          "Crisp",
-          "Defined",
-          "High",
-          "Sharp",
-          "Extreme"
-        ]
-      },
-      {
-        "name": "Scene Realism",
-        "explanation": "Degree to which the image mimics real-world lighting and texture",
-        "value": "Stylized",
-        "importance": 95,
-        "example_value": "Shoreline textures and foliage appear true-to-life",
-        "values": [
-          "Stylized",
-          "Painterly",
-          "Artistic",
-          "Semi-Realistic",
-          "Neutral Realism",
-          "Photorealistic",
-          "Detailed Realism",
-          "Hyperreal",
-          "Enhanced Realism",
-          "Surreal Realism",
-          "Ultra-Defined"
-        ]
-      },
-      {
-        "name": "Framing Balance",
-        "explanation": "Symmetry and weight distribution in the composition",
-        "value": "Visually Balanced",
-        "importance": 78,
-        "example_value": "Coastline guiding eye diagonally, figure offset to the right",
-        "values": [
-          "Chaotic",
-          "Disjointed",
-          "Loose",
-          "Unstructured",
-          "Neutral",
-          "Visually Balanced",
-          "Structured",
-          "Harmonious",
-          "Architectonic",
-          "Geometric",
-          "Perfectly Symmetrical"
-        ]
-      },
-      {
-        "name": "Light Source Clarity",
-        "explanation": "How defined and directional the light source appears",
-        "value": "Moderately Clear",
-        "importance": 74,
-        "example_value": "Sunlight casting gentle, soft-edged shadows",
-        "values": [
-          "Diffuse",
-          "Overcast",
-          "Soft",
-          "Subtle",
-          "Implied",
-          "Moderately Clear",
-          "Clear",
-          "Direct",
-          "Harsh",
-          "Theatrical",
-          "Blinding"
-        ]
-      },
-      {
-        "name": "Grain Texture",
-        "explanation": "The visibility and strength of image texture or photographic grain",
-        "value": "Noisy",
-        "importance": 65,
-        "example_value": "Subtle grain visible in beach stones and cliff face",
-        "values": [
-          "Smooth",
-          "Digital Clean",
-          "Minimal Grain",
-          "Soft Grain",
-          "Matte",
-          "Natural Film Texture",
-          "Defined Grain",
-          "Strong Grain",
-          "Coarse",
-          "Rough",
-          "Noisy"
-        ]
-      },
-      {
-        "name": "Color Saturation",
-        "explanation": "Intensity of the colors used in the image",
-        "value": "Desaturated",
-        "importance": 82,
-        "example_value": "Lush greens, deep blue sea, but not oversaturated",
-        "values": [
-          "Desaturated",
-          "Faded",
-          "Muted",
-          "Soft",
-          "Neutral",
-          "Medium Saturation",
-          "Lively",
-          "Vibrant",
-          "Bold",
-          "Intense",
-          "Oversaturated"
-        ]
-      },
-      {
-        "name": "Depth Perception",
-        "explanation": "The sense of distance and spatial layering in the image",
-        "value": "Moderately Deep",
-        "importance": 88,
-        "example_value": "Foreground pebbles and distant sea line clearly separated",
-        "values": [
-          "Flat",
-          "Minimal",
-          "Shallow",
-          "Layered",
-          "Slight Depth",
-          "Moderately Deep",
-          "Deep",
-          "Expanded",
-          "Vast",
-          "Dramatic Depth",
-          "Cinematic"
-        ]
-      },
-      {
-        "name": "Movement Suggestion",
-        "explanation": "How much implied motion is present in the image",
-        "value": "Mild Motion",
-        "importance": 54,
-        "example_value": "Gentle waves, walking posture of man",
-        "values": [
-          "Still",
-          "Frozen",
-          "Minimal",
-          "Implied",
-          "Static",
-          "Mild Motion",
-          "Noticeable Motion",
-          "Flowing",
-          "Dynamic",
-          "Sweeping",
-          "Kinetic"
-        ]
-      },
-      {
-        "name": "Nature Dominance",
-        "explanation": "How much of the image is occupied by natural elements",
-        "value": "None",
-        "importance": 85,
-        "example_value": "Sea, cliffs, and vegetation make up majority of frame",
-        "values": [
-          "None",
-          "Sparse",
-          "Low",
-          "Fragmented",
-          "Balanced",
-          "High Nature Presence",
-          "Dominant",
-          "Overwhelming",
-          "Engulfing",
-          "Pure Wilderness",
-          "Mythic Naturalism"
-        ]
-      },
-      {
-        "name": "Human Presence Subtlety",
-        "explanation": "How prominent or intrusive the human figure appears",
-        "value": "Overbearing",
-        "importance": 68,
-        "example_value": "Single person placed low and off to the side",
-        "values": [
-          "None",
-          "Barely Visible",
-          "Blended",
-          "Minor",
-          "Secondary",
-          "Low Emphasis",
-          "Equal Focus",
-          "Moderate Presence",
-          "Dominant",
-          "Central",
-          "Overbearing"
-        ]
-      },
-      {
-        "name": "Horizon Line Prominence",
-        "explanation": "Visibility and compositional dominance of the horizon",
-        "value": "Gently Defined",
-        "importance": 61,
-        "example_value": "Soft line where sky meets sea in top third of image",
-        "values": [
-          "Hidden",
-          "Soft",
-          "Blended",
-          "Implied",
-          "Subtle",
-          "Gently Defined",
-          "Clear",
-          "Prominent",
-          "Framing",
-          "Dividing",
-          "Overpowering"
-        ]
-      },
-      {
-        "name": "Ambient Light Mood",
-        "explanation": "Overall feeling of lighting across the scene",
-        "value": "Joyful",
-        "importance": 80,
-        "example_value": "Bright daylight with soft contrast",
-        "values": [
-          "Dark",
-          "Somber",
-          "Cloudy",
-          "Flat",
-          "Neutral",
-          "Open and Relaxed",
-          "Uplifting",
-          "Sunny",
-          "Joyful",
-          "Radiant",
-          "Overexposed"
-        ]
-      },
-      {
-        "name": "Visual Simplicity",
-        "explanation": "How minimal or cluttered the visual composition appears",
-        "value": "Balanced Simplicity",
-        "importance": 76,
-        "example_value": "Clean lines, few objects, no visual noise",
-        "values": [
-          "Chaotic",
-          "Busy",
-          "Layered",
-          "Textured",
-          "Neutral",
-          "Balanced Simplicity",
-          "Clear",
-          "Minimalist",
-          "Sparse",
-          "Bare",
-          "Zen-like"
-        ]
-      },
-      {
-        "name": "Detail Sharpness",
-        "explanation": "Crispness and definition of image details",
-        "value": "Moderate Sharpness",
-        "importance": 84,
-        "example_value": "Edges of rocks and cliff vegetation clearly visible",
-        "values": [
-          "Blurry",
-          "Soft",
-          "Matte",
-          "Low Sharpness",
-          "Natural",
-          "Moderate Sharpness",
-          "Crisp",
-          "High Definition",
-          "Hyperclear",
-          "Sharpened",
-          "Overprocessed"
-        ]
-      },
-      {
-        "name": "Foreground Emphasis",
-        "explanation": "How much visual weight is given to the closest part of the image",
-        "value": "Crushing Foreground",
-        "importance": 67,
-        "example_value": "Rocks and man provide anchoring without dominating",
-        "values": [
-          "None",
-          "Distant",
-          "Background-Focused",
-          "Minimal",
-          "Balanced",
-          "Mildly Anchored",
-          "Anchored",
-          "Dominant Foreground",
-          "Strong Anchor",
-          "Foreground-Heavy",
-          "Crushing Foreground"
-        ]
-      },
-      {
-        "name": "Color Palette Harmony",
-        "explanation": "How well the colors blend and complement each other",
-        "value": "Perfectly Blended",
-        "importance": 73,
-        "example_value": "Earthy browns, greens, and cool blue sea tones",
-        "values": [
-          "Discordant",
-          "Contrasty",
-          "Vivid Clashes",
-          "Bold Mix",
-          "Neutral",
-          "Natural Harmony",
-          "Complementary",
-          "Pastel Flow",
-          "Color-Themed",
-          "Monochrome",
-          "Perfectly Blended"
-        ]
-      },
-      {
-        "name": "Line Flow",
-        "explanation": "How the visual lines guide the viewer's eye",
-        "value": "Curved Natural Path",
-        "importance": 70,
-        "example_value": "Curved coastline draws eye from figure to horizon",
-        "values": [
-          "Chaotic",
-          "Broken",
-          "Erratic",
-          "Unfocused",
-          "Neutral",
-          "Curved Natural Path",
-          "Rhythmic",
-          "Guided",
-          "Strong Flow",
-          "Cinematic Sweep",
-          "Perfect Spiral"
-        ]
-      },
-      {
-        "name": "Narrative Suggestion",
-        "explanation": "How much the image implies a story or human experience",
-        "value": "Light Narrative",
-        "importance": 75,
-        "example_value": "Elderly man walking with poles along coastal path",
-        "values": [
-          "None",
-          "Minimal",
-          "Abstract",
-          "Unclear",
-          "Neutral",
-          "Light Narrative",
-          "Personal",
-          "Implied Backstory",
-          "Strong Story",
-          "Dramatic Scene",
-          "Mythic"
-        ]
-      },
-      {
-        "name": "Temporal Atmosphere",
-        "explanation": "Time of day and temporal mood (pastoral, timeless, fleeting)",
-        "value": "Present-Moment",
-        "importance": 69,
-        "example_value": "Midday sun with no nostalgic or futuristic cues",
-        "values": [
-          "Timeless",
-          "Dreamlike",
-          "Distant Past",
-          "Soft Glow",
-          "Neutral Time",
-          "Present-Moment",
-          "Passing",
-          "Ephemeral",
-          "Golden Hour",
-          "Imminent Change",
-          "Frozen Time"
+  },
+  {
+    "id": "aesthetic-face-profile",
+    "title": "Example: What makes a face beautiful?",
+    "description": "This example captures 20 latent dimensions that contribute to perceived facial beauty based on symmetry, harmony, expression, and subtle feature qualities. Each dimension includes mid-level category values and structured gradations from low to high.",
+    "category": "Human Perception",
+    "selectedDimension": "Facial Harmony",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Facial Symmetry",
+          "explanation": "Balance and mirroring between the left and right sides of the face",
+          "value": "Moderately Symmetrical",
+          "importance": 95,
+          "example_value": "Equal distance between eyes and ears on both sides",
+          "values": [
+            "Highly Asymmetrical",
+            "Unbalanced",
+            "Slightly Skewed",
+            "Visibly Uneven",
+            "Softly Tilted",
+            "Moderately Symmetrical",
+            "Balanced",
+            "Evenly Mirrored",
+            "Perfectly Proportioned",
+            "Near-Identical Halves",
+            "Flawlessly Symmetrical"
+          ]
+        },
+        {
+          "name": "Skin Clarity",
+          "explanation": "Smoothness, evenness of tone, and absence of blemishes",
+          "value": "Even Complexion",
+          "importance": 92,
+          "example_value": "Smooth skin with minimal pores or discoloration",
+          "values": [
+            "Acne-Prone",
+            "Patchy",
+            "Red-Blotched",
+            "Uneven",
+            "Mildly Textured",
+            "Even Complexion",
+            "Smooth",
+            "Refined Texture",
+            "Radiant",
+            "Glowing",
+            "Porcelain Clarity"
+          ]
+        },
+        {
+          "name": "Eye Expression",
+          "explanation": "The emotional and aesthetic impression conveyed by the eyes",
+          "value": "Soft and Engaging",
+          "importance": 90,
+          "example_value": "Eyes that look gently curious or kind",
+          "values": [
+            "Empty",
+            "Flat",
+            "Tired",
+            "Neutral",
+            "Focused",
+            "Soft and Engaging",
+            "Warm",
+            "Expressive",
+            "Captivating",
+            "Magnetic",
+            "Soulful and Deep"
+          ]
+        },
+        {
+          "name": "Lip Fullness",
+          "explanation": "Volume and shape of lips, perceived as balanced or appealing",
+          "value": "Moderately Full",
+          "importance": 85,
+          "example_value": "Naturally rounded lips with gentle curvature",
+          "values": [
+            "Thin",
+            "Flat",
+            "Tight-Lipped",
+            "Narrow",
+            "Slightly Defined",
+            "Moderately Full",
+            "Rounded",
+            "Voluminous",
+            "Plush",
+            "Kissable",
+            "Perfect Cupid's Bow"
+          ]
+        },
+        {
+          "name": "Jawline Definition",
+          "explanation": "How cleanly the jaw is outlined and structured",
+          "value": "Subtly Defined",
+          "importance": 80,
+          "example_value": "Soft but visible jaw curve, no harsh edges",
+          "values": [
+            "Blurry",
+            "Undefined",
+            "Soft Jaw",
+            "Round",
+            "Mildly Structured",
+            "Subtly Defined",
+            "Crisp",
+            "Angular",
+            "Chiseled",
+            "Sculpted",
+            "Statuesque"
+          ]
+        },
+        {
+          "name": "Cheekbone Prominence",
+          "explanation": "How much cheekbones stand out in the facial structure",
+          "value": "Gently Raised",
+          "importance": 82,
+          "example_value": "Light catching softly along cheekbone arcs",
+          "values": [
+            "Flat",
+            "Low Set",
+            "Blended",
+            "Soft Ridges",
+            "Mild Curves",
+            "Gently Raised",
+            "Defined",
+            "Prominent",
+            "Sharp Lines",
+            "High Sculpted",
+            "Sculptural Peaks"
+          ]
+        },
+        {
+          "name": "Nose Proportion",
+          "explanation": "Harmony of nose size and shape in relation to the face",
+          "value": "Harmonious",
+          "importance": 87,
+          "example_value": "A nose that blends with the overall shape of the face",
+          "values": [
+            "Large and Wide",
+            "Bulbous",
+            "Flat Bridge",
+            "Long and Narrow",
+            "Slightly Asymmetrical",
+            "Harmonious",
+            "Balanced",
+            "Refined",
+            "Elegant",
+            "Delicate",
+            "Classic Profile"
+          ]
+        },
+        {
+          "name": "Eyebrow Shape",
+          "explanation": "Curvature, thickness, and flow of the eyebrows",
+          "value": "Natural Arc",
+          "importance": 76,
+          "example_value": "Soft arch that follows the bone structure",
+          "values": [
+            "Unkempt",
+            "Flat",
+            "Over-Plucked",
+            "Irregular",
+            "Softly Sloped",
+            "Natural Arc",
+            "Cleanly Defined",
+            "Symmetrical Arch",
+            "Sculpted",
+            "Perfect Curve",
+            "High Precision"
+          ]
+        },
+        {
+          "name": "Facial Harmony",
+          "explanation": "Overall balance between all facial features",
+          "value": "Cohesive Blend",
+          "importance": 96,
+          "example_value": "Nothing stands out as disproportionate",
+          "values": [
+            "Chaotic",
+            "Mismatched",
+            "Unbalanced",
+            "Mild Disparity",
+            "Nearly Aligned",
+            "Cohesive Blend",
+            "Balanced Proportions",
+            "Flowing Structure",
+            "Unified Geometry",
+            "Elegant Equilibrium",
+            "Golden Ratio Harmony"
+          ]
+        },
+        {
+          "name": "Smile Impact",
+          "explanation": "How expressive and pleasant the smile is",
+          "value": "Warm and Approachable",
+          "importance": 88,
+          "example_value": "A relaxed smile with slightly raised cheeks",
+          "values": [
+            "Absent",
+            "Forced",
+            "Flat",
+            "Mild",
+            "Gentle",
+            "Warm and Approachable",
+            "Charming",
+            "Radiant",
+            "Magnetic",
+            "Joyful Beam",
+            "Infectious Glow"
+          ]
+        },
+        {
+          "name": "Eye Size to Face Ratio",
+          "explanation": "How large the eyes are in proportion to the face",
+          "value": "Slightly Large",
+          "importance": 78,
+          "example_value": "Eyes just slightly larger than average",
+          "values": [
+            "Very Small",
+            "Narrow",
+            "Low Emphasis",
+            "Average",
+            "Mildly Prominent",
+            "Slightly Large",
+            "Open and Bright",
+            "Doll-like",
+            "Bold Gaze",
+            "Enlarged Highlighted",
+            "Idealized Proportion"
+          ]
+        },
+        {
+          "name": "Forehead Proportion",
+          "explanation": "Height and curvature of the forehead in balance with other features",
+          "value": "Balanced Forehead",
+          "importance": 65,
+          "example_value": "Forehead height matches golden facial thirds",
+          "values": [
+            "Very Low",
+            "Short",
+            "Flat",
+            "Slightly Small",
+            "Mildly Low",
+            "Balanced Forehead",
+            "Gracefully High",
+            "Slight Dome",
+            "Smooth Curve",
+            "Sculpted Crown",
+            "Ideal Third"
+          ]
+        },
+        {
+          "name": "Hairline Shape",
+          "explanation": "The flow and positioning of the hairline in framing the face",
+          "value": "Natural Frame",
+          "importance": 60,
+          "example_value": "Even hairline that follows forehead contour",
+          "values": [
+            "Uneven",
+            "Jagged",
+            "Receded",
+            "Irregular",
+            "Sloped",
+            "Natural Frame",
+            "Soft Widow's Peak",
+            "Curved Flow",
+            "Ideal Contour",
+            "Framing Halo",
+            "Symmetric Frame"
+          ]
+        },
+        {
+          "name": "Chin Shape",
+          "explanation": "Form and prominence of the chin in relation to the jaw and lips",
+          "value": "Softly Defined",
+          "importance": 72,
+          "example_value": "Rounded tip, neither sharp nor recessed",
+          "values": [
+            "Receding",
+            "Flat",
+            "Undefined",
+            "Blunt",
+            "Mildly Pointed",
+            "Softly Defined",
+            "Rounded",
+            "Balanced",
+            "Elegantly Prominent",
+            "Sculpted",
+            "Perfectly Centered"
+          ]
+        },
+        {
+          "name": "Facial Glow",
+          "explanation": "Perceived inner vitality and luminosity of the skin",
+          "value": "Healthy Radiance",
+          "importance": 83,
+          "example_value": "Soft light reflected naturally on skin",
+          "values": [
+            "Dull",
+            "Pale",
+            "Flat Lighting",
+            "Dry",
+            "Basic Tone",
+            "Healthy Radiance",
+            "Soft Glow",
+            "Inner Warmth",
+            "Luminous Skin",
+            "Ethereal Shine",
+            "Angel-like Light"
+          ]
+        },
+        {
+          "name": "Color Harmony",
+          "explanation": "How the skin tone, eye color, and lip tone complement each other",
+          "value": "Natural Balance",
+          "importance": 79,
+          "example_value": "Olive skin with hazel eyes and soft coral lips",
+          "values": [
+            "Clashing",
+            "Slight Discord",
+            "Washed Out",
+            "Off-Tone",
+            "Neutralized",
+            "Natural Balance",
+            "Soft Contrast",
+            "Vibrant Match",
+            "Harmonious Palette",
+            "Aesthetic Unity",
+            "Perfect Blend"
+          ]
+        },
+        {
+          "name": "Nostril Symmetry",
+          "explanation": "Proportional balance between nostrils and nose tip",
+          "value": "Aligned",
+          "importance": 68,
+          "example_value": "Both nostrils of equal height and width",
+          "values": [
+            "Misaligned",
+            "Visible Skew",
+            "Uneven Widths",
+            "Imbalanced Shape",
+            "Nearly Aligned",
+            "Aligned",
+            "Symmetrical Flare",
+            "Perfect Width Match",
+            "Balanced Ellipse",
+            "Even Airflow",
+            "Invisible Perfection"
+          ]
+        },
+        {
+          "name": "Pupil Brightness",
+          "explanation": "How well light reflects in the pupils to enhance liveliness",
+          "value": "Visible Light Dot",
+          "importance": 73,
+          "example_value": "Small white highlight in both eyes",
+          "values": [
+            "Flat",
+            "Dim",
+            "Clouded",
+            "Shadowed",
+            "Faint Spark",
+            "Visible Light Dot",
+            "Reflective",
+            "Alive Gaze",
+            "Glowing Eyes",
+            "Starry Reflection",
+            "Vibrant Radiance"
+          ]
+        },
+        {
+          "name": "Smile Line Softness",
+          "explanation": "Curvature and depth of nasolabial lines during a smile",
+          "value": "Gently Formed",
+          "importance": 64,
+          "example_value": "Soft lines indicating a genuine smile without harsh creases",
+          "values": [
+            "Deep Wrinkles",
+            "Sharp Lines",
+            "Hollowed",
+            "Angular",
+            "Mild Indent",
+            "Gently Formed",
+            "Soft Contours",
+            "Youthful Curves",
+            "Natural Elevation",
+            "Playful Arcs",
+            "Barely Present"
+          ]
+        },
+        {
+          "name": "Eyelash Presence",
+          "explanation": "Length, density, and natural curvature of the eyelashes",
+          "value": "Visible and Curved",
+          "importance": 71,
+          "example_value": "Lashes curve upwards and frame the eye",
+          "values": [
+            "Sparse",
+            "Short",
+            "Straight",
+            "Flat",
+            "Moderate",
+            "Visible and Curved",
+            "Darkened Fringe",
+            "Framing Arc",
+            "Feathered Sweep",
+            "Lush Curl",
+            "Elegant Flutter"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "A-company-corporate-language",
+    "title": "Example: A company Corporate Language",
+    "description": "This profile captures the tone, style, and communication dimensions typical of a company's corporate language: professional, innovative, collaborative, and tech-forward, yet human and inviting.",
+    "category": "Corporate Language",
+    "selectedDimension": "Professionalism",
+    "dimensions": {
+        "latent_dimensions": [
+          {
+            "name": "Emotional Tone",
+            "explanation": "The overall emotional resonance conveyed through the language",
+            "value": "Balanced",
+            "importance": 85,
+            "example_value": "Do you dream of clean oceans and beaches?",
+            "values": [
+              "Flat", "Detached", "Serious", "Hopeful", "Neutral", "Balanced", "Optimistic", "Uplifting", "Inspiring", "Passionate", "Evangelical"
+            ]
+          },
+          {
+            "name": "Formality Level",
+            "explanation": "The degree of formal vs. informal language used",
+            "value": "Conversational",
+            "importance": 76,
+            "example_value": "Wanna join the team?",
+            "values": [
+              "Very Formal", "Formal", "Professional", "Polished", "Neutral", "Conversational", "Casual", "Friendly", "Relaxed", "Slangy", "Informal"
+            ]
+          },
+          {
+            "name": "Call-to-Action Strength",
+            "explanation": "The urgency and directness of action-oriented language",
+            "value": "Encouraging",
+            "importance": 78,
+            "example_value": "Support a great cause with a great impact.",
+            "values": [
+              "Absent", "Implied", "Soft", "Polite", "Suggestive", "Encouraging", "Assertive", "Compelling", "Urgent", "Forceful", "Overbearing"
+            ]
+          },
+          {
+            "name": "Technical Depth",
+            "explanation": "The amount of technical detail and specificity present",
+            "value": "Moderate Detail",
+            "importance": 72,
+            "example_value": "collecting plastic pellets using AI, robot, and drone technology",
+            "values": [
+              "None", "Basic", "Simple", "General", "Slightly Technical", "Moderate Detail", "Precise", "Detailed", "Complex", "Highly Technical", "Specialist"
+            ]
+          },
+          {
+            "name": "Environmental Urgency",
+            "explanation": "How urgent or critical the environmental problem is presented",
+            "value": "Concerned",
+            "importance": 83,
+            "example_value": "Plastic pellets is a threat to our ecosystems",
+            "values": [
+              "Unmentioned", "Subtle", "Mild", "Noted", "Observed", "Concerned", "Pressing", "Urgent", "Dire", "Alarmist", "Apocalyptic"
+            ]
+          },
+          {
+            "name": "Narrative Structure",
+            "explanation": "How strongly the text follows a chronological or story-based structure",
+            "value": "Lightly Structured",
+            "importance": 68,
+            "example_value": "2023 Q3... 2023 Q4... 2024 Q1...",
+            "values": [
+              "None", "Loose", "Scattered", "Unclear", "Fragmented", "Lightly Structured", "Sequential", "Organized", "Narrative", "Thematic", "Story-Driven"
+            ]
+          },
+          {
+            "name": "Hopefulness Level",
+            "explanation": "The degree to which the language conveys hope for change",
+            "value": "Steady Hope",
+            "importance": 80,
+            "example_value": "Let’s change the world together",
+            "values": [
+              "Hopeless", "Cynical", "Doubtful", "Reserved", "Neutral", "Steady Hope", "Uplifting", "Confident", "Inspiring", "Visionary", "Idealistic"
+            ]
+          },
+          {
+            "name": "Clarity of Problem Definition",
+            "explanation": "How explicitly the problem is introduced and explained",
+            "value": "Clearly Stated",
+            "importance": 75,
+            "example_value": "Plastic pellets are the raw material used to create any given plastic product.",
+            "values": [
+              "Vague", "Hinted", "Implied", "Brief", "Moderately Clear", "Clearly Stated", "Well Explained", "In-Depth", "Thorough", "Overdefined", "Redundant"
+            ]
+          },
+          {
+            "name": "Tone of Optimism vs Realism",
+            "explanation": "Balance between hopeful language and realistic descriptions",
+            "value": "Balanced",
+            "importance": 70,
+            "example_value": "This is a problem that unfortunately has been identified worldwide.",
+            "values": [
+              "Pessimistic", "Gloomy", "Cautious", "Wary", "Realistic", "Balanced", "Hopeful", "Encouraging", "Cheerful", "Idealized", "Unrealistically Positive"
+            ]
+          },
+          {
+            "name": "Use of Jargon",
+            "explanation": "Degree of domain-specific terminology used",
+            "value": "Mild Use",
+            "importance": 60,
+            "example_value": "microplastics, computer vision, AI",
+            "values": [
+              "None", "Everyday", "Basic", "Accessible", "General Tech", "Mild Use", "Moderate Jargon", "Technical", "Specialist", "Heavy", "Dense"
+            ]
+          },
+          {
+            "name": "Engagement Style",
+            "explanation": "How much the reader is actively engaged through direct address",
+            "value": "Inviting",
+            "importance": 82,
+            "example_value": "Follow the journey of the project right here...",
+            "values": [
+              "Distant", "Detached", "Neutral", "Mentioning", "Subtle Invite", "Inviting", "Friendly", "Personal", "Inclusive", "Interactive", "Immersive"
+            ]
+          },
+          {
+            "name": "Innovation Framing",
+            "explanation": "How strongly the text positions the solution as innovative or cutting-edge",
+            "value": "Forward-Looking",
+            "importance": 74,
+            "example_value": "develop a robot that, with the help of AI, can remove plastic pellets",
+            "values": [
+              "Conventional", "Simple", "Improved", "Established", "Slightly Innovative", "Forward-Looking", "Advanced", "Disruptive", "Futuristic", "Revolutionary", "Speculative"
+            ]
+          },
+          {
+            "name": "Marketing Tone",
+            "explanation": "Level of branding and promotional language present",
+            "value": "Moderate",
+            "importance": 65,
+            "example_value": "Support a great cause with a great impact.",
+            "values": [
+              "None", "Subtle", "Reserved", "Professional", "Mild", "Moderate", "Promotional", "Persuasive", "Salesy", "Exaggerated", "Hype-Filled"
+            ]
+          },
+          {
+            "name": "Scientific Anchoring",
+            "explanation": "Presence of data, facts, or scientific references",
+            "value": "Occasional Facts",
+            "importance": 66,
+            "example_value": "Over 220 marine species have been documented consuming plastic waste.",
+            "values": [
+              "Absent", "Speculative", "Anecdotal", "Lightly Stated", "Assumed", "Occasional Facts", "Referenced", "Data-Rich", "Heavily Supported", "Cited", "Academic"
+            ]
+          },
+          {
+            "name": "Problem-to-Solution Clarity",
+            "explanation": "How clearly the text presents the relationship between the problem and the solution",
+            "value": "Coherent",
+            "importance": 79,
+            "example_value": "That is why Race for Oceans and Trifork has joined forces...",
+            "values": [
+              "Disconnected", "Loose", "Implied", "Somewhat Related", "Mentioned", "Coherent", "Logical", "Structured", "Clear", "Highlighted", "Over-Explained"
+            ]
+          },
+          {
+            "name": "Use of Timeline",
+            "explanation": "How much chronological structure is used to show progress or process",
+            "value": "Light Timeline",
+            "importance": 58,
+            "example_value": "2023 Q3... 2024 Q1...",
+            "values": [
+              "Absent", "Random", "Sparse", "Referential", "Loose", "Light Timeline", "Chronological", "Milestone-Driven", "Roadmapped", "Timeline-Focused", "Strictly Chronological"
+            ]
+          },
+          {
+            "name": "Community Appeal",
+            "explanation": "How much the text aims to rally collective effort or shared responsibility",
+            "value": "Inclusive",
+            "importance": 81,
+            "example_value": "Let’s change the world together",
+            "values": [
+              "Self-Oriented", "Neutral", "Personal", "Descriptive", "Acknowledging", "Inclusive", "Encouraging", "Collaborative", "Mobilizing", "Empowering", "Collective Rallying"
+            ]
+          },
+          {
+            "name": "Visual Language Use",
+            "explanation": "Degree to which the language creates mental imagery",
+            "value": "Moderate Imagery",
+            "importance": 62,
+            "example_value": "collecting pellets using a two-finger system",
+            "values": [
+              "Abstract", "Sparse", "General", "Functional", "Subtle", "Moderate Imagery", "Descriptive", "Vivid", "Cinematic", "Graphic", "Sensory Overload"
+            ]
+          },
+          {
+            "name": "Readability Level",
+            "explanation": "How easily the text can be read and understood by the general audience",
+            "value": "Accessible",
+            "importance": 77,
+            "example_value": "Plastic pellets are the raw material used...",
+            "values": [
+              "Academic", "Complex", "Technical", "Formal", "Neutral", "Accessible", "Simple", "Plain", "Elementary", "Child-Friendly", "Oversimplified"
+            ]
+          },
+          {
+            "name": "Inspirational Drive",
+            "explanation": "The extent to which the text seeks to inspire action or emotion",
+            "value": "Motivating",
+            "importance": 84,
+            "example_value": "Follow the journey. Let’s change the world together.",
+            "values": [
+              "Uninspired", "Dry", "Reserved", "Matter-of-fact", "Balanced", "Motivating", "Encouraging", "Inspirational", "Emotional", "Evocative", "Heroic"
+            ]
+          }
         ]
       }
-    ]
-  }
-}, {
-  "id": "image-style",
-  "title": "Dimensions of Image Style",
-  "description": "Analysed from a random smartphone image taken in Denmark.",
-  "category": "Photography",
-  "selectedDimension": "Scene Realism",
-  "dimensions": {
-    "latent_dimensions": [
-      {
-        "name": "Color Temperature",
-        "explanation": "Controls the warmth or coolness of the image tones",
-        "value": "Balanced",
-        "importance": 90,
-        "example_value": "#87CEEB sky with moderate green vegetation",
-        "values": [
-          "Cold",
-          "Cool",
-          "Subtle Cool",
-          "Slightly Cool",
-          "Neutral Cool",
-          "Balanced",
-          "Slightly Warm",
-          "Warm",
-          "Golden",
-          "Amber",
-          "Hot"
-        ]
-      },
-      {
-        "name": "Contrast Level",
-        "explanation": "Degree of tonal separation between light and dark areas",
-        "value": "Natural",
-        "importance": 86,
-        "example_value": "Clear shadow from the man on pebbles, yet details visible",
-        "values": [
-          "Flat",
-          "Low",
-          "Soft",
-          "Muted",
-          "Subdued",
-          "Natural",
-          "Crisp",
-          "Defined",
-          "High",
-          "Sharp",
-          "Extreme"
-        ]
-      },
-      {
-        "name": "Scene Realism",
-        "explanation": "Degree to which the image mimics real-world lighting and texture",
-        "value": "Photorealistic",
-        "importance": 95,
-        "example_value": "Shoreline textures and foliage appear true-to-life",
-        "values": [
-          "Stylized",
-          "Painterly",
-          "Artistic",
-          "Semi-Realistic",
-          "Neutral Realism",
-          "Photorealistic",
-          "Detailed Realism",
-          "Hyperreal",
-          "Enhanced Realism",
-          "Surreal Realism",
-          "Ultra-Defined"
-        ]
-      },
-      {
-        "name": "Framing Balance",
-        "explanation": "Symmetry and weight distribution in the composition",
-        "value": "Visually Balanced",
-        "importance": 78,
-        "example_value": "Coastline guiding eye diagonally, figure offset to the right",
-        "values": [
-          "Chaotic",
-          "Disjointed",
-          "Loose",
-          "Unstructured",
-          "Neutral",
-          "Visually Balanced",
-          "Structured",
-          "Harmonious",
-          "Architectonic",
-          "Geometric",
-          "Perfectly Symmetrical"
-        ]
-      },
-      {
-        "name": "Light Source Clarity",
-        "explanation": "How defined and directional the light source appears",
-        "value": "Moderately Clear",
-        "importance": 74,
-        "example_value": "Sunlight casting gentle, soft-edged shadows",
-        "values": [
-          "Diffuse",
-          "Overcast",
-          "Soft",
-          "Subtle",
-          "Implied",
-          "Moderately Clear",
-          "Clear",
-          "Direct",
-          "Harsh",
-          "Theatrical",
-          "Blinding"
-        ]
-      },
-      {
-        "name": "Grain Texture",
-        "explanation": "The visibility and strength of image texture or photographic grain",
-        "value": "Natural Film Texture",
-        "importance": 65,
-        "example_value": "Subtle grain visible in beach stones and cliff face",
-        "values": [
-          "Smooth",
-          "Digital Clean",
-          "Minimal Grain",
-          "Soft Grain",
-          "Matte",
-          "Natural Film Texture",
-          "Defined Grain",
-          "Strong Grain",
-          "Coarse",
-          "Rough",
-          "Noisy"
-        ]
-      },
-      {
-        "name": "Color Saturation",
-        "explanation": "Intensity of the colors used in the image",
-        "value": "Medium Saturation",
-        "importance": 82,
-        "example_value": "Lush greens, deep blue sea, but not oversaturated",
-        "values": [
-          "Desaturated",
-          "Faded",
-          "Muted",
-          "Soft",
-          "Neutral",
-          "Medium Saturation",
-          "Lively",
-          "Vibrant",
-          "Bold",
-          "Intense",
-          "Oversaturated"
-        ]
-      },
-      {
-        "name": "Depth Perception",
-        "explanation": "The sense of distance and spatial layering in the image",
-        "value": "Moderately Deep",
-        "importance": 88,
-        "example_value": "Foreground pebbles and distant sea line clearly separated",
-        "values": [
-          "Flat",
-          "Minimal",
-          "Shallow",
-          "Layered",
-          "Slight Depth",
-          "Moderately Deep",
-          "Deep",
-          "Expanded",
-          "Vast",
-          "Dramatic Depth",
-          "Cinematic"
-        ]
-      },
-      {
-        "name": "Movement Suggestion",
-        "explanation": "How much implied motion is present in the image",
-        "value": "Mild Motion",
-        "importance": 54,
-        "example_value": "Gentle waves, walking posture of man",
-        "values": [
-          "Still",
-          "Frozen",
-          "Minimal",
-          "Implied",
-          "Static",
-          "Mild Motion",
-          "Noticeable Motion",
-          "Flowing",
-          "Dynamic",
-          "Sweeping",
-          "Kinetic"
-        ]
-      },
-      {
-        "name": "Nature Dominance",
-        "explanation": "How much of the image is occupied by natural elements",
-        "value": "High Nature Presence",
-        "importance": 85,
-        "example_value": "Sea, cliffs, and vegetation make up majority of frame",
-        "values": [
-          "None",
-          "Sparse",
-          "Low",
-          "Fragmented",
-          "Balanced",
-          "High Nature Presence",
-          "Dominant",
-          "Overwhelming",
-          "Engulfing",
-          "Pure Wilderness",
-          "Mythic Naturalism"
-        ]
-      },
-      {
-        "name": "Human Presence Subtlety",
-        "explanation": "How prominent or intrusive the human figure appears",
-        "value": "Low Emphasis",
-        "importance": 68,
-        "example_value": "Single person placed low and off to the side",
-        "values": [
-          "None",
-          "Barely Visible",
-          "Blended",
-          "Minor",
-          "Secondary",
-          "Low Emphasis",
-          "Equal Focus",
-          "Moderate Presence",
-          "Dominant",
-          "Central",
-          "Overbearing"
-        ]
-      },
-      {
-        "name": "Horizon Line Prominence",
-        "explanation": "Visibility and compositional dominance of the horizon",
-        "value": "Gently Defined",
-        "importance": 61,
-        "example_value": "Soft line where sky meets sea in top third of image",
-        "values": [
-          "Hidden",
-          "Soft",
-          "Blended",
-          "Implied",
-          "Subtle",
-          "Gently Defined",
-          "Clear",
-          "Prominent",
-          "Framing",
-          "Dividing",
-          "Overpowering"
-        ]
-      },
-      {
-        "name": "Ambient Light Mood",
-        "explanation": "Overall feeling of lighting across the scene",
-        "value": "Open and Relaxed",
-        "importance": 80,
-        "example_value": "Bright daylight with soft contrast",
-        "values": [
-          "Dark",
-          "Somber",
-          "Cloudy",
-          "Flat",
-          "Neutral",
-          "Open and Relaxed",
-          "Uplifting",
-          "Sunny",
-          "Joyful",
-          "Radiant",
-          "Overexposed"
-        ]
-      },
-      {
-        "name": "Visual Simplicity",
-        "explanation": "How minimal or cluttered the visual composition appears",
-        "value": "Balanced Simplicity",
-        "importance": 76,
-        "example_value": "Clean lines, few objects, no visual noise",
-        "values": [
-          "Chaotic",
-          "Busy",
-          "Layered",
-          "Textured",
-          "Neutral",
-          "Balanced Simplicity",
-          "Clear",
-          "Minimalist",
-          "Sparse",
-          "Bare",
-          "Zen-like"
-        ]
-      },
-      {
-        "name": "Detail Sharpness",
-        "explanation": "Crispness and definition of image details",
-        "value": "Moderate Sharpness",
-        "importance": 84,
-        "example_value": "Edges of rocks and cliff vegetation clearly visible",
-        "values": [
-          "Blurry",
-          "Soft",
-          "Matte",
-          "Low Sharpness",
-          "Natural",
-          "Moderate Sharpness",
-          "Crisp",
-          "High Definition",
-          "Hyperclear",
-          "Sharpened",
-          "Overprocessed"
-        ]
-      },
-      {
-        "name": "Foreground Emphasis",
-        "explanation": "How much visual weight is given to the closest part of the image",
-        "value": "Mildly Anchored",
-        "importance": 67,
-        "example_value": "Rocks and man provide anchoring without dominating",
-        "values": [
-          "None",
-          "Distant",
-          "Background-Focused",
-          "Minimal",
-          "Balanced",
-          "Mildly Anchored",
-          "Anchored",
-          "Dominant Foreground",
-          "Strong Anchor",
-          "Foreground-Heavy",
-          "Crushing Foreground"
-        ]
-      },
-      {
-        "name": "Color Palette Harmony",
-        "explanation": "How well the colors blend and complement each other",
-        "value": "Natural Harmony",
-        "importance": 73,
-        "example_value": "Earthy browns, greens, and cool blue sea tones",
-        "values": [
-          "Discordant",
-          "Contrasty",
-          "Vivid Clashes",
-          "Bold Mix",
-          "Neutral",
-          "Natural Harmony",
-          "Complementary",
-          "Pastel Flow",
-          "Color-Themed",
-          "Monochrome",
-          "Perfectly Blended"
-        ]
-      },
-      {
-        "name": "Line Flow",
-        "explanation": "How the visual lines guide the viewer's eye",
-        "value": "Curved Natural Path",
-        "importance": 70,
-        "example_value": "Curved coastline draws eye from figure to horizon",
-        "values": [
-          "Chaotic",
-          "Broken",
-          "Erratic",
-          "Unfocused",
-          "Neutral",
-          "Curved Natural Path",
-          "Rhythmic",
-          "Guided",
-          "Strong Flow",
-          "Cinematic Sweep",
-          "Perfect Spiral"
-        ]
-      },
-      {
-        "name": "Narrative Suggestion",
-        "explanation": "How much the image implies a story or human experience",
-        "value": "Light Narrative",
-        "importance": 75,
-        "example_value": "Elderly man walking with poles along coastal path",
-        "values": [
-          "None",
-          "Minimal",
-          "Abstract",
-          "Unclear",
-          "Neutral",
-          "Light Narrative",
-          "Personal",
-          "Implied Backstory",
-          "Strong Story",
-          "Dramatic Scene",
-          "Mythic"
-        ]
-      },
-      {
-        "name": "Temporal Atmosphere",
-        "explanation": "Time of day and temporal mood (pastoral, timeless, fleeting)",
-        "value": "Present-Moment",
-        "importance": 69,
-        "example_value": "Midday sun with no nostalgic or futuristic cues",
-        "values": [
-          "Timeless",
-          "Dreamlike",
-          "Distant Past",
-          "Soft Glow",
-          "Neutral Time",
-          "Present-Moment",
-          "Passing",
-          "Ephemeral",
-          "Golden Hour",
-          "Imminent Change",
-          "Frozen Time"
-        ]
-      }
-    ]
-  }
-}, {
-  "id": "john-cleese-humor",
-  "title": "John Cleese Style Humor",
-  "description": "Analyzed from John Cleese's comedy style, focusing on cynicism and punchline ambiguity. Perfect for creating witty, slightly cynical humor.",
-  "category": "Comedy",
-  "selectedDimension": "Sarcasm Intensity",
-  "dimensions": {
-    "latent_dimensions": [
-      {
-        "name": "Cynicism Level",
-        "explanation": "Indicates how skeptical or distrustful the humor is toward institutions or professions",
-        "value": "Mildly Cynical",
-        "importance": 91,
-        "example_value": "people couldn't figure out which side of the stamp to spit on",
-        "values": [
-          "Naive",
-          "Idealistic",
-          "Trusting",
-          "Sincere",
-          "Dry",
-          "Mildly Cynical",
-          "Cynical",
-          "Jaded",
-          "Mocking",
-          "Acerbic",
-          "Bitter"
-        ]
-      },
-      {
-        "name": "Punchline Ambiguity",
-        "explanation": "How much the joke relies on indirectness or misdirection",
-        "value": "Moderately Twisted",
-        "importance": 84,
-        "example_value": "which side of the stamp to spit on",
-        "values": [
-          "Literal",
-          "Direct",
-          "Obvious",
-          "Simple",
-          "Subtle",
-          "Moderately Twisted",
-          "Surprising",
-          "Layered",
-          "Cryptic",
-          "Obscure",
-          "Absurd"
-        ]
-      },
-      {
-        "name": "Authority Satire",
-        "explanation": "Degree of mockery or critique aimed at figures of authority or respect",
-        "value": "Sarcastic",
-        "importance": 88,
-        "example_value": "commemorative stamps commemorating lawyers",
-        "values": [
-          "Respectful",
-          "Earnest",
-          "Gentle",
-          "Playful",
-          "Ironic",
-          "Sarcastic",
-          "Cutting",
-          "Disrespectful",
-          "Ridiculing",
-          "Scathing",
-          "Defamatory"
-        ]
-      },
-      {
-        "name": "Formality of Language",
-        "explanation": "The level of structured, formal, or polished language used",
-        "value": "Conversational",
-        "importance": 62,
-        "example_value": "they had to withdraw them",
-        "values": [
-          "Academic",
-          "Stilted",
-          "Formal",
-          "Polished",
-          "Professional",
-          "Conversational",
-          "Colloquial",
-          "Casual",
-          "Slangy",
-          "Unfiltered",
-          "Crude"
-        ]
-      },
-      {
-        "name": "Historical Irony",
-        "explanation": "How much the humor draws on or twists established traditions or respected symbols",
-        "value": "Tradition-Undermining",
-        "importance": 74,
-        "example_value": "The U.S. Postal Service... commemorative stamps",
-        "values": [
-          "Reverent",
-          "Respectful",
-          "Cautious",
-          "Balanced",
-          "Neutral",
-          "Tradition-Undermining",
-          "Critical",
-          "Ironic",
-          "Darkly Ironic",
-          "Mock-Historic",
-          "Subversive"
-        ]
-      },
-      {
-        "name": "Delivery Sharpness",
-        "explanation": "The abruptness or smoothness of the punchline delivery",
-        "value": "Snappy",
-        "importance": 71,
-        "example_value": "spit on",
-        "values": [
-          "Rambling",
-          "Drawn-out",
-          "Gradual",
-          "Flowing",
-          "Smooth",
-          "Snappy",
-          "Abrupt",
-          "Jarring",
-          "Blunt",
-          "Sudden",
-          "Staccato"
-        ]
-      },
-      {
-        "name": "Absurdity Level",
-        "explanation": "The degree of irrationality or surrealism in the humor",
-        "value": "Mildly Absurd",
-        "importance": 70,
-        "example_value": "which side of the stamp to spit on",
-        "values": [
-          "Realistic",
-          "Grounded",
-          "Believable",
-          "Commonplace",
-          "Dry",
-          "Mildly Absurd",
-          "Silly",
-          "Goofy",
-          "Ridiculous",
-          "Ludicrous",
-          "Surreal"
-        ]
-      },
-      {
-        "name": "Cultural Specificity",
-        "explanation": "How much the joke relies on a specific cultural context",
-        "value": "American-Focused",
-        "importance": 58,
-        "example_value": "The U.S. Postal Service",
-        "values": [
-          "Universal",
-          "Global",
-          "Generic Western",
-          "Modern",
-          "Subtle American",
-          "American-Focused",
-          "Deep Americana",
-          "Regional Dialect",
-          "Obscure Reference",
-          "In-Joke"
-        ]
-      },
-      {
-        "name": "Moral Edginess",
-        "explanation": "Degree to which the joke challenges ethical norms or sensitivities",
-        "value": "Borderline Tactless",
-        "importance": 69,
-        "example_value": "spit on and its implied disdain",
-        "values": [
-          "Wholesome",
-          "Polite",
-          "Safe",
-          "Acceptable",
-          "Crisp",
-          "Borderline Tactless",
-          "Provocative",
-          "Rude",
-          "Crass",
-          "Offensive",
-          "Shocking"
-        ]
-      },
-      {
-        "name": "Cleverness Quotient",
-        "explanation": "The level of intellectual play or wordplay in the joke",
-        "value": "Wittily Constructed",
-        "importance": 85,
-        "example_value": "couldn't figure out which side of the stamp to spit on as misdirection",
-        "values": [
-          "Dull",
-          "Literal",
-          "Plain",
-          "Simple",
-          "Slightly Clever",
-          "Wittily Constructed",
-          "Clever",
-          "Sharp",
-          "Ingenious",
-          "Brilliant",
-          "Genius"
-        ]
-      },
-      {
-        "name": "Nostalgic Tone",
-        "explanation": "Level of old-fashioned or retro feeling in the humor",
-        "value": "Mildly Retro",
-        "importance": 44,
-        "example_value": "postal service stamps",
-        "values": [
-          "Modern",
-          "Contemporary",
-          "Timeless",
-          "Subtle Retro",
-          "Implied Past",
-          "Mildly Retro",
-          "Old-Timey",
-          "Vintage",
-          "WWII Era",
-          "Depression Era",
-          "Victorian"
-        ]
-      },
-      {
-        "name": "Visual Imagination Trigger",
-        "explanation": "How easily the joke conjures a mental image",
-        "value": "Vividly Suggestive",
-        "importance": 66,
-        "example_value": "which side of the stamp to spit on",
-        "values": [
-          "Abstract",
-          "Hard to Picture",
-          "Subtle",
-          "Mild",
-          "Recognizable",
-          "Vividly Suggestive",
-          "Detailed",
-          "Cinematic",
-          "Graphic",
-          "Extreme",
-          "Grotesque"
-        ]
-      },
-      {
-        "name": "Temporal Specificity",
-        "explanation": "How anchored the humor is to a specific time period",
-        "value": "Late 20th Century",
-        "importance": 49,
-        "example_value": "postal service stamps",
-        "values": [
-          "Timeless",
-          "Future-Oriented",
-          "Present-Day",
-          "2010s",
-          "2000s",
-          "Late 20th Century",
-          "Mid-Century",
-          "WWII Era",
-          "Depression Era",
-          "Victorian",
-          "Historic"
-        ]
-      },
-      {
-        "name": "Irony Density",
-        "explanation": "How much of the joke relies on irony",
-        "value": "High Irony",
-        "importance": 86,
-        "example_value": "commemorative stamps commemorating lawyers",
-        "values": [
-          "None",
-          "Low",
-          "Light",
-          "Implied",
-          "Moderate",
-          "High Irony",
-          "Explicit",
-          "Layered",
-          "Recursive",
-          "Meta-Ironic",
-          "Post-Ironic"
-        ]
-      },
-      {
-        "name": "Use of Wordplay",
-        "explanation": "Extent of puns, double meanings, or phonetic tricks",
-        "value": "Mild Wordplay",
-        "importance": 59,
-        "example_value": "spit on as both literal and symbolic",
-        "values": [
-          "None",
-          "Flat",
-          "Plain",
-          "Straight",
-          "Dry",
-          "Mild Wordplay",
-          "Double Meaning",
-          "Pun-Based",
-          "Phonetic Trick",
-          "Layered Pun",
-          "Meta-Wordplay"
-        ]
-      },
-      {
-        "name": "Social Commentary Depth",
-        "explanation": "Level of embedded social critique or observation",
-        "value": "Light Commentary",
-        "importance": 68,
-        "example_value": "lawyers as a target of mild satire",
-        "values": [
-          "None",
-          "Surface",
-          "Thin",
-          "Subtle",
-          "Implied",
-          "Light Commentary",
-          "Moderate",
-          "Direct",
-          "Heavy-Handed",
-          "Blunt",
-          "Preachy"
-        ]
-      },
-      {
-        "name": "Syllabic Rhythm",
-        "explanation": "How much the joke flows rhythmically in its syllables",
-        "value": "Light Rhythm",
-        "importance": 39,
-        "example_value": "which side of the stamp to spit on",
-        "values": [
-          "Choppy",
-          "Clunky",
-          "Irregular",
-          "Uneven",
-          "Straightforward",
-          "Light Rhythm",
-          "Flowing",
-          "Bouncy",
-          "Lyrical",
-          "Poetic",
-          "Musical"
-        ]
-      },
-      {
-        "name": "Sarcasm Intensity",
-        "explanation": "The harshness or bite of the sarcastic tone",
-        "value": "Moderate Sarcasm",
-        "importance": 73,
-        "example_value": "people couldn't figure out which side of the stamp to spit on",
-        "values": [
-          "Sincere",
-          "Light",
-          "Playful",
-          "Dry",
-          "Wry",
-          "Moderate Sarcasm",
-          "Cutting",
-          "Bitter",
-          "Scornful",
-          "Cruel",
-          "Venomous"
-        ]
-      },
-      {
-        "name": "Professional Stereotype Use",
-        "explanation": "How much the joke depends on professional clichés or generalizations",
-        "value": "Relies on Tropes",
-        "importance": 77,
-        "example_value": "lawyers as untrustworthy stereotype",
-        "values": [
-          "Original",
-          "Personalized",
-          "Nuanced",
-          "Balanced",
-          "Neutral",
-          "Relies on Tropes",
-          "Recognizable",
-          "Overused",
-          "Cartoonish",
-          "Exaggerated",
-          "Exaggerated"
-        ]
-      },
-      {
-        "name": "Nostalgic Tone",
-        "explanation": "Level of old-fashioned or retro feeling in the humor",
-        "value": "Mildly Retro",
-        "importance": 44,
-        "example_value": "postal service stamps",
-        "values": [
-          "Modern",
-          "Contemporary",
-          "Timeless",
-          "Subtle Retro",
-          "Implied Past",
-          "Mildly Retro",
-          "Old-Timey",
-          "Vintage",
-          "WWII Era",
-          "Depression Era",
-          "Victorian"
-        ]
-      }
-    ]
-  }
-}, {
-  "id": "website-design",
-  "title": "Website Design Dimensions",
-  "description": "Analyzed from a modern website design, focusing on visual hierarchy and user experience elements.",
-  "category": "Web Design",
-  "selectedDimension": "Visual Hierarchy",
-  "dimensions": {
-    "latent_dimensions": [
-      {
-        "name": "Visual Hierarchy",
-        "explanation": "How clearly the design guides the user's attention through different elements",
-        "value": "Strong Hierarchy",
-        "importance": 92,
-        "example_value": "Clear heading structure with distinct font sizes and weights",
-        "values": [
-          "Flat",
-          "Minimal",
-          "Subtle",
-          "Balanced",
-          "Moderate",
-          "Strong Hierarchy",
-          "Emphasized",
-          "Bold",
-          "Dramatic",
-          "Overwhelming",
-          "Chaotic"
-        ]
-      },
-      {
-        "name": "Color Scheme",
-        "explanation": "The overall color palette and how colors are used throughout the design",
-        "value": "Professional Blue",
-        "importance": 88,
-        "example_value": "Primary blue with white and gray accents",
-        "values": [
-          "Monochromatic",
-          "Neutral",
-          "Pastel",
-          "Earthy",
-          "Balanced",
-          "Professional Blue",
-          "Vibrant",
-          "Bold",
-          "Dark",
-          "High Contrast",
-          "Experimental"
-        ]
-      },
-      {
-        "name": "Typography Style",
-        "explanation": "The font choices and how text is presented",
-        "value": "Clean Sans-serif",
-        "importance": 85,
-        "example_value": "Modern sans-serif fonts with good readability",
-        "values": [
-          "Serif",
-          "Classic",
-          "Minimal",
-          "Readable",
-          "Balanced",
-          "Clean Sans-serif",
-          "Modern",
-          "Bold",
-          "Stylized",
-          "Decorative",
-          "Experimental"
-        ]
-      },
-      {
-        "name": "Layout Structure",
-        "explanation": "How content is organized and arranged on the page",
-        "value": "Grid-based",
-        "importance": 90,
-        "example_value": "Organized grid layout with clear sections",
-        "values": [
-          "Free-form",
-          "Minimal",
-          "Centered",
-          "Balanced",
-          "Structured",
-          "Grid-based",
-          "Organized",
-          "Complex",
-          "Layered",
-          "Dense",
-          "Overwhelming"
-        ]
-      },
-      {
-        "name": "White Space Usage",
-        "explanation": "How empty space is used to create breathing room",
-        "value": "Generous",
-        "importance": 82,
-        "example_value": "Plenty of padding and margins around elements",
-        "values": [
-          "Minimal",
-          "Tight",
-          "Compact",
-          "Balanced",
-          "Comfortable",
-          "Generous",
-          "Spacious",
-          "Open",
-          "Airy",
-          "Sparse",
-          "Empty"
-        ]
-      },
-      {
-        "name": "Interactive Elements",
-        "explanation": "How buttons, links, and interactive components are designed",
-        "value": "Subtle Hover",
-        "importance": 78,
-        "example_value": "Gentle hover effects and smooth transitions",
-        "values": [
-          "Static",
-          "Minimal",
-          "Subtle",
-          "Functional",
-          "Balanced",
-          "Subtle Hover",
-          "Interactive",
-          "Dynamic",
-          "Animated",
-          "Flashy",
-          "Overwhelming"
-        ]
-      },
-      {
-        "name": "Content Density",
-        "explanation": "How much information is presented in a given space",
-        "value": "Moderate",
-        "importance": 75,
-        "example_value": "Good balance of content without feeling cluttered",
-        "values": [
-          "Sparse",
-          "Light",
-          "Comfortable",
-          "Balanced",
-          "Moderate",
-          "Informative",
-          "Dense",
-          "Compact",
-          "Crowded",
-          "Overwhelming",
-          "Chaotic"
-        ]
-      },
-      {
-        "name": "Brand Presence",
-        "explanation": "How prominently the brand identity is displayed",
-        "value": "Professional",
-        "importance": 80,
-        "example_value": "Consistent branding with logo and color scheme",
-        "values": [
-          "Minimal",
-          "Subtle",
-          "Discrete",
-          "Balanced",
-          "Present",
-          "Professional",
-          "Prominent",
-          "Bold",
-          "Dominant",
-          "Overwhelming",
-          "Aggressive"
-        ]
-      },
-      {
-        "name": "Navigation Clarity",
-        "explanation": "How easy it is to find and use navigation elements",
-        "value": "Clear",
-        "importance": 87,
-        "example_value": "Obvious navigation menu with clear labels",
-        "values": [
-          "Hidden",
-          "Minimal",
-          "Subtle",
-          "Functional",
-          "Accessible",
-          "Clear",
-          "Obvious",
-          "Prominent",
-          "Bold",
-          "Dominant",
-          "Overwhelming"
-        ]
-      },
-      {
-        "name": "Mobile Responsiveness",
-        "explanation": "How well the design adapts to different screen sizes",
-        "value": "Responsive",
-        "importance": 85,
-        "example_value": "Design adapts smoothly to mobile and tablet screens",
-        "values": [
-          "Fixed",
-          "Basic",
-          "Adaptive",
-          "Flexible",
-          "Responsive",
-          "Mobile-first",
-          "Progressive",
-          "Advanced",
-          "Optimized",
-          "Perfect",
-          "Over-engineered"
-        ]
-      },
-      {
-        "name": "Loading Performance",
-        "explanation": "How quickly the design loads and becomes interactive",
-        "value": "Fast",
-        "importance": 83,
-        "example_value": "Quick loading times with smooth interactions",
-        "values": [
-          "Slow",
-          "Heavy",
-          "Moderate",
-          "Acceptable",
-          "Good",
-          "Fast",
-          "Optimized",
-          "Lightning",
-          "Instant",
-          "Pre-loaded",
-          "Over-optimized"
-        ]
-      },
-      {
-        "name": "Accessibility",
-        "explanation": "How well the design accommodates users with different abilities",
-        "value": "Good",
-        "importance": 76,
-        "example_value": "Proper contrast ratios and keyboard navigation",
-        "values": [
-          "Poor",
-          "Basic",
-          "Minimal",
-          "Acceptable",
-          "Standard",
-          "Good",
-          "Comprehensive",
-          "Excellent",
-          "Inclusive",
-          "Perfect",
-          "Over-engineered"
-        ]
-      },
-      {
-        "name": "Content Readability",
-        "explanation": "How easy it is to read and understand the content",
-        "value": "High",
-        "importance": 89,
-        "example_value": "Clear typography with good contrast and spacing",
-        "values": [
-          "Poor",
-          "Difficult",
-          "Challenging",
-          "Acceptable",
-          "Readable",
-          "High",
-          "Excellent",
-          "Optimal",
-          "Perfect",
-          "Enhanced",
-          "Over-enhanced"
-        ]
-      },
-      {
-        "name": "Visual Consistency",
-        "explanation": "How uniform the design elements are throughout",
-        "value": "Consistent",
-        "importance": 84,
-        "example_value": "Uniform styling across all pages and components",
-        "values": [
-          "Inconsistent",
-          "Varied",
-          "Mixed",
-          "Acceptable",
-          "Balanced",
-          "Consistent",
-          "Uniform",
-          "Cohesive",
-          "Harmonious",
-          "Perfect",
-          "Rigid"
-        ]
-      },
-      {
-        "name": "Call-to-Action Prominence",
-        "explanation": "How prominently action buttons and links are displayed",
-        "value": "Clear",
-        "importance": 81,
-        "example_value": "Obvious buttons with clear purpose and styling",
-        "values": [
-          "Hidden",
-          "Subtle",
-          "Discrete",
-          "Present",
-          "Visible",
-          "Clear",
-          "Prominent",
-          "Bold",
-          "Dominant",
-          "Aggressive",
-          "Overwhelming"
-        ]
-      },
-      {
-        "name": "Information Architecture",
-        "explanation": "How logically content is organized and structured",
-        "value": "Logical",
-        "importance": 86,
-        "example_value": "Clear content hierarchy with intuitive organization",
-        "values": [
-          "Chaotic",
-          "Confusing",
-          "Unclear",
-          "Acceptable",
-          "Functional",
-          "Logical",
-          "Clear",
-          "Intuitive",
-          "Excellent",
-          "Perfect",
-          "Over-organized"
-        ]
-      },
-      {
-        "name": "Visual Appeal",
-        "explanation": "Overall aesthetic attractiveness of the design",
-        "value": "Professional",
-        "importance": 88,
-        "example_value": "Clean, modern design with professional appearance",
-        "values": [
-          "Unattractive",
-          "Basic",
-          "Plain",
-          "Acceptable",
-          "Pleasant",
-          "Professional",
-          "Attractive",
-          "Beautiful",
-          "Stunning",
-          "Perfect",
-          "Over-designed"
-        ]
-      },
-      {
-        "name": "User Experience Flow",
-        "explanation": "How smoothly users can navigate and complete tasks",
-        "value": "Smooth",
-        "importance": 87,
-        "example_value": "Intuitive user journey with clear next steps",
-        "values": [
-          "Confusing",
-          "Difficult",
-          "Challenging",
-          "Acceptable",
-          "Functional",
-          "Smooth",
-          "Intuitive",
-          "Excellent",
-          "Seamless",
-          "Perfect",
-          "Over-simplified"
-        ]
-      },
-      {
-        "name": "Technical Sophistication",
-        "explanation": "Level of advanced technical features and capabilities",
-        "value": "Modern",
-        "importance": 79,
-        "example_value": "Contemporary web technologies with good performance",
-        "values": [
-          "Basic",
-          "Simple",
-          "Standard",
-          "Adequate",
-          "Good",
-          "Modern",
-          "Advanced",
-          "Sophisticated",
-          "Cutting-edge",
-          "Experimental",
-          "Over-engineered"
-        ]
-      },
-      {
-        "name": "Content Relevance",
-        "explanation": "How well the content matches user expectations and needs",
-        "value": "Highly Relevant",
-        "importance": 85,
-        "example_value": "Content directly addresses user needs and goals",
-        "values": [
-          "Irrelevant",
-          "Poor",
-          "Basic",
-          "Acceptable",
-          "Good",
-          "Highly Relevant",
-          "Excellent",
-          "Perfect",
-          "Targeted",
-          "Personalized",
-          "Over-personalized"
-        ]
-      }
-    ]
-  }
-}, {
-  "id": "A-company-corporate-language",
-  "title": "Example: A company Corporate Language",
-  "description": "This profile captures the tone, style, and communication dimensions typical of a company's corporate language: professional, innovative, collaborative, and tech-forward, yet human and inviting.",
-  "category": "Corporate Communication",
-  "selectedDimension": "Emotional Tone",
-  "dimensions": {
-    "latent_dimensions": [
-      { "name": "Emotional Tone", "explanation": "The overall emotional resonance conveyed through the language", "value": "Balanced", "importance": 85, "example_value": "At Trifork, we believe in building a smarter tomorrow together.", "values": ["Flat", "Detached", "Serious", "Hopeful", "Neutral", "Balanced", "Optimistic", "Uplifting", "Inspiring", "Passionate", "Evangelical"] },
-      { "name": "Formality Level", "explanation": "The degree of formal vs. informal language used", "value": "Conversational", "importance": 76, "example_value": "We invite you to join our journey of innovation.", "values": ["Very Formal", "Formal", "Professional", "Polished", "Neutral", "Conversational", "Casual", "Friendly", "Relaxed", "Slangy", "Informal"] },
-      { "name": "Call-to-Action Strength", "explanation": "The urgency and directness of action-oriented language", "value": "Encouraging", "importance": 78, "example_value": "Discover how you can be part of shaping the future with us.", "values": ["Absent", "Implied", "Soft", "Polite", "Suggestive", "Encouraging", "Assertive", "Compelling", "Urgent", "Forceful", "Overbearing"] },
-      { "name": "Technical Depth", "explanation": "The amount of technical detail and specificity present", "value": "Moderate Detail", "importance": 72, "example_value": "Leveraging cloud-native architectures and AI-driven solutions.", "values": ["None", "Basic", "Simple", "General", "Slightly Technical", "Moderate Detail", "Precise", "Detailed", "Complex", "Highly Technical", "Specialist"] },
-      { "name": "Environmental Urgency", "explanation": "How urgent or critical the environmental problem is presented", "value": "Concerned", "importance": 83, "example_value": "Sustainable digital transformation is essential for lasting impact.", "values": ["Unmentioned", "Subtle", "Mild", "Noted", "Observed", "Concerned", "Pressing", "Urgent", "Dire", "Alarmist", "Apocalyptic"] },
-      { "name": "Narrative Structure", "explanation": "How strongly the text follows a chronological or story-based structure", "value": "Lightly Structured", "importance": 68, "example_value": "From ideation to implementation, we partner with you every step of the way.", "values": ["None", "Loose", "Scattered", "Unclear", "Fragmented", "Lightly Structured", "Sequential", "Organized", "Narrative", "Thematic", "Story-Driven"] },
-      { "name": "Hopefulness Level", "explanation": "The degree to which the language conveys hope for change", "value": "Steady Hope", "importance": 80, "example_value": "Together, we can create meaningful change through technology.", "values": ["Hopeless", "Cynical", "Doubtful", "Reserved", "Neutral", "Steady Hope", "Uplifting", "Confident", "Inspiring", "Visionary", "Idealistic"] },
-      { "name": "Clarity of Problem Definition", "explanation": "How explicitly the problem is introduced and explained", "value": "Clearly Stated", "importance": 75, "example_value": "Organizations face increasing complexity in digital transformation.", "values": ["Vague", "Hinted", "Implied", "Brief", "Moderately Clear", "Clearly Stated", "Well Explained", "In-Depth", "Thorough", "Overdefined", "Redundant"] },
-      { "name": "Tone of Optimism vs Realism", "explanation": "Balance between hopeful language and realistic descriptions", "value": "Balanced", "importance": 70, "example_value": "While challenges are real, we see opportunities for growth and innovation.", "values": ["Pessimistic", "Gloomy", "Cautious", "Wary", "Realistic", "Balanced", "Hopeful", "Encouraging", "Cheerful", "Idealized", "Unrealistically Positive"] },
-      { "name": "Use of Jargon", "explanation": "Degree of domain-specific terminology used", "value": "Mild Use", "importance": 60, "example_value": "Microservices, Kubernetes, machine learning.", "values": ["None", "Everyday", "Basic", "Accessible", "General Tech", "Mild Use", "Moderate Jargon", "Technical", "Specialist", "Heavy", "Dense"] },
-      { "name": "Engagement Style", "explanation": "How much the reader is actively engaged through direct address", "value": "Inviting", "importance": 82, "example_value": "Let’s collaborate to unlock your organization’s potential.", "values": ["Distant", "Detached", "Neutral", "Mentioning", "Subtle Invite", "Inviting", "Friendly", "Personal", "Inclusive", "Interactive", "Immersive"] },
-      { "name": "Innovation Framing", "explanation": "How strongly the text positions the solution as innovative or cutting-edge", "value": "Forward-Looking", "importance": 74, "example_value": "Pioneering next-generation solutions for tomorrow’s challenges.", "values": ["Conventional", "Simple", "Improved", "Established", "Slightly Innovative", "Forward-Looking", "Advanced", "Disruptive", "Futuristic", "Revolutionary", "Speculative"] },
-      { "name": "Marketing Tone", "explanation": "Level of branding and promotional language present", "value": "Moderate", "importance": 65, "example_value": "Empowering your business with cutting-edge technology.", "values": ["None", "Subtle", "Reserved", "Professional", "Mild", "Moderate", "Promotional", "Persuasive", "Salesy", "Exaggerated", "Hype-Filled"] },
-      { "name": "Scientific Anchoring", "explanation": "Presence of data, facts, or scientific references", "value": "Occasional Facts", "importance": 66, "example_value": "Our solutions are validated by industry-leading benchmarks.", "values": ["Absent", "Speculative", "Anecdotal", "Lightly Stated", "Assumed", "Occasional Facts", "Referenced", "Data-Rich", "Heavily Supported", "Cited", "Academic"] },
-      { "name": "Problem-to-Solution Clarity", "explanation": "How clearly the text presents the relationship between the problem and the solution", "value": "Coherent", "importance": 79, "example_value": "That’s why Trifork delivers end-to-end digital solutions.", "values": ["Disconnected", "Loose", "Implied", "Somewhat Related", "Mentioned", "Coherent", "Logical", "Structured", "Clear", "Highlighted", "Over-Explained"] },
-      { "name": "Use of Timeline", "explanation": "How much chronological structure is used to show progress or process", "value": "Light Timeline", "importance": 58, "example_value": "2024: Launch. 2025: Scale. 2026: Transform.", "values": ["Absent", "Random", "Sparse", "Referential", "Loose", "Light Timeline", "Chronological", "Milestone-Driven", "Roadmapped", "Timeline-Focused", "Strictly Chronological"] },
-      { "name": "Community Appeal", "explanation": "How much the text aims to rally collective effort or shared responsibility", "value": "Inclusive", "importance": 81, "example_value": "Join our community of innovators and thought leaders.", "values": ["Self-Oriented", "Neutral", "Personal", "Descriptive", "Acknowledging", "Inclusive", "Encouraging", "Collaborative", "Mobilizing", "Empowering", "Collective Rallying"] },
-      { "name": "Visual Language Use", "explanation": "Degree to which the language creates mental imagery", "value": "Moderate Imagery", "importance": 62, "example_value": "Imagine a seamless digital experience, from first click to final delivery.", "values": ["Abstract", "Sparse", "General", "Functional", "Subtle", "Moderate Imagery", "Descriptive", "Vivid", "Cinematic", "Graphic", "Sensory Overload"] },
-      { "name": "Readability Level", "explanation": "How easily the text can be read and understood by the general audience", "value": "Accessible", "importance": 77, "example_value": "We make complex technology simple and accessible.", "values": ["Academic", "Complex", "Technical", "Formal", "Neutral", "Accessible", "Simple", "Plain", "Elementary", "Child-Friendly", "Oversimplified"] },
-      { "name": "Inspirational Drive", "explanation": "The extent to which the text seeks to inspire action or emotion", "value": "Motivating", "importance": 84, "example_value": "Let’s build a brighter digital future together.", "values": ["Uninspired", "Dry", "Reserved", "Matter-of-fact", "Balanced", "Motivating", "Encouraging", "Inspirational", "Emotional", "Evocative", "Heroic"] }
-    ]
-  }
-}]
+   }
+]
