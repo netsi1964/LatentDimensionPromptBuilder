@@ -386,7 +386,3708 @@
           "Narrative Rich"
         ]
       }
+<<<<<<< HEAD
     ]
+=======
+    },
+  {
+    "id": "photoshop-styled",
+    "title": "Example of doing Photoshop sort of styling",
+    "description": "Using mostly color modifications",
+    "category": "Photography",
+    "selectedDimension": "Depth Perception",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Color Temperature",
+          "explanation": "Controls the warmth or coolness of the image tones",
+          "value": "Cold",
+          "importance": 90,
+          "example_value": "#87CEEB sky with moderate green vegetation",
+          "values": [
+            "Cold",
+            "Cool",
+            "Subtle Cool",
+            "Slightly Cool",
+            "Neutral Cool",
+            "Balanced",
+            "Slightly Warm",
+            "Warm",
+            "Golden",
+            "Amber",
+            "Hot"
+          ]
+        },
+        {
+          "name": "Contrast Level",
+          "explanation": "Degree of tonal separation between light and dark areas",
+          "value": "Extreme",
+          "importance": 86,
+          "example_value": "Clear shadow from the man on pebbles, yet details visible",
+          "values": [
+            "Flat",
+            "Low",
+            "Soft",
+            "Muted",
+            "Subdued",
+            "Natural",
+            "Crisp",
+            "Defined",
+            "High",
+            "Sharp",
+            "Extreme"
+          ]
+        },
+        {
+          "name": "Scene Realism",
+          "explanation": "Degree to which the image mimics real-world lighting and texture",
+          "value": "Stylized",
+          "importance": 95,
+          "example_value": "Shoreline textures and foliage appear true-to-life",
+          "values": [
+            "Stylized",
+            "Painterly",
+            "Artistic",
+            "Semi-Realistic",
+            "Neutral Realism",
+            "Photorealistic",
+            "Detailed Realism",
+            "Hyperreal",
+            "Enhanced Realism",
+            "Surreal Realism",
+            "Ultra-Defined"
+          ]
+        },
+        {
+          "name": "Framing Balance",
+          "explanation": "Symmetry and weight distribution in the composition",
+          "value": "Visually Balanced",
+          "importance": 78,
+          "example_value": "Coastline guiding eye diagonally, figure offset to the right",
+          "values": [
+            "Chaotic",
+            "Disjointed",
+            "Loose",
+            "Unstructured",
+            "Neutral",
+            "Visually Balanced",
+            "Structured",
+            "Harmonious",
+            "Architectonic",
+            "Geometric",
+            "Perfectly Symmetrical"
+          ]
+        },
+        {
+          "name": "Light Source Clarity",
+          "explanation": "How defined and directional the light source appears",
+          "value": "Moderately Clear",
+          "importance": 74,
+          "example_value": "Sunlight casting gentle, soft-edged shadows",
+          "values": [
+            "Diffuse",
+            "Overcast",
+            "Soft",
+            "Subtle",
+            "Implied",
+            "Moderately Clear",
+            "Clear",
+            "Direct",
+            "Harsh",
+            "Theatrical",
+            "Blinding"
+          ]
+        },
+        {
+          "name": "Grain Texture",
+          "explanation": "The visibility and strength of image texture or photographic grain",
+          "value": "Noisy",
+          "importance": 65,
+          "example_value": "Subtle grain visible in beach stones and cliff face",
+          "values": [
+            "Smooth",
+            "Digital Clean",
+            "Minimal Grain",
+            "Soft Grain",
+            "Matte",
+            "Natural Film Texture",
+            "Defined Grain",
+            "Strong Grain",
+            "Coarse",
+            "Rough",
+            "Noisy"
+          ]
+        },
+        {
+          "name": "Color Saturation",
+          "explanation": "Intensity of the colors used in the image",
+          "value": "Desaturated",
+          "importance": 82,
+          "example_value": "Lush greens, deep blue sea, but not oversaturated",
+          "values": [
+            "Desaturated",
+            "Faded",
+            "Muted",
+            "Soft",
+            "Neutral",
+            "Medium Saturation",
+            "Lively",
+            "Vibrant",
+            "Bold",
+            "Intense",
+            "Oversaturated"
+          ]
+        },
+        {
+          "name": "Depth Perception",
+          "explanation": "The sense of distance and spatial layering in the image",
+          "value": "Moderately Deep",
+          "importance": 88,
+          "example_value": "Foreground pebbles and distant sea line clearly separated",
+          "values": [
+            "Flat",
+            "Minimal",
+            "Shallow",
+            "Layered",
+            "Slight Depth",
+            "Moderately Deep",
+            "Deep",
+            "Expanded",
+            "Vast",
+            "Dramatic Depth",
+            "Cinematic"
+          ]
+        },
+        {
+          "name": "Movement Suggestion",
+          "explanation": "How much implied motion is present in the image",
+          "value": "Mild Motion",
+          "importance": 54,
+          "example_value": "Gentle waves, walking posture of man",
+          "values": [
+            "Still",
+            "Frozen",
+            "Minimal",
+            "Implied",
+            "Static",
+            "Mild Motion",
+            "Noticeable Motion",
+            "Flowing",
+            "Dynamic",
+            "Sweeping",
+            "Kinetic"
+          ]
+        },
+        {
+          "name": "Nature Dominance",
+          "explanation": "How much of the image is occupied by natural elements",
+          "value": "None",
+          "importance": 85,
+          "example_value": "Sea, cliffs, and vegetation make up majority of frame",
+          "values": [
+            "None",
+            "Sparse",
+            "Low",
+            "Fragmented",
+            "Balanced",
+            "High Nature Presence",
+            "Dominant",
+            "Overwhelming",
+            "Engulfing",
+            "Pure Wilderness",
+            "Mythic Naturalism"
+          ]
+        },
+        {
+          "name": "Human Presence Subtlety",
+          "explanation": "How prominent or intrusive the human figure appears",
+          "value": "Overbearing",
+          "importance": 68,
+          "example_value": "Single person placed low and off to the side",
+          "values": [
+            "None",
+            "Barely Visible",
+            "Blended",
+            "Minor",
+            "Secondary",
+            "Low Emphasis",
+            "Equal Focus",
+            "Moderate Presence",
+            "Dominant",
+            "Central",
+            "Overbearing"
+          ]
+        },
+        {
+          "name": "Horizon Line Prominence",
+          "explanation": "Visibility and compositional dominance of the horizon",
+          "value": "Gently Defined",
+          "importance": 61,
+          "example_value": "Soft line where sky meets sea in top third of image",
+          "values": [
+            "Hidden",
+            "Soft",
+            "Blended",
+            "Implied",
+            "Subtle",
+            "Gently Defined",
+            "Clear",
+            "Prominent",
+            "Framing",
+            "Dividing",
+            "Overpowering"
+          ]
+        },
+        {
+          "name": "Ambient Light Mood",
+          "explanation": "Overall feeling of lighting across the scene",
+          "value": "Joyful",
+          "importance": 80,
+          "example_value": "Bright daylight with soft contrast",
+          "values": [
+            "Dark",
+            "Somber",
+            "Cloudy",
+            "Flat",
+            "Neutral",
+            "Open and Relaxed",
+            "Uplifting",
+            "Sunny",
+            "Joyful",
+            "Radiant",
+            "Overexposed"
+          ]
+        },
+        {
+          "name": "Visual Simplicity",
+          "explanation": "How minimal or cluttered the visual composition appears",
+          "value": "Balanced Simplicity",
+          "importance": 76,
+          "example_value": "Clean lines, few objects, no visual noise",
+          "values": [
+            "Chaotic",
+            "Busy",
+            "Layered",
+            "Textured",
+            "Neutral",
+            "Balanced Simplicity",
+            "Clear",
+            "Minimalist",
+            "Sparse",
+            "Bare",
+            "Zen-like"
+          ]
+        },
+        {
+          "name": "Detail Sharpness",
+          "explanation": "Crispness and definition of image details",
+          "value": "Moderate Sharpness",
+          "importance": 84,
+          "example_value": "Edges of rocks and cliff vegetation clearly visible",
+          "values": [
+            "Blurry",
+            "Soft",
+            "Matte",
+            "Low Sharpness",
+            "Natural",
+            "Moderate Sharpness",
+            "Crisp",
+            "High Definition",
+            "Hyperclear",
+            "Sharpened",
+            "Overprocessed"
+          ]
+        },
+        {
+          "name": "Foreground Emphasis",
+          "explanation": "How much visual weight is given to the closest part of the image",
+          "value": "Crushing Foreground",
+          "importance": 67,
+          "example_value": "Rocks and man provide anchoring without dominating",
+          "values": [
+            "None",
+            "Distant",
+            "Background-Focused",
+            "Minimal",
+            "Balanced",
+            "Mildly Anchored",
+            "Anchored",
+            "Dominant Foreground",
+            "Strong Anchor",
+            "Foreground-Heavy",
+            "Crushing Foreground"
+          ]
+        },
+        {
+          "name": "Color Palette Harmony",
+          "explanation": "How well the colors blend and complement each other",
+          "value": "Perfectly Blended",
+          "importance": 73,
+          "example_value": "Earthy browns, greens, and cool blue sea tones",
+          "values": [
+            "Discordant",
+            "Contrasty",
+            "Vivid Clashes",
+            "Bold Mix",
+            "Neutral",
+            "Natural Harmony",
+            "Complementary",
+            "Pastel Flow",
+            "Color-Themed",
+            "Monochrome",
+            "Perfectly Blended"
+          ]
+        },
+        {
+          "name": "Line Flow",
+          "explanation": "How the visual lines guide the viewer's eye",
+          "value": "Curved Natural Path",
+          "importance": 70,
+          "example_value": "Curved coastline draws eye from figure to horizon",
+          "values": [
+            "Chaotic",
+            "Broken",
+            "Erratic",
+            "Unfocused",
+            "Neutral",
+            "Curved Natural Path",
+            "Rhythmic",
+            "Guided",
+            "Strong Flow",
+            "Cinematic Sweep",
+            "Perfect Spiral"
+          ]
+        },
+        {
+          "name": "Narrative Suggestion",
+          "explanation": "How much the image implies a story or human experience",
+          "value": "Light Narrative",
+          "importance": 75,
+          "example_value": "Elderly man walking with poles along coastal path",
+          "values": [
+            "None",
+            "Minimal",
+            "Abstract",
+            "Unclear",
+            "Neutral",
+            "Light Narrative",
+            "Personal",
+            "Implied Backstory",
+            "Strong Story",
+            "Dramatic Scene",
+            "Mythic"
+          ]
+        },
+        {
+          "name": "Temporal Atmosphere",
+          "explanation": "Time of day and temporal mood (pastoral, timeless, fleeting)",
+          "value": "Present-Moment",
+          "importance": 69,
+          "example_value": "Midday sun with no nostalgic or futuristic cues",
+          "values": [
+            "Timeless",
+            "Dreamlike",
+            "Distant Past",
+            "Soft Glow",
+            "Neutral Time",
+            "Present-Moment",
+            "Passing",
+            "Ephemeral",
+            "Golden Hour",
+            "Imminent Change",
+            "Frozen Time"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "image-style",
+    "title": "Dimensions of Image Style",
+    "description": "Analysed from a random smartphone image taken in Denmark.",
+    "category": "Photography",
+    "selectedDimension": "Scene Realism",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Color Temperature",
+          "explanation": "Controls the warmth or coolness of the image tones",
+          "value": "Balanced",
+          "importance": 90,
+          "example_value": "#87CEEB sky with moderate green vegetation",
+          "values": [
+            "Cold",
+            "Cool",
+            "Subtle Cool",
+            "Slightly Cool",
+            "Neutral Cool",
+            "Balanced",
+            "Slightly Warm",
+            "Warm",
+            "Golden",
+            "Amber",
+            "Hot"
+          ]
+        },
+        {
+          "name": "Contrast Level",
+          "explanation": "Degree of tonal separation between light and dark areas",
+          "value": "Natural",
+          "importance": 86,
+          "example_value": "Clear shadow from the man on pebbles, yet details visible",
+          "values": [
+            "Flat",
+            "Low",
+            "Soft",
+            "Muted",
+            "Subdued",
+            "Natural",
+            "Crisp",
+            "Defined",
+            "High",
+            "Sharp",
+            "Extreme"
+          ]
+        },
+        {
+          "name": "Scene Realism",
+          "explanation": "Degree to which the image mimics real-world lighting and texture",
+          "value": "Photorealistic",
+          "importance": 95,
+          "example_value": "Shoreline textures and foliage appear true-to-life",
+          "values": [
+            "Stylized",
+            "Painterly",
+            "Artistic",
+            "Semi-Realistic",
+            "Neutral Realism",
+            "Photorealistic",
+            "Detailed Realism",
+            "Hyperreal",
+            "Enhanced Realism",
+            "Surreal Realism",
+            "Ultra-Defined"
+          ]
+        },
+        {
+          "name": "Framing Balance",
+          "explanation": "Symmetry and weight distribution in the composition",
+          "value": "Visually Balanced",
+          "importance": 78,
+          "example_value": "Coastline guiding eye diagonally, figure offset to the right",
+          "values": [
+            "Chaotic",
+            "Disjointed",
+            "Loose",
+            "Unstructured",
+            "Neutral",
+            "Visually Balanced",
+            "Structured",
+            "Harmonious",
+            "Architectonic",
+            "Geometric",
+            "Perfectly Symmetrical"
+          ]
+        },
+        {
+          "name": "Light Source Clarity",
+          "explanation": "How defined and directional the light source appears",
+          "value": "Moderately Clear",
+          "importance": 74,
+          "example_value": "Sunlight casting gentle, soft-edged shadows",
+          "values": [
+            "Diffuse",
+            "Overcast",
+            "Soft",
+            "Subtle",
+            "Implied",
+            "Moderately Clear",
+            "Clear",
+            "Direct",
+            "Harsh",
+            "Theatrical",
+            "Blinding"
+          ]
+        },
+        {
+          "name": "Grain Texture",
+          "explanation": "The visibility and strength of image texture or photographic grain",
+          "value": "Natural Film Texture",
+          "importance": 65,
+          "example_value": "Subtle grain visible in beach stones and cliff face",
+          "values": [
+            "Smooth",
+            "Digital Clean",
+            "Minimal Grain",
+            "Soft Grain",
+            "Matte",
+            "Natural Film Texture",
+            "Defined Grain",
+            "Strong Grain",
+            "Coarse",
+            "Rough",
+            "Noisy"
+          ]
+        },
+        {
+          "name": "Color Saturation",
+          "explanation": "Intensity of the colors used in the image",
+          "value": "Medium Saturation",
+          "importance": 82,
+          "example_value": "Lush greens, deep blue sea, but not oversaturated",
+          "values": [
+            "Desaturated",
+            "Faded",
+            "Muted",
+            "Soft",
+            "Neutral",
+            "Medium Saturation",
+            "Lively",
+            "Vibrant",
+            "Bold",
+            "Intense",
+            "Oversaturated"
+          ]
+        },
+        {
+          "name": "Depth Perception",
+          "explanation": "The sense of distance and spatial layering in the image",
+          "value": "Moderately Deep",
+          "importance": 88,
+          "example_value": "Foreground pebbles and distant sea line clearly separated",
+          "values": [
+            "Flat",
+            "Minimal",
+            "Shallow",
+            "Layered",
+            "Slight Depth",
+            "Moderately Deep",
+            "Deep",
+            "Expanded",
+            "Vast",
+            "Dramatic Depth",
+            "Cinematic"
+          ]
+        },
+        {
+          "name": "Movement Suggestion",
+          "explanation": "How much implied motion is present in the image",
+          "value": "Mild Motion",
+          "importance": 54,
+          "example_value": "Gentle waves, walking posture of man",
+          "values": [
+            "Still",
+            "Frozen",
+            "Minimal",
+            "Implied",
+            "Static",
+            "Mild Motion",
+            "Noticeable Motion",
+            "Flowing",
+            "Dynamic",
+            "Sweeping",
+            "Kinetic"
+          ]
+        },
+        {
+          "name": "Nature Dominance",
+          "explanation": "How much of the image is occupied by natural elements",
+          "value": "High Nature Presence",
+          "importance": 85,
+          "example_value": "Sea, cliffs, and vegetation make up majority of frame",
+          "values": [
+            "None",
+            "Sparse",
+            "Low",
+            "Fragmented",
+            "Balanced",
+            "High Nature Presence",
+            "Dominant",
+            "Overwhelming",
+            "Engulfing",
+            "Pure Wilderness",
+            "Mythic Naturalism"
+          ]
+        },
+        {
+          "name": "Human Presence Subtlety",
+          "explanation": "How prominent or intrusive the human figure appears",
+          "value": "Low Emphasis",
+          "importance": 68,
+          "example_value": "Single person placed low and off to the side",
+          "values": [
+            "None",
+            "Barely Visible",
+            "Blended",
+            "Minor",
+            "Secondary",
+            "Low Emphasis",
+            "Equal Focus",
+            "Moderate Presence",
+            "Dominant",
+            "Central",
+            "Overbearing"
+          ]
+        },
+        {
+          "name": "Horizon Line Prominence",
+          "explanation": "Visibility and compositional dominance of the horizon",
+          "value": "Gently Defined",
+          "importance": 61,
+          "example_value": "Soft line where sky meets sea in top third of image",
+          "values": [
+            "Hidden",
+            "Soft",
+            "Blended",
+            "Implied",
+            "Subtle",
+            "Gently Defined",
+            "Clear",
+            "Prominent",
+            "Framing",
+            "Dividing",
+            "Overpowering"
+          ]
+        },
+        {
+          "name": "Ambient Light Mood",
+          "explanation": "Overall feeling of lighting across the scene",
+          "value": "Open and Relaxed",
+          "importance": 80,
+          "example_value": "Bright daylight with soft contrast",
+          "values": [
+            "Dark",
+            "Somber",
+            "Cloudy",
+            "Flat",
+            "Neutral",
+            "Open and Relaxed",
+            "Uplifting",
+            "Sunny",
+            "Joyful",
+            "Radiant",
+            "Overexposed"
+          ]
+        },
+        {
+          "name": "Visual Simplicity",
+          "explanation": "How minimal or cluttered the visual composition appears",
+          "value": "Balanced Simplicity",
+          "importance": 76,
+          "example_value": "Clean lines, few objects, no visual noise",
+          "values": [
+            "Chaotic",
+            "Busy",
+            "Layered",
+            "Textured",
+            "Neutral",
+            "Balanced Simplicity",
+            "Clear",
+            "Minimalist",
+            "Sparse",
+            "Bare",
+            "Zen-like"
+          ]
+        },
+        {
+          "name": "Detail Sharpness",
+          "explanation": "Crispness and definition of image details",
+          "value": "Moderate Sharpness",
+          "importance": 84,
+          "example_value": "Edges of rocks and cliff vegetation clearly visible",
+          "values": [
+            "Blurry",
+            "Soft",
+            "Matte",
+            "Low Sharpness",
+            "Natural",
+            "Moderate Sharpness",
+            "Crisp",
+            "High Definition",
+            "Hyperclear",
+            "Sharpened",
+            "Overprocessed"
+          ]
+        },
+        {
+          "name": "Foreground Emphasis",
+          "explanation": "How much visual weight is given to the closest part of the image",
+          "value": "Mildly Anchored",
+          "importance": 67,
+          "example_value": "Rocks and man provide anchoring without dominating",
+          "values": [
+            "None",
+            "Distant",
+            "Background-Focused",
+            "Minimal",
+            "Balanced",
+            "Mildly Anchored",
+            "Anchored",
+            "Dominant Foreground",
+            "Strong Anchor",
+            "Foreground-Heavy",
+            "Crushing Foreground"
+          ]
+        },
+        {
+          "name": "Color Palette Harmony",
+          "explanation": "How well the colors blend and complement each other",
+          "value": "Natural Harmony",
+          "importance": 73,
+          "example_value": "Earthy browns, greens, and cool blue sea tones",
+          "values": [
+            "Discordant",
+            "Contrasty",
+            "Vivid Clashes",
+            "Bold Mix",
+            "Neutral",
+            "Natural Harmony",
+            "Complementary",
+            "Pastel Flow",
+            "Color-Themed",
+            "Monochrome",
+            "Perfectly Blended"
+          ]
+        },
+        {
+          "name": "Line Flow",
+          "explanation": "How the visual lines guide the viewer's eye",
+          "value": "Curved Natural Path",
+          "importance": 70,
+          "example_value": "Curved coastline draws eye from figure to horizon",
+          "values": [
+            "Chaotic",
+            "Broken",
+            "Erratic",
+            "Unfocused",
+            "Neutral",
+            "Curved Natural Path",
+            "Rhythmic",
+            "Guided",
+            "Strong Flow",
+            "Cinematic Sweep",
+            "Perfect Spiral"
+          ]
+        },
+        {
+          "name": "Narrative Suggestion",
+          "explanation": "How much the image implies a story or human experience",
+          "value": "Light Narrative",
+          "importance": 75,
+          "example_value": "Elderly man walking with poles along coastal path",
+          "values": [
+            "None",
+            "Minimal",
+            "Abstract",
+            "Unclear",
+            "Neutral",
+            "Light Narrative",
+            "Personal",
+            "Implied Backstory",
+            "Strong Story",
+            "Dramatic Scene",
+            "Mythic"
+          ]
+        },
+        {
+          "name": "Temporal Atmosphere",
+          "explanation": "Time of day and temporal mood (pastoral, timeless, fleeting)",
+          "value": "Present-Moment",
+          "importance": 69,
+          "example_value": "Midday sun with no nostalgic or futuristic cues",
+          "values": [
+            "Timeless",
+            "Dreamlike",
+            "Distant Past",
+            "Soft Glow",
+            "Neutral Time",
+            "Present-Moment",
+            "Passing",
+            "Ephemeral",
+            "Golden Hour",
+            "Imminent Change",
+            "Frozen Time"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "john-cleese-humor",
+    "title": "John Cleese Style Humor",
+    "description": "Analyzed from John Cleese's comedy style, focusing on cynicism and punchline ambiguity. Perfect for creating witty, slightly cynical humor.",
+    "category": "Comedy",
+    "selectedDimension": "Sarcasm Intensity",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Cynicism Level",
+          "explanation": "Indicates how skeptical or distrustful the humor is toward institutions or professions",
+          "value": "Mildly Cynical",
+          "importance": 91,
+          "example_value": "people couldn't figure out which side of the stamp to spit on",
+          "values": [
+            "Naive",
+            "Idealistic",
+            "Trusting",
+            "Sincere",
+            "Dry",
+            "Mildly Cynical",
+            "Cynical",
+            "Jaded",
+            "Mocking",
+            "Acerbic",
+            "Bitter"
+          ]
+        },
+        {
+          "name": "Punchline Ambiguity",
+          "explanation": "How much the joke relies on indirectness or misdirection",
+          "value": "Moderately Twisted",
+          "importance": 84,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Literal",
+            "Direct",
+            "Obvious",
+            "Simple",
+            "Subtle",
+            "Moderately Twisted",
+            "Surprising",
+            "Layered",
+            "Cryptic",
+            "Obscure",
+            "Absurd"
+          ]
+        },
+        {
+          "name": "Authority Satire",
+          "explanation": "Degree of mockery or critique aimed at figures of authority or respect",
+          "value": "Sarcastic",
+          "importance": 88,
+          "example_value": "commemorative stamps commemorating lawyers",
+          "values": [
+            "Respectful",
+            "Earnest",
+            "Gentle",
+            "Playful",
+            "Ironic",
+            "Sarcastic",
+            "Cutting",
+            "Disrespectful",
+            "Ridiculing",
+            "Scathing",
+            "Defamatory"
+          ]
+        },
+        {
+          "name": "Formality of Language",
+          "explanation": "The level of structured, formal, or polished language used",
+          "value": "Conversational",
+          "importance": 62,
+          "example_value": "they had to withdraw them",
+          "values": [
+            "Academic",
+            "Stilted",
+            "Formal",
+            "Polished",
+            "Professional",
+            "Conversational",
+            "Colloquial",
+            "Casual",
+            "Slangy",
+            "Unfiltered",
+            "Crude"
+          ]
+        },
+        {
+          "name": "Historical Irony",
+          "explanation": "How much the humor draws on or twists established traditions or respected symbols",
+          "value": "Tradition-Undermining",
+          "importance": 74,
+          "example_value": "The U.S. Postal Service... commemorative stamps",
+          "values": [
+            "Reverent",
+            "Respectful",
+            "Cautious",
+            "Balanced",
+            "Neutral",
+            "Tradition-Undermining",
+            "Critical",
+            "Ironic",
+            "Darkly Ironic",
+            "Mock-Historic",
+            "Subversive"
+          ]
+        },
+        {
+          "name": "Delivery Sharpness",
+          "explanation": "The abruptness or smoothness of the punchline delivery",
+          "value": "Snappy",
+          "importance": 71,
+          "example_value": "spit on",
+          "values": [
+            "Rambling",
+            "Drawn-out",
+            "Gradual",
+            "Flowing",
+            "Smooth",
+            "Snappy",
+            "Abrupt",
+            "Jarring",
+            "Blunt",
+            "Sudden",
+            "Staccato"
+          ]
+        },
+        {
+          "name": "Absurdity Level",
+          "explanation": "The degree of irrationality or surrealism in the humor",
+          "value": "Mildly Absurd",
+          "importance": 70,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Realistic",
+            "Grounded",
+            "Believable",
+            "Commonplace",
+            "Dry",
+            "Mildly Absurd",
+            "Silly",
+            "Goofy",
+            "Ridiculous",
+            "Ludicrous",
+            "Surreal"
+          ]
+        },
+        {
+          "name": "Cultural Specificity",
+          "explanation": "How much the joke relies on a specific cultural context",
+          "value": "American-Focused",
+          "importance": 58,
+          "example_value": "The U.S. Postal Service",
+          "values": [
+            "Universal",
+            "Global",
+            "Generic Western",
+            "Modern",
+            "Subtle American",
+            "American-Focused",
+            "Deep Americana",
+            "Regional Dialect",
+            "Obscure Reference",
+            "In-Joke"
+          ]
+        },
+        {
+          "name": "Moral Edginess",
+          "explanation": "Degree to which the joke challenges ethical norms or sensitivities",
+          "value": "Borderline Tactless",
+          "importance": 69,
+          "example_value": "spit on and its implied disdain",
+          "values": [
+            "Wholesome",
+            "Polite",
+            "Safe",
+            "Acceptable",
+            "Crisp",
+            "Borderline Tactless",
+            "Provocative",
+            "Rude",
+            "Crass",
+            "Offensive",
+            "Shocking"
+          ]
+        },
+        {
+          "name": "Cleverness Quotient",
+          "explanation": "The level of intellectual play or wordplay in the joke",
+          "value": "Wittily Constructed",
+          "importance": 85,
+          "example_value": "couldn't figure out which side of the stamp to spit on as misdirection",
+          "values": [
+            "Dull",
+            "Literal",
+            "Plain",
+            "Simple",
+            "Slightly Clever",
+            "Wittily Constructed",
+            "Clever",
+            "Sharp",
+            "Ingenious",
+            "Brilliant",
+            "Genius"
+          ]
+        },
+        {
+          "name": "Nostalgic Tone",
+          "explanation": "Level of old-fashioned or retro feeling in the humor",
+          "value": "Mildly Retro",
+          "importance": 44,
+          "example_value": "postal service stamps",
+          "values": [
+            "Modern",
+            "Contemporary",
+            "Timeless",
+            "Subtle Retro",
+            "Implied Past",
+            "Mildly Retro",
+            "Old-Timey",
+            "Vintage",
+            "WWII Era",
+            "Depression Era",
+            "Victorian"
+          ]
+        },
+        {
+          "name": "Visual Imagination Trigger",
+          "explanation": "How easily the joke conjures a mental image",
+          "value": "Vividly Suggestive",
+          "importance": 66,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Abstract",
+            "Hard to Picture",
+            "Subtle",
+            "Mild",
+            "Recognizable",
+            "Vividly Suggestive",
+            "Detailed",
+            "Cinematic",
+            "Graphic",
+            "Extreme",
+            "Grotesque"
+          ]
+        },
+        {
+          "name": "Temporal Specificity",
+          "explanation": "How anchored the humor is to a specific time period",
+          "value": "Late 20th Century",
+          "importance": 49,
+          "example_value": "postal service stamps",
+          "values": [
+            "Timeless",
+            "Future-Oriented",
+            "Present-Day",
+            "2010s",
+            "2000s",
+            "Late 20th Century",
+            "Mid-Century",
+            "WWII Era",
+            "Depression Era",
+            "Victorian",
+            "Historic"
+          ]
+        },
+        {
+          "name": "Irony Density",
+          "explanation": "How much of the joke relies on irony",
+          "value": "High Irony",
+          "importance": 86,
+          "example_value": "commemorative stamps commemorating lawyers",
+          "values": [
+            "None",
+            "Low",
+            "Light",
+            "Implied",
+            "Moderate",
+            "High Irony",
+            "Explicit",
+            "Layered",
+            "Recursive",
+            "Meta-Ironic",
+            "Post-Ironic"
+          ]
+        },
+        {
+          "name": "Use of Wordplay",
+          "explanation": "Extent of puns, double meanings, or phonetic tricks",
+          "value": "Mild Wordplay",
+          "importance": 59,
+          "example_value": "spit on as both literal and symbolic",
+          "values": [
+            "None",
+            "Flat",
+            "Plain",
+            "Straight",
+            "Dry",
+            "Mild Wordplay",
+            "Double Meaning",
+            "Pun-Based",
+            "Phonetic Trick",
+            "Layered Pun",
+            "Meta-Wordplay"
+          ]
+        },
+        {
+          "name": "Social Commentary Depth",
+          "explanation": "Level of embedded social critique or observation",
+          "value": "Light Commentary",
+          "importance": 68,
+          "example_value": "lawyers as a target of mild satire",
+          "values": [
+            "None",
+            "Surface",
+            "Thin",
+            "Subtle",
+            "Implied",
+            "Light Commentary",
+            "Moderate",
+            "Direct",
+            "Heavy-Handed",
+            "Blunt",
+            "Preachy"
+          ]
+        },
+        {
+          "name": "Syllabic Rhythm",
+          "explanation": "How much the joke flows rhythmically in its syllables",
+          "value": "Light Rhythm",
+          "importance": 39,
+          "example_value": "which side of the stamp to spit on",
+          "values": [
+            "Choppy",
+            "Clunky",
+            "Irregular",
+            "Uneven",
+            "Straightforward",
+            "Light Rhythm",
+            "Flowing",
+            "Bouncy",
+            "Lyrical",
+            "Poetic",
+            "Musical"
+          ]
+        },
+        {
+          "name": "Sarcasm Intensity",
+          "explanation": "The harshness or bite of the sarcastic tone",
+          "value": "Moderate Sarcasm",
+          "importance": 73,
+          "example_value": "people couldn't figure out which side of the stamp to spit on",
+          "values": [
+            "Sincere",
+            "Light",
+            "Playful",
+            "Dry",
+            "Wry",
+            "Moderate Sarcasm",
+            "Cutting",
+            "Bitter",
+            "Scornful",
+            "Cruel",
+            "Venomous"
+          ]
+        },
+        {
+          "name": "Professional Stereotype Use",
+          "explanation": "How much the joke depends on professional clichés or generalizations",
+          "value": "Relies on Tropes",
+          "importance": 77,
+          "example_value": "lawyers as untrustworthy stereotype",
+          "values": [
+            "Original",
+            "Personalized",
+            "Nuanced",
+            "Balanced",
+            "Neutral",
+            "Relies on Tropes",
+            "Recognizable",
+            "Overused",
+            "Cartoonish",
+            "Exaggerated",
+            "Exaggerated"
+          ]
+        },
+        {
+          "name": "Nostalgic Tone",
+          "explanation": "Level of old-fashioned or retro feeling in the humor",
+          "value": "Mildly Retro",
+          "importance": 44,
+          "example_value": "postal service stamps",
+          "values": [
+            "Modern",
+            "Contemporary",
+            "Timeless",
+            "Subtle Retro",
+            "Implied Past",
+            "Mildly Retro",
+            "Old-Timey",
+            "Vintage",
+            "WWII Era",
+            "Depression Era",
+            "Victorian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "website-design",
+    "title": "Website Design Dimensions",
+    "description": "Analyzed from a modern website design, focusing on visual hierarchy and user experience elements.",
+    "category": "Web Design",
+    "selectedDimension": "Visual Hierarchy",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Visual Hierarchy",
+          "explanation": "How clearly the design guides the user's attention through different elements",
+          "value": "Strong Hierarchy",
+          "importance": 92,
+          "example_value": "Clear heading structure with distinct font sizes and weights",
+          "values": [
+            "Flat",
+            "Minimal",
+            "Subtle",
+            "Balanced",
+            "Moderate",
+            "Strong Hierarchy",
+            "Emphasized",
+            "Bold",
+            "Dramatic",
+            "Overwhelming",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Color Scheme",
+          "explanation": "The overall color palette and how colors are used throughout the design",
+          "value": "Professional Blue",
+          "importance": 88,
+          "example_value": "Primary blue with white and gray accents",
+          "values": [
+            "Monochromatic",
+            "Neutral",
+            "Pastel",
+            "Earthy",
+            "Balanced",
+            "Professional Blue",
+            "Vibrant",
+            "Bold",
+            "Dark",
+            "High Contrast",
+            "Experimental"
+          ]
+        },
+        {
+          "name": "Typography Style",
+          "explanation": "The font choices and how text is presented",
+          "value": "Clean Sans-serif",
+          "importance": 85,
+          "example_value": "Modern sans-serif fonts with good readability",
+          "values": [
+            "Serif",
+            "Classic",
+            "Minimal",
+            "Readable",
+            "Balanced",
+            "Clean Sans-serif",
+            "Modern",
+            "Bold",
+            "Stylized",
+            "Decorative",
+            "Experimental"
+          ]
+        },
+        {
+          "name": "Layout Structure",
+          "explanation": "How content is organized and arranged on the page",
+          "value": "Grid-based",
+          "importance": 90,
+          "example_value": "Organized grid layout with clear sections",
+          "values": [
+            "Free-form",
+            "Minimal",
+            "Centered",
+            "Balanced",
+            "Structured",
+            "Grid-based",
+            "Organized",
+            "Complex",
+            "Layered",
+            "Dense",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "White Space Usage",
+          "explanation": "How empty space is used to create breathing room",
+          "value": "Generous",
+          "importance": 82,
+          "example_value": "Plenty of padding and margins around elements",
+          "values": [
+            "Minimal",
+            "Tight",
+            "Compact",
+            "Balanced",
+            "Comfortable",
+            "Generous",
+            "Spacious",
+            "Open",
+            "Airy",
+            "Sparse",
+            "Empty"
+          ]
+        },
+        {
+          "name": "Interactive Elements",
+          "explanation": "How buttons, links, and interactive components are designed",
+          "value": "Subtle Hover",
+          "importance": 78,
+          "example_value": "Gentle hover effects and smooth transitions",
+          "values": [
+            "Static",
+            "Minimal",
+            "Subtle",
+            "Functional",
+            "Balanced",
+            "Subtle Hover",
+            "Interactive",
+            "Dynamic",
+            "Animated",
+            "Flashy",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Content Density",
+          "explanation": "How much information is presented in a given space",
+          "value": "Moderate",
+          "importance": 75,
+          "example_value": "Good balance of content without feeling cluttered",
+          "values": [
+            "Sparse",
+            "Light",
+            "Comfortable",
+            "Balanced",
+            "Moderate",
+            "Informative",
+            "Dense",
+            "Compact",
+            "Crowded",
+            "Overwhelming",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Brand Presence",
+          "explanation": "How prominently the brand identity is displayed",
+          "value": "Professional",
+          "importance": 80,
+          "example_value": "Consistent branding with logo and color scheme",
+          "values": [
+            "Minimal",
+            "Subtle",
+            "Discrete",
+            "Balanced",
+            "Present",
+            "Professional",
+            "Prominent",
+            "Bold",
+            "Dominant",
+            "Overwhelming",
+            "Aggressive"
+          ]
+        },
+        {
+          "name": "Navigation Clarity",
+          "explanation": "How easy it is to find and use navigation elements",
+          "value": "Clear",
+          "importance": 87,
+          "example_value": "Obvious navigation menu with clear labels",
+          "values": [
+            "Hidden",
+            "Minimal",
+            "Subtle",
+            "Functional",
+            "Accessible",
+            "Clear",
+            "Obvious",
+            "Prominent",
+            "Bold",
+            "Dominant",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Mobile Responsiveness",
+          "explanation": "How well the design adapts to different screen sizes",
+          "value": "Responsive",
+          "importance": 85,
+          "example_value": "Design adapts smoothly to mobile and tablet screens",
+          "values": [
+            "Fixed",
+            "Basic",
+            "Adaptive",
+            "Flexible",
+            "Responsive",
+            "Mobile-first",
+            "Progressive",
+            "Advanced",
+            "Optimized",
+            "Perfect",
+            "Over-engineered"
+          ]
+        },
+        {
+          "name": "Loading Performance",
+          "explanation": "How quickly the design loads and becomes interactive",
+          "value": "Fast",
+          "importance": 83,
+          "example_value": "Quick loading times with smooth interactions",
+          "values": [
+            "Slow",
+            "Heavy",
+            "Moderate",
+            "Acceptable",
+            "Good",
+            "Fast",
+            "Optimized",
+            "Lightning",
+            "Instant",
+            "Pre-loaded",
+            "Over-optimized"
+          ]
+        },
+        {
+          "name": "Accessibility",
+          "explanation": "How well the design accommodates users with different abilities",
+          "value": "Good",
+          "importance": 76,
+          "example_value": "Proper contrast ratios and keyboard navigation",
+          "values": [
+            "Poor",
+            "Basic",
+            "Minimal",
+            "Acceptable",
+            "Standard",
+            "Good",
+            "Comprehensive",
+            "Excellent",
+            "Inclusive",
+            "Perfect",
+            "Over-engineered"
+          ]
+        },
+        {
+          "name": "Content Readability",
+          "explanation": "How easy it is to read and understand the content",
+          "value": "High",
+          "importance": 89,
+          "example_value": "Clear typography with good contrast and spacing",
+          "values": [
+            "Poor",
+            "Difficult",
+            "Challenging",
+            "Acceptable",
+            "Readable",
+            "High",
+            "Excellent",
+            "Optimal",
+            "Perfect",
+            "Enhanced",
+            "Over-enhanced"
+          ]
+        },
+        {
+          "name": "Visual Consistency",
+          "explanation": "How uniform the design elements are throughout",
+          "value": "Consistent",
+          "importance": 84,
+          "example_value": "Uniform styling across all pages and components",
+          "values": [
+            "Inconsistent",
+            "Varied",
+            "Mixed",
+            "Acceptable",
+            "Balanced",
+            "Consistent",
+            "Uniform",
+            "Cohesive",
+            "Harmonious",
+            "Perfect",
+            "Rigid"
+          ]
+        },
+        {
+          "name": "Call-to-Action Prominence",
+          "explanation": "How prominently action buttons and links are displayed",
+          "value": "Clear",
+          "importance": 81,
+          "example_value": "Obvious buttons with clear purpose and styling",
+          "values": [
+            "Hidden",
+            "Subtle",
+            "Discrete",
+            "Present",
+            "Visible",
+            "Clear",
+            "Prominent",
+            "Bold",
+            "Dominant",
+            "Aggressive",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Information Architecture",
+          "explanation": "How logically content is organized and structured",
+          "value": "Logical",
+          "importance": 86,
+          "example_value": "Clear content hierarchy with intuitive organization",
+          "values": [
+            "Chaotic",
+            "Confusing",
+            "Unclear",
+            "Acceptable",
+            "Functional",
+            "Logical",
+            "Clear",
+            "Intuitive",
+            "Excellent",
+            "Perfect",
+            "Over-organized"
+          ]
+        },
+        {
+          "name": "Visual Appeal",
+          "explanation": "Overall aesthetic attractiveness of the design",
+          "value": "Professional",
+          "importance": 88,
+          "example_value": "Clean, modern design with professional appearance",
+          "values": [
+            "Unattractive",
+            "Basic",
+            "Plain",
+            "Acceptable",
+            "Pleasant",
+            "Professional",
+            "Attractive",
+            "Beautiful",
+            "Stunning",
+            "Perfect",
+            "Over-designed"
+          ]
+        },
+        {
+          "name": "User Experience Flow",
+          "explanation": "How smoothly users can navigate and complete tasks",
+          "value": "Smooth",
+          "importance": 87,
+          "example_value": "Intuitive user journey with clear next steps",
+          "values": [
+            "Confusing",
+            "Difficult",
+            "Challenging",
+            "Acceptable",
+            "Functional",
+            "Smooth",
+            "Intuitive",
+            "Excellent",
+            "Seamless",
+            "Perfect",
+            "Over-simplified"
+          ]
+        },
+        {
+          "name": "Technical Sophistication",
+          "explanation": "Level of advanced technical features and capabilities",
+          "value": "Modern",
+          "importance": 79,
+          "example_value": "Contemporary web technologies with good performance",
+          "values": [
+            "Basic",
+            "Simple",
+            "Standard",
+            "Adequate",
+            "Good",
+            "Modern",
+            "Advanced",
+            "Sophisticated",
+            "Cutting-edge",
+            "Experimental",
+            "Over-engineered"
+          ]
+        },
+        {
+          "name": "Content Relevance",
+          "explanation": "How well the content matches user expectations and needs",
+          "value": "Highly Relevant",
+          "importance": 85,
+          "example_value": "Content directly addresses user needs and goals",
+          "values": [
+            "Irrelevant",
+            "Poor",
+            "Basic",
+            "Acceptable",
+            "Good",
+            "Highly Relevant",
+            "Excellent",
+            "Perfect",
+            "Targeted",
+            "Personalized",
+            "Over-personalized"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "jazz-music-style",
+    "title": "Jazz Music Style Analysis",
+    "description": "Analyzed from classic jazz compositions, focusing on rhythm, improvisation, and harmonic complexity. Perfect for generating music-inspired content.",
+    "category": "Music",
+    "selectedDimension": "Improvisation Freedom",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Rhythmic Complexity",
+          "explanation": "The intricacy and unpredictability of rhythmic patterns",
+          "value": "Syncopated",
+          "importance": 92,
+          "example_value": "Off-beat accents and cross-rhythms creating swing feel",
+          "values": [
+            "Rigid",
+            "Simple",
+            "Steady",
+            "Predictable",
+            "Flowing",
+            "Syncopated",
+            "Complex",
+            "Polyrhythmic",
+            "Chaotic",
+            "Frenetic",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Harmonic Sophistication",
+          "explanation": "Level of complexity in chord progressions and harmonic structures",
+          "value": "Extended Chords",
+          "importance": 88,
+          "example_value": "Dominant 7th and 9th chords with chromatic passing tones",
+          "values": [
+            "Simple Triads",
+            "Basic",
+            "Conventional",
+            "Standard",
+            "Moderate",
+            "Extended Chords",
+            "Complex",
+            "Advanced",
+            "Dense",
+            "Dissonant",
+            "Atonal"
+          ]
+        },
+        {
+          "name": "Improvisation Freedom",
+          "explanation": "Degree of spontaneous musical expression and creative liberty",
+          "value": "Moderate Freedom",
+          "importance": 95,
+          "example_value": "Melodic variations within established chord changes",
+          "values": [
+            "Strictly Composed",
+            "Limited",
+            "Controlled",
+            "Structured",
+            "Guided",
+            "Moderate Freedom",
+            "Free Expression",
+            "Spontaneous",
+            "Experimental",
+            "Chaotic",
+            "Complete Anarchy"
+          ]
+        },
+        {
+          "name": "Swing Feel",
+          "explanation": "The characteristic jazz rhythm that creates a lilting, flowing sensation",
+          "value": "Strong Swing",
+          "importance": 85,
+          "example_value": "Uneven eighth notes with emphasis on off-beats",
+          "values": [
+            "Straight Time",
+            "Slight Lilt",
+            "Subtle Swing",
+            "Noticeable",
+            "Moderate",
+            "Strong Swing",
+            "Heavy Swing",
+            "Exaggerated",
+            "Extreme",
+            "Overwhelming",
+            "Caricatured"
+          ]
+        },
+        {
+          "name": "Instrumental Dialogue",
+          "explanation": "How musical instruments communicate and respond to each other",
+          "value": "Call-Response",
+          "importance": 82,
+          "example_value": "Trumpet and saxophone trading melodic phrases",
+          "values": [
+            "Monophonic",
+            "Isolated",
+            "Minimal",
+            "Subtle",
+            "Conversational",
+            "Call-Response",
+            "Interactive",
+            "Dynamic",
+            "Intense",
+            "Competitive",
+            "Cacophonous"
+          ]
+        },
+        {
+          "name": "Emotional Expression",
+          "explanation": "Range and intensity of emotional content conveyed through music",
+          "value": "Soulful",
+          "importance": 90,
+          "example_value": "Melancholic trumpet solo with subtle vibrato",
+          "values": [
+            "Mechanical",
+            "Restrained",
+            "Subtle",
+            "Expressive",
+            "Emotive",
+            "Soulful",
+            "Passionate",
+            "Dramatic",
+            "Intense",
+            "Overwhelming",
+            "Theatrical"
+          ]
+        },
+        {
+          "name": "Dynamic Range",
+          "explanation": "Variation in volume and intensity throughout the performance",
+          "value": "Varied Dynamics",
+          "importance": 78,
+          "example_value": "Soft piano introduction building to full band climax",
+          "values": [
+            "Flat",
+            "Monotone",
+            "Limited",
+            "Subtle",
+            "Moderate",
+            "Varied Dynamics",
+            "Dramatic",
+            "Extreme",
+            "Explosive",
+            "Overwhelming",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Tempo Flexibility",
+          "explanation": "How much the tempo varies and breathes throughout the piece",
+          "value": "Flexible",
+          "importance": 75,
+          "example_value": "Slight tempo pushes and pulls for musical expression",
+          "values": [
+            "Rigid",
+            "Metronomic",
+            "Steady",
+            "Stable",
+            "Slight Variation",
+            "Flexible",
+            "Fluid",
+            "Rubato",
+            "Dramatically Variable",
+            "Unstable",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Blues Influence",
+          "explanation": "Degree of blues scales, progressions, and emotional content",
+          "value": "Blues-Infused",
+          "importance": 87,
+          "example_value": "Blue notes and minor pentatonic scales in solos",
+          "values": [
+            "None",
+            "Minimal",
+            "Subtle",
+            "Present",
+            "Moderate",
+            "Blues-Infused",
+            "Heavy Blues",
+            "Dominant",
+            "Pure Blues",
+            "Overwhelming",
+            "Cliché"
+          ]
+        },
+        {
+          "name": "Ensemble Cohesion",
+          "explanation": "How well the musicians work together as a unified group",
+          "value": "Tight Ensemble",
+          "importance": 84,
+          "example_value": "Precise timing and musical awareness between players",
+          "values": [
+            "Disjointed",
+            "Loose",
+            "Uncoordinated",
+            "Adequate",
+            "Coordinated",
+            "Tight Ensemble",
+            "Unified",
+            "Seamless",
+            "Telepathic",
+            "Perfect Unity",
+            "Restrictive"
+          ]
+        },
+        {
+          "name": "Melodic Sophistication",
+          "explanation": "Complexity and beauty of melodic lines and phrases",
+          "value": "Sophisticated",
+          "importance": 86,
+          "example_value": "Chromatic passing tones and unexpected interval leaps",
+          "values": [
+            "Simple",
+            "Basic",
+            "Straightforward",
+            "Pleasant",
+            "Melodic",
+            "Sophisticated",
+            "Complex",
+            "Intricate",
+            "Challenging",
+            "Intellectual",
+            "Overly Complex"
+          ]
+        },
+        {
+          "name": "Vintage Authenticity",
+          "explanation": "How much it captures the essence of classic jazz eras",
+          "value": "Traditional",
+          "importance": 70,
+          "example_value": "1940s swing band instrumentation and arrangements",
+          "values": [
+            "Modern",
+            "Contemporary",
+            "Influenced",
+            "Nostalgic",
+            "Period-Aware",
+            "Traditional",
+            "Authentic",
+            "Historical",
+            "Purist",
+            "Museum Piece",
+            "Anachronistic"
+          ]
+        },
+        {
+          "name": "Instrumental Virtuosity",
+          "explanation": "Level of technical skill and mastery displayed by performers",
+          "value": "Skilled",
+          "importance": 81,
+          "example_value": "Fluid saxophone runs and precise trumpet articulation",
+          "values": [
+            "Amateur",
+            "Basic",
+            "Competent",
+            "Proficient",
+            "Accomplished",
+            "Skilled",
+            "Expert",
+            "Masterful",
+            "Virtuosic",
+            "Superhuman",
+            "Show-Off"
+          ]
+        },
+        {
+          "name": "Compositional Structure",
+          "explanation": "Organization and form of the musical arrangement",
+          "value": "Standard Form",
+          "importance": 77,
+          "example_value": "AABA song form with head-solos-head structure",
+          "values": [
+            "Formless",
+            "Loose",
+            "Flexible",
+            "Organized",
+            "Structured",
+            "Standard Form",
+            "Formal",
+            "Complex",
+            "Elaborate",
+            "Rigid",
+            "Academic"
+          ]
+        },
+        {
+          "name": "Rhythmic Innovation",
+          "explanation": "Creativity and originality in rhythmic patterns and accents",
+          "value": "Creative",
+          "importance": 79,
+          "example_value": "Unexpected rhythmic displacements and metric modulations",
+          "values": [
+            "Conventional",
+            "Standard",
+            "Predictable",
+            "Familiar",
+            "Interesting",
+            "Creative",
+            "Innovative",
+            "Revolutionary",
+            "Groundbreaking",
+            "Radical",
+            "Incomprehensible"
+          ]
+        },
+        {
+          "name": "Atmospheric Mood",
+          "explanation": "Overall emotional and spatial atmosphere created by the music",
+          "value": "Intimate",
+          "importance": 83,
+          "example_value": "Smoky nightclub ambiance with muted trumpet",
+          "values": [
+            "Sterile",
+            "Distant",
+            "Neutral",
+            "Warm",
+            "Cozy",
+            "Intimate",
+            "Enveloping",
+            "Immersive",
+            "Overwhelming",
+            "Suffocating",
+            "Claustrophobic"
+          ]
+        },
+        {
+          "name": "Interaction Spontaneity",
+          "explanation": "Degree of unexpected musical conversations between instruments",
+          "value": "Responsive",
+          "importance": 88,
+          "example_value": "Piano comping responding to soloist's phrases",
+          "values": [
+            "Scripted",
+            "Predetermined",
+            "Controlled",
+            "Guided",
+            "Aware",
+            "Responsive",
+            "Spontaneous",
+            "Unpredictable",
+            "Chaotic",
+            "Uncontrolled",
+            "Anarchic"
+          ]
+        },
+        {
+          "name": "Sonic Texture",
+          "explanation": "Richness and layering of instrumental sounds and timbres",
+          "value": "Rich Texture",
+          "importance": 76,
+          "example_value": "Layered horn sections with rhythm section foundation",
+          "values": [
+            "Thin",
+            "Sparse",
+            "Simple",
+            "Moderate",
+            "Layered",
+            "Rich Texture",
+            "Dense",
+            "Complex",
+            "Overwhelming",
+            "Cluttered",
+            "Muddy"
+          ]
+        },
+        {
+          "name": "Cultural Authenticity",
+          "explanation": "Connection to jazz's cultural roots and historical context",
+          "value": "Respectful",
+          "importance": 74,
+          "example_value": "Honors African American musical traditions",
+          "values": [
+            "Disconnected",
+            "Superficial",
+            "Derivative",
+            "Influenced",
+            "Aware",
+            "Respectful",
+            "Authentic",
+            "Deeply Rooted",
+            "Traditional",
+            "Reverential",
+            "Overly Reverent"
+          ]
+        },
+        {
+          "name": "Experimental Edge",
+          "explanation": "Willingness to push boundaries and explore new musical territories",
+          "value": "Slightly Adventurous",
+          "importance": 72,
+          "example_value": "Occasional use of extended techniques and modern harmonies",
+          "values": [
+            "Conservative",
+            "Traditional",
+            "Safe",
+            "Cautious",
+            "Open",
+            "Slightly Adventurous",
+            "Experimental",
+            "Avant-garde",
+            "Radical",
+            "Extreme",
+            "Alienating"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "scandinavian-interior",
+    "title": "Scandinavian Interior Design",
+    "description": "Analyzed from Nordic interior design principles, emphasizing minimalism, functionality, and natural materials. Perfect for creating calm, elegant spaces.",
+    "category": "Interior Design",
+    "selectedDimension": "Natural Light Usage",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Color Palette Warmth",
+          "explanation": "Temperature and emotional warmth of the color scheme",
+          "value": "Warm Whites",
+          "importance": 91,
+          "example_value": "Cream whites with subtle beige undertones",
+          "values": [
+            "Cool Grays",
+            "Stark White",
+            "Neutral Cool",
+            "Balanced",
+            "Soft Whites",
+            "Warm Whites",
+            "Cream Tones",
+            "Warm Beiges",
+            "Earth Tones",
+            "Rich Warmth",
+            "Overwhelming Warmth"
+          ]
+        },
+        {
+          "name": "Natural Light Usage",
+          "explanation": "How effectively natural light is maximized and distributed",
+          "value": "Maximized",
+          "importance": 95,
+          "example_value": "Large windows with minimal window treatments",
+          "values": [
+            "Blocked",
+            "Limited",
+            "Restricted",
+            "Moderate",
+            "Good",
+            "Maximized",
+            "Optimized",
+            "Flooded",
+            "Overwhelming",
+            "Glaring",
+            "Blinding"
+          ]
+        },
+        {
+          "name": "Furniture Functionality",
+          "explanation": "Balance between aesthetic appeal and practical utility",
+          "value": "Highly Functional",
+          "importance": 89,
+          "example_value": "Storage ottoman that serves as seating and storage",
+          "values": [
+            "Purely Aesthetic",
+            "Decorative",
+            "Limited Function",
+            "Adequate",
+            "Practical",
+            "Highly Functional",
+            "Multi-purpose",
+            "Extremely Functional",
+            "Utilitarian",
+            "Purely Functional",
+            "Institutionally Functional"
+          ]
+        },
+        {
+          "name": "Material Naturalness",
+          "explanation": "Prevalence of natural, organic materials versus synthetic ones",
+          "value": "Natural Materials",
+          "importance": 88,
+          "example_value": "Solid wood furniture with wool textiles",
+          "values": [
+            "Synthetic",
+            "Plastic",
+            "Processed",
+            "Mixed",
+            "Semi-natural",
+            "Natural Materials",
+            "Organic",
+            "Raw Natural",
+            "Unprocessed",
+            "Completely Natural",
+            "Overly Rustic"
+          ]
+        },
+        {
+          "name": "Clutter Level",
+          "explanation": "Amount of decorative objects and visual complexity",
+          "value": "Minimal",
+          "importance": 92,
+          "example_value": "Few carefully chosen decorative pieces",
+          "values": [
+            "Stark Empty",
+            "Sparse",
+            "Very Clean",
+            "Tidy",
+            "Organized",
+            "Minimal",
+            "Moderate",
+            "Comfortable",
+            "Busy",
+            "Cluttered",
+            "Overwhelming"
+          ]
+        },
+        {
+          "name": "Texture Variety",
+          "explanation": "Range and contrast of different surface textures",
+          "value": "Balanced Textures",
+          "importance": 84,
+          "example_value": "Smooth wood paired with chunky knit throws",
+          "values": [
+            "Monotextural",
+            "Limited",
+            "Subtle",
+            "Moderate",
+            "Varied",
+            "Balanced Textures",
+            "Rich Variety",
+            "Diverse",
+            "Complex",
+            "Overwhelming",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Spatial Openness",
+          "explanation": "Sense of space and freedom of movement",
+          "value": "Open Layout",
+          "importance": 87,
+          "example_value": "Minimal walls with flowing transitions between areas",
+          "values": [
+            "Cramped",
+            "Confined",
+            "Compartmentalized",
+            "Defined",
+            "Structured",
+            "Open Layout",
+            "Flowing",
+            "Expansive",
+            "Vast",
+            "Overwhelming",
+            "Impractically Open"
+          ]
+        },
+        {
+          "name": "Furniture Scale",
+          "explanation": "Size and proportion of furniture relative to space",
+          "value": "Human Scale",
+          "importance": 83,
+          "example_value": "Appropriately sized furniture for comfortable use",
+          "values": [
+            "Miniature",
+            "Undersized",
+            "Compact",
+            "Proportional",
+            "Comfortable",
+            "Human Scale",
+            "Generous",
+            "Oversized",
+            "Imposing",
+            "Overwhelming",
+            "Gigantic"
+          ]
+        },
+        {
+          "name": "Hygge Factor",
+          "explanation": "Level of coziness and comfortable contentment",
+          "value": "Cozy",
+          "importance": 86,
+          "example_value": "Soft lighting and warm textiles creating comfort",
+          "values": [
+            "Sterile",
+            "Clinical",
+            "Formal",
+            "Neutral",
+            "Comfortable",
+            "Cozy",
+            "Intimate",
+            "Embracing",
+            "Cocoon-like",
+            "Overwhelming",
+            "Suffocating"
+          ]
+        },
+        {
+          "name": "Sustainability Focus",
+          "explanation": "Emphasis on eco-friendly and sustainable design choices",
+          "value": "Eco-Conscious",
+          "importance": 81,
+          "example_value": "Reclaimed wood and energy-efficient lighting",
+          "values": [
+            "Unsustainable",
+            "Conventional",
+            "Standard",
+            "Aware",
+            "Considerate",
+            "Eco-Conscious",
+            "Sustainable",
+            "Eco-Focused",
+            "Green",
+            "Extremely Eco",
+            "Impractically Green"
+          ]
+        },
+        {
+          "name": "Geometric Simplicity",
+          "explanation": "Clean, simple geometric forms versus ornate complexity",
+          "value": "Simple Geometry",
+          "importance": 85,
+          "example_value": "Rectangular furniture with clean, straight lines",
+          "values": [
+            "Ornate",
+            "Decorative",
+            "Complex",
+            "Moderate",
+            "Clean",
+            "Simple Geometry",
+            "Minimal",
+            "Stark",
+            "Brutally Simple",
+            "Oversimplified",
+            "Boring"
+          ]
+        },
+        {
+          "name": "Craftsmanship Quality",
+          "explanation": "Level of skilled workmanship and attention to detail",
+          "value": "High Quality",
+          "importance": 88,
+          "example_value": "Hand-finished wood joinery and precise construction",
+          "values": [
+            "Poor",
+            "Mass-produced",
+            "Adequate",
+            "Good",
+            "Skilled",
+            "High Quality",
+            "Masterful",
+            "Artisanal",
+            "Perfect",
+            "Obsessive",
+            "Unnecessarily Perfect"
+          ]
+        },
+        {
+          "name": "Cultural Authenticity",
+          "explanation": "Connection to authentic Scandinavian design traditions",
+          "value": "Authentic",
+          "importance": 79,
+          "example_value": "True to Nordic design principles and history",
+          "values": [
+            "Inauthentic",
+            "Superficial",
+            "Inspired",
+            "Influenced",
+            "Respectful",
+            "Authentic",
+            "Traditional",
+            "Deeply Rooted",
+            "Pure",
+            "Rigid",
+            "Overly Traditional"
+          ]
+        },
+        {
+          "name": "Biophilic Elements",
+          "explanation": "Integration of natural elements and connection to nature",
+          "value": "Nature-Connected",
+          "importance": 82,
+          "example_value": "Indoor plants and natural wood grains",
+          "values": [
+            "Artificial",
+            "Sterile",
+            "Minimal Nature",
+            "Some Plants",
+            "Natural Touches",
+            "Nature-Connected",
+            "Biophilic",
+            "Garden-like",
+            "Jungle-like",
+            "Overwhelming",
+            "Impractically Natural"
+          ]
+        },
+        {
+          "name": "Seasonal Adaptability",
+          "explanation": "Design's ability to work across different seasons",
+          "value": "Seasonally Flexible",
+          "importance": 76,
+          "example_value": "Layers that can be added or removed for comfort",
+          "values": [
+            "Fixed",
+            "Rigid",
+            "Single Season",
+            "Limited",
+            "Adaptable",
+            "Seasonally Flexible",
+            "Dynamic",
+            "Highly Adaptable",
+            "Chameleon-like",
+            "Constantly Changing",
+            "Unstable"
+          ]
+        },
+        {
+          "name": "Comfort Prioritization",
+          "explanation": "Balance between aesthetic goals and physical comfort",
+          "value": "Comfort-Focused",
+          "importance": 87,
+          "example_value": "Ergonomic seating with soft, supportive cushions",
+          "values": [
+            "Uncomfortable",
+            "Aesthetic First",
+            "Adequate",
+            "Balanced",
+            "Comfortable",
+            "Comfort-Focused",
+            "Luxurious",
+            "Indulgent",
+            "Excessively Soft",
+            "Impractically Comfortable",
+            "Disability-Inducing"
+          ]
+        },
+        {
+          "name": "Lighting Design",
+          "explanation": "Thoughtfulness in artificial lighting choices and placement",
+          "value": "Layered Lighting",
+          "importance": 84,
+          "example_value": "Combination of ambient, task, and accent lighting",
+          "values": [
+            "Poor",
+            "Basic",
+            "Adequate",
+            "Good",
+            "Well-planned",
+            "Layered Lighting",
+            "Sophisticated",
+            "Professional",
+            "Theatrical",
+            "Overwhelming",
+            "Impractical"
+          ]
+        },
+        {
+          "name": "Storage Integration",
+          "explanation": "How seamlessly storage solutions are incorporated",
+          "value": "Integrated Storage",
+          "importance": 80,
+          "example_value": "Built-in wardrobes and hidden storage compartments",
+          "values": [
+            "No Storage",
+            "Minimal",
+            "Basic",
+            "Adequate",
+            "Good",
+            "Integrated Storage",
+            "Seamless",
+            "Invisible",
+            "Excessive",
+            "Overwhelming",
+            "Impractical"
+          ]
+        },
+        {
+          "name": "Workspace Integration",
+          "explanation": "How well work areas blend with living spaces",
+          "value": "Harmonious",
+          "importance": 78,
+          "example_value": "Desk area that complements overall design aesthetic",
+          "values": [
+            "Separate",
+            "Distinct",
+            "Obvious",
+            "Visible",
+            "Integrated",
+            "Harmonious",
+            "Seamless",
+            "Invisible",
+            "Excessive",
+            "Overwhelming",
+            "Impractical"
+          ]
+        },
+        {
+          "name": "Maintenance Simplicity",
+          "explanation": "Ease of keeping the space clean and well-maintained",
+          "value": "Easy Maintenance",
+          "importance": 83,
+          "example_value": "Smooth surfaces and durable materials",
+          "values": [
+            "High Maintenance",
+            "Difficult",
+            "Moderate",
+            "Manageable",
+            "Reasonable",
+            "Easy Maintenance",
+            "Low Maintenance",
+            "Minimal Care",
+            "Self-Maintaining",
+            "Impossibly Easy",
+            "Neglect-Proof"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "vintage-fashion",
+    "title": "Vintage Fashion Style",
+    "description": "Analyzed from 1950s vintage fashion, emphasizing classic silhouettes, quality materials, and timeless elegance. Perfect for creating sophisticated, retro-inspired looks.",
+    "category": "Fashion",
+    "selectedDimension": "Silhouette Definition",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Silhouette Definition",
+          "explanation": "Clarity and structure of the overall body shape created by clothing",
+          "value": "Well-Defined",
+          "importance": 94,
+          "example_value": "Fitted bodice with full A-line skirt creating hourglass shape",
+          "values": [
+            "Shapeless",
+            "Loose",
+            "Relaxed",
+            "Subtle",
+            "Structured",
+            "Well-Defined",
+            "Sharp",
+            "Dramatic",
+            "Exaggerated",
+            "Extreme",
+            "Cartoonish"
+          ]
+        },
+        {
+          "name": "Fabric Quality",
+          "explanation": "Richness, durability, and luxury level of materials used",
+          "value": "High Quality",
+          "importance": 89,
+          "example_value": "Pure wool crepe with silk lining",
+          "values": [
+            "Cheap",
+            "Synthetic",
+            "Basic",
+            "Adequate",
+            "Good",
+            "High Quality",
+            "Luxurious",
+            "Exquisite",
+            "Rare",
+            "Priceless",
+            "Impractically Expensive"
+          ]
+        },
+        {
+          "name": "Color Sophistication",
+          "explanation": "Complexity and elegance of color choices and combinations",
+          "value": "Refined",
+          "importance": 85,
+          "example_value": "Deep emerald green with pearl accessories",
+          "values": [
+            "Garish",
+            "Bright",
+            "Simple",
+            "Pleasant",
+            "Coordinated",
+            "Refined",
+            "Sophisticated",
+            "Elegant",
+            "Sublime",
+            "Perfect",
+            "Overly Complex"
+          ]
+        },
+        {
+          "name": "Construction Detail",
+          "explanation": "Level of craftsmanship and attention to construction elements",
+          "value": "Detailed",
+          "importance": 91,
+          "example_value": "Hand-sewn buttons with covered button holes",
+          "values": [
+            "Crude",
+            "Basic",
+            "Adequate",
+            "Good",
+            "Careful",
+            "Detailed",
+            "Meticulous",
+            "Artisanal",
+            "Perfect",
+            "Obsessive",
+            "Unnecessarily Complex"
+          ]
+        },
+        {
+          "name": "Era Authenticity",
+          "explanation": "Faithfulness to original 1950s design elements and proportions",
+          "value": "Period Accurate",
+          "importance": 88,
+          "example_value": "Authentic 1950s dress patterns and construction methods",
+          "values": [
+            "Modern",
+            "Contemporary",
+            "Inspired",
+            "Influenced",
+            "Respectful",
+            "Period Accurate",
+            "Historically Precise",
+            "Museum Quality",
+            "Pedantically Accurate",
+            "Restrictively Authentic",
+            "Anachronistic"
+          ]
+        },
+        {
+          "name": "Femininity Level",
+          "explanation": "Degree of traditionally feminine aesthetic elements",
+          "value": "Elegantly Feminine",
+          "importance": 87,
+          "example_value": "Soft curves, delicate details, and graceful proportions",
+          "values": [
+            "Androgynous",
+            "Neutral",
+            "Subtle",
+            "Soft",
+            "Feminine",
+            "Elegantly Feminine",
+            "Romantically Feminine",
+            "Ultra-feminine",
+            "Excessively Feminine",
+            "Stereotypically Feminine",
+            "Caricatured"
+          ]
+        },
+        {
+          "name": "Formality Level",
+          "explanation": "Appropriateness for different social occasions and settings",
+          "value": "Semi-Formal",
+          "importance": 82,
+          "example_value": "Suitable for cocktail parties and dinner dates",
+          "values": [
+            "Casual",
+            "Everyday",
+            "Smart Casual",
+            "Business",
+            "Polished",
+            "Semi-Formal",
+            "Formal",
+            "Elegant",
+            "Black Tie",
+            "Extremely Formal",
+            "Inappropriately Formal"
+          ]
+        },
+        {
+          "name": "Accessory Integration",
+          "explanation": "How well accessories complement and complete the overall look",
+          "value": "Coordinated",
+          "importance": 79,
+          "example_value": "Matching shoes, handbag, and gloves in complementary colors",
+          "values": [
+            "Mismatched",
+            "Minimal",
+            "Basic",
+            "Adequate",
+            "Harmonious",
+            "Coordinated",
+            "Perfectly Matched",
+            "Exquisitely Coordinated",
+            "Obsessively Matched",
+            "Overwhelmingly Coordinated",
+            "Ridiculously Matched"
+          ]
+        },
+        {
+          "name": "Practicality Balance",
+          "explanation": "Equilibrium between style and everyday wearability",
+          "value": "Stylishly Practical",
+          "importance": 76,
+          "example_value": "Beautiful dress with functional pockets and comfortable fit",
+          "values": [
+            "Impractical",
+            "Costume-like",
+            "Limited Use",
+            "Moderate",
+            "Wearable",
+            "Stylishly Practical",
+            "Highly Practical",
+            "Utilitarian",
+            "Purely Functional",
+            "Boring",
+            "Unstylish"
+          ]
+        },
+        {
+          "name": "Fit Precision",
+          "explanation": "How precisely the garment fits and flatters the body",
+          "value": "Tailored Fit",
+          "importance": 93,
+          "example_value": "Custom-fitted bodice with perfect shoulder and waist alignment",
+          "values": [
+            "Ill-fitting",
+            "Loose",
+            "Adequate",
+            "Good Fit",
+            "Well-fitted",
+            "Tailored Fit",
+            "Perfect Fit",
+            "Couture Fit",
+            "Impossibly Perfect",
+            "Restrictively Tight",
+            "Uncomfortably Precise"
+          ]
+        },
+        {
+          "name": "Pattern Sophistication",
+          "explanation": "Complexity and elegance of prints, patterns, or surface designs",
+          "value": "Classic Patterns",
+          "importance": 74,
+          "example_value": "Subtle polka dots or elegant floral motifs",
+          "values": [
+            "Plain",
+            "Simple",
+            "Basic",
+            "Moderate",
+            "Interesting",
+            "Classic Patterns",
+            "Sophisticated",
+            "Complex",
+            "Ornate",
+            "Overwhelming",
+            "Gaudy"
+          ]
+        },
+        {
+          "name": "Texture Richness",
+          "explanation": "Variety and quality of fabric textures and surface interests",
+          "value": "Rich Textures",
+          "importance": 81,
+          "example_value": "Combination of smooth satin and textured brocade",
+          "values": [
+            "Flat",
+            "Monotonous",
+            "Basic",
+            "Varied",
+            "Interesting",
+            "Rich Textures",
+            "Luxurious",
+            "Sumptuous",
+            "Overwhelming",
+            "Excessively Rich",
+            "Gaudy"
+          ]
+        },
+        {
+          "name": "Seasonal Appropriateness",
+          "explanation": "Suitability for specific seasons and weather conditions",
+          "value": "Season-Appropriate",
+          "importance": 72,
+          "example_value": "Lightweight wool for fall or cotton for summer",
+          "values": [
+            "Inappropriate",
+            "Limited Season",
+            "Moderate",
+            "Suitable",
+            "Well-suited",
+            "Season-Appropriate",
+            "Perfectly Seasonal",
+            "Ideally Suited",
+            "Excessively Seasonal",
+            "Impractically Seasonal",
+            "Restrictively Seasonal"
+          ]
+        },
+        {
+          "name": "Timeless Appeal",
+          "explanation": "Ability to remain stylish and relevant across different eras",
+          "value": "Timeless",
+          "importance": 86,
+          "example_value": "Classic A-line dress that looks elegant in any decade",
+          "values": [
+            "Dated",
+            "Trendy",
+            "Period-Specific",
+            "Moderately Lasting",
+            "Enduring",
+            "Timeless",
+            "Eternal",
+            "Universally Appealing",
+            "Impossibly Timeless",
+            "Boringly Classic",
+            "Generically Timeless"
+          ]
+        },
+        {
+          "name": "Proportional Harmony",
+          "explanation": "Balance and relationship between different elements of the design",
+          "value": "Well-Proportioned",
+          "importance": 88,
+          "example_value": "Balanced relationship between neckline, waist, and hem length",
+          "values": [
+            "Disproportionate",
+            "Unbalanced",
+            "Awkward",
+            "Adequate",
+            "Balanced",
+            "Well-Proportioned",
+            "Harmonious",
+            "Perfect",
+            "Ideally Balanced",
+            "Mathematically Perfect",
+            "Rigidly Proportioned"
+          ]
+        },
+        {
+          "name": "Embellishment Elegance",
+          "explanation": "Sophistication and appropriateness of decorative elements",
+          "value": "Subtle Elegance",
+          "importance": 78,
+          "example_value": "Delicate lace trim or pearl buttons as accent details",
+          "values": [
+            "Plain",
+            "Minimal",
+            "Simple",
+            "Moderate",
+            "Tasteful",
+            "Subtle Elegance",
+            "Ornate",
+            "Elaborate",
+            "Excessive",
+            "Overwhelming",
+            "Gaudy"
+          ]
+        },
+        {
+          "name": "Cultural Appropriateness",
+          "explanation": "Respectful representation of 1950s fashion without harmful stereotypes",
+          "value": "Respectful",
+          "importance": 75,
+          "example_value": "Celebrates fashion history without perpetuating limiting gender roles",
+          "values": [
+            "Problematic",
+            "Insensitive",
+            "Unaware",
+            "Neutral",
+            "Conscious",
+            "Respectful",
+            "Thoughtful",
+            "Progressively Respectful",
+            "Overly Cautious",
+            "Restrictively Careful",
+            "Paralyzingly Respectful"
+          ]
+        },
+        {
+          "name": "Maintenance Requirements",
+          "explanation": "Ease of caring for and maintaining the garment",
+          "value": "Moderate Care",
+          "importance": 71,
+          "example_value": "Dry cleaning recommended but not overly delicate",
+          "values": [
+            "High Maintenance",
+            "Delicate",
+            "Careful Handling",
+            "Standard Care",
+            "Reasonable",
+            "Moderate Care",
+            "Easy Care",
+            "Low Maintenance",
+            "Wash and Wear",
+            "Indestructible",
+            "Neglect-Proof"
+          ]
+        },
+        {
+          "name": "Versatility Factor",
+          "explanation": "Adaptability to different occasions and styling approaches",
+          "value": "Versatile",
+          "importance": 77,
+          "example_value": "Can be dressed up or down with different accessories",
+          "values": [
+            "Single-Purpose",
+            "Limited",
+            "Specific",
+            "Moderate",
+            "Adaptable",
+            "Versatile",
+            "Highly Versatile",
+            "Infinitely Adaptable",
+            "Chameleon-like",
+            "Overly Adaptable",
+            "Characterless"
+          ]
+        },
+        {
+          "name": "Modern Relevance",
+          "explanation": "Applicability and inspiration for contemporary fashion",
+          "value": "Inspiring",
+          "importance": 73,
+          "example_value": "Influences modern designers and contemporary style choices",
+          "values": [
+            "Irrelevant",
+            "Outdated",
+            "Historical Only",
+            "Interesting",
+            "Influential",
+            "Inspiring",
+            "Highly Relevant",
+            "Trend-Setting",
+            "Prophetic",
+            "Impossibly Relevant",
+            "Overly Influential"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "renaissance-painting",
+    "title": "Renaissance Painting Style",
+    "description": "Analyzed from classic Renaissance artwork, emphasizing realistic representation, masterful technique, and classical composition. Perfect for creating sophisticated, historically-inspired art.",
+    "category": "Art",
+    "selectedDimension": "Realistic Representation",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Realistic Representation",
+          "explanation": "Degree of naturalistic depiction and faithful representation of subjects",
+          "value": "Highly Realistic",
+          "importance": 95,
+          "example_value": "Anatomically correct human figures with accurate proportions",
+          "values": [
+            "Abstract",
+            "Stylized",
+            "Simplified",
+            "Naturalistic",
+            "Realistic",
+            "Highly Realistic",
+            "Photorealistic",
+            "Hyperrealistic",
+            "Impossibly Realistic",
+            "Clinically Accurate",
+            "Surgically Precise"
+          ]
+        },
+        {
+          "name": "Perspective Mastery",
+          "explanation": "Sophistication of spatial depth and three-dimensional representation",
+          "value": "Linear Perspective",
+          "importance": 92,
+          "example_value": "Precise vanishing points creating convincing architectural spaces",
+          "values": [
+            "Flat",
+            "Naive",
+            "Basic Depth",
+            "Moderate",
+            "Good Perspective",
+            "Linear Perspective",
+            "Atmospheric Perspective",
+            "Complex Perspective",
+            "Perfect Perspective",
+            "Mathematically Precise",
+            "Artificially Perfect"
+          ]
+        },
+        {
+          "name": "Light and Shadow",
+          "explanation": "Mastery of chiaroscuro and dramatic lighting effects",
+          "value": "Dramatic Lighting",
+          "importance": 89,
+          "example_value": "Strong directional light creating sculptural modeling",
+          "values": [
+            "Flat Lighting",
+            "Minimal Shadow",
+            "Subtle",
+            "Moderate",
+            "Good Contrast",
+            "Dramatic Lighting",
+            "Bold Chiaroscuro",
+            "Theatrical",
+            "Extreme Contrast",
+            "Overwhelming",
+            "Artificially Dramatic"
+          ]
+        },
+        {
+          "name": "Compositional Balance",
+          "explanation": "Harmony and arrangement of elements within the picture plane",
+          "value": "Harmonious",
+          "importance": 91,
+          "example_value": "Triangular composition with balanced figure placement",
+          "values": [
+            "Chaotic",
+            "Unbalanced",
+            "Loose",
+            "Adequate",
+            "Balanced",
+            "Harmonious",
+            "Perfectly Balanced",
+            "Mathematically Precise",
+            "Rigidly Structured",
+            "Overly Formal",
+            "Restrictively Balanced"
+          ]
+        },
+        {
+          "name": "Color Richness",
+          "explanation": "Depth, saturation, and sophistication of color palette",
+          "value": "Rich Colors",
+          "importance": 85,
+          "example_value": "Deep ultramarine blues and warm earth tones",
+          "values": [
+            "Monochrome",
+            "Limited",
+            "Muted",
+            "Moderate",
+            "Vibrant",
+            "Rich Colors",
+            "Luxurious",
+            "Sumptuous",
+            "Overwhelmingly Rich",
+            "Excessively Saturated",
+            "Garish"
+          ]
+        },
+        {
+          "name": "Technical Virtuosity",
+          "explanation": "Level of artistic skill and mastery of painting techniques",
+          "value": "Masterful",
+          "importance": 94,
+          "example_value": "Flawless brushwork and seamless color transitions",
+          "values": [
+            "Amateur",
+            "Basic",
+            "Competent",
+            "Skilled",
+            "Accomplished",
+            "Masterful",
+            "Virtuosic",
+            "Transcendent",
+            "Impossibly Skilled",
+            "Supernaturally Good",
+            "Inhumanly Perfect"
+          ]
+        },
+        {
+          "name": "Anatomical Accuracy",
+          "explanation": "Precision in depicting human and animal anatomy",
+          "value": "Anatomically Correct",
+          "importance": 88,
+          "example_value": "Accurate muscle definition and skeletal structure",
+          "values": [
+            "Inaccurate",
+            "Stylized",
+            "Simplified",
+            "Adequate",
+            "Good",
+            "Anatomically Correct",
+            "Medically Accurate",
+            "Perfectly Accurate",
+            "Scientifically Precise",
+            "Dissection-Level",
+            "Unnaturally Perfect"
+          ]
+        },
+        {
+          "name": "Historical Authenticity",
+          "explanation": "Faithfulness to Renaissance period styles and conventions",
+          "value": "Period Appropriate",
+          "importance": 83,
+          "example_value": "Authentic Renaissance costume and architectural details",
+          "values": [
+            "Anachronistic",
+            "Modern",
+            "Mixed Period",
+            "Influenced",
+            "Respectful",
+            "Period Appropriate",
+            "Historically Accurate",
+            "Pedantically Correct",
+            "Museum Quality",
+            "Obsessively Accurate",
+            "Restrictively Authentic"
+          ]
+        },
+        {
+          "name": "Symbolic Depth",
+          "explanation": "Richness of symbolic meaning and allegorical content",
+          "value": "Symbolic",
+          "importance": 87,
+          "example_value": "Religious iconography and classical mythological references",
+          "values": [
+            "Literal",
+            "Surface Level",
+            "Simple",
+            "Moderate",
+            "Meaningful",
+            "Symbolic",
+            "Deeply Symbolic",
+            "Multilayered",
+            "Esoteric",
+            "Incomprehensibly Complex",
+            "Overly Symbolic"
+          ]
+        },
+        {
+          "name": "Emotional Expression",
+          "explanation": "Depth and sophistication of emotional content",
+          "value": "Emotionally Rich",
+          "importance": 86,
+          "example_value": "Subtle facial expressions conveying complex emotions",
+          "values": [
+            "Emotionless",
+            "Reserved",
+            "Subtle",
+            "Expressive",
+            "Emotionally Aware",
+            "Emotionally Rich",
+            "Deeply Moving",
+            "Overwhelming",
+            "Melodramatic",
+            "Excessively Emotional",
+            "Manipulative"
+          ]
+        },
+        {
+          "name": "Surface Texture",
+          "explanation": "Rendering of different material qualities and surface characteristics",
+          "value": "Realistic Textures",
+          "importance": 84,
+          "example_value": "Convincing silk, marble, and flesh textures",
+          "values": [
+            "Flat",
+            "Simplified",
+            "Basic",
+            "Moderate",
+            "Good Texture",
+            "Realistic Textures",
+            "Tactile",
+            "Perfectly Rendered",
+            "Hyperrealistic",
+            "Impossibly Detailed",
+            "Obsessively Textured"
+          ]
+        },
+        {
+          "name": "Narrative Clarity",
+          "explanation": "Clarity and effectiveness of storytelling within the composition",
+          "value": "Clear Narrative",
+          "importance": 82,
+          "example_value": "Obvious biblical or mythological story being depicted",
+          "values": [
+            "Unclear",
+            "Ambiguous",
+            "Mysterious",
+            "Readable",
+            "Understandable",
+            "Clear Narrative",
+            "Obvious",
+            "Didactic",
+            "Overly Explicit",
+            "Painfully Clear",
+            "Insultingly Obvious"
+          ]
+        },
+        {
+          "name": "Proportional Harmony",
+          "explanation": "Mathematical precision in proportional relationships",
+          "value": "Golden Ratio",
+          "importance": 90,
+          "example_value": "Figures constructed using classical proportional systems",
+          "values": [
+            "Disproportionate",
+            "Unbalanced",
+            "Adequate",
+            "Good",
+            "Harmonious",
+            "Golden Ratio",
+            "Mathematically Perfect",
+            "Ideally Proportioned",
+            "Impossibly Perfect",
+            "Rigidly Mathematical",
+            "Inhumanly Perfect"
+          ]
+        },
+        {
+          "name": "Atmospheric Quality",
+          "explanation": "Convincing representation of air, space, and environmental effects",
+          "value": "Atmospheric",
+          "importance": 81,
+          "example_value": "Hazy distant landscapes with aerial perspective",
+          "values": [
+            "Airless",
+            "Flat",
+            "Basic",
+            "Moderate",
+            "Good Depth",
+            "Atmospheric",
+            "Convincing",
+            "Perfectly Atmospheric",
+            "Impossibly Convincing",
+            "Hyperrealistic",
+            "Unnaturally Perfect"
+          ]
+        },
+        {
+          "name": "Classical Influence",
+          "explanation": "Integration of Greek and Roman artistic traditions",
+          "value": "Classical",
+          "importance": 88,
+          "example_value": "Greco-Roman architectural elements and mythological themes",
+          "values": [
+            "Non-Classical",
+            "Modern",
+            "Mixed",
+            "Influenced",
+            "Respectful",
+            "Classical",
+            "Purely Classical",
+            "Scholarly",
+            "Pedantically Classical",
+            "Restrictively Classical",
+            "Archaeologically Precise"
+          ]
+        },
+        {
+          "name": "Spiritual Transcendence",
+          "explanation": "Quality of elevating viewers to higher spiritual or aesthetic realms",
+          "value": "Transcendent",
+          "importance": 87,
+          "example_value": "Heavenly light and divine presence in religious scenes",
+          "values": [
+            "Mundane",
+            "Earthly",
+            "Material",
+            "Elevated",
+            "Inspiring",
+            "Transcendent",
+            "Otherworldly",
+            "Divine",
+            "Impossibly Transcendent",
+            "Overwhelmingly Spiritual",
+            "Artificially Transcendent"
+          ]
+        },
+        {
+          "name": "Intellectual Sophistication",
+          "explanation": "Depth of intellectual content and philosophical meaning",
+          "value": "Intellectually Rich",
+          "importance": 85,
+          "example_value": "Complex philosophical allegories and learned references",
+          "values": [
+            "Simple",
+            "Basic",
+            "Moderate",
+            "Thoughtful",
+            "Intellectual",
+            "Intellectually Rich",
+            "Deeply Philosophical",
+            "Scholarly",
+            "Overly Complex",
+            "Impenetrably Intellectual",
+            "Pretentiously Scholarly"
+          ]
+        },
+        {
+          "name": "Patron Sophistication",
+          "explanation": "Level of refinement expected from educated Renaissance patrons",
+          "value": "Aristocratic",
+          "importance": 79,
+          "example_value": "Cultured references appealing to noble and clerical patrons",
+          "values": [
+            "Popular",
+            "Common",
+            "Accessible",
+            "Educated",
+            "Cultured",
+            "Aristocratic",
+            "Elite",
+            "Courtly",
+            "Exclusively Elite",
+            "Impossibly Refined",
+            "Pretentiously Elite"
+          ]
+        },
+        {
+          "name": "Innovation Within Tradition",
+          "explanation": "Balance between following conventions and artistic innovation",
+          "value": "Traditional Innovation",
+          "importance": 83,
+          "example_value": "Novel techniques while respecting established artistic principles",
+          "values": [
+            "Purely Traditional",
+            "Conservative",
+            "Respectful",
+            "Moderately New",
+            "Innovative",
+            "Traditional Innovation",
+            "Groundbreaking",
+            "Revolutionary",
+            "Radically New",
+            "Destructively Innovative",
+            "Incomprehensibly New"
+          ]
+        },
+        {
+          "name": "Timeless Beauty",
+          "explanation": "Achievement of enduring aesthetic appeal transcending historical periods",
+          "value": "Timeless",
+          "importance": 91,
+          "example_value": "Beauty that remains compelling across centuries",
+          "values": [
+            "Dated",
+            "Period-Bound",
+            "Historical",
+            "Enduring",
+            "Lasting",
+            "Timeless",
+            "Eternal",
+            "Universally Beautiful",
+            "Impossibly Timeless",
+            "Transcendently Beautiful",
+            "Inhumanly Perfect"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "noir-literature",
+    "title": "Noir Literature Style",
+    "description": "Analyzed from classic noir fiction, emphasizing dark atmosphere, moral ambiguity, and psychological depth. Perfect for creating compelling, shadowy narratives.",
+    "category": "Literature",
+    "selectedDimension": "Moral Ambiguity",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Atmospheric Darkness",
+          "explanation": "Density and pervasiveness of dark, brooding atmosphere",
+          "value": "Shadowy",
+          "importance": 94,
+          "example_value": "Rain-slicked streets under flickering neon signs",
+          "values": [
+            "Bright",
+            "Optimistic",
+            "Neutral",
+            "Overcast",
+            "Dim",
+            "Shadowy",
+            "Dark",
+            "Oppressive",
+            "Suffocating",
+            "Impenetrably Dark",
+            "Apocalyptically Dark"
+          ]
+        },
+        {
+          "name": "Moral Ambiguity",
+          "explanation": "Complexity of ethical questions and blurred lines between right and wrong",
+          "value": "Morally Complex",
+          "importance": 96,
+          "example_value": "Detective compromising principles to solve case",
+          "values": [
+            "Clear Cut",
+            "Simple",
+            "Straightforward",
+            "Ethical",
+            "Nuanced",
+            "Morally Complex",
+            "Ambiguous",
+            "Deeply Ambiguous",
+            "Impossibly Complex",
+            "Paralyzing Ambiguity",
+            "Nihilistic"
+          ]
+        },
+        {
+          "name": "Urban Decay",
+          "explanation": "Degree of urban deterioration and societal breakdown depicted",
+          "value": "Decaying",
+          "importance": 88,
+          "example_value": "Crumbling tenements and abandoned warehouse districts",
+          "values": [
+            "Pristine",
+            "Clean",
+            "Maintained",
+            "Worn",
+            "Deteriorating",
+            "Decaying",
+            "Crumbling",
+            "Abandoned",
+            "Post-Apocalyptic",
+            "Completely Ruined",
+            "Impossibly Decayed"
+          ]
+        },
+        {
+          "name": "Psychological Complexity",
+          "explanation": "Depth of character psychology and internal conflict",
+          "value": "Psychologically Deep",
+          "importance": 92,
+          "example_value": "Protagonist's internal struggle with past trauma",
+          "values": [
+            "Simple",
+            "Basic",
+            "Straightforward",
+            "Moderate",
+            "Complex",
+            "Psychologically Deep",
+            "Intricate",
+            "Labyrinthine",
+            "Impossibly Complex",
+            "Clinically Detailed",
+            "Overwhelmingly Deep"
+          ]
+        },
+        {
+          "name": "Cynicism Level",
+          "explanation": "Degree of distrust and pessimism about human nature",
+          "value": "Cynical",
+          "importance": 90,
+          "example_value": "Everyone has ulterior motives and hidden agendas",
+          "values": [
+            "Optimistic",
+            "Hopeful",
+            "Neutral",
+            "Skeptical",
+            "Pessimistic",
+            "Cynical",
+            "Deeply Cynical",
+            "Bitter",
+            "Completely Cynical",
+            "Nihilistic",
+            "Misanthropic"
+          ]
+        },
+        {
+          "name": "Femme Fatale Presence",
+          "explanation": "Strength and centrality of dangerous, alluring female characters",
+          "value": "Prominent",
+          "importance": 85,
+          "example_value": "Seductive woman with deadly secrets and hidden motives",
+          "values": [
+            "Absent",
+            "Minimal",
+            "Background",
+            "Present",
+            "Notable",
+            "Prominent",
+            "Central",
+            "Dominant",
+            "Overwhelming",
+            "Stereotypical",
+            "Caricatured"
+          ]
+        },
+        {
+          "name": "Violence Brutality",
+          "explanation": "Intensity and graphic nature of violent content",
+          "value": "Moderate Violence",
+          "importance": 82,
+          "example_value": "Occasional brutal confrontations with consequences",
+          "values": [
+            "Peaceful",
+            "Implied",
+            "Minimal",
+            "Moderate",
+            "Present",
+            "Moderate Violence",
+            "Brutal",
+            "Graphic",
+            "Extreme",
+            "Overwhelmingly Violent",
+            "Gratuitously Brutal"
+          ]
+        },
+        {
+          "name": "Narrative Complexity",
+          "explanation": "Intricacy of plot structure and storytelling techniques",
+          "value": "Complex Plot",
+          "importance": 87,
+          "example_value": "Multiple timelines and unreliable narrators",
+          "values": [
+            "Simple",
+            "Linear",
+            "Straightforward",
+            "Moderate",
+            "Layered",
+            "Complex Plot",
+            "Intricate",
+            "Labyrinthine",
+            "Impossibly Complex",
+            "Confusingly Complex",
+            "Incomprehensibly Complex"
+          ]
+        },
+        {
+          "name": "Existential Themes",
+          "explanation": "Exploration of meaning, purpose, and human condition",
+          "value": "Existential",
+          "importance": 89,
+          "example_value": "Characters questioning purpose and meaning of existence",
+          "values": [
+            "Superficial",
+            "Material",
+            "Practical",
+            "Thoughtful",
+            "Philosophical",
+            "Existential",
+            "Deeply Existential",
+            "Profoundly Existential",
+            "Overwhelmingly Existential",
+            "Paralyzing Existential",
+            "Nihilistic"
+          ]
+        },
+        {
+          "name": "Dialogue Sharpness",
+          "explanation": "Wit, cynicism, and edge in character conversations",
+          "value": "Sharp Dialogue",
+          "importance": 86,
+          "example_value": "Snappy, cynical exchanges with hidden meanings",
+          "values": [
+            "Flat",
+            "Basic",
+            "Adequate",
+            "Good",
+            "Witty",
+            "Sharp Dialogue",
+            "Razor Sharp",
+            "Cutting",
+            "Brutally Sharp",
+            "Impossibly Witty",
+            "Artificially Sharp"
+          ]
+        },
+        {
+          "name": "Corruption Pervasiveness",
+          "explanation": "Extent to which corruption infects institutions and society",
+          "value": "Widespread",
+          "importance": 91,
+          "example_value": "Police, politicians, and business leaders all compromised",
+          "values": [
+            "Minimal",
+            "Isolated",
+            "Limited",
+            "Present",
+            "Significant",
+            "Widespread",
+            "Pervasive",
+            "Overwhelming",
+            "Universal",
+            "Impossibly Corrupt",
+            "Cartoonishly Corrupt"
+          ]
+        },
+        {
+          "name": "Stylistic Prose",
+          "explanation": "Literary quality and distinctive voice of the writing",
+          "value": "Stylized",
+          "importance": 84,
+          "example_value": "Poetic descriptions of urban decay and human psychology",
+          "values": [
+            "Plain",
+            "Simple",
+            "Functional",
+            "Good",
+            "Polished",
+            "Stylized",
+            "Artistic",
+            "Poetic",
+            "Overly Stylized",
+            "Pretentiously Artistic",
+            "Incomprehensibly Stylized"
+          ]
+        },
+        {
+          "name": "Fatalism Degree",
+          "explanation": "Sense of predetermined doom and inescapable destiny",
+          "value": "Fatalistic",
+          "importance": 88,
+          "example_value": "Characters trapped by circumstances beyond their control",
+          "values": [
+            "Optimistic",
+            "Hopeful",
+            "Neutral",
+            "Pessimistic",
+            "Resigned",
+            "Fatalistic",
+            "Doomed",
+            "Inevitably Doomed",
+            "Cosmically Doomed",
+            "Paralyzingly Fatalistic",
+            "Nihilistically Fatalistic"
+          ]
+        },
+        {
+          "name": "Social Commentary",
+          "explanation": "Depth of critique of societal problems and institutions",
+          "value": "Social Critique",
+          "importance": 83,
+          "example_value": "Exposing inequality, corruption, and social injustice",
+          "values": [
+            "Apolitical",
+            "Neutral",
+            "Observant",
+            "Aware",
+            "Critical",
+            "Social Critique",
+            "Scathing Critique",
+            "Radical Critique",
+            "Revolutionary",
+            "Impossibly Critical",
+            "Destructively Critical"
+          ]
+        },
+        {
+          "name": "Paranoia Intensity",
+          "explanation": "Level of suspicion, distrust, and fear of conspiracy",
+          "value": "Paranoid",
+          "importance": 81,
+          "example_value": "Everyone watched, nothing as it seems, constant threats",
+          "values": [
+            "Trusting",
+            "Naive",
+            "Cautious",
+            "Suspicious",
+            "Distrustful",
+            "Paranoid",
+            "Deeply Paranoid",
+            "Extremely Paranoid",
+            "Clinically Paranoid",
+            "Impossibly Paranoid",
+            "Paralyzingly Paranoid"
+          ]
+        },
+        {
+          "name": "Redemption Possibility",
+          "explanation": "Potential for characters to find salvation or moral recovery",
+          "value": "Limited Redemption",
+          "importance": 79,
+          "example_value": "Slim hope for moral recovery against overwhelming odds",
+          "values": [
+            "Hopeless",
+            "Impossible",
+            "Unlikely",
+            "Difficult",
+            "Possible",
+            "Limited Redemption",
+            "Achievable",
+            "Likely",
+            "Guaranteed",
+            "Unrealistically Hopeful",
+            "Impossibly Optimistic"
+          ]
+        },
+        {
+          "name": "Temporal Disorientation",
+          "explanation": "Confusion of timelines and non-linear narrative structure",
+          "value": "Moderate Confusion",
+          "importance": 76,
+          "example_value": "Flashbacks and fragmented memories blur timeline",
+          "values": [
+            "Linear",
+            "Chronological",
+            "Clear",
+            "Slightly Complex",
+            "Moderately Complex",
+            "Moderate Confusion",
+            "Confusing",
+            "Extremely Confusing",
+            "Incomprehensibly Complex",
+            "Impossibly Confused",
+            "Chaotically Confused"
+          ]
+        },
+        {
+          "name": "Isolation Themes",
+          "explanation": "Emphasis on loneliness and alienation from society",
+          "value": "Isolated",
+          "importance": 87,
+          "example_value": "Protagonist cut off from meaningful human connections",
+          "values": [
+            "Connected",
+            "Social",
+            "Integrated",
+            "Somewhat Alone",
+            "Lonely",
+            "Isolated",
+            "Profoundly Isolated",
+            "Completely Alone",
+            "Impossibly Isolated",
+            "Existentially Alone",
+            "Cosmically Isolated"
+          ]
+        },
+        {
+          "name": "Genre Authenticity",
+          "explanation": "Faithfulness to classic noir conventions and traditions",
+          "value": "Authentic Noir",
+          "importance": 85,
+          "example_value": "True to 1940s hard-boiled detective story traditions",
+          "values": [
+            "Non-Noir",
+            "Inspired",
+            "Influenced",
+            "Respectful",
+            "Traditional",
+            "Authentic Noir",
+            "Pure Noir",
+            "Perfectly Noir",
+            "Rigidly Traditional",
+            "Slavishly Authentic",
+            "Clichéd"
+          ]
+        },
+        {
+          "name": "Emotional Detachment",
+          "explanation": "Distance and coolness in emotional expression and connection",
+          "value": "Emotionally Cool",
+          "importance": 78,
+          "example_value": "Characters maintain emotional distance despite intense situations",
+          "values": [
+            "Emotionally Open",
+            "Expressive",
+            "Warm",
+            "Moderate",
+            "Reserved",
+            "Emotionally Cool",
+            "Detached",
+            "Cold",
+            "Impossibly Detached",
+            "Emotionally Dead",
+            "Completely Unfeeling"
+          ]
+        }
+      ]
+    }
+>>>>>>> e6d22f9d350345a20abdc8f51cc53eb62cf50df9
   }
 }, {
   "id": "aesthetic-face-profile",
