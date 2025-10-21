@@ -4709,5 +4709,226 @@
           }
         ]
       }
-   }
+   },
+  {
+    "id": "cartoon-styles",
+    "title": "Cartoon Styles",
+    "description": "Stylized cartoon scene with clean line art, flat shading, expressive characters, and a playful tech vibe.",
+    "category": "Visual",
+    "selectedDimension": "Humor & Playfulness",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Emotional Tone",
+          "explanation": "Dominant affect conveyed by the content",
+          "value": "Neutral",
+          "importance": 87,
+          "example_value": "A calm, measured statement with no overt feeling",
+          "values": [
+            "Flat", "Muted", "Slightly Sad", "Melancholic", "Even", "Neutral", "Warm", "Upbeat", "Joyful", "Radiant", "Euphoric"
+          ]
+        },
+        {
+          "name": "Formality Level",
+          "explanation": "Degree of formal vs. casual style",
+          "value": "Neutral",
+          "importance": 74,
+          "example_value": "Please review the notes when convenient.",
+          "values": [
+            "Slangy", "Casual", "Conversational", "Informal", "Semi-informal", "Neutral", "Semi-formal", "Formal", "Ceremonial", "Official", "Stilted"
+          ]
+        },
+        {
+          "name": "Lexical Complexity",
+          "explanation": "Sophistication of word choice",
+          "value": "Moderate",
+          "importance": 68,
+          "example_value": "We’ll evaluate feasible options before deciding.",
+          "values": [
+            "Very Simple", "Simple", "Basic", "Plain", "Everyday", "Moderate", "Varied", "Advanced", "Erudite", "Scholarly", "Arcane"
+          ]
+        },
+        {
+          "name": "Concreteness",
+          "explanation": "Use of tangible specifics vs. abstractions",
+          "value": "Balanced",
+          "importance": 63,
+          "example_value": "The team shipped the update on Tuesday.",
+          "values": [
+            "Highly Abstract", "Abstract", "Conceptual", "Generalized", "Mixed-lean abstract", "Balanced", "Mixed-lean concrete", "Concrete", "Very Concrete", "Vivid", "Sensory-rich"
+          ]
+        },
+        {
+          "name": "Narrative Pace",
+          "explanation": "Speed at which ideas/events unfold",
+          "value": "Medium",
+          "importance": 55,
+          "example_value": "First this happened, then we refined the plan.",
+          "values": [
+            "Glacial", "Very Slow", "Slow", "Measured", "Leisurely", "Medium", "Brisk", "Quick", "Fast", "Rapid-fire", "Breakneck"
+          ]
+        },
+        {
+          "name": "Subjectivity",
+          "explanation": "Personal opinion vs. objective reporting",
+          "value": "Balanced",
+          "importance": 61,
+          "example_value": "It seems promising, but the data will confirm.",
+          "values": [
+            "Purely Objective", "Objective", "Cool", "Detached", "Guarded", "Balanced", "Leaning Personal", "Subjective", "Opinionated", "Strongly Opinionated", "Highly Biased"
+          ]
+        },
+        {
+          "name": "Sentiment Polarity",
+          "explanation": "Overall positive vs. negative stance",
+          "value": "Neutral",
+          "importance": 70,
+          "example_value": "The results are acceptable and within expectations.",
+          "values": [
+            "Very Negative", "Negative", "Downbeat", "Slightly Negative", "Mixed-lean negative", "Neutral", "Mixed-lean positive", "Slightly Positive", "Positive", "Very Positive", "Enthusiastic"
+          ]
+        },
+        {
+          "name": "Specificity",
+          "explanation": "Amount of precise detail provided",
+          "value": "Moderate Detail",
+          "importance": 66,
+          "example_value": "We’ll deliver three iterations over six weeks.",
+          "values": [
+            "Vague", "Broad", "High-level", "General", "Some Detail", "Moderate Detail", "Detailed", "Very Detailed", "Exhaustive", "Forensic", "Granular"
+          ]
+        },
+        {
+          "name": "Technicality",
+          "explanation": "Use of domain-specific jargon and concepts",
+          "value": "Moderate",
+          "importance": 72,
+          "example_value": "We’ll deploy via CI and roll back if metrics regress.",
+          "values": [
+            "Layperson", "Everyday", "Low-tech", "Basic Jargon", "Some Jargon", "Moderate", "Technical", "Very Technical", "Expert", "Specialist", "Esoteric"
+          ]
+        },
+        {
+          "name": "Directness",
+          "explanation": "Blunt clarity vs. indirect hedging",
+          "value": "Neutral",
+          "importance": 58,
+          "example_value": "Please send the draft by Friday.",
+          "values": [
+            "Highly Indirect", "Indirect", "Hedged", "Softened", "Tempered", "Neutral", "Clear", "Direct", "Blunt", "Forthright", "Uncompromising"
+          ]
+        },
+        {
+          "name": "Certainty",
+          "explanation": "Confidence level signaled by the text",
+          "value": "Balanced",
+          "importance": 59,
+          "example_value": "Data suggests this approach will likely work.",
+          "values": [
+            "Highly Tentative", "Tentative", "Cautious", "Reserved", "Leaning Uncertain", "Balanced", "Leaning Certain", "Confident", "Very Confident", "Emphatic", "Unequivocal"
+          ]
+        },
+        {
+          "name": "Politeness Strategy",
+          "explanation": "Degree of courtesy and face-saving language",
+          "value": "Courteous",
+          "importance": 54,
+          "example_value": "Could you please review this when you have time?",
+          "values": [
+            "Abrasive", "Curt", "Blunt", "Plain", "Neutral", "Courteous", "Polite", "Very Polite", "Deferential", "Highly Deferential", "Obsequious"
+          ]
+        },
+        {
+          "name": "Humor & Playfulness",
+          "explanation": "Presence of jokes, wordplay, or levity",
+          "value": "Balanced",
+          "importance": 41,
+          "example_value": "No pressure—just the fate of the sprint.",
+          "values": [
+            "Solemn", "Serious", "Sober", "Dry", "Subtle", "Balanced", "Light", "Playful", "Witty", "Humorous", "Comedic"
+          ]
+        },
+        {
+          "name": "Imagery Density",
+          "explanation": "Frequency of metaphors and sensory images",
+          "value": "Moderate",
+          "importance": 44,
+          "example_value": "The plan is a compass, not a map.",
+          "values": [
+            "Literal", "Sparse", "Low", "Minimal", "Some", "Moderate", "Rich", "Vivid", "Lush", "Evocative", "Surreal"
+          ]
+        },
+        {
+          "name": "Temporal Focus",
+          "explanation": "Orientation toward past, present, or future",
+          "value": "Present-focused",
+          "importance": 50,
+          "example_value": "We’re shipping today and monitoring tonight.",
+          "values": [
+            "Distant Past", "Past-lean", "Recent Past", "Near Past", "Past/Present Mix", "Present-focused", "Near Future", "Next Phase", "Upcoming", "Future-lean", "Speculative Future"
+          ]
+        },
+        {
+          "name": "Urgency",
+          "explanation": "Pressure implied for action or attention",
+          "value": "Moderate",
+          "importance": 62,
+          "example_value": "Let’s address this in the next stand-up.",
+          "values": [
+            "No Rush", "Low", "Relaxed", "Casual", "Some Urgency", "Moderate", "Prompt", "High", "Very High", "Critical", "Emergency"
+          ]
+        },
+        {
+          "name": "Inclusivity of Voice",
+          "explanation": "Balance between ‘I’, ‘you’, and ‘we’",
+          "value": "Balanced",
+          "importance": 47,
+          "example_value": "We’ll coordinate so everyone is heard.",
+          "values": [
+            "Self-centric", "I-lean", "Personal", "One-sided", "You-lean", "Balanced", "We-lean", "Team-centric", "Collaborative", "Consensus-oriented", "Collectivist"
+          ]
+        },
+        {
+          "name": "Novelty vs. Conventionality",
+          "explanation": "How original or standard the ideas feel",
+          "value": "Middle",
+          "importance": 53,
+          "example_value": "A tried-and-true pattern with a small twist.",
+          "values": [
+            "Derivative", "Very Familiar", "Conventional", "Expected", "Common", "Middle", "Somewhat Fresh", "Fresh", "Original", "Inventive", "Radical"
+          ]
+        },
+        {
+          "name": "Ambiguity",
+          "explanation": "Clarity vs. openness to multiple interpretations",
+          "value": "Moderate",
+          "importance": 46,
+          "example_value": "We might pivot depending on results.",
+          "values": [
+            "Crystal Clear", "Very Clear", "Clear", "Mostly Clear", "Slightly Vague", "Moderate", "Vague", "Ambiguous", "Highly Ambiguous", "Oblique", "Opaque"
+          ]
+        },
+        {
+          "name": "Structure Tightness",
+          "explanation": "How organized and logically sequenced the content is",
+          "value": "Balanced",
+          "importance": 64,
+          "example_value": "Intro → findings → implications → next steps.",
+          "values": [
+            "Chaotic", "Loose", "Rambling", "Unstructured", "Some Structure", "Balanced", "Structured", "Well-structured", "Tight", "Very Tight", "Rigorous"
+          ]
+        },
+        {
+          "name": "Visual Rhythm (for images)",
+          "explanation": "Regularity of visual flow or repetition",
+          "value": "Moderate",
+          "importance": 38,
+          "example_value": "SVG path: \"M 20 80 C 40 60, 60 100, 80 80\"",
+          "values": [
+            "Static", "Sparse", "Loose", "Irregular", "Gently Varied", "Moderate", "Measured", "Regular", "Pulsed", "Strongly Rhythmic", "Hypnotic"
+          ]
+        }
+      ]
+    }
+  }
 ]
