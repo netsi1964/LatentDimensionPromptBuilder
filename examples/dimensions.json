@@ -1,5 +1,416 @@
 [
   {
+    "id": "cartoon-ish-talk",
+    "title": "Cartoon style (talk)",
+    "description": "A custom style configuration created with the Latent Dimension Prompt Builder.",
+    "category": "Custom",
+    "selectedDimension": "Line Weight Consistency",
+    "dimensions": {
+      "latent_dimensions": [
+        {
+          "name": "Line Weight Consistency",
+          "explanation": "Controls the thickness and consistency of outlines across the illustration.",
+          "value": "Strong",
+          "importance": 89,
+          "example_value": "M 50 400 C 50 350, 150 350, 150 400",
+          "values": [
+            "Hairline",
+            "Extra Thin",
+            "Thin",
+            "Semi Thin",
+            "Light Medium",
+            "Strong",
+            "Bold",
+            "Heavy",
+            "Ultra Bold",
+            "Outline Emphasis",
+            "Ink Density"
+          ]
+        },
+        {
+          "name": "Color Saturation",
+          "explanation": "Defines how vivid or muted the color palette appears.",
+          "value": "Soft",
+          "importance": 90,
+          "example_value": "\"Muted blue-gray tones with subtle highlights\"",
+          "values": [
+            "Desaturated Gray",
+            "Low",
+            "Subtle",
+            "Gentle",
+            "Balanced Saturation",
+            "Soft",
+            "Lively",
+            "Vivid",
+            "Bright",
+            "Rich",
+            "Neon Intense"
+          ]
+        },
+        {
+          "name": "Lighting Direction",
+          "explanation": "Determines the main direction of light illuminating the scene.",
+          "value": "Slightly Frontal",
+          "importance": 78,
+          "example_value": "M 200 200 L 300 100",
+          "values": [
+            "Backlit",
+            "Top Left",
+            "Top",
+            "Top Right",
+            "Frontal Light",
+            "Slightly Frontal",
+            "Front Right",
+            "Side Right",
+            "Bottom Right",
+            "Bottom",
+            "Dynamic Multi-source"
+          ]
+        },
+        {
+          "name": "Character Stylization",
+          "explanation": "Controls how realistic or cartoony the characters look.",
+          "value": "Rounded Comic",
+          "importance": 97,
+          "example_value": "\"Simplified anatomy with expressive eyes and defined outlines\"",
+          "values": [
+            "Abstract Shapes",
+            "Highly Simplified",
+            "Cartoonish",
+            "Stylized Soft",
+            "Mid Stylized",
+            "Rounded Comic",
+            "Semi Realistic",
+            "Naturalistic",
+            "Realistic",
+            "Hyper Realistic",
+            "Photographic"
+          ]
+        },
+        {
+          "name": "Shadow Softness",
+          "explanation": "Controls how diffused or sharp the shadows appear.",
+          "value": "Smooth",
+          "importance": 80,
+          "example_value": "M 150 450 C 200 460, 300 460, 350 450",
+          "values": [
+            "No Shadows",
+            "Softest",
+            "Diffuse",
+            "Feathered",
+            "Balanced Shadow",
+            "Smooth",
+            "Defined",
+            "Crisp",
+            "Hard",
+            "Strong Edge",
+            "Graphic Contrast"
+          ]
+        },
+        {
+          "name": "Facial Expression Contrast",
+          "explanation": "Adjusts how expressive and contrasting facial features are.",
+          "value": "Clear Distinction",
+          "importance": 88,
+          "example_value": "\"Human skeptical vs. AI focused\"",
+          "values": [
+            "Flat",
+            "Subtle",
+            "Gentle",
+            "Soft Variation",
+            "Moderate Contrast",
+            "Clear Distinction",
+            "High Contrast",
+            "Exaggerated",
+            "Caricature",
+            "Extreme Opposites",
+            "Animated"
+          ]
+        },
+        {
+          "name": "Ambient Color Temperature",
+          "explanation": "Defines the general warmth or coolness of scene lighting.",
+          "value": "Cool Neutral",
+          "importance": 70,
+          "example_value": "\"Soft daylight with cool bluish tone\"",
+          "values": [
+            "Blue Tint",
+            "Cool",
+            "Cold",
+            "Slightly Cool",
+            "Neutral White",
+            "Cool Neutral",
+            "Slightly Warm",
+            "Warm",
+            "Amber",
+            "Golden",
+            "Sunset Orange"
+          ]
+        },
+        {
+          "name": "Texture Presence",
+          "explanation": "Specifies how much surface texture is visible in the artwork.",
+          "value": "Vector Smooth",
+          "importance": 72,
+          "example_value": "\"Flat color fills with smooth gradients and no grain\"",
+          "values": [
+            "Ultra Flat",
+            "Minimal",
+            "Soft Noise",
+            "Subtle Grain",
+            "Clean Digital",
+            "Vector Smooth",
+            "Light Brush",
+            "Visible Strokes",
+            "Paper Texture",
+            "Painterly",
+            "Rough Canvas"
+          ]
+        },
+        {
+          "name": "Composition Balance",
+          "explanation": "Controls how visual weight is distributed across the frame.",
+          "value": "Centered",
+          "importance": 91,
+          "example_value": "M 100 300 L 250 300 L 400 300",
+          "values": [
+            "Heavily Left",
+            "Slight Left",
+            "Off-Center",
+            "Symmetrical",
+            "Calm Center",
+            "Centered",
+            "Weighted Right",
+            "Dynamic Asymmetry",
+            "Strong Diagonal",
+            "Complex",
+            "Chaotic"
+          ]
+        },
+        {
+          "name": "Outline Color Use",
+          "explanation": "Defines the tone and style of outlines separating forms.",
+          "value": "Cool Black",
+          "importance": 76,
+          "example_value": "\"Dark gray outlines creating contrast without harshness\"",
+          "values": [
+            "No Outline",
+            "Light Outline",
+            "Soft Gray",
+            "Muted Tone",
+            "Neutral Dark Lines",
+            "Cool Black",
+            "Vivid Black",
+            "Colored Lines",
+            "Dynamic Blend",
+            "Gradient Edges",
+            "Contrast Edge"
+          ]
+        },
+        {
+          "name": "Depth of Field Stylization",
+          "explanation": "Determines how depth and focus are represented.",
+          "value": "Flat 2D",
+          "importance": 77,
+          "example_value": "\"Background clouds simplified with minimal blur\"",
+          "values": [
+            "Flat 2D",
+            "Minimal",
+            "Soft Layers",
+            "Low Gradient",
+            "Balanced",
+            "Flat 2D",
+            "Layered",
+            "Depth Focus",
+            "Dynamic Depth",
+            "Cinematic Focus",
+            "Photo Depth"
+          ]
+        },
+        {
+          "name": "Clothing Texture Simplification",
+          "explanation": "Controls detail level in clothing folds and shading.",
+          "value": "Simplified",
+          "importance": 65,
+          "example_value": "\"Smooth T-shirt with minor shading\"",
+          "values": [
+            "Flat Color",
+            "Soft Fold",
+            "Light Shading",
+            "Mild Detail",
+            "Flat Cloth",
+            "Simplified",
+            "Stylized Texture",
+            "Layered Fabric",
+            "Detailed",
+            "Complex Weave",
+            "Hyper Realistic"
+          ]
+        },
+        {
+          "name": "Character Lighting Edge",
+          "explanation": "Adjusts the amount of light outlining characters' edges.",
+          "value": "Balanced",
+          "importance": 83,
+          "example_value": "M 400 220 C 410 200, 420 180, 430 200",
+          "values": [
+            "None",
+            "Barely Visible",
+            "Soft",
+            "Feathered",
+            "Subtle Edge Light",
+            "Balanced",
+            "Crisp",
+            "Strong Rim",
+            "Glow",
+            "Halo Effect",
+            "Radiant"
+          ]
+        },
+        {
+          "name": "Color Harmony Scheme",
+          "explanation": "Defines the relationship between colors in the palette.",
+          "value": "Soft Analogous",
+          "importance": 94,
+          "example_value": "\"Blue, teal, and cyan with muted background tones\"",
+          "values": [
+            "Monochrome",
+            "Muted Dual",
+            "Neutral Split",
+            "Balanced Warm-Cool",
+            "Analogous Cool",
+            "Soft Analogous",
+            "Triadic",
+            "Complementary",
+            "High Contrast",
+            "Vibrant Complementary",
+            "Experimental Spectrum"
+          ]
+        },
+        {
+          "name": "Line Curve Smoothness",
+          "explanation": "Controls how fluid and organic the line shapes appear.",
+          "value": "Flowing",
+          "importance": 81,
+          "example_value": "M 60 400 C 90 360, 150 360, 180 400",
+          "values": [
+            "Angular",
+            "Rigid",
+            "Low Curve",
+            "Mild Curve",
+            "Gentle Curves",
+            "Flowing",
+            "Rounded",
+            "Soft Organic",
+            "Fluid",
+            "Elastic Motion",
+            "Dynamic Motion"
+          ]
+        },
+        {
+          "name": "Scene Context Abstraction",
+          "explanation": "Determines how realistic or abstract the environment appears.",
+          "value": "Light Forms",
+          "importance": 74,
+          "example_value": "\"Floating clouds and geometric icons in pastel tones\"",
+          "values": [
+            "Empty",
+            "Flat Gradient",
+            "Minimal Hints",
+            "Suggestive",
+            "Stylized Context",
+            "Light Forms",
+            "Representational",
+            "Defined",
+            "Realistic",
+            "Detailed",
+            "Fully Rendered"
+          ]
+        },
+        {
+          "name": "Human Posture Expressiveness",
+          "explanation": "Controls the body language intensity and emotion conveyed by humans.",
+          "value": "Assertive",
+          "importance": 86,
+          "example_value": "\"Crossed arms and skeptical expression\"",
+          "values": [
+            "Relaxed",
+            "Loose",
+            "Casual",
+            "Leaning",
+            "Composed",
+            "Assertive",
+            "Firm",
+            "Rigid",
+            "Dynamic",
+            "Exaggerated Pose",
+            "Theatrical"
+          ]
+        },
+        {
+          "name": "AI Texture Style",
+          "explanation": "Defines the visual surface quality of the AI figure.",
+          "value": "Soft Glow",
+          "importance": 99,
+          "example_value": "\"Blue holographic body with faint luminous grid lines\"",
+          "values": [
+            "Flat Color",
+            "Matte",
+            "Subtle Shine",
+            "Plastic",
+            "Holographic Grid",
+            "Soft Glow",
+            "Reflective",
+            "Metallic",
+            "Neon Mesh",
+            "Crystal",
+            "Energy Field"
+          ]
+        },
+        {
+          "name": "Mood Contrast",
+          "explanation": "Captures emotional differences between characters or elements.",
+          "value": "Noticeable",
+          "importance": 90,
+          "example_value": "\"Human frustrated, AI calm and focused\"",
+          "values": [
+            "Harmonious",
+            "Mild",
+            "Subtle",
+            "Light Variation",
+            "Balanced Opposition",
+            "Noticeable",
+            "Strong",
+            "Dramatic",
+            "Intense",
+            "Extreme Duality",
+            "Polarized"
+          ]
+        },
+        {
+          "name": "Overall Rendering Finish",
+          "explanation": "Defines the final polish and smoothness of the illustration.",
+          "value": "Smooth Vector",
+          "importance": 92,
+          "example_value": "\"Clean digital rendering with precise edges and gradients\"",
+          "values": [
+            "Sketchy",
+            "Loose",
+            "Soft",
+            "Refined Rough",
+            "Clean Finish",
+            "Smooth Vector",
+            "Glossy",
+            "Polished",
+            "HD Finish",
+            "Hyper Clean",
+            "Studio Perfect"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "skagen-style",
     "title": "Example: Skagensmalernes Artistic Style",
     "description": "This profile captures the visual and emotional dimensions found in the Danish Skagen painters' style: natural light, realism in everyday life, coastal settings, and a subtle interplay between people and nature.",
